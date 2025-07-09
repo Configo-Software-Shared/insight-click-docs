@@ -1,0 +1,3726 @@
+<html lang="en" style="padding: 20px" xmlns="http://www.w3.org/1999/xhtml" xmlns:xoom="urn:xmlns:zanyants:xoom">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.9.3/semantic.min.css" xmlns="" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/se/jszip-3.10.1/dt-2.0.7/b-3.0.2/b-colvis-3.0.2/b-html5-3.0.2/b-print-3.0.2/cr-2.0.2/date-1.5.2/fc-5.0.0/fh-4.0.1/kt-2.12.0/r-3.0.2/rg-1.5.0/sc-2.4.2/sb-1.7.1/sp-2.3.1/datatables.min.css" xmlns="" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" xmlns="">//</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.9.3/semantic.min.js" xmlns="">//</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js" xmlns="">//</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js" xmlns="">//</script>
+    <script src="https://cdn.datatables.net/v/se/jszip-3.10.1/dt-2.0.7/b-3.0.2/b-colvis-3.0.2/b-html5-3.0.2/b-print-3.0.2/cr-2.0.2/date-1.5.2/fc-5.0.0/fh-4.0.1/kt-2.12.0/r-3.0.2/rg-1.5.0/sc-2.4.2/sb-1.7.1/sp-2.3.1/datatables.min.js" xmlns="">//</script>
+    <script type="text/javascript" src="script/cfg-tables.js" xmlns="">//</script>
+    <title>Logic Domains Matrix</title>
+  </head>
+  <body>
+    <h2 class="ui header">Logic Domain Rules/Objectives/BVFs Matrix</h2>
+    <table id="logic-domain-matrix" class="ui collapsing celled table">
+      <thead>
+        <tr class="header">
+          <th>Category</th>
+          <th>Logic Component</th>
+          <th>BAK General</th>
+          <th>BAK General Maintenance</th>
+          <th>ClickMobile Schedule Update</th>
+          <th>DC Protocols General</th>
+          <th>EF General Measurement</th>
+          <th>Equip Info General</th>
+          <th>FSE Analytics</th>
+          <th>General</th>
+          <th>General Maintenance</th>
+          <th>OND General Maintenance</th>
+          <th>ORB General</th>
+          <th>ORB General Maintenance</th>
+          <th>PER General</th>
+          <th>PER General Maintenance</th>
+          <th>TMS</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Rules</td>
+          <td>Assignment finish at or before task due date</td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+        </tr>
+        <tr>
+          <td>Rules</td>
+          <td>Assignment Resource Dependency Rule</td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Rules</td>
+          <td>Assignment start at or after appointment window start</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Rules</td>
+          <td>Assignment start at or after task early start</td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+        </tr>
+        <tr>
+          <td>Rules</td>
+          <td>Assignment start at or before appointment window finish</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Rules</td>
+          <td>Assignment start at or before multi-day task late start</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Rules</td>
+          <td>Assignment start at or before task late start</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Rules</td>
+          <td>Assignment Time Dependency Rule</td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Rules</td>
+          <td>BAK Match Working Area</td>
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Rules</td>
+          <td>Business Hierarchy District</td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Rules</td>
+          <td>Contractor Company Capacity Rule</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Rules</td>
+          <td>District Match Business Hierarchy</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Rules</td>
+          <td>Do not schedule cancelled tasks</td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+        </tr>
+        <tr>
+          <td>Rules</td>
+          <td>Do not schedule inactive resources</td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+        </tr>
+        <tr>
+          <td>Rules</td>
+          <td>Do not schedule Requests</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+        </tr>
+        <tr>
+          <td>Rules</td>
+          <td>Do not Schedule Tasks during Hunting Lock Down</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Rules</td>
+          <td>Do not Schedule to Excluded Resource</td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+        </tr>
+        <tr>
+          <td>Rules</td>
+          <td>Do not schedule to leads</td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+        </tr>
+        <tr>
+          <td>Rules</td>
+          <td>Duration rule</td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+        </tr>
+        <tr>
+          <td>Rules</td>
+          <td>EF Match Route</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Rules</td>
+          <td>Index Rule</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Rules</td>
+          <td>Limit travel from resource home base</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Rules</td>
+          <td>Match business hierarchy</td>
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+        </tr>
+        <tr>
+          <td>Rules</td>
+          <td>Match Crew Size</td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+        </tr>
+        <tr>
+          <td>Rules</td>
+          <td>Match number of required resources</td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+        </tr>
+        <tr>
+          <td>Rules</td>
+          <td>Match required resources</td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+        </tr>
+        <tr>
+          <td>Rules</td>
+          <td>Match resource skills rule</td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+        </tr>
+        <tr>
+          <td>Rules</td>
+          <td>Match Routes</td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Rules</td>
+          <td>Match Time Phased Skills</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Rules</td>
+          <td>Multi-day assignment start at or before appointment window finish</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Rules</td>
+          <td>One assignment per task</td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+        </tr>
+        <tr>
+          <td>Rules</td>
+          <td>Only schedule alarms to night operators</td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Rules</td>
+          <td>Only schedule High Tasks to night operators </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Rules</td>
+          <td>Only schedule Tasks to Storm Operator</td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Rules</td>
+          <td>ORB Match Route</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Rules</td>
+          <td>PER Floaters - PMs Only</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Rules</td>
+          <td>Relocation Rule</td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+        </tr>
+        <tr>
+          <td>Rules</td>
+          <td>Resource availability</td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+        </tr>
+        <tr>
+          <td>Rules</td>
+          <td>Schedule tasks from now with travel</td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+        </tr>
+        <tr>
+          <td>Rules</td>
+          <td>Schedule Well Pad Visits During Day</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+        </tr>
+        <tr>
+          <td>Rules</td>
+          <td>Schedule working and optional time</td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+        </tr>
+        <tr>
+          <td>Rules</td>
+          <td>Schedule working time</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Rules</td>
+          <td>Spacing duration between assignments</td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+        </tr>
+        <tr>
+          <td>Rules</td>
+          <td>Task Index Rule - Equipment Info</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Rules</td>
+          <td>Task Index Rule - OND Maintenance</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Rules</td>
+          <td>Task index rule - open tasks</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Rules</td>
+          <td>Task Index Rule - Ops</td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Rules</td>
+          <td>Task Index Rule - ORB Maintenance</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Rules</td>
+          <td>Task Index Rule - ORB Ops</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Rules</td>
+          <td>Task Index Rule - PER</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+        </tr>
+        <tr>
+          <td>Rules</td>
+          <td>Task Index Rule - Self Schedule EF</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Rules</td>
+          <td>Task Index Rule - Self-Schedule</td>
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Rules</td>
+          <td>Task Index Rule - TMS</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+        </tr>
+        <tr>
+          <td>Rules</td>
+          <td>Territory Planning Rule</td>
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td>
+            <div class="ui green label">YES</div>
+          </td>
+          <td />
+        </tr>
+        <tr>
+          <td>Objectives</td>
+          <td>[VS ] Base Priority Boost to Prefer task with DP Equals 100</td>
+          <td>
+            <div class="ui green label">5000</div>
+          </td>
+          <td>
+            <div class="ui green label">5000</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">5000</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">5000</div>
+          </td>
+        </tr>
+        <tr>
+          <td>Objectives</td>
+          <td>[VS] ASAP Boost for Tasks with DP more than or Equal to 60</td>
+          <td>
+            <div class="ui green label">5000</div>
+          </td>
+          <td>
+            <div class="ui green label">5000</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">5000</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">15000</div>
+          </td>
+          <td />
+          <td>
+            <div class="ui green label">5000</div>
+          </td>
+        </tr>
+        <tr>
+          <td>Objectives</td>
+          <td>[VS] Base Priority Boost for DP more than 50 - Maint</td>
+          <td />
+          <td>
+            <div class="ui green label">5000</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">5000</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Objectives</td>
+          <td>[VS] Base Priority Boost for DP more than 60</td>
+          <td>
+            <div class="ui green label">5000</div>
+          </td>
+          <td>
+            <div class="ui green label">5000</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">5000</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">17500</div>
+          </td>
+          <td />
+          <td>
+            <div class="ui green label">5000</div>
+          </td>
+        </tr>
+        <tr>
+          <td>Objectives</td>
+          <td>ASAP Maint - Boost for Tasks with DP less than or Equal to 49</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">6000</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Objectives</td>
+          <td>ASAP Maint - Boost for Tasks with DP more than or Equal to 50</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">5000</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Objectives</td>
+          <td>BAK Flare Boost</td>
+          <td>
+            <div class="ui green label">20000</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Objectives</td>
+          <td>BAK Minimize Travel Between Assignments</td>
+          <td>
+            <div class="ui green label">10000</div>
+          </td>
+          <td>
+            <div class="ui green label">10000</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Objectives</td>
+          <td>BAK Same Sites</td>
+          <td>
+            <div class="ui green label">5000</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Objectives</td>
+          <td>BAK Travel Boost Tank Anodes</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Objectives</td>
+          <td>Base Priority Revenue</td>
+          <td>
+            <div class="ui green label">5000</div>
+          </td>
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">5000</div>
+          </td>
+          <td>
+            <div class="ui green label">5000</div>
+          </td>
+          <td>
+            <div class="ui green label">10</div>
+          </td>
+          <td>
+            <div class="ui green label">100</div>
+          </td>
+          <td>
+            <div class="ui green label">5000</div>
+          </td>
+          <td />
+          <td>
+            <div class="ui green label">5000</div>
+          </td>
+          <td>
+            <div class="ui green label">5000</div>
+          </td>
+          <td>
+            <div class="ui green label">5000</div>
+          </td>
+          <td />
+          <td>
+            <div class="ui green label">5000</div>
+          </td>
+          <td>
+            <div class="ui green label">5000</div>
+          </td>
+        </tr>
+        <tr>
+          <td>Objectives</td>
+          <td>Boost - Same Site PM03 Measurement </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">13000</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Objectives</td>
+          <td>CA_Number of Scheduled Appointments</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Objectives</td>
+          <td>CA_Number of Scheduled NonAppointments</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Objectives</td>
+          <td>CA_Number of Scheduled Tasks</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Objectives</td>
+          <td>Down time ASAP</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">3000</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">3000</div>
+          </td>
+        </tr>
+        <tr>
+          <td>Objectives</td>
+          <td>Down time ASAP 2</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Objectives</td>
+          <td>EF PM03 Measurement ASAP</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">15000</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Objectives</td>
+          <td>Equip Info Reduce Idle Time</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Objectives</td>
+          <td>Equip Info Same Sites</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">10</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Objectives</td>
+          <td>Equipment Info ASAP</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">10</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Objectives</td>
+          <td>FSM ASAP PER All Tasks</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">15000</div>
+          </td>
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Objectives</td>
+          <td>FSM Schedule HIGH/MED-HIGH ASAP</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">10000</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Objectives</td>
+          <td>FSM Schedule HIGH/MED-HIGH ASAP - Maint</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">10000</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Objectives</td>
+          <td>FSM Schedule HIGH/MED-HIGH ASAP - ORB</td>
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">10000</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">10000</div>
+          </td>
+          <td>
+            <div class="ui green label">10000</div>
+          </td>
+          <td>
+            <div class="ui green label">10000</div>
+          </td>
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Objectives</td>
+          <td>FSM Schedule HIGH/MED-HIGH/EMER ASAP - BAK</td>
+          <td>
+            <div class="ui green label">10000</div>
+          </td>
+          <td>
+            <div class="ui green label">10000</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Objectives</td>
+          <td>FSM Schedule MED/MED-LOW/LOW ASAP</td>
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">5000</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">5000</div>
+          </td>
+          <td>
+            <div class="ui green label">5000</div>
+          </td>
+          <td>
+            <div class="ui green label">5000</div>
+          </td>
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Objectives</td>
+          <td>FSM Schedule Open Low ASAP</td>
+          <td>
+            <div class="ui green label">5000</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Objectives</td>
+          <td>FSM Task Priority HIGH Boost</td>
+          <td>
+            <div class="ui green label">10000</div>
+          </td>
+          <td>
+            <div class="ui green label">10000</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">10000</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">12000</div>
+          </td>
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Objectives</td>
+          <td>Home Base</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Objectives</td>
+          <td>Maintenance ASAP</td>
+          <td />
+          <td>
+            <div class="ui green label">10000</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">10000</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">12000</div>
+          </td>
+          <td />
+        </tr>
+        <tr>
+          <td>Objectives</td>
+          <td>Maintenance PM02 DP over 50</td>
+          <td />
+          <td>
+            <div class="ui green label">10000</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">10000</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Objectives</td>
+          <td>Maintenance PM03</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">10000</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Objectives</td>
+          <td>Minimize the Use of Overtime</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Objectives</td>
+          <td>Minimize Travel Between Assignments</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">10000</div>
+          </td>
+          <td>
+            <div class="ui green label">10</div>
+          </td>
+          <td />
+          <td>
+            <div class="ui green label">3000</div>
+          </td>
+          <td>
+            <div class="ui green label">20000</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">3000</div>
+          </td>
+        </tr>
+        <tr>
+          <td>Objectives</td>
+          <td>ORB FSM Task Priority HIGH Boost</td>
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">10000</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">10000</div>
+          </td>
+          <td>
+            <div class="ui green label">10000</div>
+          </td>
+          <td>
+            <div class="ui green label">10000</div>
+          </td>
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Objectives</td>
+          <td>ORB Minimize Travel Between Assignments</td>
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">6000</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">6000</div>
+          </td>
+          <td>
+            <div class="ui green label">6000</div>
+          </td>
+          <td>
+            <div class="ui green label">6000</div>
+          </td>
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Objectives</td>
+          <td>ORB Prefer Route HIGH Stack Only</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">2000</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Objectives</td>
+          <td>ORB Prefer Route Operator</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">8000</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Objectives</td>
+          <td>ORB Preferred Engineer Objective</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Objectives</td>
+          <td>ORB Same Sites</td>
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">8000</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">8000</div>
+          </td>
+          <td>
+            <div class="ui green label">8000</div>
+          </td>
+          <td>
+            <div class="ui green label">8000</div>
+          </td>
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Objectives</td>
+          <td>PER Minimize Travel Time</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">2500</div>
+          </td>
+          <td>
+            <div class="ui green label">7500</div>
+          </td>
+          <td />
+        </tr>
+        <tr>
+          <td>Objectives</td>
+          <td>PER Prefer Down Task</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Objectives</td>
+          <td>Perfer Longer Duration Work</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">2000</div>
+          </td>
+        </tr>
+        <tr>
+          <td>Objectives</td>
+          <td>PM02 Environmental Boost</td>
+          <td />
+          <td>
+            <div class="ui green label">10000</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">10000</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Objectives</td>
+          <td>Prefer Down Task</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">2000</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">2000</div>
+          </td>
+        </tr>
+        <tr>
+          <td>Objectives</td>
+          <td>Prefer Internal Engineers</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Objectives</td>
+          <td>Prefer Lead Operators</td>
+          <td>
+            <div class="ui green label">20000</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Objectives</td>
+          <td>Prefer Longer Duration Work</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Objectives</td>
+          <td>Prefer Megatasks</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Objectives</td>
+          <td>Prefer Operators over Leads</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Objectives</td>
+          <td>Prefer Route Operator</td>
+          <td>
+            <div class="ui green label">25000</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Objectives</td>
+          <td>Preferred Engineer Objective</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Objectives</td>
+          <td>Preferred Engineer Working Area</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Objectives</td>
+          <td>Reduce idle time</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">5000</div>
+          </td>
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Objectives</td>
+          <td>Same Sites</td>
+          <td />
+          <td>
+            <div class="ui green label">10000</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">5000</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">7500</div>
+          </td>
+          <td>
+            <div class="ui green label">7500</div>
+          </td>
+          <td>
+            <div class="ui green label">4000</div>
+          </td>
+        </tr>
+        <tr>
+          <td>Objectives</td>
+          <td>Same Sites Maint.</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">20000</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Objectives</td>
+          <td>SAP Priority Boost</td>
+          <td />
+          <td>
+            <div class="ui green label">20000</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Objectives</td>
+          <td>Schedule Appointments ASAP</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Objectives</td>
+          <td>Schedule Non-Appointments ASAP</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">10000</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">10000</div>
+          </td>
+        </tr>
+        <tr>
+          <td>Objectives</td>
+          <td>Task Dynamic Priority</td>
+          <td>
+            <div class="ui green label">5000</div>
+          </td>
+          <td>
+            <div class="ui green label">5000</div>
+          </td>
+          <td />
+          <td>
+            <div class="ui green label">5000</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">4000</div>
+          </td>
+          <td />
+          <td>
+            <div class="ui green label">5000</div>
+          </td>
+          <td>
+            <div class="ui green label">5000</div>
+          </td>
+          <td>
+            <div class="ui green label">5000</div>
+          </td>
+          <td>
+            <div class="ui green label">5000</div>
+          </td>
+          <td>
+            <div class="ui green label">8000</div>
+          </td>
+          <td>
+            <div class="ui green label">5000</div>
+          </td>
+        </tr>
+        <tr>
+          <td>Objectives</td>
+          <td>Task Dynamic Priority - Maint</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td>
+            <div class="ui green label">5000</div>
+          </td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Business Value Functions</td>
+          <td>CA Number of Task Scheuled DP 00 - 25</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Business Value Functions</td>
+          <td>CA Number of Task Scheuled DP 26 - 60</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Business Value Functions</td>
+          <td>CA Number of Task Scheuled DP 61-75</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Business Value Functions</td>
+          <td>CA Number of Task Scheuled DP 76-90</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Business Value Functions</td>
+          <td>CA Number of Task Scheuled DP 91-98</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Business Value Functions</td>
+          <td>CA Number of Task Scheuled DP 99-100</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Business Value Functions</td>
+          <td>CA_Appointments on Critical Zone (Less than 30 mins before app finish)</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Business Value Functions</td>
+          <td>CA_Appointments on Safe Zone (More than 30 mins before app finish)</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Business Value Functions</td>
+          <td>CA_ASAP - Appointments</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Business Value Functions</td>
+          <td>CA_ASAP - Non Appointments</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Business Value Functions</td>
+          <td>CA_Fixed Travel With From HB</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Business Value Functions</td>
+          <td>CA_Fixed Travel With To/From HB</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Business Value Functions</td>
+          <td>CA_FSE_Number of Scheduled Appointments</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Business Value Functions</td>
+          <td>CA_FSE_Number of Scheduled NonAppointments</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Business Value Functions</td>
+          <td>CA_FSE_Number of Scheduled Tasks</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Business Value Functions</td>
+          <td>CA_Number of Same Site Tasks</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Business Value Functions</td>
+          <td>CA_Response Time for DP 00 to 25</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Business Value Functions</td>
+          <td>CA_Response Time for DP 26 to 60</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Business Value Functions</td>
+          <td>CA_Response Time for DP 61 to 75</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Business Value Functions</td>
+          <td>CA_Response Time for DP 76 to 90</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Business Value Functions</td>
+          <td>CA_Response Time for DP 91 to 98</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Business Value Functions</td>
+          <td>CA_Response Time for DP 99 to 100</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Business Value Functions</td>
+          <td>CA_Total Overtime Hours</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Business Value Functions</td>
+          <td>CA_Total Regular Hours</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Business Value Functions</td>
+          <td>CA_Total Travel Time [Min] - With To/From HB</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Business Value Functions</td>
+          <td>CA_Total Travel Time [Min] - Without To/From HB</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Business Value Functions</td>
+          <td>CA_Total Working Hours (Regular and OverTime)</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Business Value Functions</td>
+          <td>Report's AB Penalties Cost</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Business Value Functions</td>
+          <td>Report's External Engineers Cost</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Business Value Functions</td>
+          <td>Report's Internal Engineers Cost</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Business Value Functions</td>
+          <td>Report's Number of Same Site Tasks</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Business Value Functions</td>
+          <td>Report's Operational Cost</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Business Value Functions</td>
+          <td>Report's Overtime Duration</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Business Value Functions</td>
+          <td>Report's Penalties Cost</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Business Value Functions</td>
+          <td>Report's Travel Distance Approximate With To/From HB</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr>
+          <td>Business Value Functions</td>
+          <td>Report's Work Revenue</td>
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+      </tbody>
+    </table>
+    <script>
+          $( document ).ready( function () {
+            initDataTableWithButtons(
+              "#logic-domain-matrix",
+              "Logic Domain Matrix",
+              true,
+              false,
+              {
+                orderCellsTop: false,
+                order: [[0, 'desc'], [1, 'asc']],
+                paging: false,
+                columnDefs: [
+                  { targets: [ 0 ], visible: false }
+                ],
+                rowGroup: {
+                  dataSrc: 0
+                }
+              }
+            );
+
+            // Hide rows in #logic-domain-matrix where all columns except the first are empty
+            let unusedRulesAndObjectives = [];
+            $('#logic-domain-matrix tbody tr').each(function() {
+              var $cells = $(this).find('td');
+              if ($cells.length < 2) return; // Skip rows with less than 2 cells, these are component names
+
+              // Check if all cells except the first two are empty
+              var allEmpty = true;
+              $cells.slice(1).each(function() {
+                if ($(this).text().trim() !== '') {
+                  allEmpty = false;
+                  return false; // break
+                }
+              });
+              if (allEmpty) {
+                $(this).hide();
+                unusedRulesAndObjectives.push($cells.first().text().trim());
+              }
+            });
+
+            // If there are unused rules or objectives, display a list
+            if (unusedRulesAndObjectives.length > 0) {
+              $('#logic-domain-matrix').after(
+                '<div class="ui warning message"><div class="header">Unused Components</div>' +
+                `<p>The following ${unusedRulesAndObjectives.length} components are not used by any logic domain and have been removed from the matrix:</p><p>` +
+                unusedRulesAndObjectives.join(', ') + '</p></div>'
+              );
+            }
+          } );
+        </script>
+  </body>
+</html>

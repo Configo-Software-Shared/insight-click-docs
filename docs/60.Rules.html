@@ -1,0 +1,1304 @@
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:xoom="urn:xmlns:zanyants:xoom" xmlns:w6vc="urn:zanyants-xoom:meta:o=zanyants;c=w6-virtual-collection;v=1.0;">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.9.3/semantic.min.css" xmlns="" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/se/jszip-3.10.1/dt-2.0.7/b-3.0.2/b-colvis-3.0.2/b-html5-3.0.2/b-print-3.0.2/cr-2.0.2/date-1.5.2/fc-5.0.0/fh-4.0.1/kt-2.12.0/r-3.0.2/rg-1.5.0/sc-2.4.2/sb-1.7.1/sp-2.3.1/datatables.min.css" xmlns="" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" xmlns="">//</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.9.3/semantic.min.js" xmlns="">//</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js" xmlns="">//</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js" xmlns="">//</script>
+    <script src="https://cdn.datatables.net/v/se/jszip-3.10.1/dt-2.0.7/b-3.0.2/b-colvis-3.0.2/b-html5-3.0.2/b-print-3.0.2/cr-2.0.2/date-1.5.2/fc-5.0.0/fh-4.0.1/kt-2.12.0/r-3.0.2/rg-1.5.0/sc-2.4.2/sb-1.7.1/sp-2.3.1/datatables.min.js" xmlns="">//</script>
+    <script type="text/javascript" src="script/cfg-tables.js" xmlns="">//</script>
+    <title>Rules</title>
+  </head>
+  <body style="padding:16px">
+    <h2 class="ui header">Rules</h2>
+    <table id="rulesTable" class="ui celled table" style="width:100%">
+      <thead>
+        <tr class="header">
+          <th>Rule</th>
+          <th>Category</th>
+          <th>Type</th>
+          <th>Family</th>
+          <th>Eval. order</th>
+          <th>Relevance group</th>
+          <th>Settings</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Assignment finish at or before task due date</td>
+          <td>Time Rules</td>
+          <td>Match Time Rule</td>
+          <td family="6">DRT</td>
+          <td>4</td>
+          <td></td>
+          <td>
+            <ul>
+              <li>[AdditionalMinutes] = [0]</li>
+              <li>Time Zone Support [1]</li>
+              <li>Match Empty Value [1]</li>
+              <li>Is Start [0]</li>
+              <li>[OperatorType] = [SMALLER_EQUAL]</li>
+              <li>[ObjectProperty]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [DueDate]</li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Assignment Resource Dependency Rule</td>
+          <td>Multi Stage Task Rules</td>
+          <td>Resource Dependency Rule</td>
+          <td family="5">DR</td>
+          <td>1</td>
+          <td />
+          <td>
+            <ul />
+          </td>
+        </tr>
+        <tr>
+          <td>Assignment start at or after appointment window start</td>
+          <td>Time Rules</td>
+          <td>Match Time Rule</td>
+          <td family="6">DRT</td>
+          <td>4</td>
+          <td></td>
+          <td>
+            <ul>
+              <li>[AdditionalMinutes] = [0]</li>
+              <li>Time Zone Support [1]</li>
+              <li>Match Empty Value [1]</li>
+              <li>Is Start [1]</li>
+              <li>[OperatorType] = [GREATER_EQUAL]</li>
+              <li>[ObjectProperty]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [AppointmentStart]</li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Assignment start at or after task early start</td>
+          <td>Time Rules</td>
+          <td>Match Time Rule</td>
+          <td family="6">DRT</td>
+          <td>4</td>
+          <td></td>
+          <td>
+            <ul>
+              <li>[AdditionalMinutes] = [0]</li>
+              <li>Time Zone Support [1]</li>
+              <li>Match Empty Value [1]</li>
+              <li>Is Start [1]</li>
+              <li>[OperatorType] = [GREATER_EQUAL]</li>
+              <li>[ObjectProperty]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [EarlyStart]</li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Assignment start at or before appointment window finish</td>
+          <td>Time Rules</td>
+          <td>Match Time Rule</td>
+          <td family="6">DRT</td>
+          <td>4</td>
+          <td>Non Multi Day Tasks</td>
+          <td>
+            <ul>
+              <li>[AdditionalMinutes] = [0]</li>
+              <li>Time Zone Support [1]</li>
+              <li>Match Empty Value [1]</li>
+              <li>Is Start [1]</li>
+              <li>[OperatorType] = [SMALLER_EQUAL]</li>
+              <li>[ObjectProperty]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [AppointmentFinish]</li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Assignment start at or before multi-day task late start</td>
+          <td>Time Rules</td>
+          <td>Match Time Rule</td>
+          <td family="6">DRT</td>
+          <td>4</td>
+          <td>Multi Day Tasks</td>
+          <td>
+            <ul>
+              <li>[AdditionalMinutes] = [0]</li>
+              <li>Time Zone Support [1]</li>
+              <li>Match Empty Value [1]</li>
+              <li>Is Start [1]</li>
+              <li>[OperatorType] = [SMALLER_EQUAL]</li>
+              <li>[ObjectProperty]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [LateStart]</li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Assignment start at or before task late start</td>
+          <td>Time Rules</td>
+          <td>Match Time Rule</td>
+          <td family="6">DRT</td>
+          <td>4</td>
+          <td>Non Multi Day Tasks</td>
+          <td>
+            <ul>
+              <li>[AdditionalMinutes] = [0]</li>
+              <li>Time Zone Support [1]</li>
+              <li>Match Empty Value [1]</li>
+              <li>Is Start [1]</li>
+              <li>[OperatorType] = [SMALLER_EQUAL]</li>
+              <li>[ObjectProperty]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [LateStart]</li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Assignment Time Dependency Rule</td>
+          <td>Multi Stage Task Rules</td>
+          <td>Extended Time Dependency Rule</td>
+          <td family="6">DRT</td>
+          <td>1</td>
+          <td />
+          <td>
+            <ul />
+          </td>
+        </tr>
+        <tr>
+          <td>BAK Match Working Area</td>
+          <td>Match Rules</td>
+          <td>Extended Match Rule</td>
+          <td family="5">DR</td>
+          <td>1</td>
+          <td></td>
+          <td>
+            <ul>
+              <li>
+                <span>Conditions XML</span>
+                <ul>
+                  <li>
+                    <span>Matches</span>
+                    <ul>
+                      <li>
+                        <span>Single- to Multi-Value Match</span>
+                        <ul>
+                          <li>Relation [Includes]</li>
+                          <li>Operator [=]</li>
+                          <li>AllowedEmpty [None]</li>
+                          <li>Engineer Property [WorkingAreas]</li>
+                          <li>Task Property [WorkingArea]</li>
+                          <li>
+                            <span>Multi-Value Details</span>
+                            <ul>
+                              <li>Property [WorkingArea]</li>
+                              <li>AllowedEmpty [None]</li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>[PropertyReferences] = []</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Business Hierarchy District</td>
+          <td>Match Rules</td>
+          <td>Extended Match Rule</td>
+          <td family="5">DR</td>
+          <td>1</td>
+          <td></td>
+          <td>
+            <ul>
+              <li>
+                <span>Conditions XML</span>
+                <ul>
+                  <li>
+                    <span>Matches</span>
+                    <ul>
+                      <li>
+                        <span>Single-Value Match</span>
+                        <ul>
+                          <li>Operator [=]</li>
+                          <li>AllowedEmpty [None]</li>
+                          <li>Engineer Property [Region]</li>
+                          <li>Task Property [Region]</li>
+                        </ul>
+                      </li>
+                      <li>
+                        <span>Single-Value Match</span>
+                        <ul>
+                          <li>Operator [=]</li>
+                          <li>AllowedEmpty [None]</li>
+                          <li>Engineer Property [District]</li>
+                          <li>Task Property [District]</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>[PropertyReferences]<ul><li>[PropertyReference]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [Region]</li></ul></li></ul></li><li>[PropertyReference]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Engineer]</li><li>[PropertyReference] = [Region]</li></ul></li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Contractor Company Capacity Rule</td>
+          <td>Basic Behavior Rules</td>
+          <td>Contractor Capacity Rule</td>
+          <td family="4">RT</td>
+          <td>1</td>
+          <td></td>
+          <td>
+            <ul>
+              <li>Time Resolution [W6TIME_DAY]</li>
+              <li>[OverCapacityPercentage] = [0]</li>
+              <li>[FreezeContractorsFromTime] = [43200]</li>
+              <li>[FreezeContractorsDays] = [1]</li>
+              <li>[FreezeContractorsSchedule] = [0]</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>District Match Business Hierarchy</td>
+          <td>Match Rules</td>
+          <td>Extended Match Rule</td>
+          <td family="5">DR</td>
+          <td>2</td>
+          <td></td>
+          <td>
+            <ul>
+              <li>
+                <span>Conditions XML</span>
+                <ul>
+                  <li>
+                    <span>Matches</span>
+                    <ul>
+                      <li>
+                        <span>Single-Value Match</span>
+                        <ul>
+                          <li>Operator [=]</li>
+                          <li>AllowedEmpty [None]</li>
+                          <li>Engineer Property [Area]</li>
+                          <li>Task Property [Area]</li>
+                        </ul>
+                      </li>
+                      <li>
+                        <span>Single-Value Match</span>
+                        <ul>
+                          <li>Operator [=]</li>
+                          <li>AllowedEmpty [None]</li>
+                          <li>Engineer Property [Region]</li>
+                          <li>Task Property [Region]</li>
+                        </ul>
+                      </li>
+                      <li>
+                        <span>Single-Value Match</span>
+                        <ul>
+                          <li>Operator [=]</li>
+                          <li>AllowedEmpty [None]</li>
+                          <li>Engineer Property [District]</li>
+                          <li>Task Property [District]</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>[PropertyReferences] = []</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Do not schedule cancelled tasks</td>
+          <td>Match Rules</td>
+          <td>Match Constant Rule</td>
+          <td family="0">D</td>
+          <td>1</td>
+          <td></td>
+          <td>
+            <ul>
+              <li>[IncludeEmptyValues] = [1]</li>
+              <li>[OperatorType] = [EXCLUDE]</li>
+              <li>Const Variable []</li>
+              <li>[PropertyToCompare]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [Status]</li></ul></li></ul></li>
+              <li>[ConstObject]<ul><li>[GenericObjectReference]<ul><li>[CollectionReference] = [TaskStatus]</li><li>[ObjectReference] = [Cancelled]</li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Do not schedule inactive resources</td>
+          <td>Match Rules</td>
+          <td>Match Constant Rule</td>
+          <td family="1">R</td>
+          <td>1</td>
+          <td></td>
+          <td>
+            <ul>
+              <li>[IncludeEmptyValues] = [1]</li>
+              <li>[OperatorType] = [EQUAL]</li>
+              <li>Const Variable [-1]</li>
+              <li>[PropertyToCompare]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Engineer]</li><li>[PropertyReference] = [Active]</li></ul></li></ul></li>
+              <li>[ConstObject] = []</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Do not schedule Requests</td>
+          <td>Match Rules</td>
+          <td>Extended Match Rule</td>
+          <td family="5">DR</td>
+          <td>1</td>
+          <td>TMS - Water Hauling Requests - No Tasks</td>
+          <td>
+            <ul>
+              <li>
+                <span>Conditions XML</span>
+                <ul>
+                  <li>
+                    <span>Matches</span>
+                    <ul>
+                      <li>
+                        <span>Single-Value Match</span>
+                        <ul>
+                          <li>Operator [&lt;&gt;]</li>
+                          <li>AllowedEmpty [None]</li>
+                          <li>Engineer Property [Key]</li>
+                          <li>Task Property [AssignedEngineer]</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>[PropertyReferences] = []</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Do not Schedule Tasks during Hunting Lock Down</td>
+          <td>Time Rules</td>
+          <td>Enhanced Calendar Rule</td>
+          <td family="6">DRT</td>
+          <td>5</td>
+          <td>Down Tasks - Hunting Season Exclusion</td>
+          <td>
+            <ul>
+              <li>[Calendar]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [Calendar]</li></ul></li></ul></li>
+              <li>[AllowToStartInOptionalTime] = [0]</li>
+              <li>[AllowToFinishInOptionalTime] = [0]</li>
+              <li>[MinimumDurationInWorkingTime] = [60]</li>
+              <li>Time Zone Support [1]</li>
+              <li>[StartTimeKind_SO] = [W6_WORKING_TIME]</li>
+              <li>[FinishTimeKind_SO] = [W6_WORKING_TIME]</li>
+              <li>[MaximumDurationInNonWorking_SO] = [60]</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Do not Schedule to Excluded Resource</td>
+          <td>Match Rules</td>
+          <td>Extended Match Rule</td>
+          <td family="5">DR</td>
+          <td>2</td>
+          <td></td>
+          <td>
+            <ul>
+              <li>
+                <span>Conditions XML</span>
+                <ul>
+                  <li>
+                    <span>Matches</span>
+                    <ul>
+                      <li>
+                        <span>Single- to Multi-Value Match</span>
+                        <ul>
+                          <li>Relation [Exclude]</li>
+                          <li>Operator [=]</li>
+                          <li>AllowedEmpty [Task]</li>
+                          <li>Engineer Property [ID]</li>
+                          <li>Task Property [ExcludedEngineers]</li>
+                          <li>
+                            <span>Multi-Value Details</span>
+                            <ul>
+                              <li>Property [ExcludedEngineerID]</li>
+                              <li>AllowedEmpty [Task]</li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>[PropertyReferences]<ul><li>[PropertyReference]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [ExcludedEngineers]</li></ul></li></ul></li><li>[PropertyReference]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Engineer]</li><li>[PropertyReference] = [ID]</li></ul></li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Do not schedule to leads</td>
+          <td>Match Rules</td>
+          <td>Match Constant Rule</td>
+          <td family="5">DR</td>
+          <td>1</td>
+          <td>Rule BAK Leads</td>
+          <td>
+            <ul>
+              <li>[IncludeEmptyValues] = [1]</li>
+              <li>[OperatorType] = [EXCLUDE]</li>
+              <li>Const Variable []</li>
+              <li>[PropertyToCompare]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Engineer]</li><li>[PropertyReference] = [EngineerType]</li></ul></li></ul></li>
+              <li>[ConstObject]<ul><li>[GenericObjectReference]<ul><li>[CollectionReference] = [EngineerType]</li><li>[ObjectReference] = [Lead Operator]</li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Duration rule</td>
+          <td>Basic Behavior Rules</td>
+          <td>Duration Rule</td>
+          <td family="6">DRT</td>
+          <td>10</td>
+          <td />
+          <td>
+            <ul />
+          </td>
+        </tr>
+        <tr>
+          <td>EF Match Route</td>
+          <td>Match Rules</td>
+          <td>Extended Match Rule</td>
+          <td family="5">DR</td>
+          <td>1</td>
+          <td>Rule EF Route Specific Operators</td>
+          <td>
+            <ul>
+              <li>
+                <span>Conditions XML</span>
+                <ul>
+                  <li>
+                    <span>Matches</span>
+                    <ul>
+                      <li>
+                        <span>Single- to Multi-Value Match</span>
+                        <ul>
+                          <li>Relation [Includes]</li>
+                          <li>Operator [=]</li>
+                          <li>AllowedEmpty [Task]</li>
+                          <li>Engineer Property [FSMRoutes]</li>
+                          <li>Task Property [MROParentMOCID]</li>
+                          <li>
+                            <span>Multi-Value Details</span>
+                            <ul>
+                              <li>Property [Route]</li>
+                              <li>AllowedEmpty [Task]</li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>[PropertyReferences] = []</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Index Rule</td>
+          <td>Performance Rules</td>
+          <td>Index Rule</td>
+          <td family="5">DR</td>
+          <td>1</td>
+          <td />
+          <td>
+            <ul>
+              <li>[EngineerIndex]<ul><li>[GenericIndexReference]<ul><li>[CollectionReference] = [Engineer]</li><li>[IndexReference] = [Region,District]</li></ul></li></ul></li>
+              <li>[RelatedFields] = [Region,District]</li>
+              <li>[ReferencingFields] = []</li>
+              <li>[TaskReferencedProperties]<ul><li>Task Property [TaskRegion]</li><li>Task Property [TaskDistrict]</li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Limit travel from resource home base</td>
+          <td>Geography Rules</td>
+          <td>Travel From Home Base Rule</td>
+          <td family="5">DR</td>
+          <td>3</td>
+          <td></td>
+          <td>
+            <ul>
+              <li>Distance Factor [1609]</li>
+              <li>Threshold Value [80450]</li>
+              <li>[ByDistance] = [1]</li>
+              <li>By Resource Property [1]</li>
+              <li>[MaximumAllowedDuration]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Engineer]</li><li>[PropertyReference] = [MaxDistanceFromHB]</li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Match business hierarchy</td>
+          <td>Match Rules</td>
+          <td>Extended Match Rule</td>
+          <td family="5">DR</td>
+          <td>2</td>
+          <td></td>
+          <td>
+            <ul>
+              <li>
+                <span>Conditions XML</span>
+                <ul>
+                  <li>
+                    <span>Matches</span>
+                    <ul>
+                      <li>
+                        <span>Single-Value Match</span>
+                        <ul>
+                          <li>Operator [=]</li>
+                          <li>AllowedEmpty [None]</li>
+                          <li>Engineer Property [Area]</li>
+                          <li>Task Property [Area]</li>
+                        </ul>
+                      </li>
+                      <li>
+                        <span>Single-Value Match</span>
+                        <ul>
+                          <li>Operator [=]</li>
+                          <li>AllowedEmpty [None]</li>
+                          <li>Engineer Property [Region]</li>
+                          <li>Task Property [Region]</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>[PropertyReferences] = []</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Match Crew Size</td>
+          <td>Basic Behavior Rules</td>
+          <td>Match Crew Size Rule</td>
+          <td family="6">DRT</td>
+          <td>7</td>
+          <td></td>
+          <td>
+            <ul>
+              <li>[RequiredCrewSize]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [RequiredCrewSize]</li></ul></li></ul></li>
+              <li>Min Size Elasticity [0]</li>
+              <li>Max Size Elasticity [1]</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Match number of required resources</td>
+          <td>Basic Behavior Rules</td>
+          <td>Number Of Required Engineers Rule</td>
+          <td family="5">DR</td>
+          <td>1</td>
+          <td />
+          <td>
+            <ul />
+          </td>
+        </tr>
+        <tr>
+          <td>Match required resources</td>
+          <td>Match Rules</td>
+          <td>Extended Match Rule</td>
+          <td family="5">DR</td>
+          <td>2</td>
+          <td></td>
+          <td>
+            <ul>
+              <li>
+                <span>Conditions XML</span>
+                <ul>
+                  <li>
+                    <span>Matches</span>
+                    <ul>
+                      <li>
+                        <span>Single- to Multi-Value Match</span>
+                        <ul>
+                          <li>Relation [Included]</li>
+                          <li>Operator [=]</li>
+                          <li>AllowedEmpty [Task]</li>
+                          <li>Engineer Property [ID]</li>
+                          <li>Task Property [RequiredEngineers]</li>
+                          <li>
+                            <span>Multi-Value Details</span>
+                            <ul>
+                              <li>Property [RequiredEngineerID]</li>
+                              <li>AllowedEmpty [Task]</li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>[PropertyReferences]<ul><li>[PropertyReference]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [RequiredEngineers]</li></ul></li></ul></li><li>[PropertyReference]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Engineer]</li><li>[PropertyReference] = [ID]</li></ul></li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Match resource skills rule</td>
+          <td>Match Rules</td>
+          <td>Extended Match Rule</td>
+          <td family="5">DR</td>
+          <td>2</td>
+          <td></td>
+          <td>
+            <ul>
+              <li>
+                <span>Conditions XML</span>
+                <ul>
+                  <li>
+                    <span>Matches</span>
+                    <ul>
+                      <li>
+                        <span>Multi-Value Match</span>
+                        <ul>
+                          <li>Relation [Includes]</li>
+                          <li>AllowedEmpty [Task]</li>
+                          <li>Engineer Property [Skills]</li>
+                          <li>Task Property [RequiredSkills1]</li>
+                          <li>
+                            <span>Matches</span>
+                            <ul>
+                              <li>
+                                <span>Single-Value Match</span>
+                                <ul>
+                                  <li>Operator [=]</li>
+                                  <li>AllowedEmpty [Task]</li>
+                                  <li>Engineer Property [Key]</li>
+                                  <li>Task Property [Key]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Single-Value Match</span>
+                                <ul>
+                                  <li>Operator [&gt;=]</li>
+                                  <li>AllowedEmpty [Task]</li>
+                                  <li>Engineer Property [SkillLevel]</li>
+                                  <li>Task Property [SkillLevel]</li>
+                                </ul>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>[PropertyReferences] = []</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Match Routes</td>
+          <td>Match Rules</td>
+          <td>Extended Match Rule</td>
+          <td family="5">DR</td>
+          <td>1</td>
+          <td>FSM BAK Match Routes</td>
+          <td>
+            <ul>
+              <li>
+                <span>Conditions XML</span>
+                <ul>
+                  <li>
+                    <span>Matches</span>
+                    <ul>
+                      <li>
+                        <span>Single- to Multi-Value Match</span>
+                        <ul>
+                          <li>Relation [Includes]</li>
+                          <li>Operator [=]</li>
+                          <li>AllowedEmpty [Task]</li>
+                          <li>Engineer Property [FSMRoutes]</li>
+                          <li>Task Property [MROParentMOCID]</li>
+                          <li>
+                            <span>Multi-Value Details</span>
+                            <ul>
+                              <li>Property [Route]</li>
+                              <li>AllowedEmpty [Task]</li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>[PropertyReferences] = []</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Match Time Phased Skills</td>
+          <td>Match Rules</td>
+          <td>Extended Match Rule</td>
+          <td family="6">DRT</td>
+          <td>5</td>
+          <td>Crews</td>
+          <td>
+            <ul>
+              <li>
+                <span>Conditions XML</span>
+                <ul>
+                  <li>
+                    <span>Matches</span>
+                    <ul>
+                      <li>
+                        <span>Multi-Value Match</span>
+                        <ul>
+                          <li>Relation [Includes]</li>
+                          <li>AllowedEmpty [Task]</li>
+                          <li>Engineer Property [TimePhasedSkills]</li>
+                          <li>Task Property [RequiredSkills1]</li>
+                          <li>
+                            <span>Matches</span>
+                            <ul>
+                              <li>
+                                <span>Single-Value Match</span>
+                                <ul>
+                                  <li>Operator [=]</li>
+                                  <li>AllowedEmpty [Task]</li>
+                                  <li>Engineer Property [SkillKey]</li>
+                                  <li>Task Property [Key]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Single-Value Match</span>
+                                <ul>
+                                  <li>Operator [&gt;=]</li>
+                                  <li>AllowedEmpty [Task]</li>
+                                  <li>Engineer Property [SkillLevel]</li>
+                                  <li>Task Property [SkillLevel]</li>
+                                </ul>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>[PropertyReferences]<ul><li>[PropertyReference]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [RequiredSkills1]</li></ul></li></ul></li><li>[PropertyReference]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Engineer]</li><li>[PropertyReference] = [TimePhasedSkills]</li></ul></li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Multi-day assignment start at or before appointment window finish</td>
+          <td>Time Rules</td>
+          <td>Match Time Rule</td>
+          <td family="6">DRT</td>
+          <td>4</td>
+          <td>Multi Day Tasks</td>
+          <td>
+            <ul>
+              <li>[AdditionalMinutes] = [0]</li>
+              <li>Time Zone Support [1]</li>
+              <li>Match Empty Value [1]</li>
+              <li>Is Start [1]</li>
+              <li>[OperatorType] = [SMALLER_EQUAL]</li>
+              <li>[ObjectProperty]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [AppointmentFinish]</li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>One assignment per task</td>
+          <td>Basic Behavior Rules</td>
+          <td>One Assignment Per Task Rule</td>
+          <td family="0">D</td>
+          <td>1</td>
+          <td />
+          <td>
+            <ul />
+          </td>
+        </tr>
+        <tr>
+          <td>Only schedule alarms to night operators</td>
+          <td>Match Rules</td>
+          <td>Match Constant Rule</td>
+          <td family="5">DR</td>
+          <td>1</td>
+          <td>Rule BAK Ops Night Operator Tasks</td>
+          <td>
+            <ul>
+              <li>[IncludeEmptyValues] = [1]</li>
+              <li>[OperatorType] = [EXCLUDE]</li>
+              <li>Const Variable []</li>
+              <li>[PropertyToCompare]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Engineer]</li><li>[PropertyReference] = [EngineerType]</li></ul></li></ul></li>
+              <li>[ConstObject]<ul><li>[GenericObjectReference]<ul><li>[CollectionReference] = [EngineerType]</li><li>[ObjectReference] = [Night Operator]</li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Only schedule High Tasks to night operators </td>
+          <td>Match Rules</td>
+          <td>Match Constant Rule</td>
+          <td family="5">DR</td>
+          <td>1</td>
+          <td>Rule EF Ops Night Operator Tasks</td>
+          <td>
+            <ul>
+              <li>[IncludeEmptyValues] = [1]</li>
+              <li>[OperatorType] = [EXCLUDE]</li>
+              <li>Const Variable []</li>
+              <li>[PropertyToCompare]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Engineer]</li><li>[PropertyReference] = [EngineerType]</li></ul></li></ul></li>
+              <li>[ConstObject]<ul><li>[GenericObjectReference]<ul><li>[CollectionReference] = [EngineerType]</li><li>[ObjectReference] = [Night Operator]</li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Only schedule Tasks to Storm Operator</td>
+          <td>Match Rules</td>
+          <td>Match Constant Rule</td>
+          <td family="5">DR</td>
+          <td>1</td>
+          <td>Rule BAK Strom Operator Tasks</td>
+          <td>
+            <ul>
+              <li>[IncludeEmptyValues] = [1]</li>
+              <li>[OperatorType] = [EXCLUDE]</li>
+              <li>Const Variable []</li>
+              <li>[PropertyToCompare]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Engineer]</li><li>[PropertyReference] = [EngineerType]</li></ul></li></ul></li>
+              <li>[ConstObject]<ul><li>[GenericObjectReference]<ul><li>[CollectionReference] = [EngineerType]</li><li>[ObjectReference] = [Storm Operator]</li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>ORB Match Route</td>
+          <td>Match Rules</td>
+          <td>Extended Match Rule</td>
+          <td family="5">DR</td>
+          <td>1</td>
+          <td>FSM ORB Match Routes</td>
+          <td>
+            <ul>
+              <li>
+                <span>Conditions XML</span>
+                <ul>
+                  <li>
+                    <span>Matches</span>
+                    <ul>
+                      <li>
+                        <span>Single- to Multi-Value Match</span>
+                        <ul>
+                          <li>Relation [Includes]</li>
+                          <li>Operator [=]</li>
+                          <li>AllowedEmpty [Task]</li>
+                          <li>Engineer Property [FSMRoutes]</li>
+                          <li>Task Property [MROParentMOCID]</li>
+                          <li>
+                            <span>Multi-Value Details</span>
+                            <ul>
+                              <li>Property [Route]</li>
+                              <li>AllowedEmpty [Task]</li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>[PropertyReferences] = []</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>PER Floaters - PMs Only</td>
+          <td>Match Rules</td>
+          <td>Match Constant Rule</td>
+          <td family="5">DR</td>
+          <td>1</td>
+          <td>Rule PER Floater Excluded Tasks</td>
+          <td>
+            <ul>
+              <li>[IncludeEmptyValues] = [1]</li>
+              <li>[OperatorType] = [EXCLUDE]</li>
+              <li>Const Variable []</li>
+              <li>[PropertyToCompare]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Engineer]</li><li>[PropertyReference] = [EngineerType]</li></ul></li></ul></li>
+              <li>[ConstObject]<ul><li>[GenericObjectReference]<ul><li>[CollectionReference] = [EngineerType]</li><li>[ObjectReference] = [Floater]</li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Relocation Rule</td>
+          <td>Basic Behavior Rules</td>
+          <td>Crew Allocation Rule</td>
+          <td family="4">RT</td>
+          <td>5</td>
+          <td></td>
+          <td>
+            <ul>
+              <li>[ScheduleEngineersAsIndividuals] = [1]</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Resource availability</td>
+          <td>Basic Behavior Rules</td>
+          <td>Resource Availability Rule</td>
+          <td family="4">RT</td>
+          <td>6</td>
+          <td></td>
+          <td>
+            <ul>
+              <li>[RemoveIntervalsShorterThan] = [0]</li>
+              <li>[LeaveIntervalsLongerThan] = [14400]</li>
+              <li>[RemoveTravelTime] = [0]</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Schedule tasks from now with travel</td>
+          <td>Time Rules</td>
+          <td>System Time Rule</td>
+          <td family="6">DRT</td>
+          <td>7</td>
+          <td></td>
+          <td>
+            <ul>
+              <li>[OffsetFromCurrentTime] = [0]</li>
+              <li>[AddTravelTime] = [1]</li>
+              <li>[MaxTimeFromPreviousAssignment] = [14400]</li>
+              <li>[UseAerialDistance] = [0]</li>
+              <li>[UseResourceRealTimeLocation] = [1]</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Schedule Well Pad Visits During Day</td>
+          <td>Time Rules</td>
+          <td>Enhanced Calendar Rule</td>
+          <td family="6">DRT</td>
+          <td>1</td>
+          <td>ORB Day Tasks</td>
+          <td>
+            <ul>
+              <li>[Calendar]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [Calendar]</li></ul></li></ul></li>
+              <li>[AllowToStartInOptionalTime] = [0]</li>
+              <li>[AllowToFinishInOptionalTime] = [0]</li>
+              <li>[MinimumDurationInWorkingTime] = [60]</li>
+              <li>Time Zone Support [1]</li>
+              <li>[StartTimeKind_SO] = [W6_WORKING_TIME]</li>
+              <li>[FinishTimeKind_SO] = [W6_WORKING_TIME]</li>
+              <li>[MaximumDurationInNonWorking_SO] = [60]</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Schedule working and optional time</td>
+          <td>Time Rules</td>
+          <td>Enhanced Calendar Rule</td>
+          <td family="6">DRT</td>
+          <td>5</td>
+          <td></td>
+          <td>
+            <ul>
+              <li>[Calendar]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Engineer]</li><li>[PropertyReference] = [Calendar]</li></ul></li></ul></li>
+              <li>[AllowToStartInOptionalTime] = [0]</li>
+              <li>[AllowToFinishInOptionalTime] = [1]</li>
+              <li>[MinimumDurationInWorkingTime] = [60]</li>
+              <li>Time Zone Support [0]</li>
+              <li>[StartTimeKind_SO] = []</li>
+              <li>[FinishTimeKind_SO] = []</li>
+              <li>[MaximumDurationInNonWorking_SO] = [0]</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Schedule working time</td>
+          <td>Time Rules</td>
+          <td>Enhanced Calendar Rule</td>
+          <td family="4">RT</td>
+          <td>5</td>
+          <td></td>
+          <td>
+            <ul>
+              <li>[Calendar]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Engineer]</li><li>[PropertyReference] = [Calendar]</li></ul></li></ul></li>
+              <li>[AllowToStartInOptionalTime] = [0]</li>
+              <li>[AllowToFinishInOptionalTime] = [0]</li>
+              <li>[MinimumDurationInWorkingTime] = [60]</li>
+              <li>Time Zone Support [0]</li>
+              <li>[StartTimeKind_SO] = []</li>
+              <li>[FinishTimeKind_SO] = []</li>
+              <li>[MaximumDurationInNonWorking_SO] = [0]</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Spacing duration between assignments</td>
+          <td>Time Rules</td>
+          <td>Gap Rule</td>
+          <td family="6">DRT</td>
+          <td>9</td>
+          <td></td>
+          <td>
+            <ul>
+              <li>Calculate Fixed Gap [0]</li>
+              <li>Fixed Gap Duration [0]</li>
+              <li>[MinimalTravelTimeGap] = [0]</li>
+              <li>Check Travel From Home [0]</li>
+              <li>Limit Travel From HB [0]</li>
+              <li>Check Travel To Home [0]</li>
+              <li>Limit Travel To HB [0]</li>
+              <li>Include Optional Hours [1]</li>
+              <li>[UseAerialDistance] = [0]</li>
+              <li>[UseResourceRealTimeLocation] = [1]</li>
+              <li>Automatic Periodic [1]</li>
+              <li>[PeriodicResolution] = [W6_PERIODIC_DAY]</li>
+              <li>[PeriodicWeekDay] = [W6_MONDAY]</li>
+              <li>[PeriodicMonthDay] = [1]</li>
+              <li>[PeriodicStartTime] = [0]</li>
+              <li>[AddBreak] = [0]</li>
+              <li>[BreakStartHour] = [0]</li>
+              <li>[BreakStartMinute] = [0]</li>
+              <li>Break Duration [0]</li>
+              <li>[BreakHourByResourceProperty] = [0]</li>
+              <li>[BreakHourProperty] = []</li>
+              <li>[BreakByWorkingDayStart] = [0]</li>
+              <li>[BreakRelativeToWorkingDayStart] = [0]</li>
+              <li>[BreakRelativeTimeProperty] = []</li>
+              <li>[BreakDurationByProperty] = [0]</li>
+              <li>[BreakDurationProperty] = []</li>
+              <li>Travel From HB By Resource Property [0]</li>
+              <li>[TravelFromHBProperty] = []</li>
+              <li>Travel To HB By Resource Property [0]</li>
+              <li>[TravelToHBProperty] = []</li>
+              <li>Fixed Gap By Resource Property [0]</li>
+              <li>[FixedGapProperty] = []</li>
+              <li>[MinimalTravelTimeGapByResourceProperty] = [0]</li>
+              <li>[MinimalTravelTimeGapProperty] = []</li>
+              <li>[AllowTravelInNonworkingHours] = [0]</li>
+              <li>[MaxTravelInNonworkingByResourceProperty] = [0]</li>
+              <li>[MaxTravelInNonworkingProperty] = []</li>
+              <li>[MaxTravelInNonworkingTime] = [0]</li>
+              <li>Calendar Property [EngineerCalendar]</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Task Index Rule - Equipment Info</td>
+          <td>Performance Rules</td>
+          <td>Task Index Rule</td>
+          <td family="5">DR</td>
+          <td>1</td>
+          <td />
+          <td>
+            <ul>
+              <li>[TaskIndex]<ul><li>[GenericIndexReference]<ul><li>[CollectionReference] = [Task]</li><li>[IndexReference] = [District]</li></ul></li></ul></li>
+              <li>[RelatedFields] = [District]</li>
+              <li>[ReferencingFields] = []</li>
+              <li>[EngineerReferencedProperties] = []</li>
+              <li>[TaskGroup] = [Self Schedule Equipment Info]</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Task Index Rule - OND Maintenance</td>
+          <td>Performance Rules</td>
+          <td>Task Index Rule</td>
+          <td family="5">DR</td>
+          <td>1</td>
+          <td />
+          <td>
+            <ul>
+              <li>[TaskIndex]<ul><li>[GenericIndexReference]<ul><li>[CollectionReference] = [Task]</li><li>[IndexReference] = [Region]</li></ul></li></ul></li>
+              <li>[RelatedFields] = [Region]</li>
+              <li>[ReferencingFields] = []</li>
+              <li>[EngineerReferencedProperties] = []</li>
+              <li>[TaskGroup] = [OND Self-Schedule Group]</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Task index rule - open tasks</td>
+          <td>Performance Rules</td>
+          <td>Task Index Rule</td>
+          <td family="5">DR</td>
+          <td>1</td>
+          <td />
+          <td>
+            <ul>
+              <li>[TaskIndex]<ul><li>[GenericIndexReference]<ul><li>[CollectionReference] = [Task]</li><li>[IndexReference] = [District,DueDate]</li></ul></li></ul></li>
+              <li>[RelatedFields] = [District,&lt;36&gt;0|7]</li>
+              <li>[ReferencingFields] = []</li>
+              <li>[EngineerReferencedProperties] = []</li>
+              <li>[TaskGroup] = [Open Tasks]</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Task Index Rule - Ops</td>
+          <td>Performance Rules</td>
+          <td>Task Index Rule</td>
+          <td family="5">DR</td>
+          <td>1</td>
+          <td />
+          <td>
+            <ul>
+              <li>[TaskIndex]<ul><li>[GenericIndexReference]<ul><li>[CollectionReference] = [Task]</li><li>[IndexReference] = [District]</li></ul></li></ul></li>
+              <li>[RelatedFields] = [District]</li>
+              <li>[ReferencingFields] = []</li>
+              <li>[EngineerReferencedProperties] = []</li>
+              <li>[TaskGroup] = [Self-Schedule Group]</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Task Index Rule - ORB Maintenance</td>
+          <td>Performance Rules</td>
+          <td>Task Index Rule</td>
+          <td family="5">DR</td>
+          <td>1</td>
+          <td />
+          <td>
+            <ul>
+              <li>[TaskIndex]<ul><li>[GenericIndexReference]<ul><li>[CollectionReference] = [Task]</li><li>[IndexReference] = [Region]</li></ul></li></ul></li>
+              <li>[RelatedFields] = [Region]</li>
+              <li>[ReferencingFields] = []</li>
+              <li>[EngineerReferencedProperties] = []</li>
+              <li>[TaskGroup] = [ORB Self-Schedule Maintenance]</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Task Index Rule - ORB Ops</td>
+          <td>Performance Rules</td>
+          <td>Task Index Rule</td>
+          <td family="5">DR</td>
+          <td>1</td>
+          <td />
+          <td>
+            <ul>
+              <li>[TaskIndex]<ul><li>[GenericIndexReference]<ul><li>[CollectionReference] = [Task]</li><li>[IndexReference] = [District]</li></ul></li></ul></li>
+              <li>[RelatedFields] = [District]</li>
+              <li>[ReferencingFields] = []</li>
+              <li>[EngineerReferencedProperties] = []</li>
+              <li>[TaskGroup] = [ORB Self-Schedule Group]</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Task Index Rule - PER</td>
+          <td>Performance Rules</td>
+          <td>Task Index Rule</td>
+          <td family="5">DR</td>
+          <td>1</td>
+          <td />
+          <td>
+            <ul>
+              <li>[TaskIndex]<ul><li>[GenericIndexReference]<ul><li>[CollectionReference] = [Task]</li><li>[IndexReference] = [District]</li></ul></li></ul></li>
+              <li>[RelatedFields] = [District]</li>
+              <li>[ReferencingFields] = []</li>
+              <li>[EngineerReferencedProperties] = []</li>
+              <li>[TaskGroup] = [FSM PER Self Schedule]</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Task Index Rule - Self Schedule EF</td>
+          <td>Performance Rules</td>
+          <td>Task Index Rule</td>
+          <td family="5">DR</td>
+          <td>1</td>
+          <td />
+          <td>
+            <ul>
+              <li>[TaskIndex]<ul><li>[GenericIndexReference]<ul><li>[CollectionReference] = [Task]</li><li>[IndexReference] = [Region]</li></ul></li></ul></li>
+              <li>[RelatedFields] = [Region]</li>
+              <li>[ReferencingFields] = []</li>
+              <li>[EngineerReferencedProperties] = []</li>
+              <li>[TaskGroup] = [Self-Schedule Group EF]</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Task Index Rule - Self-Schedule</td>
+          <td>Performance Rules</td>
+          <td>Task Index Rule</td>
+          <td family="5">DR</td>
+          <td>1</td>
+          <td />
+          <td>
+            <ul>
+              <li>[TaskIndex]<ul><li>[GenericIndexReference]<ul><li>[CollectionReference] = [Task]</li><li>[IndexReference] = [Region]</li></ul></li></ul></li>
+              <li>[RelatedFields] = [Region]</li>
+              <li>[ReferencingFields] = []</li>
+              <li>[EngineerReferencedProperties] = []</li>
+              <li>[TaskGroup] = [Self-Schedule Group]</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Task Index Rule - TMS</td>
+          <td>Performance Rules</td>
+          <td>Task Index Rule</td>
+          <td family="5">DR</td>
+          <td>1</td>
+          <td />
+          <td>
+            <ul>
+              <li>[TaskIndex]<ul><li>[GenericIndexReference]<ul><li>[CollectionReference] = [Task]</li><li>[IndexReference] = [District,DueDate]</li></ul></li></ul></li>
+              <li>[RelatedFields] = [District,&lt;36&gt;0|2]</li>
+              <li>[ReferencingFields] = []</li>
+              <li>[EngineerReferencedProperties] = []</li>
+              <li>[TaskGroup] = [TMS Self-Schedule Group]</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Territory Planning Rule</td>
+          <td>Geography Rules</td>
+          <td>Territory Planning Rule</td>
+          <td family="6">DRT</td>
+          <td>1</td>
+          <td />
+          <td>
+            <ul>
+              <li>[RelevanceGroup_SO] = []</li>
+              <li>[LongitudePropID_SO]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Engineer]</li><li>[PropertyReference] = [Longitude]</li></ul></li></ul></li>
+              <li>[LatitudePropID_SO]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Engineer]</li><li>[PropertyReference] = [Latitude]</li></ul></li></ul></li>
+              <li>[ByDistance_SO] = [1]</li>
+              <li>[TPLimit_SO] = [15]</li>
+              <li>[IsLimitByEngineerProperty_SO] = [0]</li>
+              <li>[LimitPropID_SO] = []</li>
+              <li>[IsTimePhased_SO] = [1]</li>
+              <li>[IsAerialDistance_SO] = [0]</li>
+              <li>[UseDefaultOnEmpty_SO] = [0]</li>
+              <li>[AlwaysIncludeOnEmpty_SO] = [0]</li>
+              <li>[AlwaysExcludeOnEmpty_SO] = [1]</li>
+              <li>[DistanceFactor_SO] = [0]</li>
+              <li>[TaskAreaProperty_SO]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [WorkingArea]</li></ul></li></ul></li>
+              <li>[MatchAtLeastOne_SO] = [1]</li>
+              <li>[IsTaskPropertyMV_SO] = [0]</li>
+              <li>[EngineerTerritoryAreaProperty_SO]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [EngineerTerritory_SO]</li><li>[PropertyReference] = [WorkingAreas]</li></ul></li></ul></li>
+              <li>[EngineerDefaultAreaProperty_SO] = []</li>
+              <li>[IsEngineerDefaultAreaProperty_SO] = [0]</li>
+              <li>[IsEngineerDefaultRadius_SO] = [1]</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <script>
+          $( document ).ready( function () {
+            initDataTableWithButtons(
+              "#rulesTable",
+              "Rules",
+              true,
+              true,
+              {
+                order: [[0, 'asc']],
+                paging: false,
+              }
+            );
+          } );</script>
+  </body>
+</html>

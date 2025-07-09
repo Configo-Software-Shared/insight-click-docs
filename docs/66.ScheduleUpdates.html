@@ -1,0 +1,838 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.9.3/semantic.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/se/jszip-3.10.1/dt-2.0.7/b-3.0.2/b-colvis-3.0.2/b-html5-3.0.2/b-print-3.0.2/cr-2.0.2/date-1.5.2/fc-5.0.0/fh-4.0.1/kt-2.12.0/r-3.0.2/rg-1.5.0/sc-2.4.2/sb-1.7.1/sp-2.3.1/datatables.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js">//</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.9.3/semantic.min.js">//</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js">//</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js">//</script>
+    <script src="https://cdn.datatables.net/v/se/jszip-3.10.1/dt-2.0.7/b-3.0.2/b-colvis-3.0.2/b-html5-3.0.2/b-print-3.0.2/cr-2.0.2/date-1.5.2/fc-5.0.0/fh-4.0.1/kt-2.12.0/r-3.0.2/rg-1.5.0/sc-2.4.2/sb-1.7.1/sp-2.3.1/datatables.min.js">//</script>
+    <script type="text/javascript" src="script/cfg-tables.js">//</script>
+    <title>Schedule Updates Report</title>
+  </head>
+  <body style="padding:16px">
+    <h2>Schedule Updates</h2>
+    <table id="suTable" class="ui celled table" style="width:100%">
+      <thead>
+        <tr class="header">
+          <th>Name</th>
+          <th>Input</th>
+          <th>Policy</th>
+          <th>Uses</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>FSM BAK EMER Update</td>
+          <td>
+            <div class="ui list">
+              <div class="item">Min change: 00:05</div>
+              <div class="item">Logic domain: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">BAK General<div class="detail">Logic Domain</div></div></div>
+              <div class="item">Reschedule up to 0 days ahead</div>
+              <div class="item">Unmovable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unmovable Tasks<div class="detail">Group</div></div></div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Use workflow <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">FSM BAK EMER Tasks<div class="detail">Scheduling Workflow</div></div></div>
+              <div class="item">Unswitchable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unswitchable Tasks no Dispatch<div class="detail">Group</div></div></div>
+              <div class="item">Consider current engineer</div>
+              <div class="item">Unschedule when unable to reschedule</div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Setting[[Application]|Lunch Break|Lunch Break|]</div>
+              <div class="item">Setting[[Application]|Solutions Pack|Updates through Integration|]</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>FSM BAK HIGH Update</td>
+          <td>
+            <div class="ui list">
+              <div class="item">Min change: 00:05</div>
+              <div class="item">Logic domain: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">BAK General<div class="detail">Logic Domain</div></div></div>
+              <div class="item">Reschedule up to 0 days ahead</div>
+              <div class="item">Unmovable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unmovable Tasks<div class="detail">Group</div></div></div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Use workflow <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">FSM BAK HIGH Tasks<div class="detail">Scheduling Workflow</div></div></div>
+              <div class="item">Unswitchable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unswitchable Tasks no Dispatch<div class="detail">Group</div></div></div>
+              <div class="item">Consider current engineer</div>
+              <div class="item">Unschedule when unable to reschedule</div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Setting[[Application]|Solutions Pack|Updates through Integration|]</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>FSM BAK LOW Update</td>
+          <td>
+            <div class="ui list">
+              <div class="item">Min change: 00:05</div>
+              <div class="item">Logic domain: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">BAK General<div class="detail">Logic Domain</div></div></div>
+              <div class="item">Reschedule up to 10 days ahead</div>
+              <div class="item">Unmovable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unmovable Tasks<div class="detail">Group</div></div></div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Use workflow <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">FSM BAK LOW Tasks<div class="detail">Scheduling Workflow</div></div></div>
+              <div class="item">Unswitchable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unswitchable Tasks no Dispatch<div class="detail">Group</div></div></div>
+              <div class="item">Consider current engineer</div>
+              <div class="item">Unschedule when unable to reschedule</div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Setting[[Application]|Solutions Pack|Updates through Integration|]</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>FSM BAK MED-HIGH Update</td>
+          <td>
+            <div class="ui list">
+              <div class="item">Min change: 00:05</div>
+              <div class="item">Logic domain: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">BAK General<div class="detail">Logic Domain</div></div></div>
+              <div class="item">Reschedule up to 1 days ahead</div>
+              <div class="item">Unmovable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unmovable Tasks<div class="detail">Group</div></div></div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Use workflow <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">FSM BAK MED-HIGH Tasks<div class="detail">Scheduling Workflow</div></div></div>
+              <div class="item">Unswitchable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unswitchable Tasks no Dispatch<div class="detail">Group</div></div></div>
+              <div class="item">Consider current engineer</div>
+              <div class="item">Unschedule when unable to reschedule</div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Setting[[Application]|Solutions Pack|Updates through Integration|]</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>FSM BAK MEDIUM Update</td>
+          <td>
+            <div class="ui list">
+              <div class="item">Min change: 00:05</div>
+              <div class="item">Logic domain: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">BAK General<div class="detail">Logic Domain</div></div></div>
+              <div class="item">Reschedule up to 5 days ahead</div>
+              <div class="item">Unmovable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unmovable Tasks<div class="detail">Group</div></div></div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Use workflow <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">FSM BAK MEDIUM Tasks<div class="detail">Scheduling Workflow</div></div></div>
+              <div class="item">Unswitchable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unswitchable Tasks no Dispatch<div class="detail">Group</div></div></div>
+              <div class="item">Consider current engineer</div>
+              <div class="item">Unschedule when unable to reschedule</div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Setting[[Application]|Solutions Pack|Updates through Integration|]</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>FSM BAK MED-LOW Update</td>
+          <td>
+            <div class="ui list">
+              <div class="item">Min change: 00:05</div>
+              <div class="item">Logic domain: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">BAK General<div class="detail">Logic Domain</div></div></div>
+              <div class="item">Reschedule up to 5 days ahead</div>
+              <div class="item">Unmovable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unmovable Tasks<div class="detail">Group</div></div></div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Use workflow <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">FSM BAK MED-LOW Tasks<div class="detail">Scheduling Workflow</div></div></div>
+              <div class="item">Unswitchable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unswitchable Tasks no Dispatch<div class="detail">Group</div></div></div>
+              <div class="item">Consider current engineer</div>
+              <div class="item">Unschedule when unable to reschedule</div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Setting[[Application]|Solutions Pack|Updates through Integration|]</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>FSM EF Measurement</td>
+          <td>
+            <div class="ui list">
+              <div class="item">Min change: 00:01</div>
+              <div class="item">Logic domain: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">EF General Measurement<div class="detail">Logic Domain</div></div></div>
+              <div class="item">Reschedule up to 30 days ahead</div>
+              <div class="item">Unmovable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">FSM EF Unmovable Tasks - Maint<div class="detail">Group</div></div></div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Use workflow <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">FSM EF Measurement <div class="detail">Scheduling Workflow</div></div></div>
+              <div class="item">Unswitchable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">FSM EF Unswitchable Tasks no Dispatch - Maint<div class="detail">Group</div></div></div>
+              <div class="item">Consider current engineer</div>
+              <div class="item">Unschedule when unable to reschedule</div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Setting[[Application]|Solutions Pack|Updates through Integration|]</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>FSM HIGH Update</td>
+          <td>
+            <div class="ui list">
+              <div class="item">Min change: 00:05</div>
+              <div class="item">Logic domain: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">General<div class="detail">Logic Domain</div></div></div>
+              <div class="item">Reschedule up to 0 days ahead</div>
+              <div class="item">Unmovable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unmovable Tasks<div class="detail">Group</div></div></div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Use workflow <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">FSM HIGH Tasks<div class="detail">Scheduling Workflow</div></div></div>
+              <div class="item">Unswitchable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unswitchable Tasks no Dispatch<div class="detail">Group</div></div></div>
+              <div class="item">Consider current engineer</div>
+              <div class="item">Unschedule when unable to reschedule</div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Setting[[Application]|Solutions Pack|Updates through Integration|]</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>FSM LOW Update</td>
+          <td>
+            <div class="ui list">
+              <div class="item">Min change: 00:05</div>
+              <div class="item">Logic domain: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">General<div class="detail">Logic Domain</div></div></div>
+              <div class="item">Reschedule up to 10 days ahead</div>
+              <div class="item">Unmovable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unmovable Tasks<div class="detail">Group</div></div></div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Use workflow <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">FSM LOW Tasks<div class="detail">Scheduling Workflow</div></div></div>
+              <div class="item">Unswitchable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unswitchable Tasks no Dispatch<div class="detail">Group</div></div></div>
+              <div class="item">Consider current engineer</div>
+              <div class="item">Unschedule when unable to reschedule</div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Setting[[Application]|Solutions Pack|Updates through Integration|]</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>FSM Maint. HIGH Update</td>
+          <td>
+            <div class="ui list">
+              <div class="item">Min change: 00:05</div>
+              <div class="item">Logic domain: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">General Maintenance<div class="detail">Logic Domain</div></div></div>
+              <div class="item">Reschedule up to 0 days ahead</div>
+              <div class="item">Unmovable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unmovable Tasks<div class="detail">Group</div></div></div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Use workflow <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">FSM Maint. HIGH Tasks<div class="detail">Scheduling Workflow</div></div></div>
+              <div class="item">Unswitchable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unswitchable Tasks no Dispatch<div class="detail">Group</div></div></div>
+              <div class="item">Consider current engineer</div>
+              <div class="item">Unschedule when unable to reschedule</div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Setting[[Application]|Solutions Pack|Updates through Integration|]</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>FSM Maint. LOW Update</td>
+          <td>
+            <div class="ui list">
+              <div class="item">Min change: 00:05</div>
+              <div class="item">Logic domain: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">General Maintenance<div class="detail">Logic Domain</div></div></div>
+              <div class="item">Reschedule up to 10 days ahead</div>
+              <div class="item">Unmovable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unmovable Tasks<div class="detail">Group</div></div></div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Use workflow <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">FSM Maint. LOW Tasks<div class="detail">Scheduling Workflow</div></div></div>
+              <div class="item">Unswitchable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unswitchable Tasks no Dispatch<div class="detail">Group</div></div></div>
+              <div class="item">Consider current engineer</div>
+              <div class="item">Unschedule when unable to reschedule</div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Setting[[Application]|Solutions Pack|Updates through Integration|]</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>FSM Maint. MED-HIGH Update</td>
+          <td>
+            <div class="ui list">
+              <div class="item">Min change: 00:05</div>
+              <div class="item">Logic domain: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">General Maintenance<div class="detail">Logic Domain</div></div></div>
+              <div class="item">Reschedule up to 1 days ahead</div>
+              <div class="item">Unmovable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unmovable Tasks<div class="detail">Group</div></div></div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Use workflow <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">FSM Maint. MED-HIGH Tasks<div class="detail">Scheduling Workflow</div></div></div>
+              <div class="item">Unswitchable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unswitchable Tasks no Dispatch<div class="detail">Group</div></div></div>
+              <div class="item">Consider current engineer</div>
+              <div class="item">Unschedule when unable to reschedule</div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Setting[[Application]|Solutions Pack|Updates through Integration|]</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>FSM Maint. MEDIUM Update</td>
+          <td>
+            <div class="ui list">
+              <div class="item">Min change: 00:05</div>
+              <div class="item">Logic domain: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">General Maintenance<div class="detail">Logic Domain</div></div></div>
+              <div class="item">Reschedule up to 5 days ahead</div>
+              <div class="item">Unmovable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unmovable Tasks<div class="detail">Group</div></div></div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Use workflow <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">FSM Maint. MEDIUM Tasks<div class="detail">Scheduling Workflow</div></div></div>
+              <div class="item">Unswitchable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unswitchable Tasks no Dispatch<div class="detail">Group</div></div></div>
+              <div class="item">Consider current engineer</div>
+              <div class="item">Unschedule when unable to reschedule</div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Setting[[Application]|Solutions Pack|Updates through Integration|]</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>FSM Maint. MED-LOW Update</td>
+          <td>
+            <div class="ui list">
+              <div class="item">Min change: 00:05</div>
+              <div class="item">Logic domain: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">General Maintenance<div class="detail">Logic Domain</div></div></div>
+              <div class="item">Reschedule up to 5 days ahead</div>
+              <div class="item">Unmovable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unmovable Tasks<div class="detail">Group</div></div></div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Use workflow <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">FSM Maint. MED-LOW Tasks<div class="detail">Scheduling Workflow</div></div></div>
+              <div class="item">Unswitchable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unswitchable Tasks no Dispatch<div class="detail">Group</div></div></div>
+              <div class="item">Consider current engineer</div>
+              <div class="item">Unschedule when unable to reschedule</div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Setting[[Application]|Solutions Pack|Updates through Integration|]</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>FSM Maint.Masurement HIGH Update</td>
+          <td>
+            <div class="ui list">
+              <div class="item">Min change: 00:05</div>
+              <div class="item">Logic domain: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">EF General Measurement<div class="detail">Logic Domain</div></div></div>
+              <div class="item">Reschedule up to 0 days ahead</div>
+              <div class="item">Unmovable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unmovable Tasks<div class="detail">Group</div></div></div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Use workflow <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">FSM Maint.Masurement HIGH Tasks <div class="detail">Scheduling Workflow</div></div></div>
+              <div class="item">Unswitchable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unswitchable Tasks no Dispatch<div class="detail">Group</div></div></div>
+              <div class="item">Consider current engineer</div>
+              <div class="item">Unschedule when unable to reschedule</div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Setting[[Application]|Solutions Pack|Updates through Integration|]</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>FSM Maint.Masurement LOW Update</td>
+          <td>
+            <div class="ui list">
+              <div class="item">Min change: 00:05</div>
+              <div class="item">Logic domain: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">EF General Measurement<div class="detail">Logic Domain</div></div></div>
+              <div class="item">Reschedule up to 0 days ahead</div>
+              <div class="item">Unmovable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unmovable Tasks<div class="detail">Group</div></div></div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Use workflow <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">FSM Maint.Masurement LOW Tasks <div class="detail">Scheduling Workflow</div></div></div>
+              <div class="item">Unswitchable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unswitchable Tasks no Dispatch<div class="detail">Group</div></div></div>
+              <div class="item">Consider current engineer</div>
+              <div class="item">Unschedule when unable to reschedule</div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Setting[[Application]|Solutions Pack|Updates through Integration|]</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>FSM Maint.Masurement MED-HIGH Update</td>
+          <td>
+            <div class="ui list">
+              <div class="item">Min change: 00:05</div>
+              <div class="item">Logic domain: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">EF General Measurement<div class="detail">Logic Domain</div></div></div>
+              <div class="item">Reschedule up to 0 days ahead</div>
+              <div class="item">Unmovable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unmovable Tasks<div class="detail">Group</div></div></div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Use workflow <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">FSM Maint.Masurement MED-HIGH Tasks <div class="detail">Scheduling Workflow</div></div></div>
+              <div class="item">Unswitchable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unswitchable Tasks no Dispatch<div class="detail">Group</div></div></div>
+              <div class="item">Consider current engineer</div>
+              <div class="item">Unschedule when unable to reschedule</div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Setting[[Application]|Solutions Pack|Updates through Integration|]</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>FSM Maint.Masurement MEDIUM Update</td>
+          <td>
+            <div class="ui list">
+              <div class="item">Min change: 00:05</div>
+              <div class="item">Logic domain: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">EF General Measurement<div class="detail">Logic Domain</div></div></div>
+              <div class="item">Reschedule up to 0 days ahead</div>
+              <div class="item">Unmovable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unmovable Tasks<div class="detail">Group</div></div></div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Use workflow <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">FSM Maint.Masurement MEDIUM Tasks <div class="detail">Scheduling Workflow</div></div></div>
+              <div class="item">Unswitchable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unswitchable Tasks no Dispatch<div class="detail">Group</div></div></div>
+              <div class="item">Consider current engineer</div>
+              <div class="item">Unschedule when unable to reschedule</div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Setting[[Application]|Solutions Pack|Updates through Integration|]</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>FSM Maint.Masurement MED-LOW Update</td>
+          <td>
+            <div class="ui list">
+              <div class="item">Min change: 00:05</div>
+              <div class="item">Logic domain: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">EF General Measurement<div class="detail">Logic Domain</div></div></div>
+              <div class="item">Reschedule up to 0 days ahead</div>
+              <div class="item">Unmovable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unmovable Tasks<div class="detail">Group</div></div></div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Use workflow <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">FSM Maint.Masurement MED-LOW Tasks <div class="detail">Scheduling Workflow</div></div></div>
+              <div class="item">Unswitchable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unswitchable Tasks no Dispatch<div class="detail">Group</div></div></div>
+              <div class="item">Consider current engineer</div>
+              <div class="item">Unschedule when unable to reschedule</div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Setting[[Application]|Solutions Pack|Updates through Integration|]</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>FSM MED-HIGH Update</td>
+          <td>
+            <div class="ui list">
+              <div class="item">Min change: 00:05</div>
+              <div class="item">Logic domain: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">General<div class="detail">Logic Domain</div></div></div>
+              <div class="item">Reschedule up to 1 days ahead</div>
+              <div class="item">Unmovable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unmovable Tasks<div class="detail">Group</div></div></div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Use workflow <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">FSM MED-HIGH Tasks<div class="detail">Scheduling Workflow</div></div></div>
+              <div class="item">Unswitchable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unswitchable Tasks no Dispatch<div class="detail">Group</div></div></div>
+              <div class="item">Consider current engineer</div>
+              <div class="item">Unschedule when unable to reschedule</div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Setting[[Application]|Solutions Pack|Updates through Integration|]</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>FSM MEDIUM Update</td>
+          <td>
+            <div class="ui list">
+              <div class="item">Min change: 00:05</div>
+              <div class="item">Logic domain: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">General<div class="detail">Logic Domain</div></div></div>
+              <div class="item">Reschedule up to 5 days ahead</div>
+              <div class="item">Unmovable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unmovable Tasks<div class="detail">Group</div></div></div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Use workflow <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">FSM MEDIUM Tasks<div class="detail">Scheduling Workflow</div></div></div>
+              <div class="item">Unswitchable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unswitchable Tasks no Dispatch<div class="detail">Group</div></div></div>
+              <div class="item">Consider current engineer</div>
+              <div class="item">Unschedule when unable to reschedule</div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Setting[[Application]|Solutions Pack|Updates through Integration|]</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>FSM MED-LOW Update</td>
+          <td>
+            <div class="ui list">
+              <div class="item">Min change: 00:05</div>
+              <div class="item">Logic domain: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">General<div class="detail">Logic Domain</div></div></div>
+              <div class="item">Reschedule up to 5 days ahead</div>
+              <div class="item">Unmovable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unmovable Tasks<div class="detail">Group</div></div></div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Use workflow <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">FSM MED-LOW Tasks<div class="detail">Scheduling Workflow</div></div></div>
+              <div class="item">Unswitchable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unswitchable Tasks no Dispatch<div class="detail">Group</div></div></div>
+              <div class="item">Consider current engineer</div>
+              <div class="item">Unschedule when unable to reschedule</div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Setting[[Application]|Solutions Pack|Updates through Integration|]</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>FSM ORB HIGH Update</td>
+          <td>
+            <div class="ui list">
+              <div class="item">Min change: 00:05</div>
+              <div class="item">Logic domain: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">ORB General<div class="detail">Logic Domain</div></div></div>
+              <div class="item">Reschedule up to 0 days ahead</div>
+              <div class="item">Unmovable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unmovable Tasks<div class="detail">Group</div></div></div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Use workflow <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">FSM ORB HIGH Tasks<div class="detail">Scheduling Workflow</div></div></div>
+              <div class="item">Unswitchable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unswitchable Tasks no Dispatch<div class="detail">Group</div></div></div>
+              <div class="item">Consider current engineer</div>
+              <div class="item">Unschedule when unable to reschedule</div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Setting[[Application]|Solutions Pack|Updates through Integration|]</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>FSM ORB LOW Update</td>
+          <td>
+            <div class="ui list">
+              <div class="item">Min change: 00:05</div>
+              <div class="item">Logic domain: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">ORB General<div class="detail">Logic Domain</div></div></div>
+              <div class="item">Reschedule up to 10 days ahead</div>
+              <div class="item">Unmovable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unmovable Tasks<div class="detail">Group</div></div></div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Use workflow <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">FSM ORB LOW Tasks<div class="detail">Scheduling Workflow</div></div></div>
+              <div class="item">Unswitchable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unswitchable Tasks no Dispatch<div class="detail">Group</div></div></div>
+              <div class="item">Consider current engineer</div>
+              <div class="item">Unschedule when unable to reschedule</div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Setting[[Application]|Solutions Pack|Updates through Integration|]</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>FSM ORB MED-HIGH Update</td>
+          <td>
+            <div class="ui list">
+              <div class="item">Min change: 00:05</div>
+              <div class="item">Logic domain: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">ORB General<div class="detail">Logic Domain</div></div></div>
+              <div class="item">Reschedule up to 1 days ahead</div>
+              <div class="item">Unmovable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unmovable Tasks<div class="detail">Group</div></div></div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Use workflow <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">FSM ORB MED-HIGH Tasks<div class="detail">Scheduling Workflow</div></div></div>
+              <div class="item">Unswitchable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unswitchable Tasks no Dispatch<div class="detail">Group</div></div></div>
+              <div class="item">Consider current engineer</div>
+              <div class="item">Unschedule when unable to reschedule</div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Setting[[Application]|Solutions Pack|Updates through Integration|]</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>FSM ORB MEDIUM Update</td>
+          <td>
+            <div class="ui list">
+              <div class="item">Min change: 00:05</div>
+              <div class="item">Logic domain: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">ORB General<div class="detail">Logic Domain</div></div></div>
+              <div class="item">Reschedule up to 5 days ahead</div>
+              <div class="item">Unmovable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unmovable Tasks<div class="detail">Group</div></div></div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Use workflow <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">FSM ORB MEDIUM Tasks<div class="detail">Scheduling Workflow</div></div></div>
+              <div class="item">Unswitchable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unswitchable Tasks no Dispatch<div class="detail">Group</div></div></div>
+              <div class="item">Consider current engineer</div>
+              <div class="item">Unschedule when unable to reschedule</div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Setting[[Application]|Solutions Pack|Updates through Integration|]</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>FSM ORB MED-LOW Update</td>
+          <td>
+            <div class="ui list">
+              <div class="item">Min change: 00:05</div>
+              <div class="item">Logic domain: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">ORB General<div class="detail">Logic Domain</div></div></div>
+              <div class="item">Reschedule up to 5 days ahead</div>
+              <div class="item">Unmovable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unmovable Tasks<div class="detail">Group</div></div></div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Use workflow <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">FSM ORB MED-LOW Tasks<div class="detail">Scheduling Workflow</div></div></div>
+              <div class="item">Unswitchable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unswitchable Tasks no Dispatch<div class="detail">Group</div></div></div>
+              <div class="item">Consider current engineer</div>
+              <div class="item">Unschedule when unable to reschedule</div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Setting[[Application]|Solutions Pack|Updates through Integration|]</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>FSM PER EMER Update</td>
+          <td>
+            <div class="ui list">
+              <div class="item">Min change: 00:05</div>
+              <div class="item">Logic domain: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">PER General<div class="detail">Logic Domain</div></div></div>
+              <div class="item">Reschedule up to 0 days ahead</div>
+              <div class="item">Unmovable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unmovable Tasks<div class="detail">Group</div></div></div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Use workflow <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">FSM PER EMER Tasks<div class="detail">Scheduling Workflow</div></div></div>
+              <div class="item">Unswitchable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unswitchable Tasks no Dispatch<div class="detail">Group</div></div></div>
+              <div class="item">Consider current engineer</div>
+              <div class="item">Unschedule when unable to reschedule</div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Setting[[Application]|Solutions Pack|Updates through Integration|]</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>FSM PER HIGH-Update</td>
+          <td>
+            <div class="ui list">
+              <div class="item">Min change: 00:05</div>
+              <div class="item">Logic domain: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">PER General<div class="detail">Logic Domain</div></div></div>
+              <div class="item">Reschedule up to 1 days ahead</div>
+              <div class="item">Unmovable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unmovable Tasks<div class="detail">Group</div></div></div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Use workflow <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">FSM PER HIGH Tasks<div class="detail">Scheduling Workflow</div></div></div>
+              <div class="item">Unswitchable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unswitchable Tasks no Dispatch<div class="detail">Group</div></div></div>
+              <div class="item">Consider current engineer</div>
+              <div class="item">Unschedule when unable to reschedule</div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Setting[[Application]|Solutions Pack|Updates through Integration|]</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>FSM PER LOW-Update</td>
+          <td>
+            <div class="ui list">
+              <div class="item">Min change: 00:05</div>
+              <div class="item">Logic domain: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">PER General<div class="detail">Logic Domain</div></div></div>
+              <div class="item">Reschedule up to 1 days ahead</div>
+              <div class="item">Unmovable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unmovable Tasks<div class="detail">Group</div></div></div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Use workflow <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">FSM PER LOW Tasks<div class="detail">Scheduling Workflow</div></div></div>
+              <div class="item">Unswitchable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unswitchable Tasks no Dispatch<div class="detail">Group</div></div></div>
+              <div class="item">Consider current engineer</div>
+              <div class="item">Unschedule when unable to reschedule</div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Setting[[Application]|Solutions Pack|Updates through Integration|]</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>FSM PER MED-HIGH-Update</td>
+          <td>
+            <div class="ui list">
+              <div class="item">Min change: 00:05</div>
+              <div class="item">Logic domain: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">PER General<div class="detail">Logic Domain</div></div></div>
+              <div class="item">Reschedule up to 1 days ahead</div>
+              <div class="item">Unmovable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unmovable Tasks<div class="detail">Group</div></div></div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Use workflow <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">FSM PER MED-HIGH Tasks<div class="detail">Scheduling Workflow</div></div></div>
+              <div class="item">Unswitchable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unswitchable Tasks no Dispatch<div class="detail">Group</div></div></div>
+              <div class="item">Consider current engineer</div>
+              <div class="item">Unschedule when unable to reschedule</div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Setting[[Application]|Solutions Pack|Updates through Integration|]</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>FSM PER MEDIUM-Update</td>
+          <td>
+            <div class="ui list">
+              <div class="item">Min change: 00:05</div>
+              <div class="item">Logic domain: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">PER General<div class="detail">Logic Domain</div></div></div>
+              <div class="item">Reschedule up to 1 days ahead</div>
+              <div class="item">Unmovable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unswitchable Tasks no Dispatch<div class="detail">Group</div></div></div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Use workflow <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">FSM PER MEDIUM Tasks<div class="detail">Scheduling Workflow</div></div></div>
+              <div class="item">Unswitchable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unswitchable Tasks no Dispatch<div class="detail">Group</div></div></div>
+              <div class="item">Consider current engineer</div>
+              <div class="item">Unschedule when unable to reschedule</div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Setting[[Application]|Solutions Pack|Updates through Integration|]</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>FSM PER MED-LOW-Update</td>
+          <td>
+            <div class="ui list">
+              <div class="item">Min change: 00:05</div>
+              <div class="item">Logic domain: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">PER General<div class="detail">Logic Domain</div></div></div>
+              <div class="item">Reschedule up to 1 days ahead</div>
+              <div class="item">Unmovable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unmovable Tasks<div class="detail">Group</div></div></div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Use workflow <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">FSM PER MED-LOW Tasks<div class="detail">Scheduling Workflow</div></div></div>
+              <div class="item">Unswitchable tasks: <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Unswitchable Tasks no Dispatch<div class="detail">Group</div></div></div>
+              <div class="item">Consider current engineer</div>
+              <div class="item">Unschedule when unable to reschedule</div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Setting[[Application]|Solutions Pack|Updates through Integration|]</div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <script>
+          $( document ).ready( function () {
+            initDataTableWithButtons(
+              '#suTable',
+              'Schedule Updates',
+              true,
+              true,
+              {
+                paging: false,
+                order: [[0, 'asc']],
+              }
+            );
+          } );
+        </script>
+  </body>
+</html>

@@ -1,0 +1,1079 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:regexp="http://exslt.org/regular-expressions" xmlns:set="http://exslt.org/sets" xmlns:xoom="urn:xmlns:zanyants:xoom">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.9.3/semantic.min.css" xmlns="" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/se/jszip-3.10.1/dt-2.0.7/b-3.0.2/b-colvis-3.0.2/b-html5-3.0.2/b-print-3.0.2/cr-2.0.2/date-1.5.2/fc-5.0.0/fh-4.0.1/kt-2.12.0/r-3.0.2/rg-1.5.0/sc-2.4.2/sb-1.7.1/sp-2.3.1/datatables.min.css" xmlns="" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" xmlns="">//</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.9.3/semantic.min.js" xmlns="">//</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js" xmlns="">//</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js" xmlns="">//</script>
+    <script src="https://cdn.datatables.net/v/se/jszip-3.10.1/dt-2.0.7/b-3.0.2/b-colvis-3.0.2/b-html5-3.0.2/b-print-3.0.2/cr-2.0.2/date-1.5.2/fc-5.0.0/fh-4.0.1/kt-2.12.0/r-3.0.2/rg-1.5.0/sc-2.4.2/sb-1.7.1/sp-2.3.1/datatables.min.js" xmlns="">//</script>
+    <script type="text/javascript" src="script/cfg-tables.js" xmlns="">//</script>
+    <title>ClickMobile Templates</title>
+    <style>
+          .item b {
+            color: #2185d0;
+          }
+        </style>
+  </head>
+  <body style="padding: 16px">
+    <h2>ClickMobile Templates</h2>
+    <table id="summaryTable" class="ui celled table" style="width: 100%">
+      <thead>
+        <tr class="header">
+          <th>Name</th>
+          <th>OOTB Modules</th>
+          <th>Events</th>
+          <th>Custom Panels</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>[Vendor Water Field Resource - SPANISH]</td>
+          <td>
+            <div class="ui list">
+              <div class="item">El Horario (v1.3)</div>
+              <div class="item">Asset</div>
+              <div class="item">Power Map</div>
+              <div class="item">Self-Scheduling</div>
+              <div class="item">Timesheet</div>
+              <div class="item">Messages</div>
+              <div class="item">Absence Request</div>
+              <div class="item">Activity</div>
+              <div class="item">Timesheet</div>
+              <div class="item">Crew Allocation</div>
+              <div class="item">Notification</div>
+              <div class="item">My Parts</div>
+              <div class="item">PartLocation</div>
+              <div class="item">PartsInStock</div>
+              <div class="item">Part Orders</div>
+              <div class="item">Engineer</div>
+              <div class="item">RequiredPart</div>
+              <div class="item">SWDs</div>
+              <div class="item">Documentos</div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Absence Management (User Only) Event</div>
+              <div class="item">
+                <b>Copy Properties from Parent</b></div>
+              <div class="item">DerivationToRequiredPartEvent (Parts Management)</div>
+              <div class="item">
+                <b>PartOrderAutoFillEvent (Parts Management)</b></div>
+              <div class="item">
+                <b>Set Notification Property</b></div>
+              <div class="item">
+                <b>TaskEvent (Parts Management)</b></div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">
+                <b>Diabsolut.MarathonOil.Mobile.Touch.Panels.DisplayStatusTransitionPanel</b> (1)</div>
+              <div class="item">W6.ClickMobile.Web.AbsenceManagement.W6CMAbsenceManagementCancelButton (1)</div>
+              <div class="item">W6.ClickMobile.Web.DelayAssignment.W6ClickMobileDelayAssignment (1)</div>
+              <div class="item">W6.ClickMobile.Web.NativeAppLauncher.W6CMNativeAppLauncher (4)</div>
+              <div class="item">W6.ClickMobile.Web.PartsManagement.Custom_Panels.DefectivePart (1)</div>
+              <div class="item">W6.ClickMobile.Web.PartsManagement.Custom_Panels.OrderPart (2)</div>
+              <div class="item">W6.ClickMobile.Web.PartsManagement.Floating_Lists.PartInStockFloatingList (2)</div>
+              <div class="item">W6.ClickMobile.Web.PartsManagement.Floating_Lists.PartOrderFloatingList (1)</div>
+              <div class="item">W6.ClickMobile.Web.PartsManagement.Floating_Lists.TaskRequieredPartFloatingList (1)</div>
+              <div class="item">W6CMBoxIconDictionary.W6CMBocIconDictionaryUI (1)</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>[Vendor Water Field Resource]</td>
+          <td>
+            <div class="ui list">
+              <div class="item">Schedule (v1.4)</div>
+              <div class="item">Asset</div>
+              <div class="item">Power Map</div>
+              <div class="item">Self-Scheduling</div>
+              <div class="item">Timesheet</div>
+              <div class="item">Messages</div>
+              <div class="item">Absence Request</div>
+              <div class="item">Activity</div>
+              <div class="item">Timesheet</div>
+              <div class="item">Crew Allocation</div>
+              <div class="item">Notification</div>
+              <div class="item">Facility Check List</div>
+              <div class="item">My Parts</div>
+              <div class="item">PartLocation</div>
+              <div class="item">PartsInStock</div>
+              <div class="item">Part Orders</div>
+              <div class="item">Engineer</div>
+              <div class="item">RequiredPart</div>
+              <div class="item">SWDs</div>
+              <div class="item">Documents</div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Absence Management (User Only) Event</div>
+              <div class="item">
+                <b>Copy Properties from Parent</b></div>
+              <div class="item">DerivationToRequiredPartEvent (Parts Management)</div>
+              <div class="item">
+                <b>PartOrderAutoFillEvent (Parts Management)</b></div>
+              <div class="item">
+                <b>Set Notification Property</b></div>
+              <div class="item">
+                <b>TaskEvent (Parts Management)</b></div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">
+                <b>Diabsolut.MarathonOil.Mobile.Touch.Panels.DisplayStatusTransitionPanel</b> (1)</div>
+              <div class="item">
+                <b>Diabsolut.PropertyCopy.Mobile.Touch.Panels.PropertyCopyPanel</b> (1)</div>
+              <div class="item">W6.ClickMobile.Web.AbsenceManagement.W6CMAbsenceManagementCancelButton (1)</div>
+              <div class="item">W6.ClickMobile.Web.DelayAssignment.W6ClickMobileDelayAssignment (1)</div>
+              <div class="item">W6.ClickMobile.Web.NativeAppLauncher.W6CMNativeAppLauncher (5)</div>
+              <div class="item">W6.ClickMobile.Web.PartsManagement.Custom_Panels.DefectivePart (1)</div>
+              <div class="item">W6.ClickMobile.Web.PartsManagement.Custom_Panels.OrderPart (2)</div>
+              <div class="item">W6.ClickMobile.Web.PartsManagement.Floating_Lists.PartInStockFloatingList (2)</div>
+              <div class="item">W6.ClickMobile.Web.PartsManagement.Floating_Lists.PartOrderFloatingList (1)</div>
+              <div class="item">W6.ClickMobile.Web.PartsManagement.Floating_Lists.TaskRequieredPartFloatingList (1)</div>
+              <div class="item">W6CMBoxIconDictionary.W6CMBocIconDictionaryUI (1)</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>BAK Maintenance</td>
+          <td>
+            <div class="ui list">
+              <div class="item">Schedule (v12.6)</div>
+              <div class="item">Resource (v12.6)</div>
+              <div class="item">Notification/Add-On</div>
+              <div class="item">Power Map</div>
+              <div class="item">Absence Request</div>
+              <div class="item">Self-Scheduling</div>
+              <div class="item">Asset</div>
+              <div class="item">Crew Allocation</div>
+              <div class="item">My Parts</div>
+              <div class="item">PartLocation</div>
+              <div class="item">PartsInStock</div>
+              <div class="item">Part Orders</div>
+              <div class="item">RequiredPart</div>
+              <div class="item">Work Plan</div>
+              <div class="item">Plan Operations</div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Absence Management (User Only) Event</div>
+              <div class="item">
+                <b>Copy Properties from Parent</b></div>
+              <div class="item">RelatedAssignmentsEvent</div>
+              <div class="item">
+                <b>Set Notification Property</b></div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">
+                <b>Diabsolut.EngineerPropertiesAutoFill.Mobile.Touch.EngineerPropertiesAutoFill</b> (65)</div>
+              <div class="item">
+                <b>Diabsolut.MarathonOil.Mobile.Touch.Panels.DefaultFAPanel</b> (1)</div>
+              <div class="item">
+                <b>Diabsolut.MarathonOil.Mobile.Touch.Panels.DictionaryFilterPanel</b> (9)</div>
+              <div class="item">
+                <b>Diabsolut.MarathonOil.Mobile.Touch.Panels.GridPanel</b> (2)</div>
+              <div class="item">
+                <b>Diabsolut.MarathonOil.Mobile.Touch.Panels.SurveyPanel</b> (57)</div>
+              <div class="item">
+                <b>Diabsolut.MarathonOil.Mobile.Touch.Panels.SurveySubmitPanel</b> (15)</div>
+              <div class="item">
+                <b>Diabsolut.PropertyCopy.Mobile.Touch.Panels.js</b> (1)</div>
+              <div class="item">
+                <b>Diabsolut.PropertyCopy.Mobile.Touch.Panels.PropertyCopyPanel</b> (228)</div>
+              <div class="item">
+                <b>Marathon.SCADA.FSM.CM.Components.AssetSearchPanel</b> (3)</div>
+              <div class="item">
+                <b>Marathon.SCADA.FSM.CM.Components.GenericSearchPanel</b> (1)</div>
+              <div class="item">
+                <b>Marathon.SCADA.FSM.CM.Components.LocationAssetSearchPanel</b> (12)</div>
+              <div class="item">
+                <b>Marathon.SCADA.FSM.CM.Components.StepDependencyPanel</b> (1)</div>
+              <div class="item">W6.ClickMobile.Web.AbsenceManagement.W6CMAbsenceManagementCancelButton (1)</div>
+              <div class="item">W6.ClickMobile.Web.NativeAppLauncher.W6CMNativeAppLauncher (2)</div>
+              <div class="item">W6.ClickMobile.Web.PartsManagement.Custom_Panels.DefectivePart (1)</div>
+              <div class="item">W6.ClickMobile.Web.PartsManagement.Custom_Panels.OrderPart (2)</div>
+              <div class="item">W6.ClickMobile.Web.PartsManagement.Floating_Lists.PartInStockFloatingList (1)</div>
+              <div class="item">W6.ClickMobile.Web.PartsManagement.Floating_Lists.PartOrderFloatingList (1)</div>
+              <div class="item">W6.ClickMobile.Web.PartsManagement.Floating_Lists.TaskRequieredPartFloatingList (1)</div>
+              <div class="item">W6CMBoxIconDictionary.W6CMBocIconDictionaryUI (8)</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>BAK Operations</td>
+          <td>
+            <div class="ui list">
+              <div class="item">Schedule (v13.2)</div>
+              <div class="item">Power Map</div>
+              <div class="item">Absence Request</div>
+              <div class="item">Notification / Add-On (v13.2)</div>
+              <div class="item">Resource</div>
+              <div class="item">Self-Scheduling</div>
+              <div class="item">Asset</div>
+              <div class="item">Crew Allocation</div>
+              <div class="item">Work Plan</div>
+              <div class="item">Plan Operations</div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Absence Management (User Only) Event</div>
+              <div class="item">
+                <b>Copy Properties from Parent</b></div>
+              <div class="item">
+                <b>Set Notification Property</b></div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">
+                <b>Diabsolut.EngineerPropertiesAutoFill.Mobile.Touch.EngineerPropertiesAutoFill</b> (57)</div>
+              <div class="item">
+                <b>Diabsolut.MarathonOil.Mobile.Touch.Panels.DefaultFAPanel</b> (1)</div>
+              <div class="item">
+                <b>Diabsolut.MarathonOil.Mobile.Touch.Panels.DictionaryFilterPanel</b> (13)</div>
+              <div class="item">
+                <b>Diabsolut.MarathonOil.Mobile.Touch.Panels.GridPanel</b> (2)</div>
+              <div class="item">
+                <b>Diabsolut.MarathonOil.Mobile.Touch.Panels.SurveyPanel</b> (51)</div>
+              <div class="item">
+                <b>Diabsolut.MarathonOil.Mobile.Touch.Panels.SurveySubmitPanel</b> (13)</div>
+              <div class="item">
+                <b>Diabsolut.PropertyCopy.Mobile.Touch.Panels.js</b> (1)</div>
+              <div class="item">
+                <b>Diabsolut.PropertyCopy.Mobile.Touch.Panels.PropertyCopyPanel</b> (163)</div>
+              <div class="item">
+                <b>Marathon.SCADA.FSM.CM.Components.AssetSearchPanel</b> (4)</div>
+              <div class="item">
+                <b>Marathon.SCADA.FSM.CM.Components.LocationAssetSearchPanel</b> (8)</div>
+              <div class="item">
+                <b>Marathon.SCADA.FSM.CM.Components.StepDependencyPanel</b> (1)</div>
+              <div class="item">W6.ClickMobile.Web.AbsenceManagement.W6CMAbsenceManagementCancelButton (1)</div>
+              <div class="item">W6.ClickMobile.Web.BarcodeScanner.W6CMWebBarcodeScanner (3)</div>
+              <div class="item">W6.ClickMobile.Web.DelayAssignment.W6ClickMobileDelayAssignment (1)</div>
+              <div class="item">W6.ClickMobile.Web.NativeAppLauncher.W6CMNativeAppLauncher (2)</div>
+              <div class="item">W6CMBoxIconDictionary.W6CMBocIconDictionaryUI (6)</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Copy of BAK Operations</td>
+          <td>
+            <div class="ui list">
+              <div class="item">Schedule (v12.9)</div>
+              <div class="item">Power Map</div>
+              <div class="item">Absence Request</div>
+              <div class="item">Notification / Add-On (v12.9)</div>
+              <div class="item">Resource</div>
+              <div class="item">Self-Scheduling</div>
+              <div class="item">Asset</div>
+              <div class="item">Crew Allocation</div>
+              <div class="item">Work Plan</div>
+              <div class="item">Plan Operations</div>
+              <div class="item">Task</div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Absence Management (User Only) Event</div>
+              <div class="item">
+                <b>Copy Properties from Parent</b></div>
+              <div class="item">
+                <b>Set Notification Property</b></div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">
+                <b>Diabsolut.EngineerPropertiesAutoFill.Mobile.Touch.EngineerPropertiesAutoFill</b> (54)</div>
+              <div class="item">
+                <b>Diabsolut.MarathonOil.Mobile.Touch.Panels.DictionaryFilterPanel</b> (13)</div>
+              <div class="item">
+                <b>Diabsolut.MarathonOil.Mobile.Touch.Panels.GridPanel</b> (2)</div>
+              <div class="item">
+                <b>Diabsolut.MarathonOil.Mobile.Touch.Panels.SurveyPanel</b> (34)</div>
+              <div class="item">
+                <b>Diabsolut.MarathonOil.Mobile.Touch.Panels.SurveySubmitPanel</b> (11)</div>
+              <div class="item">
+                <b>Diabsolut.PropertyCopy.Mobile.Touch.Panels.js</b> (1)</div>
+              <div class="item">
+                <b>Diabsolut.PropertyCopy.Mobile.Touch.Panels.PropertyCopyPanel</b> (136)</div>
+              <div class="item">
+                <b>Marathon.SCADA.FSM.CM.Components.AssetSearchPanel</b> (2)</div>
+              <div class="item">
+                <b>Marathon.SCADA.FSM.CM.Components.LocationAssetSearchPanel</b> (8)</div>
+              <div class="item">
+                <b>Marathon.SCADA.FSM.CM.Components.StepDependencyPanel</b> (1)</div>
+              <div class="item">W6.ClickMobile.Web.AbsenceManagement.W6CMAbsenceManagementCancelButton (1)</div>
+              <div class="item">W6.ClickMobile.Web.DelayAssignment.W6ClickMobileDelayAssignment (1)</div>
+              <div class="item">W6.ClickMobile.Web.NativeAppLauncher.W6CMNativeAppLauncher (2)</div>
+              <div class="item">W6CMBoxIconDictionary.W6CMBocIconDictionaryUI (6)</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>DC Protocols</td>
+          <td>
+            <div class="ui list">
+              <div class="item">Schedule (v11.8)</div>
+              <div class="item">Self-Scheduling</div>
+              <div class="item">Notification / Add-On</div>
+              <div class="item">Absence Request</div>
+              <div class="item">Resource</div>
+              <div class="item">Asset</div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Absence Management (User Only) Event</div>
+              <div class="item">
+                <b>Copy Properties from Parent</b></div>
+              <div class="item">
+                <b>PartOrderAutoFillEvent (Parts Management)</b></div>
+              <div class="item">
+                <b>Set Notification Property</b></div>
+              <div class="item">
+                <b>TaskEvent (Parts Management)</b></div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">
+                <b>Diabsolut.CalculationBetweenFields.Mobile.Touch.CalculationBetweenFieldsPanel</b> (1)</div>
+              <div class="item">
+                <b>Diabsolut.EngineerPropertiesAutoFill.Mobile.Touch.EngineerPropertiesAutoFill</b> (167)</div>
+              <div class="item">
+                <b>Diabsolut.MarathonOil.Mobile.Touch.Panels.DefaultFAPanel</b> (9)</div>
+              <div class="item">
+                <b>Diabsolut.MarathonOil.Mobile.Touch.Panels.DictionaryFilterPanel</b> (17)</div>
+              <div class="item">
+                <b>Diabsolut.MarathonOil.Mobile.Touch.Panels.GridPanel</b> (2)</div>
+              <div class="item">
+                <b>Diabsolut.MarathonOil.Mobile.Touch.Panels.SurveyPanel</b> (407)</div>
+              <div class="item">
+                <b>Diabsolut.MarathonOil.Mobile.Touch.Panels.SurveySubmitPanel</b> (186)</div>
+              <div class="item">
+                <b>Diabsolut.PropertyCopy.Mobile.Touch.Panels.js</b> (1)</div>
+              <div class="item">
+                <b>Diabsolut.PropertyCopy.Mobile.Touch.Panels.PropertyCopyPanel</b> (259)</div>
+              <div class="item">
+                <b>Marathon.SCADA.FSM.CM.Components.AssetSearchPanel</b> (3)</div>
+              <div class="item">
+                <b>Marathon.SCADA.FSM.CM.Components.GenericSearchPanel</b> (2)</div>
+              <div class="item">
+                <b>Marathon.SCADA.FSM.CM.Components.LocationAssetSearchPanel</b> (26)</div>
+              <div class="item">
+                <b>Marathon.SCADA.FSM.CM.Components.StepDependencyPanel</b> (1)</div>
+              <div class="item">W6.ClickMobile.Web.AbsenceManagement.W6CMAbsenceManagementCancelButton (1)</div>
+              <div class="item">W6.ClickMobile.Web.NativeAppLauncher.W6CMNativeAppLauncher (2)</div>
+              <div class="item">W6CMBoxIconDictionary.W6CMBocIconDictionaryUI (7)</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>EF Maintenance</td>
+          <td>
+            <div class="ui list">
+              <div class="item">Schedule (v11)</div>
+              <div class="item">Power Map</div>
+              <div class="item">Absence Request</div>
+              <div class="item">Notification / Add-On</div>
+              <div class="item">Work Order Parts</div>
+              <div class="item">My Truck Stock</div>
+              <div class="item">Truck Stock Transfer</div>
+              <div class="item">Self-Scheduling</div>
+              <div class="item">Asset</div>
+              <div class="item">Crew Allocation</div>
+              <div class="item">PartLocation</div>
+              <div class="item">Part Orders</div>
+              <div class="item">Resource</div>
+              <div class="item">RequiredPart</div>
+              <div class="item">Work Plan</div>
+              <div class="item">Plan Operations</div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Absence Management (User Only) Event</div>
+              <div class="item">
+                <b>Copy Properties from Parent</b></div>
+              <div class="item">
+                <b>PartOrderAutoFillEvent (Parts Management)</b></div>
+              <div class="item">RelatedAssignmentsEvent</div>
+              <div class="item">
+                <b>Set Notification Property</b></div>
+              <div class="item">
+                <b>TaskEvent (Parts Management)</b></div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">
+                <b>Diabsolut.EngineerPropertiesAutoFill.Mobile.Touch.EngineerPropertiesAutoFill</b> (42)</div>
+              <div class="item">
+                <b>Diabsolut.MarathonOil.Mobile.Touch.Panels.DefaultFAPanel</b> (3)</div>
+              <div class="item">
+                <b>Diabsolut.MarathonOil.Mobile.Touch.Panels.DictionaryFilterPanel</b> (14)</div>
+              <div class="item">
+                <b>Diabsolut.MarathonOil.Mobile.Touch.Panels.GridPanel</b> (2)</div>
+              <div class="item">
+                <b>Diabsolut.MarathonOil.Mobile.Touch.Panels.SurveyPanel</b> (25)</div>
+              <div class="item">
+                <b>Diabsolut.MarathonOil.Mobile.Touch.Panels.SurveySubmitPanel</b> (7)</div>
+              <div class="item">
+                <b>Diabsolut.PropertyCopy.Mobile.Touch.Panels.js</b> (1)</div>
+              <div class="item">
+                <b>Diabsolut.PropertyCopy.Mobile.Touch.Panels.PropertyCopyPanel</b> (196)</div>
+              <div class="item">
+                <b>Marathon.SCADA.FSM.CM.Components.AssetSearchPanel</b> (2)</div>
+              <div class="item">
+                <b>Marathon.SCADA.FSM.CM.Components.GenericSearchPanel</b> (1)</div>
+              <div class="item">
+                <b>Marathon.SCADA.FSM.CM.Components.LocationAssetSearchPanel</b> (7)</div>
+              <div class="item">
+                <b>Marathon.SCADA.FSM.CM.Components.StepDependencyPanel</b> (1)</div>
+              <div class="item">W6.ClickMobile.Web.AbsenceManagement.W6CMAbsenceManagementCancelButton (1)</div>
+              <div class="item">W6.ClickMobile.Web.BarcodeScanner.W6CMWebBarcodeScanner (2)</div>
+              <div class="item">W6.ClickMobile.Web.DelayAssignment.W6ClickMobileDelayAssignment (1)</div>
+              <div class="item">W6.ClickMobile.Web.NativeAppLauncher.W6CMNativeAppLauncher (2)</div>
+              <div class="item">W6.ClickMobile.Web.PartsManagement.Custom_Panels.DefectivePart (1)</div>
+              <div class="item">W6.ClickMobile.Web.PartsManagement.Custom_Panels.MarkAsUsed (1)</div>
+              <div class="item">W6.ClickMobile.Web.PartsManagement.Custom_Panels.OrderPart (3)</div>
+              <div class="item">W6.ClickMobile.Web.PartsManagement.Floating_Lists.PartInStockFloatingList (1)</div>
+              <div class="item">W6.ClickMobile.Web.PartsManagement.Floating_Lists.PartOrderFloatingList (1)</div>
+              <div class="item">W6.ClickMobile.Web.PartsManagement.Floating_Lists.TaskRequieredPartFloatingList (1)</div>
+              <div class="item">W6.ClickMobile.Web.RelatedAssignments.W6CMRelatedAssignments (1)</div>
+              <div class="item">W6CMBoxIconDictionary.W6CMBocIconDictionaryUI (5)</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>EF Operations</td>
+          <td>
+            <div class="ui list">
+              <div class="item">Schedule (v11.2)</div>
+              <div class="item">Power Map</div>
+              <div class="item">Absence Request</div>
+              <div class="item">Notification / Add-On</div>
+              <div class="item">Asset</div>
+              <div class="item">Self-Scheduling</div>
+              <div class="item">Crew Allocation</div>
+              <div class="item">Resource</div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Absence Management (User Only) Event</div>
+              <div class="item">
+                <b>Copy Properties from Parent</b></div>
+              <div class="item">
+                <b>Set Notification Property</b></div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">
+                <b>Diabsolut.EngineerPropertiesAutoFill.Mobile.Touch.EngineerPropertiesAutoFill</b> (47)</div>
+              <div class="item">
+                <b>Diabsolut.MarathonOil.Mobile.Touch.js</b> (1)</div>
+              <div class="item">
+                <b>Diabsolut.MarathonOil.Mobile.Touch.Panels.DefaultFAPanel</b> (7)</div>
+              <div class="item">
+                <b>Diabsolut.MarathonOil.Mobile.Touch.Panels.DictionaryFilterPanel</b> (16)</div>
+              <div class="item">
+                <b>Diabsolut.MarathonOil.Mobile.Touch.Panels.GridPanel</b> (2)</div>
+              <div class="item">
+                <b>Diabsolut.MarathonOil.Mobile.Touch.Panels.SurveyPanel</b> (71)</div>
+              <div class="item">
+                <b>Diabsolut.MarathonOil.Mobile.Touch.Panels.SurveySubmitPanel</b> (24)</div>
+              <div class="item">
+                <b>Diabsolut.PropertyCopy.Mobile.Touch.Panels.js</b> (1)</div>
+              <div class="item">
+                <b>Diabsolut.PropertyCopy.Mobile.Touch.Panels.PropertyCopyPanel</b> (134)</div>
+              <div class="item">
+                <b>Marathon.SCADA.FSM.CM.Components.AssetSearchPanel</b> (1)</div>
+              <div class="item">
+                <b>Marathon.SCADA.FSM.CM.Components.LocationAssetSearchPanel</b> (8)</div>
+              <div class="item">W6.ClickMobile.Web.AbsenceManagement.W6CMAbsenceManagementCancelButton (1)</div>
+              <div class="item">W6.ClickMobile.Web.DelayAssignment.W6ClickMobileDelayAssignment (1)</div>
+              <div class="item">W6.ClickMobile.Web.NativeAppLauncher.W6CMNativeAppLauncher (2)</div>
+              <div class="item">W6CMBoxIconDictionary.W6CMBocIconDictionaryUI (3)</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Equipment Info</td>
+          <td>
+            <div class="ui list">
+              <div class="item">Schedule</div>
+              <div class="item">Notification/Add-On</div>
+              <div class="item">Resource</div>
+              <div class="item">Self-Scheduling</div>
+              <div class="item">Asset</div>
+              <div class="item">Power Map</div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list" />
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">
+                <b>Diabsolut.CalculationBetweenFields.Mobile.Touch.CalculationBetweenFieldsPanel</b> (2)</div>
+              <div class="item">
+                <b>Diabsolut.EngineerPropertiesAutoFill.Mobile.Touch.EngineerPropertiesAutoFill</b> (13)</div>
+              <div class="item">
+                <b>Diabsolut.MarathonOil.Mobile.Touch.Panels.DictionaryFilterPanel</b> (2)</div>
+              <div class="item">
+                <b>Diabsolut.PropertyCopy.Mobile.Touch.Panels.js</b> (1)</div>
+              <div class="item">
+                <b>Diabsolut.PropertyCopy.Mobile.Touch.Panels.PropertyCopyPanel</b> (67)</div>
+              <div class="item">
+                <b>Marathon.SCADA.FSM.CM.Components.AssetSearchPanel</b> (2)</div>
+              <div class="item">
+                <b>Marathon.SCADA.FSM.CM.Components.LocationAssetSearchPanel</b> (2)</div>
+              <div class="item">W6.ClickMobile.Web.BarcodeScanner.W6CMWebBarcodeScanner (2)</div>
+              <div class="item">W6.ClickMobile.Web.NativeAppLauncher.W6CMNativeAppLauncher (3)</div>
+              <div class="item">W6CMBoxIconDictionary.W6CMBocIconDictionaryUI (1)</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Equipment Info New</td>
+          <td>
+            <div class="ui list">
+              <div class="item">Schedule</div>
+              <div class="item">Notification/Add-On</div>
+              <div class="item">Resource</div>
+              <div class="item">Self-Scheduling</div>
+              <div class="item">Asset</div>
+              <div class="item">Power Map</div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list" />
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">
+                <b>Diabsolut.CalculationBetweenFields.Mobile.Touch.CalculationBetweenFieldsPanel</b> (2)</div>
+              <div class="item">
+                <b>Diabsolut.EngineerPropertiesAutoFill.Mobile.Touch.EngineerPropertiesAutoFill</b> (13)</div>
+              <div class="item">
+                <b>Diabsolut.MarathonOil.Mobile.Touch.Panels.DictionaryFilterPanel</b> (2)</div>
+              <div class="item">
+                <b>Diabsolut.PropertyCopy.Mobile.Touch.Panels.js</b> (1)</div>
+              <div class="item">
+                <b>Diabsolut.PropertyCopy.Mobile.Touch.Panels.PropertyCopyPanel</b> (66)</div>
+              <div class="item">
+                <b>Marathon.SCADA.FSM.CM.Components.AssetSearchPanel</b> (2)</div>
+              <div class="item">
+                <b>Marathon.SCADA.FSM.CM.Components.LocationAssetSearchPanel</b> (2)</div>
+              <div class="item">W6.ClickMobile.Web.BarcodeScanner.W6CMWebBarcodeScanner (2)</div>
+              <div class="item">W6.ClickMobile.Web.NativeAppLauncher.W6CMNativeAppLauncher (3)</div>
+              <div class="item">W6CMBoxIconDictionary.W6CMBocIconDictionaryUI (1)</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Equipment Tagging</td>
+          <td>
+            <div class="ui list">
+              <div class="item">Resource</div>
+              <div class="item">Asset</div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list" />
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">
+                <b>Diabsolut.CalculationBetweenFields.Mobile.Touch.CalculationBetweenFieldsPanel</b> (2)</div>
+              <div class="item">
+                <b>Diabsolut.EngineerPropertiesAutoFill.Mobile.Touch.EngineerPropertiesAutoFill</b> (2)</div>
+              <div class="item">
+                <b>Diabsolut.PropertyCopy.Mobile.Touch.Panels.PropertyCopyPanel</b> (4)</div>
+              <div class="item">
+                <b>Marathon.SCADA.FSM.CM.Components.AssetSearchPanel</b> (2)</div>
+              <div class="item">
+                <b>Marathon.SCADA.FSM.CM.Components.LocationAssetSearchPanel</b> (1)</div>
+              <div class="item">W6.ClickMobile.Web.BarcodeScanner.W6CMWebBarcodeScanner (2)</div>
+              <div class="item">W6.ClickMobile.Web.NativeAppLauncher.W6CMNativeAppLauncher (1)</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>MCAT Maintenance</td>
+          <td>
+            <div class="ui list">
+              <div class="item">Schedule (v10.9)</div>
+              <div class="item">Self-Scheduling</div>
+              <div class="item">Notification / ATF</div>
+              <div class="item">Power Map</div>
+              <div class="item">Absence / Non-Availability</div>
+              <div class="item">Resource</div>
+              <div class="item">Asset</div>
+              <div class="item">Crew Allocation</div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Absence Management (User Only) Event</div>
+              <div class="item">
+                <b>Copy Properties from Parent</b></div>
+              <div class="item">RelatedAssignmentsEvent</div>
+              <div class="item">
+                <b>Set Notification Property</b></div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">
+                <b>Diabsolut.EngineerPropertiesAutoFill.Mobile.Touch.EngineerPropertiesAutoFill</b> (53)</div>
+              <div class="item">
+                <b>Diabsolut.MarathonOil.Mobile.Touch.Panels.DefaultFAPanel</b> (3)</div>
+              <div class="item">
+                <b>Diabsolut.MarathonOil.Mobile.Touch.Panels.DictionaryFilterPanel</b> (19)</div>
+              <div class="item">
+                <b>Diabsolut.MarathonOil.Mobile.Touch.Panels.GridPanel</b> (2)</div>
+              <div class="item">
+                <b>Diabsolut.MarathonOil.Mobile.Touch.Panels.SurveyPanel</b> (43)</div>
+              <div class="item">
+                <b>Diabsolut.MarathonOil.Mobile.Touch.Panels.SurveySubmitPanel</b> (12)</div>
+              <div class="item">
+                <b>Diabsolut.PropertyCopy.Mobile.Touch.Panels.js</b> (1)</div>
+              <div class="item">
+                <b>Diabsolut.PropertyCopy.Mobile.Touch.Panels.PropertyCopyPanel</b> (155)</div>
+              <div class="item">
+                <b>Marathon.SCADA.FSM.CM.Components.AssetSearchPanel</b> (8)</div>
+              <div class="item">
+                <b>Marathon.SCADA.FSM.CM.Components.GenericSearchPanel</b> (1)</div>
+              <div class="item">
+                <b>Marathon.SCADA.FSM.CM.Components.LocationAssetSearchPanel</b> (9)</div>
+              <div class="item">
+                <b>Marathon.SCADA.FSM.CM.Components.StepDependencyPanel</b> (1)</div>
+              <div class="item">W6.ClickMobile.Web.AbsenceManagement.W6CMAbsenceManagementCancelButton (1)</div>
+              <div class="item">W6.ClickMobile.Web.BarcodeScanner.W6CMWebBarcodeScanner (3)</div>
+              <div class="item">W6.ClickMobile.Web.NativeAppLauncher.W6CMNativeAppLauncher (2)</div>
+              <div class="item">W6CMBoxIconDictionary.W6CMBocIconDictionaryUI (5)</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>MOC PSSR </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Schedule (v1.0)</div>
+              <div class="item">Power Map</div>
+              <div class="item">Absence / Non-Availability</div>
+              <div class="item">Notification / ATF</div>
+              <div class="item">Self-Scheduling</div>
+              <div class="item">Asset</div>
+              <div class="item">Crew Allocation</div>
+              <div class="item">My Parts</div>
+              <div class="item">PartLocation</div>
+              <div class="item">PartsInStock</div>
+              <div class="item">Part Orders</div>
+              <div class="item">Resource</div>
+              <div class="item">RequiredPart</div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Absence Management (User Only) Event</div>
+              <div class="item">
+                <b>Copy Properties from Parent</b></div>
+              <div class="item">DerivationToRequiredPartEvent (Parts Management)</div>
+              <div class="item">
+                <b>PartOrderAutoFillEvent (Parts Management)</b></div>
+              <div class="item">RelatedAssignmentsEvent</div>
+              <div class="item">
+                <b>Set Notification Property</b></div>
+              <div class="item">
+                <b>TaskEvent (Parts Management)</b></div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">
+                <b>Diabsolut.EngineerPropertiesAutoFill.Mobile.Touch.EngineerPropertiesAutoFill</b> (26)</div>
+              <div class="item">
+                <b>Diabsolut.MarathonOil.Mobile.Touch.Panels.DictionaryFilterPanel</b> (8)</div>
+              <div class="item">
+                <b>Diabsolut.PropertyCopy.Mobile.Touch.Panels.PropertyCopyPanel</b> (141)</div>
+              <div class="item">
+                <b>Marathon.SCADA.FSM.CM.Components.AssetSearchPanel</b> (1)</div>
+              <div class="item">
+                <b>Marathon.SCADA.FSM.CM.Components.LocationAssetSearchPanel</b> (2)</div>
+              <div class="item">
+                <b>Marathon.SCADA.FSM.CM.Components.StepDependencyPanel</b> (1)</div>
+              <div class="item">W6.ClickMobile.Web.AbsenceManagement.W6CMAbsenceManagementCancelButton (1)</div>
+              <div class="item">W6.ClickMobile.Web.DelayAssignment.W6ClickMobileDelayAssignment (1)</div>
+              <div class="item">W6.ClickMobile.Web.NativeAppLauncher.W6CMNativeAppLauncher (2)</div>
+              <div class="item">W6.ClickMobile.Web.PartsManagement.Custom_Panels.DefectivePart (1)</div>
+              <div class="item">W6.ClickMobile.Web.PartsManagement.Custom_Panels.OrderPart (2)</div>
+              <div class="item">W6.ClickMobile.Web.PartsManagement.Floating_Lists.PartInStockFloatingList (2)</div>
+              <div class="item">W6.ClickMobile.Web.PartsManagement.Floating_Lists.PartOrderFloatingList (1)</div>
+              <div class="item">W6.ClickMobile.Web.PartsManagement.Floating_Lists.TaskRequieredPartFloatingList (1)</div>
+              <div class="item">W6CMBoxIconDictionary.W6CMBocIconDictionaryUI (3)</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>ORB Operations</td>
+          <td>
+            <div class="ui list">
+              <div class="item">Schedule (v10.8)</div>
+              <div class="item">Power Map</div>
+              <div class="item">Absence / Non-Availability</div>
+              <div class="item">Notification / ATF</div>
+              <div class="item">Self-Scheduling</div>
+              <div class="item">Resource</div>
+              <div class="item">Asset</div>
+              <div class="item">Crew Allocation</div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Absence Management (User Only) Event</div>
+              <div class="item">
+                <b>Copy Properties from Parent</b></div>
+              <div class="item">
+                <b>Set Notification Property</b></div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">
+                <b>Diabsolut.EngineerPropertiesAutoFill.Mobile.Touch.EngineerPropertiesAutoFill</b> (44)</div>
+              <div class="item">
+                <b>Diabsolut.MarathonOil.Mobile.Touch.Panels.DefaultFAPanel</b> (3)</div>
+              <div class="item">
+                <b>Diabsolut.MarathonOil.Mobile.Touch.Panels.DictionaryFilterPanel</b> (18)</div>
+              <div class="item">
+                <b>Diabsolut.MarathonOil.Mobile.Touch.Panels.GridPanel</b> (2)</div>
+              <div class="item">
+                <b>Diabsolut.MarathonOil.Mobile.Touch.Panels.SurveyPanel</b> (11)</div>
+              <div class="item">
+                <b>Diabsolut.MarathonOil.Mobile.Touch.Panels.SurveySubmitPanel</b> (4)</div>
+              <div class="item">
+                <b>Diabsolut.PropertyCopy.Mobile.Touch.Panels.js</b> (1)</div>
+              <div class="item">
+                <b>Diabsolut.PropertyCopy.Mobile.Touch.Panels.PropertyCopyPanel</b> (121)</div>
+              <div class="item">
+                <b>Marathon.SCADA.FSM.CM.Components.AssetSearchPanel</b> (9)</div>
+              <div class="item">
+                <b>Marathon.SCADA.FSM.CM.Components.GenericSearchPanel</b> (1)</div>
+              <div class="item">
+                <b>Marathon.SCADA.FSM.CM.Components.LocationAssetSearchPanel</b> (9)</div>
+              <div class="item">W6.ClickMobile.Web.AbsenceManagement.W6CMAbsenceManagementCancelButton (1)</div>
+              <div class="item">W6.ClickMobile.Web.BarcodeScanner.W6CMWebBarcodeScanner (4)</div>
+              <div class="item">W6.ClickMobile.Web.NativeAppLauncher.W6CMNativeAppLauncher (2)</div>
+              <div class="item">W6CMBoxIconDictionary.W6CMBocIconDictionaryUI (4)</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>PER Operations</td>
+          <td>
+            <div class="ui list">
+              <div class="item">Schedule (v11.3)</div>
+              <div class="item">Power Map</div>
+              <div class="item">Absence / Non-Availability</div>
+              <div class="item">Notification / ATF</div>
+              <div class="item">Asset</div>
+              <div class="item">Self-Scheduling</div>
+              <div class="item">Crew Allocation</div>
+              <div class="item">Resource</div>
+              <div class="item">Global Forms</div>
+              <div class="item">Flare</div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Absence Management (User Only) Event</div>
+              <div class="item">
+                <b>Copy Properties from Parent</b></div>
+              <div class="item">
+                <b>Set Notification Property</b></div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">
+                <b>Diabsolut.EngineerPropertiesAutoFill.Mobile.Touch.EngineerPropertiesAutoFill</b> (41)</div>
+              <div class="item">
+                <b>Diabsolut.MarathonOil.Mobile.Touch.Panels.DefaultFAPanel</b> (4)</div>
+              <div class="item">
+                <b>Diabsolut.MarathonOil.Mobile.Touch.Panels.DictionaryFilterPanel</b> (17)</div>
+              <div class="item">
+                <b>Diabsolut.MarathonOil.Mobile.Touch.Panels.GridPanel</b> (2)</div>
+              <div class="item">
+                <b>Diabsolut.MarathonOil.Mobile.Touch.Panels.SurveyPanel</b> (30)</div>
+              <div class="item">
+                <b>Diabsolut.MarathonOil.Mobile.Touch.Panels.SurveySubmitPanel</b> (8)</div>
+              <div class="item">
+                <b>Diabsolut.PropertyCopy.Mobile.Touch.Panels.PropertyCopyPanel</b> (76)</div>
+              <div class="item">
+                <b>Marathon.SCADA.FSM.CM.Components.AssetSearchPanel</b> (1)</div>
+              <div class="item">
+                <b>Marathon.SCADA.FSM.CM.Components.LocationAssetSearchPanel</b> (7)</div>
+              <div class="item">W6.ClickMobile.Web.AbsenceManagement.W6CMAbsenceManagementCancelButton (1)</div>
+              <div class="item">W6.ClickMobile.Web.DelayAssignment.W6ClickMobileDelayAssignment (1)</div>
+              <div class="item">W6.ClickMobile.Web.NativeAppLauncher.W6CMNativeAppLauncher (2)</div>
+              <div class="item">W6CMBoxIconDictionary.W6CMBocIconDictionaryUI (4)</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>POC</td>
+          <td>
+            <div class="ui list">
+              <div class="item">Schedule</div>
+              <div class="item">Self-Scheduling</div>
+              <div class="item">Resource</div>
+              <div class="item">Asset</div>
+              <div class="item">Panic Timer</div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list" />
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">
+                <b>ClickOnePanicTimer.PanicTimerCustomPanel</b> (1)</div>
+              <div class="item">
+                <b>ClickOnePanicTimer.ResetPanicTimerCustomPanel</b> (1)</div>
+              <div class="item">
+                <b>Diabsolut.CalculationBetweenFields.Mobile.Touch.CalculationBetweenFieldsPanel</b> (2)</div>
+              <div class="item">
+                <b>Diabsolut.EngineerPropertiesAutoFill.Mobile.Touch.EngineerPropertiesAutoFill</b> (10)</div>
+              <div class="item">
+                <b>Diabsolut.MarathonOil.Mobile.Touch.Panels.DictionaryFilterPanel</b> (1)</div>
+              <div class="item">
+                <b>Diabsolut.PropertyCopy.Mobile.Touch.Panels.PropertyCopyPanel</b> (14)</div>
+              <div class="item">
+                <b>Marathon.SCADA.FSM.CM.Components.AssetSearchPanel</b> (1)</div>
+              <div class="item">
+                <b>Marathon.SCADA.FSM.CM.Components.LocationAssetSearchPanel</b> (3)</div>
+              <div class="item">W6.ClickMobile.Web.BarcodeScanner.W6CMWebBarcodeScanner (1)</div>
+              <div class="item">W6.ClickMobile.Web.NativeAppLauncher.W6CMNativeAppLauncher (3)</div>
+              <div class="item">W6CMBoxIconDictionary.W6CMBocIconDictionaryUI (2)</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Test [Field Resource]</td>
+          <td>
+            <div class="ui list">
+              <div class="item">Schedule (v3.9)</div>
+              <div class="item">Messages</div>
+              <div class="item">Asset</div>
+              <div class="item">Power Map</div>
+              <div class="item">Self-Scheduling</div>
+              <div class="item">Comments</div>
+              <div class="item">Absence Request</div>
+              <div class="item">Activity</div>
+              <div class="item">Timesheet</div>
+              <div class="item">Timesheet</div>
+              <div class="item">Crew Allocation</div>
+              <div class="item">Notification / Add-On</div>
+              <div class="item">My Parts</div>
+              <div class="item">PartLocation</div>
+              <div class="item">PartsInStock</div>
+              <div class="item">Part Orders</div>
+              <div class="item">Engineer</div>
+              <div class="item">RequiredPart</div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Absence Management (User Only) Event</div>
+              <div class="item">
+                <b>Comments Handler</b></div>
+              <div class="item">
+                <b>Copy Properties from Parent</b></div>
+              <div class="item">DerivationToRequiredPartEvent (Parts Management)</div>
+              <div class="item">
+                <b>PartOrderAutoFillEvent (Parts Management)</b></div>
+              <div class="item">RelatedAssignmentsEvent</div>
+              <div class="item">
+                <b>Set Notification Property</b></div>
+              <div class="item">
+                <b>TaskEvent (Parts Management)</b></div>
+              <div class="item">Timesheet Event</div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">
+                <b>Diabsolut.EngineerPropertiesAutoFill.Mobile.Touch.EngineerPropertiesAutoFill</b> (23)</div>
+              <div class="item">
+                <b>Diabsolut.MarathonOil.Mobile.Touch.Panels.DictionaryFilterPanel</b> (16)</div>
+              <div class="item">
+                <b>Diabsolut.PropertyCopy.Mobile.Touch.Panels.js</b> (1)</div>
+              <div class="item">
+                <b>Diabsolut.PropertyCopy.Mobile.Touch.Panels.PropertyCopyPanel</b> (124)</div>
+              <div class="item">
+                <b>Marathon.SCADA.FSM.CM.Components.AssetSearchPanel</b> (2)</div>
+              <div class="item">
+                <b>Marathon.SCADA.FSM.CM.Components.LocationAssetSearchPanel</b> (5)</div>
+              <div class="item">W6.ClickMobile.Web.AbsenceManagement.W6CMAbsenceManagementCancelButton (1)</div>
+              <div class="item">W6.ClickMobile.Web.Comments.CommentsPanel (3)</div>
+              <div class="item">W6.ClickMobile.Web.DelayAssignment.W6ClickMobileDelayAssignment (1)</div>
+              <div class="item">W6.ClickMobile.Web.NativeAppLauncher.W6CMNativeAppLauncher (3)</div>
+              <div class="item">W6.ClickMobile.Web.PartsManagement.Custom_Panels.DefectivePart (1)</div>
+              <div class="item">W6.ClickMobile.Web.PartsManagement.Custom_Panels.MarkAsUsed (1)</div>
+              <div class="item">W6.ClickMobile.Web.PartsManagement.Custom_Panels.OrderPart (3)</div>
+              <div class="item">W6.ClickMobile.Web.PartsManagement.Floating_Lists.PartInStockFloatingList (2)</div>
+              <div class="item">W6.ClickMobile.Web.PartsManagement.Floating_Lists.PartOrderFloatingList (1)</div>
+              <div class="item">W6.ClickMobile.Web.PartsManagement.Floating_Lists.TaskRequieredPartFloatingList (1)</div>
+              <div class="item">W6.ClickMobile.Web.RelatedAssignments.W6CMRelatedAssignments (1)</div>
+              <div class="item">W6.ClickMobile.Web.Timesheet.W6CMTimesheetAssignmentPanel (1)</div>
+              <div class="item">W6.ClickMobile.Web.Timesheet.W6CMTimesheetFloatingList (1)</div>
+              <div class="item">W6CMBoxIconDictionary.W6CMBocIconDictionaryUI (1)</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Test Inspections</td>
+          <td>
+            <div class="ui list">
+              <div class="item">Schedule</div>
+              <div class="item">Self-Scheduling</div>
+              <div class="item">Notification / Add-On</div>
+              <div class="item">Resource</div>
+              <div class="item">Absence Request</div>
+              <div class="item">Asset</div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">Absence Management (User Only) Event</div>
+              <div class="item">
+                <b>Copy Properties from Parent</b></div>
+              <div class="item">
+                <b>Set Notification Property</b></div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">
+                <b>Diabsolut.CalculationBetweenFields.Mobile.Touch.CalculationBetweenFieldsPanel</b> (2)</div>
+              <div class="item">
+                <b>Diabsolut.EngineerPropertiesAutoFill.Mobile.Touch.EngineerPropertiesAutoFill</b> (57)</div>
+              <div class="item">
+                <b>Diabsolut.MarathonOil.Mobile.Touch.js</b> (1)</div>
+              <div class="item">
+                <b>Diabsolut.MarathonOil.Mobile.Touch.Panels.DefaultFAPanel</b> (6)</div>
+              <div class="item">
+                <b>Diabsolut.MarathonOil.Mobile.Touch.Panels.DictionaryFilterPanel</b> (15)</div>
+              <div class="item">
+                <b>Diabsolut.MarathonOil.Mobile.Touch.Panels.SurveyPanel</b> (212)</div>
+              <div class="item">
+                <b>Diabsolut.MarathonOil.Mobile.Touch.Panels.SurveySubmitPanel</b> (74)</div>
+              <div class="item">
+                <b>Diabsolut.PropertyCopy.Mobile.Touch.Panels.js</b> (1)</div>
+              <div class="item">
+                <b>Diabsolut.PropertyCopy.Mobile.Touch.Panels.PropertyCopyPanel</b> (180)</div>
+              <div class="item">
+                <b>Marathon.SCADA.FSM.CM.Components.AssetSearchPanel</b> (3)</div>
+              <div class="item">
+                <b>Marathon.SCADA.FSM.CM.Components.LocationAssetSearchPanel</b> (28)</div>
+              <div class="item">
+                <b>Marathon.SCADA.FSM.CM.Components.StepDependencyPanel</b> (1)</div>
+              <div class="item">W6.ClickMobile.Web.AbsenceManagement.W6CMAbsenceManagementCancelButton (1)</div>
+              <div class="item">W6.ClickMobile.Web.Comments.CommentsPanel (1)</div>
+              <div class="item">W6.ClickMobile.Web.NativeAppLauncher.W6CMNativeAppLauncher (1)</div>
+              <div class="item">W6CMBoxIconDictionary.W6CMBocIconDictionaryUI (4)</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>TMS Vendor</td>
+          <td>
+            <div class="ui list">
+              <div class="item">Schedule (v2.0)</div>
+              <div class="item">Asset</div>
+              <div class="item">Power Map</div>
+              <div class="item">Engineer</div>
+              <div class="item">SWDs</div>
+              <div class="item">Documents</div>
+              <div class="item">Self-Scheduling</div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list" />
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">
+                <b>Diabsolut.MarathonOil.Mobile.Touch.Panels.DisplayStatusTransitionPanel</b> (1)</div>
+              <div class="item">
+                <b>Diabsolut.PropertyCopy.Mobile.Touch.Panels.PropertyCopyPanel</b> (1)</div>
+              <div class="item">W6.ClickMobile.Web.DelayAssignment.W6ClickMobileDelayAssignment (1)</div>
+              <div class="item">W6.ClickMobile.Web.NativeAppLauncher.W6CMNativeAppLauncher (3)</div>
+              <div class="item">W6CMBoxIconDictionary.W6CMBocIconDictionaryUI (1)</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>TMS Vendor - SPA</td>
+          <td>
+            <div class="ui list">
+              <div class="item">El Horario (v2.0)</div>
+              <div class="item">Asset</div>
+              <div class="item">Power Map</div>
+              <div class="item">Engineer</div>
+              <div class="item">SWDs</div>
+              <div class="item">Documentos</div>
+            </div>
+          </td>
+          <td>
+            <div class="ui list" />
+          </td>
+          <td>
+            <div class="ui list">
+              <div class="item">
+                <b>Diabsolut.MarathonOil.Mobile.Touch.Panels.DisplayStatusTransitionPanel</b> (1)</div>
+              <div class="item">
+                <b>Diabsolut.PropertyCopy.Mobile.Touch.Panels.PropertyCopyPanel</b> (1)</div>
+              <div class="item">W6.ClickMobile.Web.DelayAssignment.W6ClickMobileDelayAssignment (1)</div>
+              <div class="item">W6.ClickMobile.Web.NativeAppLauncher.W6CMNativeAppLauncher (2)</div>
+              <div class="item">W6CMBoxIconDictionary.W6CMBocIconDictionaryUI (1)</div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <script>
+      $( document ).ready( function ()
+        {
+          initDataTableWithButtons(
+            '#summaryTable',
+            "ClickMobile Templates",
+            false,
+            true,
+            {
+              paging: false,
+              order: [[0, 'asc']],
+            }
+          );
+        } );
+          </script>
+  </body>
+</html>

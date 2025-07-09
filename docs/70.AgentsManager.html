@@ -1,0 +1,2041 @@
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:xoom="urn:xmlns:zanyants:xoom">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.9.3/semantic.min.css" xmlns="" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/se/jszip-3.10.1/dt-2.0.7/b-3.0.2/b-colvis-3.0.2/b-html5-3.0.2/b-print-3.0.2/cr-2.0.2/date-1.5.2/fc-5.0.0/fh-4.0.1/kt-2.12.0/r-3.0.2/rg-1.5.0/sc-2.4.2/sb-1.7.1/sp-2.3.1/datatables.min.css" xmlns="" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" xmlns="">//</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.9.3/semantic.min.js" xmlns="">//</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js" xmlns="">//</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js" xmlns="">//</script>
+    <script src="https://cdn.datatables.net/v/se/jszip-3.10.1/dt-2.0.7/b-3.0.2/b-colvis-3.0.2/b-html5-3.0.2/b-print-3.0.2/cr-2.0.2/date-1.5.2/fc-5.0.0/fh-4.0.1/kt-2.12.0/r-3.0.2/rg-1.5.0/sc-2.4.2/sb-1.7.1/sp-2.3.1/datatables.min.js" xmlns="">//</script>
+    <script type="text/javascript" src="script/cfg-tables.js" xmlns="">//</script>
+    <title>Agents Manager</title>
+  </head>
+  <body style="padding:16px">
+    <h2 class="ui header">Agents Manager</h2>
+    <table id="amTable" class="ui celled table" style="width:100%">
+      <thead>
+        <tr>
+          <th>Servers</th>
+          <th>Schedule</th>
+          <th>Name</th>
+          <th>Instances</th>
+          <th>Repeat @ Gap</th>
+          <th>Agent Setting</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 21:00, from 2022-04-07.</td>
+          <td>Attachment Fix URL</td>
+          <td>1</td>
+          <td />
+          <td>
+            <h4>Proactive Business Monitoring</h4>Attachment Fix URL</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Weekly</h4>Every Friday at 21:00 of every week, from 2024-03-01.</td>
+          <td>Attachment Refresh Mobile Documents</td>
+          <td>1</td>
+          <td />
+          <td>
+            <h4>Proactive Business Monitoring</h4>Attachment Refresh Mobile Documents</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 02:00, from 2022-02-02.</td>
+          <td>BackReporting SendAttachment Flag</td>
+          <td>1</td>
+          <td>23:59 @ 00:01</td>
+          <td>
+            <h4>Proactive Business Monitoring</h4>FSM BackReporting Attachment Flag</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 06:00, from 2024-03-11.</td>
+          <td>BAK Bundler New DST</td>
+          <td>1</td>
+          <td>10:00 @ 00:02</td>
+          <td>
+            <h4>Bundler</h4>BAK Bundler</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 19:00, from 2021-11-15.</td>
+          <td>BAK Cancel RSD Tasks not Completed</td>
+          <td>1</td>
+          <td>00:15 @ 00:01</td>
+          <td>
+            <h4>Workflow Agent</h4>BAK Cancel Return Same Day Tasks not Completed</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 05:00, from 2024-03-12.</td>
+          <td>BAK Create Daily Admin Task DST</td>
+          <td>1</td>
+          <td />
+          <td>
+            <h4>Proactive Business Monitoring</h4>Create Daily Admin Tasks</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 04:00, from 2024-03-11.</td>
+          <td>BAK Create Flare Notification DST</td>
+          <td>1</td>
+          <td>16:00 @ 00:01</td>
+          <td>
+            <h4>Workflow Agent</h4>BAK Create Flare Notification</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 06:00, from 2020-10-14.</td>
+          <td>BAK Extend Ops Due Dates</td>
+          <td>1</td>
+          <td>23:59 @ 00:05</td>
+          <td>
+            <h4>Workflow Agent</h4>BAK Extend Ops Due Dates</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 06:00, from 2020-10-19.</td>
+          <td>BAK Jeopardy Agent Unscheduled</td>
+          <td>1</td>
+          <td>23:59 @ 00:05</td>
+          <td>
+            <h4>Workflow Agent</h4>BAK Alert Jeopardy Unscheduled Tasks</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 05:00, from 2021-10-14.</td>
+          <td>BAK Jeopardy Flare Alarm Past Due</td>
+          <td>1</td>
+          <td>23:59 @ 00:01</td>
+          <td>
+            <h4>Workflow Agent</h4>BAK Alert Flare Alarm Past Due</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 05:00, from 2021-05-18.</td>
+          <td>BAK Jeopardy Not Acknowledged</td>
+          <td>1</td>
+          <td>23:59 @ 00:05</td>
+          <td>
+            <h4>Workflow Agent</h4>BAK Alert Jeopardy Not Acknowledged Alarms</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 23:00, from 2020-09-23.</td>
+          <td>BAK OPS Cancel Past Due Tasks</td>
+          <td>1</td>
+          <td>00:30 @ 00:05</td>
+          <td>
+            <h4>Workflow Agent</h4>BAK OPS Cancel Past Due Tasks</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 00:01, from 2020-07-22.</td>
+          <td>BAK OPS Dispatch Mobile Tasks Pin</td>
+          <td>1</td>
+          <td>23:59 @ 00:01</td>
+          <td>
+            <h4>Workflow Agent</h4>BAK OPS Dispatch Mobile Tasks</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 06:00, from 2021-12-08.</td>
+          <td>BAK OPS Dispatch Today</td>
+          <td>1</td>
+          <td>23:59 @ 00:01</td>
+          <td>
+            <h4>Workflow Agent</h4>BAK OPS Dispatch Today</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 19:00, from 2024-03-11.</td>
+          <td>BAK Unschedule Work End of Day DST</td>
+          <td>1</td>
+          <td>00:20 @ 00:01</td>
+          <td>
+            <h4>Workflow Agent</h4>BAK Unschedule Dispatched work - End of day</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 07:00, from 2024-03-12.</td>
+          <td>BAK Unschedule Work End of Night DST</td>
+          <td>1</td>
+          <td>00:10 @ 00:01</td>
+          <td>
+            <h4>Workflow Agent</h4>BAK Unschedule Dispatched work - End of Night</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 22:00, from 2022-09-12.</td>
+          <td>Cancel Reactive RBBE Reset</td>
+          <td>1</td>
+          <td>00:15 @ 00:01</td>
+          <td>
+            <h4>Workflow Agent</h4>FSM Cancel Past Due Reactive RBBEs</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Hourly</h4>Every 12:00 from 2020-12-02 18:30.</td>
+          <td>Cancelling Expired Reoccurring Task v2</td>
+          <td>1</td>
+          <td>00:10</td>
+          <td>
+            <h4>Proactive Business Monitoring</h4>Cancelling Expired Reoccurring Tasks </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 06:00, from 2020-04-20.</td>
+          <td>Dispatch Next 3 hours</td>
+          <td>1</td>
+          <td>23:59 @ 00:05</td>
+          <td>
+            <h4>Workflow Agent</h4>Dispatch Next 6 hours</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 22:00, from 2015-12-21.</td>
+          <td>Display Date Agent</td>
+          <td>1</td>
+          <td>00:30 @ 00:01</td>
+          <td>
+            <h4>Workflow Agent</h4>Display Date Agent</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 05:00, from 2024-02-15.</td>
+          <td>EF Jeopardy Critical PM Past Due</td>
+          <td>1</td>
+          <td>23:59 @ 00:01</td>
+          <td>
+            <h4>Workflow Agent</h4>EF Critical PM Past Due</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 06:00, from 2022-12-19.</td>
+          <td>EF LDAR Past Due Tasks</td>
+          <td>1</td>
+          <td>23:59 @ 00:01</td>
+          <td>
+            <h4>Workflow Agent</h4>EF LDAR Task Past Due</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+            <div class="ui label">Disabled</div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 23:00, from 2024-01-24.</td>
+          <td>EF OPS Cancel Past Due Tasks</td>
+          <td>1</td>
+          <td>00:30 @ 00:05</td>
+          <td>
+            <h4>Workflow Agent</h4>EF OPS Cancel Past Due Tasks</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Hourly</h4>Every 12:00 from 2024-03-12 10:00.</td>
+          <td>EF Unschedule Dispatched Work v2 - DST</td>
+          <td>1</td>
+          <td>00:15 @ 00:01</td>
+          <td>
+            <h4>Workflow Agent</h4>EF Unschedule Dispatched work</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+            <div class="ui label">Disabled</div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 22:00, from 2024-04-03.</td>
+          <td>Equipment Info Close Records</td>
+          <td>1</td>
+          <td />
+          <td>
+            <h4>Proactive Business Monitoring</h4>Equipment Info Close Records</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 06:00, from 2024-04-17.</td>
+          <td>Equipment Info Dispatch</td>
+          <td>1</td>
+          <td>10:00 @ 00:01</td>
+          <td>
+            <h4>Workflow Agent</h4>Equipment Info Dispatch Agent</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 19:30, from 2024-04-16.</td>
+          <td>Equipment Info Extend</td>
+          <td>1</td>
+          <td>00:20 @ 00:01</td>
+          <td>
+            <h4>Workflow Agent</h4>Equipment Info Extend</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+            <div class="ui label">Disabled</div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 05:30, from 2024-02-21.</td>
+          <td>Equipment Info Optimizer</td>
+          <td>1</td>
+          <td>12:00 @ 00:15</td>
+          <td>
+            <h4>Schedule</h4>Equipment Info Quick Optimize</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 19:00, from 2024-04-16.</td>
+          <td>Equipment Info Unschedule</td>
+          <td>1</td>
+          <td>00:20 @ 00:01</td>
+          <td>
+            <h4>Workflow Agent</h4>Equipment Info Unschedule Agent</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+            <div class="ui label">Disabled</div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 23:00, from 2024-02-22.</td>
+          <td>Equipment Info Update Records</td>
+          <td>1</td>
+          <td />
+          <td>
+            <h4>Proactive Business Monitoring</h4>Equipment Info Update Records</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 06:00, from 2020-01-29.</td>
+          <td>Extend Maintenance Due Dates</td>
+          <td>1</td>
+          <td>23:59 @ 00:05</td>
+          <td>
+            <h4>Workflow Agent</h4>Extend Maintenance Due Dates</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 06:00, from 2022-03-07.</td>
+          <td>Extend Ops Due Dates</td>
+          <td>1</td>
+          <td>23:59 @ 00:01</td>
+          <td>
+            <h4>Workflow Agent</h4>Extend Ops Due Dates</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+            <div class="ui label">Disabled</div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 04:00, from 2023-08-01.</td>
+          <td>FSM BAK High Tank Alarm Pending Assignment</td>
+          <td>1</td>
+          <td>23:59 @ 01:00</td>
+          <td>
+            <h4>Workflow Agent</h4>BAK Tank Pressure Pending Assignment </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 04:00, from 2023-08-01.</td>
+          <td>FSM BAK High Tank Alarm Pending Completion</td>
+          <td>1</td>
+          <td>14:00 @ 01:00</td>
+          <td>
+            <h4>Workflow Agent</h4>BAK Tank Pressure Pending Completion</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 19:00, from 2021-11-15.</td>
+          <td>FSM BAK Location Down Reset</td>
+          <td>1</td>
+          <td />
+          <td>
+            <h4>Proactive Business Monitoring</h4>FSM BAK Location Down Reset</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 20:00, from 2023-01-20.</td>
+          <td>FSM BAK Move Active WOs Forward</td>
+          <td>1</td>
+          <td>00:10 @ 00:01</td>
+          <td>
+            <h4>Workflow Agent</h4>BAK Move Active WOs Forward</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 04:00, from 2022-07-07.</td>
+          <td>FSM BAK OPS Optimize Rejected/Operator PMs</td>
+          <td>1</td>
+          <td>16:00 @ 00:01</td>
+          <td>
+            <h4>Schedule</h4>FSM BAK OPS Optimize Rejected/Operator PMs</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 04:00, from 2021-12-06.</td>
+          <td>FSM BAK Quick Optimize New</td>
+          <td>1</td>
+          <td>23:59 @ 00:01</td>
+          <td>
+            <h4>Schedule</h4>FSM BAK Quick Optimize</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 06:00, from 2021-11-15.</td>
+          <td>FSM BAK Return Same Day Travel</td>
+          <td>1</td>
+          <td>12:00 @ 00:01</td>
+          <td>
+            <h4>Workflow Agent</h4>BAK OPS Return Same Day Travel Status</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 23:00, from 2023-05-01.</td>
+          <td>FSM Cancel Inspections</td>
+          <td>1</td>
+          <td>00:20 @ 00:01</td>
+          <td>
+            <h4>Workflow Agent</h4>FSM Cancel Inspections</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 19:00, from 2021-06-17.</td>
+          <td>FSM Clear Required Resources</td>
+          <td>1</td>
+          <td>00:10 @ 00:01</td>
+          <td>
+            <h4>Workflow Agent</h4>FSM Clear Required Resources</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 23:00, from 2022-03-04.</td>
+          <td>FSM Close Completed DC Protocols</td>
+          <td>1</td>
+          <td />
+          <td>
+            <h4>Proactive Business Monitoring</h4>FSM Close Form DC</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 23:00, from 2021-12-13.</td>
+          <td>FSM Close Completed Tier 1 Audits</td>
+          <td>1</td>
+          <td />
+          <td>
+            <h4>Proactive Business Monitoring</h4>FSM Tier 1 Close Forms</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 00:00, from 2022-09-30.</td>
+          <td>FSM Create Task History Records</td>
+          <td>1</td>
+          <td />
+          <td>
+            <h4>Proactive Business Monitoring</h4>FSM Create Task History Records</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 18:00, from 2024-03-11.</td>
+          <td>FSM Daily Active Tasks Email DST</td>
+          <td>1</td>
+          <td>00:10 @ 00:01</td>
+          <td>
+            <h4>Workflow Agent</h4>FSM Daily Active Tasks Email</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 06:00, from 2020-02-13.</td>
+          <td>FSM Daily Optimizer (1-2)</td>
+          <td>1</td>
+          <td>18:00 @ 00:45</td>
+          <td>
+            <h4>Schedule</h4>FSM Daily Optimizer (1-2)</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 01:00, from 2023-02-08.</td>
+          <td>FSM Delete RBBEs</td>
+          <td>1</td>
+          <td />
+          <td>
+            <h4>Proactive Business Monitoring</h4>FSM Delete RBBEs</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 06:00, from 2020-03-03.</td>
+          <td>FSM EF Maint. Daily Optimizer</td>
+          <td>1</td>
+          <td>18:00 @ 00:45</td>
+          <td>
+            <h4>Schedule</h4>FSM Maint. Daily Optimizer (1-2)</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 00:30, from 2021-02-02.</td>
+          <td>FSM EF Maint. Measurement Quick Optimize 2</td>
+          <td>1</td>
+          <td>23:59 @ 00:01</td>
+          <td>
+            <h4>Schedule</h4>FSM Maint.Measurement EF Quick Optimize</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 00:01, from 2020-03-04.</td>
+          <td>FSM EF Maint. Nightly Optimizer (3-7)</td>
+          <td>1</td>
+          <td>23:00 @ 00:30</td>
+          <td>
+            <h4>Schedule</h4>FSM Maint. Nightly Optimizer (3-7)</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 00:01, from 2020-03-04.</td>
+          <td>FSM EF Maint. Nightly Optimizer (8-30)</td>
+          <td>1</td>
+          <td>23:00 @ 00:30</td>
+          <td>
+            <h4>Schedule</h4>FSM Maint. Nightly Optimizer (8-30)</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 00:01, from 2020-03-03.</td>
+          <td>FSM EF Maint. Quick Optimize</td>
+          <td>1</td>
+          <td>23:59 @ 00:01</td>
+          <td>
+            <h4>Schedule</h4>FSM Maint. EF Quick Optimize</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 00:30, from 2021-02-02.</td>
+          <td>FSM EF Measurement Optimizer 3</td>
+          <td>1</td>
+          <td>23:59 @ 00:01</td>
+          <td>
+            <h4>Schedule</h4>FSM Maint. Measurement (1- 90)</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+            <div class="ui label">Disabled</div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 12:00, from 2022-07-06.</td>
+          <td>FSM EF Quick Optimize Med/Med-Low</td>
+          <td>1</td>
+          <td>23:59 @ 00:01</td>
+          <td>
+            <h4>Schedule</h4>FSM EF Quick Optimize Med/Med Low</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 00:01, from 2022-09-22.</td>
+          <td>FSM EF Quick Optimize</td>
+          <td>1</td>
+          <td>23:59 @ 00:01</td>
+          <td>
+            <h4>Schedule</h4>FSM EF Quick Optimize</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 09:00, from 2023-07-18.</td>
+          <td>FSM EF Revert Original Calendar Night</td>
+          <td>1</td>
+          <td />
+          <td>
+            <h4>Proactive Business Monitoring</h4>FSM EF Revert Original Calendar Night</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 21:00, from 2023-07-16.</td>
+          <td>FSM EF Revert Original Calendar</td>
+          <td>1</td>
+          <td />
+          <td>
+            <h4>Proactive Business Monitoring</h4>FSM EF Revert Original Calendar</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 06:00, from 2021-02-01.</td>
+          <td>FSM EF Site Checks Task Create</td>
+          <td>1</td>
+          <td>23:00 @ 00:01</td>
+          <td>
+            <h4>Proactive Business Monitoring</h4>FSM EF Site Checks</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 22:00, from 2023-05-22.</td>
+          <td>FSM Eq Data Capture Close Completed</td>
+          <td>1</td>
+          <td />
+          <td>
+            <h4>Proactive Business Monitoring</h4>FSM Eq Data Capture Close Completed</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 21:00, from 2023-06-09.</td>
+          <td>FSM Extend Monthly Inspections</td>
+          <td>1</td>
+          <td />
+          <td>
+            <h4>Proactive Business Monitoring</h4>FSM Extend Monthly Inspections</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 21:00, from 2023-12-14.</td>
+          <td>FSM MT Cancel</td>
+          <td>1</td>
+          <td />
+          <td>
+            <h4>Proactive Business Monitoring</h4>FSM MT Cancel</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 00:01, from 2020-02-12.</td>
+          <td>FSM Nightly Optimizer (1-7)</td>
+          <td>1</td>
+          <td>06:00 @ 00:30</td>
+          <td>
+            <h4>Schedule</h4>FSM Nightly Optimizer (1-7)</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 00:01, from 2020-06-25.</td>
+          <td>FSM Nightly Optimizer (31-90)</td>
+          <td>1</td>
+          <td>06:00 @ 00:30</td>
+          <td>
+            <h4>Schedule</h4>FSM Nightly Optimizer (31-90)</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 00:01, from 2020-02-12.</td>
+          <td>FSM Nightly Optimizer (8-30)</td>
+          <td>1</td>
+          <td>06:00 @ 00:30</td>
+          <td>
+            <h4>Schedule</h4>FSM Nightly Optimizer (8-30)</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 23:00, from 2024-01-10.</td>
+          <td>FSM On Hold Move Forward</td>
+          <td>1</td>
+          <td>00:15 @ 00:01</td>
+          <td>
+            <h4>Workflow Agent</h4>FSM On Hold Move Forward</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 00:01, from 2021-05-12.</td>
+          <td>FSM ORB Daily Optimizer (1-2)</td>
+          <td>1</td>
+          <td>20:00 @ 00:30</td>
+          <td>
+            <h4>Schedule</h4>FSM ORB Daily Optimizer (1-2)</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 01:00, from 2021-05-13.</td>
+          <td>FSM ORB Daily Optimizer (Today)</td>
+          <td>1</td>
+          <td>20:00 @ 00:01</td>
+          <td>
+            <h4>Schedule</h4>FSM ORB Daily Optimizer (Today)</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 00:01, from 2022-01-10.</td>
+          <td>FSM ORB Quick Optimize</td>
+          <td>1</td>
+          <td>23:59 @ 00:01</td>
+          <td>
+            <h4>Schedule</h4>FSM ORB Quick Optimize</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+            <div class="ui label">Disabled</div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 04:00, from 2023-05-11.</td>
+          <td>FSM Panic Deadline Monitor</td>
+          <td>1</td>
+          <td>23:59 @ 00:01</td>
+          <td>
+            <h4>Proactive Business Monitoring</h4>FSM Panic Deadline Monitor</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 06:00, from 2022-10-04.</td>
+          <td>FSM PER Daily Optimizer (1-2) v2</td>
+          <td>1</td>
+          <td>23:59 @ 00:10</td>
+          <td>
+            <h4>Schedule</h4>FSM PER Daily Optimizer (1-2)</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 09:30, from 2023-03-03.</td>
+          <td>FSM PER Dispatch Scheduled Tasks</td>
+          <td>1</td>
+          <td>23:59 @ 00:05</td>
+          <td>
+            <h4>Workflow Agent</h4>PER OPS Dispatch Next 3 Hours</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 00:01, from 2023-01-17.</td>
+          <td>FSM PER Quick Optimize</td>
+          <td>1</td>
+          <td>23:59 @ 00:01</td>
+          <td>
+            <h4>Schedule</h4>FSM PER Quick Optimize High</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 06:00, from 2024-01-11.</td>
+          <td>FSM PER Quick Optimizer MED</td>
+          <td>1</td>
+          <td>23:59 @ 00:01</td>
+          <td>
+            <h4>Schedule</h4>FSM PER Quick Optimizer Med/Med Low</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Hourly</h4>Every 12:00 from 2024-04-17 06:00.</td>
+          <td>FSM PER Unschedule End of Day DST v3</td>
+          <td>1</td>
+          <td>00:10 @ 00:01</td>
+          <td>
+            <h4>Workflow Agent</h4>PER Unschedule Dispatched work - End of day</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 06:00, from 2022-04-01.</td>
+          <td>FSM PM Create Next Task</td>
+          <td>1</td>
+          <td />
+          <td>
+            <h4>Proactive Business Monitoring</h4>FSM PM Create Next Task</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 23:00, from 2022-09-26.</td>
+          <td>FSM Purge Objects</td>
+          <td>1</td>
+          <td />
+          <td>
+            <h4>PurgeAgent</h4>FSM Purge Objects</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 20:00, from 2022-09-29.</td>
+          <td>FSM RBBE Create Tasks</td>
+          <td>1</td>
+          <td />
+          <td>
+            <h4>Proactive Business Monitoring</h4>FSM RBBE Create Tasks</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 19:00, from 2022-09-12.</td>
+          <td>FSM Reactive RBBE Reset</td>
+          <td>1</td>
+          <td />
+          <td>
+            <h4>Proactive Business Monitoring</h4>FSM Reactive RBBE Reset</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 06:00, from 2021-07-23.</td>
+          <td>FSM Recurring Requests Create</td>
+          <td>1</td>
+          <td />
+          <td>
+            <h4>Proactive Business Monitoring</h4>FSM Recurring Requests Create</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 06:00, from 2024-03-28.</td>
+          <td>FSM Recurring Tasks Move Forward Daily</td>
+          <td>1</td>
+          <td />
+          <td>
+            <h4>Proactive Business Monitoring</h4>FSM Recurring Tasks Move Foward Daily</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 23:00, from 2024-01-08.</td>
+          <td>FSM Reset Alarm Counter</td>
+          <td>1</td>
+          <td />
+          <td>
+            <h4>Proactive Business Monitoring</h4>FSM Reset Alarm Counter</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 23:00, from 2022-08-09.</td>
+          <td>FSM Reset Resource Email Update</td>
+          <td>1</td>
+          <td />
+          <td>
+            <h4>Proactive Business Monitoring</h4>FSM Reset Resource Email Update</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+            <div class="ui label">Disabled</div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 08:00, from 2023-07-01.</td>
+          <td>FSM Resource Safety Hourly Alert</td>
+          <td>1</td>
+          <td>10:05 @ 01:00</td>
+          <td>
+            <h4>Proactive Business Monitoring</h4>FSM Resource Safety Hourly Alert</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+            <div class="ui label">Disabled</div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 07:58, from 2023-07-01.</td>
+          <td>FSM Resource Safety Hourly Reset</td>
+          <td>1</td>
+          <td>10:05 @ 01:00</td>
+          <td>
+            <h4>Proactive Business Monitoring</h4>FSM Resource Safety Hourly Reset</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+            <div class="ui label">Disabled</div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 20:30, from 2023-07-01.</td>
+          <td>FSM Resource Safety Reset Day Over</td>
+          <td>1</td>
+          <td />
+          <td>
+            <h4>Proactive Business Monitoring</h4>FSM Resource Safety Reset DayOver</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+            <div class="ui label">Disabled</div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 08:05, from 2023-06-30.</td>
+          <td>FSM Resource Safety Status Check</td>
+          <td>1</td>
+          <td>10:55 @ 00:01</td>
+          <td>
+            <h4>Proactive Business Monitoring</h4>FSM Resource Safety Status</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+            <div class="ui label">Disabled</div>
+          </td>
+          <td>
+            <h4>OneTime</h4>One time at 11:11 on 2023-01-23.</td>
+          <td>FSM Support</td>
+          <td>1</td>
+          <td />
+          <td>
+            <h4>Proactive Business Monitoring</h4>FSM Support</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+            <div class="ui label">Disabled</div>
+          </td>
+          <td>
+            <h4>OneTime</h4>One time at 17:23 on 2022-06-20.</td>
+          <td>FSM Tier 1 Forms Delete Flag</td>
+          <td>1</td>
+          <td />
+          <td>
+            <h4>Proactive Business Monitoring</h4>FSM Tier 1 Forms Delete Flag</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 23:00, from 2023-09-15.</td>
+          <td>FSM Yearly Tasks</td>
+          <td>1</td>
+          <td />
+          <td>
+            <h4>Proactive Business Monitoring</h4>FSM Yearly Tasks</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 06:00, from 2020-04-20.</td>
+          <td>General Bundle Agent 8-30</td>
+          <td>1</td>
+          <td>23:59 @ 00:02</td>
+          <td>
+            <h4>Bundler</h4>General Bundler Agent 8-30</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 06:00, from 2020-04-02.</td>
+          <td>General Bundle Agent v2</td>
+          <td>1</td>
+          <td>23:59 @ 00:01</td>
+          <td>
+            <h4>Bundler</h4>General Bundler Agent</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Weekly</h4>Every Monday at 00:00 of every week, from 2022-02-11.</td>
+          <td>HES OverDue Actions</td>
+          <td>1</td>
+          <td>23:00 @ 00:30</td>
+          <td>
+            <h4>Proactive Business Monitoring</h4>FSM Overdue Actions</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 02:00, from 2023-11-19.</td>
+          <td>Login History</td>
+          <td>1</td>
+          <td />
+          <td>
+            <h4>Proactive Business Monitoring</h4>Login History</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+            <div class="ui label">Disabled</div>
+          </td>
+          <td>
+            <h4>OneTime</h4>One time at 15:51 on 2022-09-19.</td>
+          <td>Manual Purge</td>
+          <td>1</td>
+          <td />
+          <td>
+            <h4>PurgeAgent</h4>Manual Purge</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 06:00, from 2019-12-11.</td>
+          <td>MRO - Maintenance Dispatch Next 8 Hours (New)</td>
+          <td>1</td>
+          <td>23:59 @ 00:05</td>
+          <td>
+            <h4>Workflow Agent</h4>MRO - Maintenance Dispatch Next 8 hours</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 07:14, from 2022-08-29.</td>
+          <td>MRO Create Task Manual Entry</td>
+          <td>1</td>
+          <td>23:59 @ 00:01</td>
+          <td>
+            <h4>Workflow Agent</h4>MRO CreateTask Manual Entry</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 04:00, from 2021-12-21.</td>
+          <td>NEW FSM BAK Daily Optimizer</td>
+          <td>1</td>
+          <td>16:00 @ 00:45</td>
+          <td>
+            <h4>Schedule</h4>FSM BAK Daily Optimizer</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 05:00, from 2024-03-12.</td>
+          <td>ORB - Unschedule Dispatched Work - End of Day - AM DST</td>
+          <td>1</td>
+          <td>00:15 @ 00:01</td>
+          <td>
+            <h4>Workflow Agent</h4>ORB Unschedule Dispatched Work - End of Day</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 18:00, from 2024-03-11.</td>
+          <td>ORB - Unschedule Dispatched Work - End of Day - PM DST</td>
+          <td>1</td>
+          <td>00:15 @ 00:01</td>
+          <td>
+            <h4>Workflow Agent</h4>ORB Unschedule Dispatched Work - End of Day</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every 2 days at 20:00, from 2021-04-01.</td>
+          <td>ORB Acknowledge Handover Notes</td>
+          <td>1</td>
+          <td />
+          <td>
+            <h4>Proactive Business Monitoring</h4>ORB Acknowledge Handover Notes</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 07:00, from 2021-06-14.</td>
+          <td>ORB Alert Jeopardy Unscheduled Tasks (PastDue)</td>
+          <td>1</td>
+          <td>23:59 @ 00:01</td>
+          <td>
+            <h4>Workflow Agent</h4>ORB Alert Jeopardy Unscheduled Tasks</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 20:00, from 2021-06-29.</td>
+          <td>ORB Cancel Today</td>
+          <td>1</td>
+          <td>00:10 @ 00:01</td>
+          <td>
+            <h4>Workflow Agent</h4>ORB Cancel Today</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 05:00, from 2024-03-12.</td>
+          <td>ORB Create Daily Admin Task DST</td>
+          <td>1</td>
+          <td />
+          <td>
+            <h4>Proactive Business Monitoring</h4>ORB Create Daily Admin Tasks</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 06:00, from 2022-03-07.</td>
+          <td>ORB Extend Ops Due Dates</td>
+          <td>1</td>
+          <td>23:59 @ 00:01</td>
+          <td>
+            <h4>Workflow Agent</h4>ORB Extend Ops Due Dates</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 06:00, from 2021-11-29.</td>
+          <td>ORB General Bundle Agent</td>
+          <td>1</td>
+          <td>23:59 @ 00:05</td>
+          <td>
+            <h4>Bundler</h4>ORB Bundler Agent OPS</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 23:00, from 2021-09-08.</td>
+          <td>ORB Ops Cancel Past Due Tasks</td>
+          <td>1</td>
+          <td>00:30 @ 00:05</td>
+          <td>
+            <h4>Workflow Agent</h4>ORB OPS Cancel Past Due Tasks</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 05:00, from 2020-09-15.</td>
+          <td>ORB OPS Dispatch Next 9 Hours</td>
+          <td>1</td>
+          <td>23:59 @ 00:01</td>
+          <td>
+            <h4>Workflow Agent</h4>ORB OPS Dispatch Next 9 Hours</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 18:30, from 2022-08-29.</td>
+          <td>ORB Remove Excluded Resources</td>
+          <td>1</td>
+          <td>00:15 @ 00:01</td>
+          <td>
+            <h4>Workflow Agent</h4>ORB Remove Excluded Resources</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 12:00, from 2024-03-11.</td>
+          <td>ORB Unschedule Mid Day DST</td>
+          <td>1</td>
+          <td>00:10 @ 00:01</td>
+          <td>
+            <h4>Workflow Agent</h4>ORB Unschedule Dispatched Work - Mid Day</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+            <div class="ui label">Disabled</div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 01:00, from 2022-08-25.</td>
+          <td>Panic Timer Agent</td>
+          <td>1</td>
+          <td>23:59 @ 00:01</td>
+          <td>
+            <h4>Proactive Business Monitoring</h4>PanicTimer</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Weekly</h4>Every Sunday at 12:00 of every week, from 2024-01-21.</td>
+          <td>PER AVO Increase Priority</td>
+          <td>1</td>
+          <td />
+          <td>
+            <h4>Proactive Business Monitoring</h4>PER AVO Increase Priority</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 05:00, from 2022-08-03.</td>
+          <td>PER Bundling Agent v2</td>
+          <td>1</td>
+          <td>22:59 @ 00:02</td>
+          <td>
+            <h4>Bundler</h4>PER Bundler Agent</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Weekly</h4>Every Friday at 06:00 of every week, from 2024-01-19.</td>
+          <td>PER Create Weekly AVO</td>
+          <td>1</td>
+          <td />
+          <td>
+            <h4>Proactive Business Monitoring</h4>PER Create Weekly AVO</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 06:00, from 2021-10-29.</td>
+          <td>PER Extend Tasks</td>
+          <td>1</td>
+          <td>23:59 @ 00:05</td>
+          <td>
+            <h4>Workflow Agent</h4>PER Extend Due Date</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 05:00, from 2022-06-21.</td>
+          <td>PER Jeopardy Pilot Alarm Past Due</td>
+          <td>1</td>
+          <td>23:59 @ 00:01</td>
+          <td>
+            <h4>Workflow Agent</h4>PER Alert Pilot Alarm Past Due</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Weekly</h4>Every Monday at 00:01 of every week, from 2024-01-22.</td>
+          <td>PER Reset Weekly AVO</td>
+          <td>1</td>
+          <td />
+          <td>
+            <h4>Proactive Business Monitoring</h4>PER Reset Weekly AVO</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Hourly</h4>Every 12:00 from 2022-07-22 06:00.</td>
+          <td>PER Service Request Compressors</td>
+          <td>1</td>
+          <td>00:01</td>
+          <td>
+            <h4>Proactive Business Monitoring</h4>FSM PER SR Overdue Compressor</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>AfterAgent</h4>Immediately after agent Purge Tasks and Assignments.</td>
+          <td>Purge Objects and Collections</td>
+          <td>1</td>
+          <td />
+          <td>
+            <h4>PurgeAgent</h4>Purge Objects and Collections</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+            <div class="ui label">Disabled</div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 23:00, from 2022-08-25.</td>
+          <td>Purge Panic Timer</td>
+          <td>1</td>
+          <td />
+          <td>
+            <h4>PurgeAgent</h4>Purge Panic Timer</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 22:00, from 2023-07-11.</td>
+          <td>Purge Tasks and Assignments</td>
+          <td>1</td>
+          <td>00:30 @ 00:01</td>
+          <td>
+            <h4>PurgeAgent</h4>Purge Tasks and Assignments</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+            <div class="ui label">Disabled</div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 03:00, from 2022-10-05.</td>
+          <td>RBBE Calculate Daily Delta</td>
+          <td>1</td>
+          <td>00:20 @ 00:59</td>
+          <td>
+            <h4>Proactive Business Monitoring</h4>FSM Reactive RBBE Calculate Delta</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 03:30, from 2023-04-13.</td>
+          <td>Reactive RBBE Calculate Daily Delta</td>
+          <td>1</td>
+          <td />
+          <td>
+            <h4>Proactive Business Monitoring</h4>FSM Reactive RBBE Calculate Delta</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Hourly</h4>Every 12:00 from 2022-08-29 17:50.</td>
+          <td>Rejected to Open</td>
+          <td>1</td>
+          <td>00:10 @ 00:01</td>
+          <td>
+            <h4>Workflow Agent</h4>BAK OPS Rejected to Open</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Hourly</h4>Every 01:00 from 2023-05-24 05:00.</td>
+          <td>Resend Failed Outgoing Messages</td>
+          <td>1</td>
+          <td>00:01</td>
+          <td>
+            <h4>Proactive Business Monitoring</h4>Resend Failed Outgoing Messages</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 22:00, from 2015-12-21.</td>
+          <td>Schedule Date agent</td>
+          <td>1</td>
+          <td>01:00 @ 00:01</td>
+          <td>
+            <h4>Workflow Agent</h4>Schedule Date Agent</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 14:41, from 2021-02-23.</td>
+          <td>Severe Weather Event</td>
+          <td>1</td>
+          <td>23:59 @ 00:01</td>
+          <td>
+            <h4>Proactive Business Monitoring</h4>Severe Weather</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+            <div class="ui label">Disabled</div>
+          </td>
+          <td>
+            <h4>OneTime</h4>One time at 16:29 on 2023-01-26.</td>
+          <td>Support Fix</td>
+          <td>1</td>
+          <td>00:10 @ 00:01</td>
+          <td>
+            <h4>Workflow Agent</h4>Support Fix</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+            <div class="ui label">Disabled</div>
+          </td>
+          <td>
+            <h4>OneTime</h4>One time at 15:10 on 2023-08-02.</td>
+          <td>Temp Update Data</td>
+          <td>1</td>
+          <td />
+          <td>
+            <h4>Proactive Business Monitoring</h4>Temp Update Data</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 04:00, from 2021-04-26.</td>
+          <td>TMS - Auto Approve Manual Tasks (24 hour delay no SWD/vol chg) </td>
+          <td>1</td>
+          <td>00:30 @ 00:05</td>
+          <td>
+            <h4>Proactive Business Monitoring</h4>TMS Manual Entry Auto Approval</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 00:00, from 2020-10-26.</td>
+          <td>TMS - Copy ProCount message details from Calcs to ManEntry</td>
+          <td>1</td>
+          <td>23:59 @ 00:20</td>
+          <td>
+            <h4>Proactive Business Monitoring</h4>TMS ProCount Copy Message from Calc to Man Entry</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 22:00, from 2022-01-18.</td>
+          <td>TMS - Delete duplicate MROTaskManualEntry objects</td>
+          <td>1</td>
+          <td>23:59 @ 12:00</td>
+          <td>
+            <h4>Proactive Business Monitoring</h4>TMS Eliminate duplicateMROTaskManualEntry records</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 10:00, from 2024-03-17.</td>
+          <td>TMS - High Volume Task Creation - Trigger LAST batch of ten</td>
+          <td>1</td>
+          <td>23:59 @ 00:01</td>
+          <td>
+            <h4>Proactive Business Monitoring</h4>TMS Create Next batch of Water Hauling Tasks Last 10 loads</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 10:00, from 2024-03-17.</td>
+          <td>TMS - High Volume Task Creation - Trigger NEXT batch of ten </td>
+          <td>1</td>
+          <td>23:59 @ 00:01</td>
+          <td>
+            <h4>Proactive Business Monitoring</h4>TMS Create next batch of water hauling tasks  more than 10 left</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 17:00, from 2020-10-09.</td>
+          <td>TMS - Trigger Task Validation after 7 days</td>
+          <td>1</td>
+          <td>23:59 @ 00:20</td>
+          <td>
+            <h4>Proactive Business Monitoring</h4>TMS Trigger Validation after 7 days</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Weekly</h4>Every Sunday at 23:00 of every week, from 2022-05-01.</td>
+          <td>TMS 90 Day Cancel</td>
+          <td>1</td>
+          <td />
+          <td>
+            <h4>Proactive Business Monitoring</h4>TMS 90 Day Cancel</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Hourly</h4>Every 00:15 from 2023-12-06 04:00.</td>
+          <td>TMS Auto Accept OCC Requests</td>
+          <td>1</td>
+          <td>00:10 @ 00:02</td>
+          <td>
+            <h4>Proactive Business Monitoring</h4>TMS Auto Accept OCC Requests</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 01:45, from 2023-12-04.</td>
+          <td>TMS Auto Accept Vendor Requests</td>
+          <td>1</td>
+          <td />
+          <td>
+            <h4>Proactive Business Monitoring</h4>TMS Auto Accept Vendor Requests</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 01:00, from 2023-07-28.</td>
+          <td>TMS Cancel Tasks 7 Days Past Due</td>
+          <td>1</td>
+          <td>00:30 @ 00:01</td>
+          <td>
+            <h4>Proactive Business Monitoring</h4>Cancel Water Tasks</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Hourly</h4>Every 12:00 from 2024-03-11 04:00.</td>
+          <td>Unschedule Dispatched work - Every 12 Hours - FSM DST</td>
+          <td>1</td>
+          <td>00:15 @ 00:01</td>
+          <td>
+            <h4>Workflow Agent</h4>Unschedule Dispatched work - End of day</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 00:30, from 2020-04-21.</td>
+          <td>Wells Shut-in Extend Due Dates</td>
+          <td>1</td>
+          <td>23:59 @ 00:01</td>
+          <td>
+            <h4>Workflow Agent</h4>Extend Due Date - Shut-in Wells</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="ui list">
+              <div class="item">FSE</div>
+            </div>
+          </td>
+          <td>
+            <h4>Daily</h4>Every day at 06:00, from 2020-04-21.</td>
+          <td>Wells Shut-in Unschedule</td>
+          <td>1</td>
+          <td>23:59 @ 00:01</td>
+          <td>
+            <h4>Workflow Agent</h4>Unschedule Shut-in Wells</td>
+        </tr>
+      </tbody>
+    </table>
+    <script>
+          $( document ).ready( function ()
+            {
+              initDataTableWithButtons(
+                '#amTable',
+                'Agents Manager',
+                true,
+                true,
+                {
+                  paging: false,
+                  order: [[0, 'asc'], [1, 'asc'], [2, 'asc']],
+                }
+              );
+            } );
+          </script>
+  </body>
+</html>

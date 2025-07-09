@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en" style="padding: 20px">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.9.3/semantic.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.datatables.net/v/se/jszip-3.10.1/dt-2.0.7/b-3.0.2/b-colvis-3.0.2/b-html5-3.0.2/b-print-3.0.2/cr-2.0.2/date-1.5.2/fc-5.0.0/fh-4.0.1/kt-2.12.0/r-3.0.2/rg-1.5.0/sc-2.4.2/sb-1.7.1/sp-2.3.1/datatables.min.css"
+    />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.9.3/semantic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/v/se/jszip-3.10.1/dt-2.0.7/b-3.0.2/b-colvis-3.0.2/b-html5-3.0.2/b-print-3.0.2/cr-2.0.2/date-1.5.2/fc-5.0.0/fh-4.0.1/kt-2.12.0/r-3.0.2/rg-1.5.0/sc-2.4.2/sb-1.7.1/sp-2.3.1/datatables.min.js"></script>
+
+    <script type="text/javascript" src="script/cfg-tables.js"></script>
+    <script type="text/javascript" src="20.StructureReport.js">//</script>
+    <title>Service Optimization Structure</title>
+    <style>
+      #collectionsTable tbody tr {
+          cursor: pointer;
+      }
+      #collectionsTable tbody tr:hover {
+          background-color: whitesmoke;
+      }
+    </style>
+  </head>
+  <body>
+    <h2 class="ui header">Collections</h2>
+    <table id="collectionsTable" class="ui celled table">
+      <thead>
+        <tr class="header">
+          <th>Name</th>
+          <th>ID</th>
+          <th>Collection Type</th>
+          <th>Storage Type</th>
+          <th>Reference</th>
+          <th>Property Count</th>
+          <th>Index Count</th>
+        </tr>
+      </thead>
+    </table>
+    <div id="details" style="margin-top: 20px;">
+      <div id="tab-menu" class="ui top attached tabular menu">
+        <a id="tab-menu-current" class="active item" data-tab="tab-current">
+          <i>Current</i>
+        </a>
+      </div>
+      <div id="tab-current" class="ui bottom attached active tab segment" data-tab="tab-current">
+        <!--Container to display the current object.-->
+      </div>
+    </div>
+    <script>
+
+  function renderObjectName( data, type, row, meta ) {
+    if ( type === 'display' )
+    {
+      return "<div class='name'>" + data + "</div>";
+    }
+    else
+    {
+      return data;
+    }
+  }
+
+  function renderObjectReference( data, type, row, meta ) {
+    const props = data?.properties;
+    if ( props && Array.isArray( props ) && props.length > 0 ) {
+      if (type === 'display') {
+        let result = `<div class='ui labels'>` +
+          props.map( ref => {
+            if ( ref.includes( ' [null]' ) ) {
+              return "<div class='ui olive label'>" +
+                `<i class="question circle icon"></i> ${ref.replace(' [null]', '')}` +
+                "</div>";
+            }
+
+            return `<div class='ui green label'>${ref}</div>`;
+          } ).join( "" ) +
+          `</div>`;
+        if ( !data.matchingIndex ) {
+          result += "<div class='ui red label'><i class='attention icon'></i> ERROR<div class='detail'>No matching index.</div></div>";
+        }
+        if (props.find( ref => ref === 'Key' )) {
+          result += "<div class='ui yellow label'><i class='warning icon'></i> WARNING<div class='detail'>\"Key\" is not portable.</div></div>";
+        }
+        return result;
+      } else {
+        return props.map( ref => ref.replace(' [null]', '') ).join( '||' ) +
+          (data.matchingIndex ? '' : ' ERROR: No matching index') +
+          (props.find( ref => ref === 'Key' ) ? ' WARNING: "Key" is not portable' : '');
+      }
+    }
+    return null;
+  }
+
+  function getTypeHtml( type ) {
+    if ( type.attrCollection && type.type === "Aggregate" ) {
+      return `
+      <div class="ui label">Aggregate</div>
+      <div class="ui bulleted list">
+        ${type.properties.map( prop => `<div class="item">${prop.name}: ${getTypeHtml(prop)}</div>` ).join( "" )}
+      </div>`;
+    } else if ( type.attrCollection ) {
+      return `
+      <span class="ui labels">
+        <div class="ui label">MultiValue</div>
+        <div class="ui purple basic label">${type.attrCollectionProductName}</div>
+      </span>
+      <div class="ui bulleted list">
+        ${type.properties.map( prop => `<div class="item">${prop.name}: ${getTypeHtml(prop)}</div>` ).join( "" )}
+      </div>`;
+    } else if ( type.type === 'Key' ) {
+      return `
+        <span class="ui labels">
+          <div class="ui label">Key</div>
+          <a class="ui primary basic label" onclick="addAndDisplayObjectDetails('${type.keyCollection}', true, false)"><i class="arrow right icon"></i>${type.keyCollection}</a>
+        </span>`;
+    } else if ( type.type === 'String' ) {
+      return `<span class="ui label">String (${type.length})</span>`;
+    } else {
+      return `<span class="ui label">${type.type}</span>`;
+    }
+  }
+
+  function getObjectDetailsHtml( tabId, data ) {
+
+    let objectReferenceSection = data.objectReference.properties ?
+      `<div class='ui labels'>` +
+      data.objectReference.properties.map( ref => {
+        if ( ref.includes( ' [null]' ) ) {
+          return "<div class='ui olive label'>" +
+            `<i class="question circle icon"></i> ${ref.replace(' [null]', '')}` +
+            "</div>";
+        }
+
+        return `<div class='ui green label'>${ref}</div>`;
+      } ).join( "" ) +
+      `</div>` : "";
+
+    let topSection = `
+    <h2 class='ui header'>${data.name}</h2>
+    <table class="ui very basic collapsing celled table">
+      <tbody>
+        <tr>
+          <td>ID</td>
+          <td>${data.id}</td>
+        </tr>
+        <tr>
+          <td>Collection Type</td>
+          <td>${data.collectionType}</td>
+        </tr>
+        <tr>
+          <td>Storage Type</td>
+          <td>${data.storageType}</td>
+        </tr>
+        ${data.objectReference.properties ?
+          `<tr>
+            <td>Object Reference</td>
+            <td>${objectReferenceSection}</td>
+          <tr>` : ""
+        }
+        ${data.objectReference.matchingIndex ?
+          `<tr>
+            <td>Object Reference Index</td>
+            <td>${data.objectReference.matchingIndex}</td>
+          </tr>` : ""
+        }
+      </tbody>
+    </table>`;
+
+    let fieldsSectionHeader = `
+    <h3 class='ui header'>Properties</h3>
+    <table id='${tabId}-fields-table' class="ui collapsing celled table">
+      <thead>
+        <tr class="header">
+          <th>Name</th>
+          <th>ID</th>
+          <th style="min-width: 350px;">Type</th>
+        </tr>
+      </thead>
+      <tbody>`;
+
+    let fieldsSection = data.properties.map( field => {
+      let name = field.name;
+      let type = field.type;
+      return `
+        <tr>
+          <td>${name}</td>
+          <td>${field.id}</td>
+          <td>${getTypeHtml(field.type)}</td>
+        </tr>`;
+    } ).join( "" );
+
+    let fieldsSectionFooter = `
+      </tbody>
+    </table>`;
+
+    let indexSectionHeader = `
+    <h3 class='ui header'>Indexes</h3>
+    <table id='${tabId}-indexes-table' class="ui collapsing celled table">
+      <thead>
+        <tr class="header">
+          <th>Name</th>
+          <th>ID</th>
+        </tr>
+      </thead>
+      <tbody>`;
+
+    let indexSection = data.indexes.map( index => {
+      return `
+        <tr>
+          <td>${index.name}</td>
+          <td>${index.id}</td>
+        </tr>`;
+    } ).join( "" );
+
+    let indexSectionFooter = `
+      </tbody>
+    </table>`;
+
+    return topSection +
+      fieldsSectionHeader + fieldsSection + fieldsSectionFooter +
+      indexSectionHeader + indexSection + indexSectionFooter;
+  }
+
+  function displayObjectDetails( objName, scrollIntoView ) {
+    let existingTab = document.getElementById( `tab-obj-${objName}` );
+    if ( existingTab !== null ) {
+      existingTab.click();
+    } else {
+      let menuItem = document.getElementById( 'tab-menu-current' );
+      menuItem.innerHTML = `<i>${objName}</i>`;
+      menuItem.click();
+
+      let objData = data.find( row => row.name === objName );
+      if (objData) {
+        document.getElementById( 'tab-current' ).innerHTML = getObjectDetailsHtml( 'tab-current', objData );
+        initDataTableWithButtons(
+          '#tab-current-fields-table',
+          `${objName} Properties`,
+          true,
+          true,
+          {
+            order: [[1, 'asc']],
+            pageLength: 25,
+            lengthMenu: [25, 50, 100, 200]
+          }
+        );
+        initDataTableWithButtons(
+          '#tab-current-indexes-table',
+          `${objName} Indexes`,
+          true,
+          true,
+          {
+            order: [[1, 'asc']],
+            pageLength: 25,
+            lengthMenu: [25, 50, 100, 200]
+          }
+        );
+      } else {
+        document.getElementById('tab-current').innerHTML = `<div class="ui negative message">Collection "${objName}" not found.</div>`;
+      }
+    }
+
+    if ( scrollIntoView ) {
+      document.getElementById( 'tab-menu' ).scrollIntoView();
+    }
+  }
+
+  function addAndDisplayObjectDetails( objName, showTab, scrollIntoView ) {
+    let objTab = document.getElementById( `tab-obj-${objName}` );
+    if ( objTab === null ) {
+      let newTabDetail = document.createElement( 'div' );
+      newTabDetail.setAttribute( 'class', 'ui bottom attached tab segment' );
+      newTabDetail.setAttribute( 'data-tab', objName );
+      document.getElementById( 'details' ).appendChild( newTabDetail );
+
+      objTab = document.createElement( 'a' );
+      objTab.setAttribute( 'id', `tab-obj-${objName}` );
+      objTab.setAttribute( 'class', 'item' );
+      objTab.setAttribute( 'data-tab', objName );
+      objTab.innerText = objName;
+      document.getElementById( 'tab-menu' ).appendChild( objTab );
+
+      if ( showTab ) {
+        objTab.click();
+      }
+
+      let objData = data.find( row => row.name === objName );
+      if (objData) {
+        newTabDetail.innerHTML = getObjectDetailsHtml( `tab-obj-${objName}`, objData );
+        // Do not initialize DataTable here, it will be done in the tab visibility handler.
+      } else {
+        newTabDetail.innerHTML = `<div class="ui negative message">Collection "${objName}" not found.</div>`;
+      }
+
+      $('.menu .item').tab({
+        onVisible: function(tabPath) {
+          $(`#details div[data-tab="${tabPath}"] table`).each(function() {
+            if ($.fn.dataTable && !$.fn.dataTable.isDataTable(this) && this.id && (this.id.endsWith('-indexes-table') || this.id.endsWith('-fields-table'))) {
+              // Get the object name from the id
+              const objName = this.id.replace('-(fields|indexes)-table', '').replace(/^tab-obj-/, '');
+              initDataTableWithButtons(
+                '#' + this.id,
+                `${objName} Properties`,
+                true,
+                true,
+                {
+                  order: [[1, 'asc']],
+                  pageLength: 25,
+                  lengthMenu: [25, 50, 100, 200]
+                }
+              );
+            } else if ($.fn.dataTable.isDataTable(this)) {
+              $(this).DataTable().columns.adjust();
+            }
+          });
+        }
+      });
+    } else if ( showTab ) {
+      objTab.click();
+    }
+
+    if ( scrollIntoView ) {
+      document.getElementById( 'tab-menu' ).scrollIntoView();
+    }
+  }
+
+  $( document ).ready( function () {
+    initDataTableWithButtons(
+      '#collectionsTable',
+      'Collections',
+      true,
+      true,
+      {
+        data: data,
+        columns: [
+          { data: 'name', render: renderObjectName },
+          { data: 'id' },
+          { data: 'collectionType' },
+          { data: 'storageType' },
+          { data: 'objectReference', render: renderObjectReference },
+          { data: 'propertyCount' },
+          { data: 'indexCount' }
+        ],
+        lengthMenu: [10, 25, 50, 100, 200],
+      }
+    );
+
+    let clickTimer = null;
+    $('#collectionsTable tbody').on('click', 'tr', function () {
+      const objName = $(this).find('.name').text();
+      if (clickTimer) {
+        clearTimeout(clickTimer);
+        clickTimer = null;
+        // Do nothing here; dblclick will handle
+      } else {
+        clickTimer = setTimeout(() => {
+          displayObjectDetails(objName); // single-click
+          clickTimer = null;
+        }, 300);
+      }
+    });
+
+    $('#collectionsTable tbody').on('dblclick', 'tr', function (e) {
+      e.preventDefault();
+      if (clickTimer) {
+        clearTimeout(clickTimer);
+        clickTimer = null;
+      }
+      const objName = $(this).find('.name').text();
+      addAndDisplayObjectDetails(objName, true, false); // double-click
+    });
+
+    $('.menu .item').tab({
+      onVisible: function(tabPath) {
+        $(`#details div[data-tab="${tabPath}"] table`).each(function() {
+          if ($.fn.dataTable && !$.fn.dataTable.isDataTable(this) && this.id && (this.id.endsWith('-indexes-table') || this.id.endsWith('-fields-table'))) {
+            // Get the object name from the id
+            const objName = this.id.replace('-(fields|indexes)-table', '').replace(/^tab-obj-/, '');
+            initDataTableWithButtons(
+              '#' + this.id,
+              `${objName} Properties`,
+              true,
+              true,
+              {
+                order: [[1, 'asc']],
+                pageLength: 25,
+                lengthMenu: [25, 50, 100, 200]
+              }
+            );
+          } else if ($.fn.dataTable.isDataTable(this)) {
+            $(this).DataTable().columns.adjust();
+          }
+        });
+      }
+    });
+  } );</script>
+  </body>
+</html>

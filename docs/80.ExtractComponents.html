@@ -1,0 +1,131 @@
+<html lang="en" xmlns:set="http://exslt.org/sets">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.9.3/semantic.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.datatables.net/v/se/jszip-3.10.1/dt-2.0.7/b-3.0.2/b-colvis-3.0.2/b-html5-3.0.2/b-print-3.0.2/cr-2.0.2/date-1.5.2/fc-5.0.0/fh-4.0.1/kt-2.12.0/r-3.0.2/rg-1.5.0/sc-2.4.2/sb-1.7.1/sp-2.3.1/datatables.min.css"
+    />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.9.3/semantic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/v/se/jszip-3.10.1/dt-2.0.7/b-3.0.2/b-colvis-3.0.2/b-html5-3.0.2/b-print-3.0.2/cr-2.0.2/date-1.5.2/fc-5.0.0/fh-4.0.1/kt-2.12.0/r-3.0.2/rg-1.5.0/sc-2.4.2/sb-1.7.1/sp-2.3.1/datatables.min.js"></script>
+
+    <script type="text/javascript" src="script/cfg-tables.js"></script>
+    <script type="text/javascript" src="80.ExtractComponents.js"></script>
+    <title>Components</title>
+  </head>
+  <body style="padding: 16px">
+    <h2 class="ui header">Components Summary</h2>
+    <table id="summaryTable" class="ui celled table" style="width: 100%">
+      <thead>
+        <tr class="header">
+          <th>Component ID</th>
+          <th>Count</th>
+          <th>Node Names</th>
+          <th>Item Types</th>
+        </tr>
+      </thead>
+      <tbody />
+    </table>
+
+    <h2 class="ui header">Components Details</h2>
+    <table id="detailsTable" class="ui celled table" style="width: 100%">
+      <thead>
+        <tr class="header">
+          <th>Component ID</th>
+          <th>Item</th>
+          <th>Paths</th>
+        </tr>
+      </thead>
+      <tbody />
+    </table>
+
+    <script>
+      const knownFileTypesRx = /\.(ico|jpeg|jpg|mp3|png|wav)$/i;
+      const objectPropsRx = /^object\./;
+      const filtered = components.filter(
+        (entry) =>
+          !knownFileTypesRx.test(entry.progId) &&
+          !objectPropsRx.test(entry.progId)
+      );
+
+      const summaryData = filtered.map((entry) => {
+        const nodeNames = [
+          ...new Set(
+            entry.entries.map((e) => {
+              const parts = e.xpath.split("/");
+              return parts[parts.length - 1];
+            })
+          ),
+        ];
+        const typeNames = [
+          ...new Set(entry.entries.map((e) => e.xoomId.split("[")[0])),
+        ];
+
+        return [entry.progId, entry.entries.length, nodeNames, typeNames];
+      });
+
+      const detailsData = filtered.reduce((acc, component) => {
+        let accEntry = undefined;
+        component.entries.forEach((entry) => {
+          if (accEntry === undefined) {
+            accEntry = [component.progId, entry.xoomId, [entry.xpath]];
+          } else if (accEntry[1] === entry.xoomId) {
+            accEntry[2].push(entry.xpath);
+          } else {
+            acc.push(accEntry);
+            accEntry = [component.progId, entry.xoomId, [entry.xpath]];
+          }
+        });
+        acc.push(accEntry);
+        return acc;
+      }, []);
+
+      $(document).ready(function () {
+        initDataTableWithButtons(
+          "#summaryTable",
+          "Components Summary",
+          false,
+          true,
+          {
+            data: summaryData,
+            columns: [
+              { render: (e) => e },
+              { render: (e) => e },
+              { render: renderList },
+              { render: renderList },
+            ],
+            order: [[0, "asc"]],
+          }
+        );
+
+        initDataTableWithButtons(
+          "#detailsTable",
+          "Components Details",
+          false,
+          true,
+          {
+            data: detailsData,
+            columns: [
+              { render: (e) => e },
+              { render: (e) => e },
+              { render: renderList },
+            ],
+            order: [[0, "asc"], [1, "asc"]],
+          }
+        );
+      });
+    </script>
+  </body>
+</html>

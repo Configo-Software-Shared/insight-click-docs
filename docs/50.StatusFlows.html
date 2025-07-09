@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Status Flows</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.9.3/semantic.min.css"
+    />
+  </head>
+  <body style="margin: 20px; height: calc(100vh - 40px)">
+    <div
+      class="ui fluid container"
+      style="height: 100%; display: flex; flex-direction: column"
+    >
+      <div style="flex: 0 0 auto">
+        <h2 class="ui header">Status Flows</h2>
+        <div class="ui segment">
+          <div class="field">
+            <label>Select status flow to view: </label>
+            <select id="subgraph-menu" class="ui dropdown"></select>
+          </div>
+        </div>
+      </div>
+      <div
+        id="graph-container"
+        class="ui segment"
+        style="
+          flex: 1;
+          margin: 0;
+          overflow: auto;
+          text-align: center;
+          min-height: 0;
+          position: relative;
+        "
+      >
+        <div
+          style="
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+          "
+        >
+          <div class="ui mini buttons">
+            <button id="zoom-in" class="ui mini button">
+              <i class="zoom in icon"></i>
+            </button>
+            <button id="zoom-out" class="ui mini button">
+              <i class="zoom out icon"></i>
+            </button>
+            <button id="reset" class="ui mini button">
+              <i class="refresh icon"></i>
+            </button>
+          </div>
+        </div>
+        <div
+          id="graph-loading"
+          class="ui active inverted dimmer"
+          style="display: none"
+        >
+          <div class="ui text loader">Rendering graph...</div>
+        </div>
+        <div
+          id="graph-error"
+          class="ui negative message"
+          style="display: none"
+        ></div>
+        <div
+          id="graph"
+          style="width: 100%; height: auto; max-width: 100%"
+        ></div>
+      </div>
+    </div>
+  </body>
+  <!-- Viz.js library -->
+  <script src="https://unpkg.com/viz.js@2.1.2/viz.js"></script>
+  <script src="https://unpkg.com/viz.js@2.1.2/lite.render.js"></script>
+  <script src="50.StatusFlowDot.js"></script>
+  <script>
+    const graphDiv = document.getElementById("graph");
+    const loading = document.getElementById("graph-loading");
+    const errorDiv = document.getElementById("graph-error");
+    const subgraphMenu = document.getElementById("subgraph-menu");
+    let viz;
+    let currentSvg = null;
+    let scale = 1;
+    let panX = 0;
+    let panY = 0;
+    let isDragging = false;
+    let lastMouseX = 0;
+    let lastMouseY = 0;
+    const SCALE_STEP = 0.2;
+    const SCALE_MIN = 0.2;
+    const SCALE_MAX = 50;
+    let allSubgraphs = [];
+    let legendBlock = "";
+    try {
+      viz = new Viz();
+    } catch (error) {
+      console.error("Failed to initialize Viz:", error);
+      errorDiv.textContent =
+        "Failed to load graph rendering library. Please refresh the page.";
+      errorDiv.style.display = "block";
+    }
+
+    function applyScale() {
+      if (currentSvg) {
+        currentSvg.style.transform = `translate(${panX}px, ${panY}px) scale(${scale})`;
+        currentSvg.style.transformOrigin = "0 0";
+        currentSvg.style.cursor = isDragging ? "grabbing" : "grab";
+      }
+    }
+
+    function enableZoomControls(svgElement) {
+      currentSvg = svgElement;
+      applyScale();
+      // Mouse events for panning
+      svgElement.addEventListener("mousedown", function (e) {
+        if (e.button === 0) {
+          // Left mouse button only
+          isDragging = true;
+          lastMouseX = e.clientX;
+          lastMouseY = e.clientY;
+          svgElement.style.cursor = "grabbing";
+          e.preventDefault();
+        }
+      });
+      svgElement.addEventListener("mousemove", function (e) {
+        if (isDragging) {
+          const deltaX = e.clientX - lastMouseX;
+          const deltaY = e.clientY - lastMouseY;
+          panX += deltaX;
+          panY += deltaY;
+          lastMouseX = e.clientX;
+          lastMouseY = e.clientY;
+          applyScale();
+          e.preventDefault();
+        }
+      });
+      svgElement.addEventListener("mouseup", function (e) {
+        if (isDragging) {
+          isDragging = false;
+          svgElement.style.cursor = "grab";
+        }
+      });
+      svgElement.addEventListener("mouseleave", function (e) {
+        if (isDragging) {
+          isDragging = false;
+          svgElement.style.cursor = "grab";
+        }
+      });
+      document.getElementById("zoom-in").onclick = function () {
+        scale = Math.min(scale + SCALE_STEP, SCALE_MAX);
+        applyScale();
+      };
+      document.getElementById("zoom-out").onclick = function () {
+        scale = Math.max(scale - SCALE_STEP, SCALE_MIN);
+        applyScale();
+      };
+      document.getElementById("reset").onclick = function () {
+        scale = 1;
+        panX = 0;
+        panY = 0;
+        applyScale();
+      };
+      // Enable zoom with scroll wheel
+      svgElement.addEventListener(
+        "wheel",
+        function (e) {
+          if (!e.ctrlKey) {
+            e.preventDefault();
+            if (e.deltaY < 0) {
+              scale = Math.min(scale + SCALE_STEP, SCALE_MAX);
+            } else {
+              scale = Math.max(scale - SCALE_STEP, SCALE_MIN);
+            }
+            applyScale();
+          }
+        },
+        { passive: false }
+      );
+    }
+
+    // Parse DOT file to extract subgraphs and legend
+    function parseDotFile(dotText) {
+      console.log(
+        "parseDotFile called with:",
+        dotText.substring(0, 200) + "..."
+      );
+
+      let subgraphs = [];
+      let legend = "";
+
+      // More robust parser that handles nested braces
+      let pos = 0;
+      const length = dotText.length;
+
+      while (pos < length) {
+        // Find next subgraph
+        const subgraphStart = dotText.indexOf("subgraph", pos);
+        if (subgraphStart === -1) break;
+
+        // Find the opening brace
+        const braceStart = dotText.indexOf("{", subgraphStart);
+        if (braceStart === -1) break;
+
+        // Find matching closing brace (handle nested braces)
+        let braceCount = 1;
+        let braceEnd = braceStart + 1;
+
+        while (braceCount > 0 && braceEnd < length) {
+          if (dotText[braceEnd] === "{") braceCount++;
+          if (dotText[braceEnd] === "}") braceCount--;
+          braceEnd++;
+        }
+
+        if (braceCount === 0) {
+          // Extract the complete subgraph block
+          const subgraphBlock = dotText.substring(subgraphStart, braceEnd);
+          console.log(
+            "Found subgraph block:",
+            subgraphBlock.substring(0, 100) + "..."
+          );
+
+          // Extract label
+          const labelMatch = subgraphBlock.match(/label\s*=\s*"([^"]+)"/);
+          if (labelMatch) {
+            const label = labelMatch[1];
+            console.log("Found label:", label);
+
+            if (label.toLowerCase().includes("legend")) {
+              legend = subgraphBlock;
+              console.log("This is the legend");
+            } else {
+              subgraphs.push({ label, block: subgraphBlock });
+              console.log("Added subgraph:", label);
+            }
+          }
+
+          pos = braceEnd;
+        } else {
+          pos = braceStart + 1;
+        }
+      }
+
+      console.log("Total subgraphs found:", subgraphs.length);
+      console.log("Legend found:", legend ? "yes" : "no");
+      return { subgraphs, legend };
+    }
+
+    // Render the selected subgraph (and legend if present)
+    function renderSubgraph(subgraphBlock) {
+      console.log(
+        "renderSubgraph called with:",
+        subgraphBlock.substring(0, 100) + "..."
+      );
+      loading.style.display = "block";
+      errorDiv.style.display = "none";
+      graphDiv.innerHTML = "";
+      scale = 1;
+      panX = 0;
+      panY = 0;
+      let dotSrc =
+        "digraph scheme {\n  rankdir = LR;\n  overlap = false;\n  node [shape = rectangle];\n";
+      if (legendBlock) dotSrc += "\n" + legendBlock + "\n";
+      dotSrc += "\n" + subgraphBlock + "\n}";
+      console.log("Generated DOT source:", dotSrc);
+      viz
+        .renderSVGElement(dotSrc)
+        .then(function (element) {
+          graphDiv.innerHTML = "";
+          graphDiv.appendChild(element);
+          loading.style.display = "none";
+          enableZoomControls(element);
+        })
+        .catch(function (error) {
+          loading.style.display = "none";
+          errorDiv.textContent = "Error rendering DOT: " + error;
+          errorDiv.style.display = "block";
+        });
+    }
+
+    // Initialize on page load using the DOT_CONTENT from the JS file
+    function initializeFromDotContent() {
+      console.log("Initializing from DOT_CONTENT");
+      const { subgraphs, legend } = parseDotFile(DOT_CONTENT);
+      allSubgraphs = subgraphs;
+      legendBlock = legend;
+
+      // Populate menu
+      subgraphMenu.innerHTML = "";
+      subgraphs.forEach((sg, idx) => {
+        const opt = document.createElement("option");
+        opt.value = idx;
+        opt.textContent = sg.label;
+        subgraphMenu.appendChild(opt);
+      });
+      if (subgraphs.length > 0) {
+        renderSubgraph(subgraphs[0].block);
+        subgraphMenu.value = 0;
+      }
+    }
+
+    // Initialize when page loads
+    document.addEventListener("DOMContentLoaded", function () {
+      initializeFromDotContent();
+    });
+
+    subgraphMenu.addEventListener("change", function () {
+      const idx = parseInt(subgraphMenu.value, 10);
+      if (!isNaN(idx) && allSubgraphs[idx]) {
+        renderSubgraph(allSubgraphs[idx].block);
+      }
+    });
+  </script>
+</html>

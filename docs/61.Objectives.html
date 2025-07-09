@@ -1,0 +1,3573 @@
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:xoom="urn:xmlns:zanyants:xoom" xmlns:w6vc="urn:zanyants-xoom:meta:o=zanyants;c=w6-virtual-collection;v=1.0;">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.9.3/semantic.min.css" xmlns="" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/se/jszip-3.10.1/dt-2.0.7/b-3.0.2/b-colvis-3.0.2/b-html5-3.0.2/b-print-3.0.2/cr-2.0.2/date-1.5.2/fc-5.0.0/fh-4.0.1/kt-2.12.0/r-3.0.2/rg-1.5.0/sc-2.4.2/sb-1.7.1/sp-2.3.1/datatables.min.css" xmlns="" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" xmlns="">//</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.9.3/semantic.min.js" xmlns="">//</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js" xmlns="">//</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js" xmlns="">//</script>
+    <script src="https://cdn.datatables.net/v/se/jszip-3.10.1/dt-2.0.7/b-3.0.2/b-colvis-3.0.2/b-html5-3.0.2/b-print-3.0.2/cr-2.0.2/date-1.5.2/fc-5.0.0/fh-4.0.1/kt-2.12.0/r-3.0.2/rg-1.5.0/sc-2.4.2/sb-1.7.1/sp-2.3.1/datatables.min.js" xmlns="">//</script>
+    <script type="text/javascript" src="script/cfg-tables.js" xmlns="">//</script>
+    <title>Objectives and Business Value Functions</title>
+  </head>
+  <body style="padding:16px">
+    <h2 class="ui header">Objectives</h2>
+    <table id="objectivesTable" class="ui celled table" style="width:100%">
+      <thead>
+        <tr class="header">
+          <th>Objective</th>
+          <th>Category</th>
+          <th>Type</th>
+          <th>Family</th>
+          <th>Relevance group</th>
+          <th>Min</th>
+          <th>Max</th>
+          <th>Settings</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>[VS ] Base Priority Boost to Prefer task with DP Equals 100</td>
+          <td>Basic Behavior Objectives</td>
+          <td>Task Priority Objective</td>
+          <td family="0">D</td>
+          <td>dynamic priority 100</td>
+          <td>0</td>
+          <td>100</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [0]</li>
+              <li>Task Property [TaskNumberOfRequiredEngineers]</li>
+              <li>
+                <span>Value XML</span>
+                <ul>
+                  <li>
+                    <span>Property Based Revenues</span>
+                    <ul>
+                      <li>
+                        <span>Number</span>
+                        <ul>
+                          <li>ID [NumberOfRequiredEngineers]</li>
+                          <li>[RefreshData] = []</li>
+                          <li>
+                            <span>Revenue</span>
+                            <ul>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [1]</li>
+                                  <li>Revenue [100.00]</li>
+                                </ul>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>[DictionaryProperty] = []</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>[VS] ASAP Boost for Tasks with DP more than or Equal to 60</td>
+          <td>Time Objectives</td>
+          <td>Enhanced Time Objective</td>
+          <td family="3">DT</td>
+          <td>[VS] Tasks with DP more than or Equal to 60 (RG)</td>
+          <td>0</td>
+          <td>100</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [0]</li>
+              <li>[PriorityWorstValue] = [0]</li>
+              <li>[PriorityBestValue] = [0]</li>
+              <li>[CompareType] = [W6_ASSIGNMENT_START]</li>
+              <li>[CompareToType] = [W6_MAX_CURRENT_TIME_AND_PROPERTY]</li>
+              <li>[EnableTimeZoneConversion] = [1]</li>
+              <li>[IgnoreEffectOnOtherTasks] = [0]</li>
+              <li>[DateProperty]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [EarlyStart]</li></ul></li></ul></li>
+              <li>[PriorityProperty] = []</li>
+              <li>[GradeFunctionPoints]<ul><li>[GradeFunctionPoint]<ul><li>[ValueX] = [0]</li><li>[ValueY] = [100]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [1800]</li><li>[ValueY] = [90]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [3600]</li><li>[ValueY] = [80]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [7200]</li><li>[ValueY] = [60]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [18000]</li><li>[ValueY] = [50]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [28800]</li><li>[ValueY] = [40]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [43200]</li><li>[ValueY] = [20]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [86400]</li><li>[ValueY] = [0]</li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>[VS] Base Priority Boost for DP more than 50 - Maint</td>
+          <td>Basic Behavior Objectives</td>
+          <td>Task Priority Objective</td>
+          <td family="0">D</td>
+          <td>[VS] Tasks with DP more than or Equal to 50 (RG) - Maint</td>
+          <td>0</td>
+          <td>100</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [0]</li>
+              <li>Task Property [TaskNumberOfRequiredEngineers]</li>
+              <li>
+                <span>Value XML</span>
+                <ul>
+                  <li>
+                    <span>Property Based Revenues</span>
+                    <ul>
+                      <li>
+                        <span>Number</span>
+                        <ul>
+                          <li>ID [NumberOfRequiredEngineers]</li>
+                          <li>[RefreshData] = []</li>
+                          <li>
+                            <span>Revenue</span>
+                            <ul>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [1]</li>
+                                  <li>Revenue [100]</li>
+                                </ul>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>[DictionaryProperty] = []</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>[VS] Base Priority Boost for DP more than 60</td>
+          <td>Basic Behavior Objectives</td>
+          <td>Task Priority Objective</td>
+          <td family="0">D</td>
+          <td>[VS] Tasks with DP more than or Equal to 60 (RG)</td>
+          <td>0</td>
+          <td>100</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [0]</li>
+              <li>Task Property [TaskNumberOfRequiredEngineers]</li>
+              <li>
+                <span>Value XML</span>
+                <ul>
+                  <li>
+                    <span>Property Based Revenues</span>
+                    <ul>
+                      <li>
+                        <span>Number</span>
+                        <ul>
+                          <li>ID [NumberOfRequiredEngineers]</li>
+                          <li>[RefreshData] = []</li>
+                          <li>
+                            <span>Revenue</span>
+                            <ul>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [1]</li>
+                                  <li>Revenue [100.00]</li>
+                                </ul>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>[DictionaryProperty] = []</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>ASAP Maint - Boost for Tasks with DP less than or Equal to 49</td>
+          <td>Time Objectives</td>
+          <td>Enhanced Time Objective</td>
+          <td family="3">DT</td>
+          <td>[VS] Tasks with DP more less or Equal to 49 (RG) - Maint</td>
+          <td>0</td>
+          <td>100</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [0]</li>
+              <li>[PriorityWorstValue] = [0]</li>
+              <li>[PriorityBestValue] = [0]</li>
+              <li>[CompareType] = [W6_ASSIGNMENT_START]</li>
+              <li>[CompareToType] = [W6_MAX_CURRENT_TIME_AND_PROPERTY]</li>
+              <li>[EnableTimeZoneConversion] = [0]</li>
+              <li>[IgnoreEffectOnOtherTasks] = [0]</li>
+              <li>[DateProperty]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [EarlyStart]</li></ul></li></ul></li>
+              <li>[PriorityProperty] = []</li>
+              <li>[GradeFunctionPoints]<ul><li>[GradeFunctionPoint]<ul><li>[ValueX] = [0]</li><li>[ValueY] = [100]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [86400]</li><li>[ValueY] = [90]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [172800]</li><li>[ValueY] = [80]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [259200]</li><li>[ValueY] = [60]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [345600]</li><li>[ValueY] = [70]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [432000]</li><li>[ValueY] = [50]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [518400]</li><li>[ValueY] = [40]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [604800]</li><li>[ValueY] = [30]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [691200]</li><li>[ValueY] = [20]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [777600]</li><li>[ValueY] = [10]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [864000]</li><li>[ValueY] = [0]</li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>ASAP Maint - Boost for Tasks with DP more than or Equal to 50</td>
+          <td>Time Objectives</td>
+          <td>Enhanced Time Objective</td>
+          <td family="3">DT</td>
+          <td>[VS] Tasks with DP more than or Equal to 50 (RG) - Maint</td>
+          <td>0</td>
+          <td>100</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [0]</li>
+              <li>[PriorityWorstValue] = [0]</li>
+              <li>[PriorityBestValue] = [0]</li>
+              <li>[CompareType] = [W6_ASSIGNMENT_START]</li>
+              <li>[CompareToType] = [W6_MAX_CURRENT_TIME_AND_PROPERTY]</li>
+              <li>[EnableTimeZoneConversion] = [1]</li>
+              <li>[IgnoreEffectOnOtherTasks] = [0]</li>
+              <li>[DateProperty]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [EarlyStart]</li></ul></li></ul></li>
+              <li>[PriorityProperty] = []</li>
+              <li>[GradeFunctionPoints]<ul><li>[GradeFunctionPoint]<ul><li>[ValueX] = [0]</li><li>[ValueY] = [100]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [86400]</li><li>[ValueY] = [90]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [172800]</li><li>[ValueY] = [80]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [259200]</li><li>[ValueY] = [70]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [345600]</li><li>[ValueY] = [60]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [432000]</li><li>[ValueY] = [50]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [518400]</li><li>[ValueY] = [40]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [604800]</li><li>[ValueY] = [30]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [691200]</li><li>[ValueY] = [20]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [777600]</li><li>[ValueY] = [10]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [864000]</li><li>[ValueY] = [0]</li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>BAK Flare Boost</td>
+          <td>Basic Behavior Objectives</td>
+          <td>Task Priority Objective</td>
+          <td family="0">D</td>
+          <td>BAK Flare Management Alarms</td>
+          <td>1</td>
+          <td>6</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [0]</li>
+              <li>Task Property []</li>
+              <li>
+                <span>Value XML</span>
+                <ul>
+                  <li>
+                    <span>Property Based Revenues</span>
+                    <ul>
+                      <li>[Dictionary]<ul><li>ID [10143]</li><li>Revenue [2875481210026]</li></ul></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>[DictionaryProperty]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [FSMSchedulePriority]</li><li>[PropertyReference] = [Rank]</li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>BAK Minimize Travel Between Assignments</td>
+          <td>Geography Objectives</td>
+          <td>Travel Between Consecutive Assignments Objective</td>
+          <td family="6">DRT</td>
+          <td></td>
+          <td>900</td>
+          <td>0</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [1]</li>
+              <li>[PeriodicResolution] = [W6_PERIODIC_DAY]</li>
+              <li>[PeriodicWeekDay] = [W6_MONDAY]</li>
+              <li>[PeriodicMonthDay] = [1]</li>
+              <li>[PeriodicStartTime] = [0]</li>
+              <li>[CheckTravelFromHomeBase] = [1]</li>
+              <li>[CheckTravelToHomeBase] = [1]</li>
+              <li>[ByDistance] = [0]</li>
+              <li>[UseAerialDistance_SO] = [0]</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>BAK Same Sites</td>
+          <td>Geography Objectives</td>
+          <td>Travel Between Consecutive Assignments Objective</td>
+          <td family="6">DRT</td>
+          <td></td>
+          <td>1609</td>
+          <td>0</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [1]</li>
+              <li>[PeriodicResolution] = [W6_PERIODIC_DAY]</li>
+              <li>[PeriodicWeekDay] = [W6_MONDAY]</li>
+              <li>[PeriodicMonthDay] = [1]</li>
+              <li>[PeriodicStartTime] = [0]</li>
+              <li>[CheckTravelFromHomeBase] = [1]</li>
+              <li>[CheckTravelToHomeBase] = [1]</li>
+              <li>[ByDistance] = [1]</li>
+              <li>[UseAerialDistance_SO] = [0]</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>BAK Travel Boost Tank Anodes</td>
+          <td>Geography Objectives</td>
+          <td>Travel Between Consecutive Assignments Objective</td>
+          <td family="6">DRT</td>
+          <td>BAK Tank Anodes</td>
+          <td>900</td>
+          <td>0</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [0]</li>
+              <li>[PeriodicResolution] = [W6_PERIODIC_DAY]</li>
+              <li>[PeriodicWeekDay] = [W6_MONDAY]</li>
+              <li>[PeriodicMonthDay] = [1]</li>
+              <li>[PeriodicStartTime] = [0]</li>
+              <li>[CheckTravelFromHomeBase] = [1]</li>
+              <li>[CheckTravelToHomeBase] = [1]</li>
+              <li>[ByDistance] = [0]</li>
+              <li>[UseAerialDistance_SO] = [0]</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Base Priority Revenue</td>
+          <td>Basic Behavior Objectives</td>
+          <td>Task Priority Objective</td>
+          <td family="0">D</td>
+          <td></td>
+          <td>0</td>
+          <td>100</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [0]</li>
+              <li>Task Property [TaskNumberOfRequiredEngineers]</li>
+              <li>
+                <span>Value XML</span>
+                <ul>
+                  <li>
+                    <span>Property Based Revenues</span>
+                    <ul>
+                      <li>
+                        <span>Number</span>
+                        <ul>
+                          <li>ID [NumberOfRequiredEngineers]</li>
+                          <li>
+                            <span>Revenue</span>
+                            <ul>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [1]</li>
+                                  <li>Revenue [100]</li>
+                                </ul>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>[DictionaryProperty] = []</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Boost - Same Site PM03 Measurement </td>
+          <td>Geography Objectives</td>
+          <td>Travel Between Consecutive Assignments Objective</td>
+          <td family="6">DRT</td>
+          <td>FSM PM03 Measurement</td>
+          <td>402.25</td>
+          <td>0</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [0]</li>
+              <li>[PeriodicResolution] = [W6_PERIODIC_DAY]</li>
+              <li>[PeriodicWeekDay] = [W6_MONDAY]</li>
+              <li>[PeriodicMonthDay] = [1]</li>
+              <li>[PeriodicStartTime] = [0]</li>
+              <li>[CheckTravelFromHomeBase] = [1]</li>
+              <li>[CheckTravelToHomeBase] = [1]</li>
+              <li>[ByDistance] = [1]</li>
+              <li>[UseAerialDistance_SO] = [0]</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>CA_Number of Scheduled Appointments</td>
+          <td></td>
+          <td></td>
+          <td family="0">D</td>
+          <td>_Appointments</td>
+          <td>0</td>
+          <td>100</td>
+          <td>
+            <ul>
+              <li>[WorkRevenue] = [1]</li>
+              <li>[WorkRevenuePlaceholder] = [W6_DATA_ENTRY]</li>
+              <li>[TaskWorkRevenueProperty] = []</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>CA_Number of Scheduled NonAppointments</td>
+          <td></td>
+          <td></td>
+          <td family="0">D</td>
+          <td>_Non Appointments</td>
+          <td>0</td>
+          <td>100</td>
+          <td>
+            <ul>
+              <li>[WorkRevenue] = [1]</li>
+              <li>[WorkRevenuePlaceholder] = [W6_DATA_ENTRY]</li>
+              <li>[TaskWorkRevenueProperty] = []</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>CA_Number of Scheduled Tasks</td>
+          <td></td>
+          <td></td>
+          <td family="0">D</td>
+          <td></td>
+          <td>0</td>
+          <td>100</td>
+          <td>
+            <ul>
+              <li>[WorkRevenue] = [1]</li>
+              <li>[WorkRevenuePlaceholder] = [W6_DATA_ENTRY]</li>
+              <li>[TaskWorkRevenueProperty] = []</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Down time ASAP</td>
+          <td>Time Objectives</td>
+          <td>Enhanced Time Objective</td>
+          <td family="3">DT</td>
+          <td>Down Tasks</td>
+          <td>0</td>
+          <td>100</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [0]</li>
+              <li>[PriorityWorstValue] = [0]</li>
+              <li>[PriorityBestValue] = [0]</li>
+              <li>[CompareType] = [W6_ASSIGNMENT_START]</li>
+              <li>[CompareToType] = [W6_MAX_CURRENT_TIME_AND_PROPERTY]</li>
+              <li>[EnableTimeZoneConversion] = [1]</li>
+              <li>[IgnoreEffectOnOtherTasks] = [0]</li>
+              <li>[DateProperty]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [EarlyStart]</li></ul></li></ul></li>
+              <li>[PriorityProperty] = []</li>
+              <li>[GradeFunctionPoints]<ul><li>[GradeFunctionPoint]<ul><li>[ValueX] = [0]</li><li>[ValueY] = [100]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [1800]</li><li>[ValueY] = [100]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [21600]</li><li>[ValueY] = [30]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [57600]</li><li>[ValueY] = [0]</li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Down time ASAP 2</td>
+          <td>Time Objectives</td>
+          <td>Enhanced Time Objective</td>
+          <td family="3">DT</td>
+          <td>Down Tasks</td>
+          <td>0</td>
+          <td>100</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [0]</li>
+              <li>[PriorityWorstValue] = [0]</li>
+              <li>[PriorityBestValue] = [0]</li>
+              <li>[CompareType] = [W6_ASSIGNMENT_START]</li>
+              <li>[CompareToType] = [W6_MAX_CURRENT_TIME_AND_PROPERTY]</li>
+              <li>[EnableTimeZoneConversion] = [1]</li>
+              <li>[IgnoreEffectOnOtherTasks] = [0]</li>
+              <li>[DateProperty]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [EarlyStart]</li></ul></li></ul></li>
+              <li>[PriorityProperty] = []</li>
+              <li>[GradeFunctionPoints]<ul><li>[GradeFunctionPoint]<ul><li>[ValueX] = [0]</li><li>[ValueY] = [100]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [3600]</li><li>[ValueY] = [100]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [57600]</li><li>[ValueY] = [0]</li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>EF PM03 Measurement ASAP</td>
+          <td>Time Objectives</td>
+          <td>Enhanced Time Objective</td>
+          <td family="3">DT</td>
+          <td>FSM PM03 Measurement</td>
+          <td>0</td>
+          <td>100</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [0]</li>
+              <li>[PriorityWorstValue] = [0]</li>
+              <li>[PriorityBestValue] = [100]</li>
+              <li>[CompareType] = [W6_ASSIGNMENT_START]</li>
+              <li>[CompareToType] = [W6_MAX_CURRENT_TIME_AND_PROPERTY]</li>
+              <li>[EnableTimeZoneConversion] = [1]</li>
+              <li>[IgnoreEffectOnOtherTasks] = [0]</li>
+              <li>[DateProperty]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [EarlyStart]</li></ul></li></ul></li>
+              <li>[PriorityProperty]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [DynamicPriority]</li></ul></li></ul></li>
+              <li>[GradeFunctionPoints]<ul><li>[GradeFunctionPoint]<ul><li>[ValueX] = [0]</li><li>[ValueY] = [100]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [86400]</li><li>[ValueY] = [95]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [172800]</li><li>[ValueY] = [90]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [259200]</li><li>[ValueY] = [85]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [345600]</li><li>[ValueY] = [80]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [432000]</li><li>[ValueY] = [75]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [518400]</li><li>[ValueY] = [70]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [604800]</li><li>[ValueY] = [65]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [691200]</li><li>[ValueY] = [60]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [777600]</li><li>[ValueY] = [55]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [864000]</li><li>[ValueY] = [50]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [950400]</li><li>[ValueY] = [45]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [1036800]</li><li>[ValueY] = [40]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [1123200]</li><li>[ValueY] = [35]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [1209600]</li><li>[ValueY] = [30]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [1296000]</li><li>[ValueY] = [25]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [1382400]</li><li>[ValueY] = [20]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [1468800]</li><li>[ValueY] = [15]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [1555200]</li><li>[ValueY] = [10]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [1641600]</li><li>[ValueY] = [5]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [1728000]</li><li>[ValueY] = [0]</li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Equip Info Reduce Idle Time</td>
+          <td>Basic Behavior Objectives</td>
+          <td>Minimize Engineer Idle Time Objective</td>
+          <td family="6">DRT</td>
+          <td></td>
+          <td>0</td>
+          <td>1</td>
+          <td>
+            <ul>
+              <li>[TimeWindowFromNow] = [14400]</li>
+              <li>[ProblematicIdleDuration] = [3600]</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Equip Info Same Sites</td>
+          <td>Geography Objectives</td>
+          <td>Travel Between Consecutive Assignments Objective</td>
+          <td family="6">DRT</td>
+          <td></td>
+          <td>16090</td>
+          <td>0</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [1]</li>
+              <li>[PeriodicResolution] = [W6_PERIODIC_DAY]</li>
+              <li>[PeriodicWeekDay] = [W6_MONDAY]</li>
+              <li>[PeriodicMonthDay] = [1]</li>
+              <li>[PeriodicStartTime] = [25200]</li>
+              <li>[CheckTravelFromHomeBase] = [1]</li>
+              <li>[CheckTravelToHomeBase] = [1]</li>
+              <li>[ByDistance] = [1]</li>
+              <li>[UseAerialDistance_SO] = [0]</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Equipment Info ASAP</td>
+          <td>Time Objectives</td>
+          <td>Enhanced Time Objective</td>
+          <td family="0">D</td>
+          <td></td>
+          <td>0</td>
+          <td>100</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [1]</li>
+              <li>[PriorityWorstValue] = [0]</li>
+              <li>[PriorityBestValue] = [0]</li>
+              <li>[CompareType] = [W6_CURRENT_TIME]</li>
+              <li>[CompareToType] = [W6_TASK_PROPERTY]</li>
+              <li>[EnableTimeZoneConversion] = [1]</li>
+              <li>[IgnoreEffectOnOtherTasks] = [0]</li>
+              <li>[DateProperty]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [EarlyStart]</li></ul></li></ul></li>
+              <li>[PriorityProperty] = []</li>
+              <li>[GradeFunctionPoints]<ul><li>[GradeFunctionPoint]<ul><li>[ValueX] = [-5184000]</li><li>[ValueY] = [100]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [5184000]</li><li>[ValueY] = [0]</li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>FSM ASAP PER All Tasks</td>
+          <td>Time Objectives</td>
+          <td>Enhanced Time Objective</td>
+          <td family="3">DT</td>
+          <td>FSM PER ASAP Objective</td>
+          <td>0</td>
+          <td>100</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [0]</li>
+              <li>[PriorityWorstValue] = [0]</li>
+              <li>[PriorityBestValue] = [100]</li>
+              <li>[CompareType] = [W6_ASSIGNMENT_START]</li>
+              <li>[CompareToType] = [W6_MAX_CURRENT_TIME_AND_PROPERTY]</li>
+              <li>[EnableTimeZoneConversion] = [1]</li>
+              <li>[IgnoreEffectOnOtherTasks] = [0]</li>
+              <li>[DateProperty]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [EarlyStart]</li></ul></li></ul></li>
+              <li>[PriorityProperty]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [DynamicPriority]</li></ul></li></ul></li>
+              <li>[GradeFunctionPoints]<ul><li>[GradeFunctionPoint]<ul><li>[ValueX] = [7200]</li><li>[ValueY] = [100]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [14400]</li><li>[ValueY] = [80]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [21600]</li><li>[ValueY] = [60]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [28800]</li><li>[ValueY] = [40]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [43200]</li><li>[ValueY] = [0]</li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>FSM Schedule HIGH/MED-HIGH ASAP</td>
+          <td>Time Objectives</td>
+          <td>Enhanced Time Objective</td>
+          <td family="3">DT</td>
+          <td>FSM HIGH/MED-HIGH SP</td>
+          <td>0</td>
+          <td>100</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [0]</li>
+              <li>[PriorityWorstValue] = [0]</li>
+              <li>[PriorityBestValue] = [100]</li>
+              <li>[CompareType] = [W6_ASSIGNMENT_START]</li>
+              <li>[CompareToType] = [W6_MAX_CURRENT_TIME_AND_PROPERTY]</li>
+              <li>[EnableTimeZoneConversion] = [1]</li>
+              <li>[IgnoreEffectOnOtherTasks] = [0]</li>
+              <li>[DateProperty]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [EarlyStart]</li></ul></li></ul></li>
+              <li>[PriorityProperty]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [DynamicPriority]</li></ul></li></ul></li>
+              <li>[GradeFunctionPoints]<ul><li>[GradeFunctionPoint]<ul><li>[ValueX] = [7200]</li><li>[ValueY] = [100]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [14400]</li><li>[ValueY] = [80]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [21600]</li><li>[ValueY] = [60]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [28800]</li><li>[ValueY] = [40]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [36000]</li><li>[ValueY] = [0]</li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>FSM Schedule HIGH/MED-HIGH ASAP - Maint</td>
+          <td>Time Objectives</td>
+          <td>Enhanced Time Objective</td>
+          <td family="3">DT</td>
+          <td>FSM HIGH/MED-HIGH SP</td>
+          <td>0</td>
+          <td>100</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [0]</li>
+              <li>[PriorityWorstValue] = [0]</li>
+              <li>[PriorityBestValue] = [100]</li>
+              <li>[CompareType] = [W6_ASSIGNMENT_START]</li>
+              <li>[CompareToType] = [W6_MAX_CURRENT_TIME_AND_PROPERTY]</li>
+              <li>[EnableTimeZoneConversion] = [1]</li>
+              <li>[IgnoreEffectOnOtherTasks] = [0]</li>
+              <li>[DateProperty]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [EarlyStart]</li></ul></li></ul></li>
+              <li>[PriorityProperty]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [DynamicPriority]</li></ul></li></ul></li>
+              <li>[GradeFunctionPoints]<ul><li>[GradeFunctionPoint]<ul><li>[ValueX] = [0]</li><li>[ValueY] = [100]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [86400]</li><li>[ValueY] = [90]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [172800]</li><li>[ValueY] = [80]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [259200]</li><li>[ValueY] = [70]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [345600]</li><li>[ValueY] = [60]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [432000]</li><li>[ValueY] = [50]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [518400]</li><li>[ValueY] = [40]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [604800]</li><li>[ValueY] = [30]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [691200]</li><li>[ValueY] = [20]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [777600]</li><li>[ValueY] = [10]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [864000]</li><li>[ValueY] = [0]</li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>FSM Schedule HIGH/MED-HIGH ASAP - ORB</td>
+          <td>Time Objectives</td>
+          <td>Enhanced Time Objective</td>
+          <td family="3">DT</td>
+          <td>ORB FSM HIGH/MED-HIGH SP</td>
+          <td>0</td>
+          <td>100</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [0]</li>
+              <li>[PriorityWorstValue] = [0]</li>
+              <li>[PriorityBestValue] = [100]</li>
+              <li>[CompareType] = [W6_ASSIGNMENT_START]</li>
+              <li>[CompareToType] = [W6_MAX_CURRENT_TIME_AND_PROPERTY]</li>
+              <li>[EnableTimeZoneConversion] = [1]</li>
+              <li>[IgnoreEffectOnOtherTasks] = [0]</li>
+              <li>[DateProperty]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [EarlyStart]</li></ul></li></ul></li>
+              <li>[PriorityProperty]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [DynamicPriority]</li></ul></li></ul></li>
+              <li>[GradeFunctionPoints]<ul><li>[GradeFunctionPoint]<ul><li>[ValueX] = [7200]</li><li>[ValueY] = [100]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [14400]</li><li>[ValueY] = [80]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [21600]</li><li>[ValueY] = [60]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [28800]</li><li>[ValueY] = [40]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [36000]</li><li>[ValueY] = [0]</li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>FSM Schedule HIGH/MED-HIGH/EMER ASAP - BAK</td>
+          <td>Time Objectives</td>
+          <td>Enhanced Time Objective</td>
+          <td family="3">DT</td>
+          <td>FSM BAK Objective ASAP</td>
+          <td>0</td>
+          <td>100</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [0]</li>
+              <li>[PriorityWorstValue] = [0]</li>
+              <li>[PriorityBestValue] = [100]</li>
+              <li>[CompareType] = [W6_ASSIGNMENT_START]</li>
+              <li>[CompareToType] = [W6_MAX_CURRENT_TIME_AND_PROPERTY]</li>
+              <li>[EnableTimeZoneConversion] = [1]</li>
+              <li>[IgnoreEffectOnOtherTasks] = [0]</li>
+              <li>[DateProperty]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [EarlyStart]</li></ul></li></ul></li>
+              <li>[PriorityProperty]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [DynamicPriority]</li></ul></li></ul></li>
+              <li>[GradeFunctionPoints]<ul><li>[GradeFunctionPoint]<ul><li>[ValueX] = [7200]</li><li>[ValueY] = [100]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [14400]</li><li>[ValueY] = [80]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [21600]</li><li>[ValueY] = [60]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [28800]</li><li>[ValueY] = [40]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [36000]</li><li>[ValueY] = [0]</li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>FSM Schedule MED/MED-LOW/LOW ASAP</td>
+          <td>Time Objectives</td>
+          <td>Enhanced Time Objective</td>
+          <td family="3">DT</td>
+          <td>FSM MED/MED-LOW SP</td>
+          <td>0</td>
+          <td>100</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [0]</li>
+              <li>[PriorityWorstValue] = [0]</li>
+              <li>[PriorityBestValue] = [100]</li>
+              <li>[CompareType] = [W6_ASSIGNMENT_START]</li>
+              <li>[CompareToType] = [W6_MAX_CURRENT_TIME_AND_PROPERTY]</li>
+              <li>[EnableTimeZoneConversion] = [1]</li>
+              <li>[IgnoreEffectOnOtherTasks] = [0]</li>
+              <li>[DateProperty]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [EarlyStart]</li></ul></li></ul></li>
+              <li>[PriorityProperty]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [DynamicPriority]</li></ul></li></ul></li>
+              <li>[GradeFunctionPoints]<ul><li>[GradeFunctionPoint]<ul><li>[ValueX] = [7200]</li><li>[ValueY] = [100]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [14400]</li><li>[ValueY] = [80]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [28800]</li><li>[ValueY] = [60]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [43200]</li><li>[ValueY] = [40]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [86400]</li><li>[ValueY] = [0]</li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>FSM Schedule Open Low ASAP</td>
+          <td>Time Objectives</td>
+          <td>Enhanced Time Objective</td>
+          <td family="3">DT</td>
+          <td>Objective - BAK Open Low</td>
+          <td>0</td>
+          <td>100</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [0]</li>
+              <li>[PriorityWorstValue] = [0]</li>
+              <li>[PriorityBestValue] = [0]</li>
+              <li>[CompareType] = [W6_ASSIGNMENT_START]</li>
+              <li>[CompareToType] = [W6_MAX_CURRENT_TIME_AND_PROPERTY]</li>
+              <li>[EnableTimeZoneConversion] = [1]</li>
+              <li>[IgnoreEffectOnOtherTasks] = [0]</li>
+              <li>[DateProperty]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [EarlyStart]</li></ul></li></ul></li>
+              <li>[PriorityProperty] = []</li>
+              <li>[GradeFunctionPoints]<ul><li>[GradeFunctionPoint]<ul><li>[ValueX] = [0]</li><li>[ValueY] = [100]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [2592000]</li><li>[ValueY] = [0]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [172800]</li><li>[ValueY] = [70]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [604800]</li><li>[ValueY] = [30]</li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>FSM Task Priority HIGH Boost</td>
+          <td>Basic Behavior Objectives</td>
+          <td>Task Priority Objective</td>
+          <td family="0">D</td>
+          <td>FSM HIGH SP</td>
+          <td>0</td>
+          <td>100</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [0]</li>
+              <li>Task Property [TaskNumberOfRequiredEngineers]</li>
+              <li>
+                <span>Value XML</span>
+                <ul>
+                  <li>
+                    <span>Property Based Revenues</span>
+                    <ul>
+                      <li>
+                        <span>Number</span>
+                        <ul>
+                          <li>ID [NumberOfRequiredEngineers]</li>
+                          <li>[RefreshData] = []</li>
+                          <li>
+                            <span>Revenue</span>
+                            <ul>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [1]</li>
+                                  <li>Revenue [100]</li>
+                                </ul>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>[DictionaryProperty] = []</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Home Base</td>
+          <td>Geography Objectives</td>
+          <td>Travel From Home Base Objective</td>
+          <td family="5">DR</td>
+          <td></td>
+          <td>3600</td>
+          <td>0</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [1]</li>
+              <li>[ByDistance] = [0]</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Maintenance ASAP</td>
+          <td>Time Objectives</td>
+          <td>Enhanced Time Objective</td>
+          <td family="3">DT</td>
+          <td>MRO - Obj - ASAP -Maintenance Tasks</td>
+          <td>0</td>
+          <td>100</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [0]</li>
+              <li>[PriorityWorstValue] = [0]</li>
+              <li>[PriorityBestValue] = [100]</li>
+              <li>[CompareType] = [W6_ASSIGNMENT_START]</li>
+              <li>[CompareToType] = [W6_MAX_CURRENT_TIME_AND_PROPERTY]</li>
+              <li>[EnableTimeZoneConversion] = [1]</li>
+              <li>[IgnoreEffectOnOtherTasks] = [0]</li>
+              <li>[DateProperty]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [EarlyStart]</li></ul></li></ul></li>
+              <li>[PriorityProperty]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [DynamicPriority]</li></ul></li></ul></li>
+              <li>[GradeFunctionPoints]<ul><li>[GradeFunctionPoint]<ul><li>[ValueX] = [0]</li><li>[ValueY] = [100]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [86400]</li><li>[ValueY] = [90]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [172800]</li><li>[ValueY] = [80]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [259200]</li><li>[ValueY] = [70]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [345600]</li><li>[ValueY] = [60]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [432000]</li><li>[ValueY] = [50]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [518400]</li><li>[ValueY] = [40]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [604800]</li><li>[ValueY] = [30]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [691200]</li><li>[ValueY] = [20]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [777600]</li><li>[ValueY] = [10]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [864000]</li><li>[ValueY] = [0]</li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Maintenance PM02 DP over 50</td>
+          <td>Time Objectives</td>
+          <td>Enhanced Time Objective</td>
+          <td family="3">DT</td>
+          <td>Maintenance PM02 DP over 50</td>
+          <td>0</td>
+          <td>100</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [0]</li>
+              <li>[PriorityWorstValue] = [0]</li>
+              <li>[PriorityBestValue] = [100]</li>
+              <li>[CompareType] = [W6_ASSIGNMENT_START]</li>
+              <li>[CompareToType] = [W6_CURRENT_TIME_TO]</li>
+              <li>[EnableTimeZoneConversion] = [1]</li>
+              <li>[IgnoreEffectOnOtherTasks] = [0]</li>
+              <li>[DateProperty] = []</li>
+              <li>[PriorityProperty]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [DynamicPriority]</li></ul></li></ul></li>
+              <li>[GradeFunctionPoints]<ul><li>[GradeFunctionPoint]<ul><li>[ValueX] = [0]</li><li>[ValueY] = [100]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [86400]</li><li>[ValueY] = [90]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [172800]</li><li>[ValueY] = [80]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [259200]</li><li>[ValueY] = [70]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [345600]</li><li>[ValueY] = [60]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [432000]</li><li>[ValueY] = [50]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [518400]</li><li>[ValueY] = [40]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [604800]</li><li>[ValueY] = [30]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [691200]</li><li>[ValueY] = [20]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [777600]</li><li>[ValueY] = [10]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [864000]</li><li>[ValueY] = [0]</li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Maintenance PM03</td>
+          <td>Time Objectives</td>
+          <td>Enhanced Time Objective</td>
+          <td family="3">DT</td>
+          <td>Maintenance PM03</td>
+          <td>0</td>
+          <td>100</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [0]</li>
+              <li>[PriorityWorstValue] = [0]</li>
+              <li>[PriorityBestValue] = [100]</li>
+              <li>[CompareType] = [W6_ASSIGNMENT_START]</li>
+              <li>[CompareToType] = [W6_MAX_CURRENT_TIME_AND_PROPERTY]</li>
+              <li>[EnableTimeZoneConversion] = [1]</li>
+              <li>[IgnoreEffectOnOtherTasks] = [0]</li>
+              <li>[DateProperty]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [EarlyStart]</li></ul></li></ul></li>
+              <li>[PriorityProperty]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [DynamicPriority]</li></ul></li></ul></li>
+              <li>[GradeFunctionPoints]<ul><li>[GradeFunctionPoint]<ul><li>[ValueX] = [0]</li><li>[ValueY] = [100]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [86400]</li><li>[ValueY] = [90]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [172800]</li><li>[ValueY] = [80]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [259200]</li><li>[ValueY] = [70]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [345600]</li><li>[ValueY] = [60]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [432000]</li><li>[ValueY] = [50]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [518400]</li><li>[ValueY] = [40]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [604800]</li><li>[ValueY] = [30]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [691200]</li><li>[ValueY] = [20]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [777600]</li><li>[ValueY] = [10]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [864000]</li><li>[ValueY] = [0]</li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Minimize the Use of Overtime</td>
+          <td>Time Objectives</td>
+          <td>Overtime Objective</td>
+          <td family="4">RT</td>
+          <td></td>
+          <td>7200</td>
+          <td>0</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [0]</li>
+              <li>[NoCalendarGetsBestGrade] = [0]</li>
+              <li>Interval Status [W6_STAT_OPTIONAL_WORK]</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Minimize Travel Between Assignments</td>
+          <td>Geography Objectives</td>
+          <td>Travel Between Consecutive Assignments Objective</td>
+          <td family="6">DRT</td>
+          <td></td>
+          <td>2700</td>
+          <td>0</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [1]</li>
+              <li>[PeriodicResolution] = [W6_PERIODIC_DAY]</li>
+              <li>[PeriodicWeekDay] = [W6_MONDAY]</li>
+              <li>[PeriodicMonthDay] = [1]</li>
+              <li>[PeriodicStartTime] = [0]</li>
+              <li>[CheckTravelFromHomeBase] = [1]</li>
+              <li>[CheckTravelToHomeBase] = [1]</li>
+              <li>[ByDistance] = [0]</li>
+              <li>[UseAerialDistance_SO] = [0]</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>ORB FSM Task Priority HIGH Boost</td>
+          <td>Basic Behavior Objectives</td>
+          <td>Task Priority Objective</td>
+          <td family="0">D</td>
+          <td>ORB FSM HIGH SP</td>
+          <td>0</td>
+          <td>100</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [0]</li>
+              <li>Task Property [TaskNumberOfRequiredEngineers]</li>
+              <li>
+                <span>Value XML</span>
+                <ul>
+                  <li>
+                    <span>Property Based Revenues</span>
+                    <ul>
+                      <li>
+                        <span>Number</span>
+                        <ul>
+                          <li>ID [NumberOfRequiredEngineers]</li>
+                          <li>[RefreshData] = []</li>
+                          <li>
+                            <span>Revenue</span>
+                            <ul>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [1]</li>
+                                  <li>Revenue [100]</li>
+                                </ul>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>[DictionaryProperty] = []</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>ORB Minimize Travel Between Assignments</td>
+          <td>Geography Objectives</td>
+          <td>Travel Between Consecutive Assignments Objective</td>
+          <td family="6">DRT</td>
+          <td></td>
+          <td>900</td>
+          <td>0</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [1]</li>
+              <li>[PeriodicResolution] = [W6_PERIODIC_DAY]</li>
+              <li>[PeriodicWeekDay] = [W6_MONDAY]</li>
+              <li>[PeriodicMonthDay] = [1]</li>
+              <li>[PeriodicStartTime] = [0]</li>
+              <li>[CheckTravelFromHomeBase] = [1]</li>
+              <li>[CheckTravelToHomeBase] = [1]</li>
+              <li>[ByDistance] = [0]</li>
+              <li>[UseAerialDistance_SO] = [0]</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>ORB Prefer Route HIGH Stack Only</td>
+          <td>Matching Objectives</td>
+          <td>Enhanced Match Properties Objective</td>
+          <td family="5">DR</td>
+          <td>ORB Preferred Resources Obj HIGH</td>
+          <td>0</td>
+          <td>1</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [0]</li>
+              <li>Full Match Only [1]</li>
+              <li>
+                <span>Conditions XML</span>
+                <ul>
+                  <li>
+                    <span>Matches</span>
+                    <ul>
+                      <li>
+                        <span>Single-Multi-Value Match</span>
+                        <ul>
+                          <li>Relation [Includes]</li>
+                          <li>Allowed Empty [None]</li>
+                          <li>Engineer Property [FSMRoutes]</li>
+                          <li>Task Property [MROParentMOCID]</li>
+                          <li>
+                            <span>Multi-Value Details</span>
+                            <ul>
+                              <li>
+                                <span>Property</span>
+                                <ul>Route</ul>
+                              </li>
+                              <li>Allowed Empty [None]</li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>[PropertyReferences]<ul><li>[PropertyReference]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [MROParentMOCID]</li></ul></li></ul></li><li>[PropertyReference]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Engineer]</li><li>[PropertyReference] = [FSMRoutes]</li></ul></li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>ORB Prefer Route Operator</td>
+          <td>Matching Objectives</td>
+          <td>Enhanced Match Properties Objective</td>
+          <td family="5">DR</td>
+          <td>ORB Preferred Resources Obj</td>
+          <td>0</td>
+          <td>1</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [0]</li>
+              <li>Full Match Only [1]</li>
+              <li>
+                <span>Conditions XML</span>
+                <ul>
+                  <li>
+                    <span>Matches</span>
+                    <ul>
+                      <li>
+                        <span>Single-Multi-Value Match</span>
+                        <ul>
+                          <li>Relation [Includes]</li>
+                          <li>Allowed Empty [None]</li>
+                          <li>Engineer Property [FSMRoutes]</li>
+                          <li>Task Property [MROParentMOCID]</li>
+                          <li>
+                            <span>Multi-Value Details</span>
+                            <ul>
+                              <li>
+                                <span>Property</span>
+                                <ul>Route</ul>
+                              </li>
+                              <li>Allowed Empty [None]</li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>[PropertyReferences]<ul><li>[PropertyReference]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [MROParentMOCID]</li></ul></li></ul></li><li>[PropertyReference]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Engineer]</li><li>[PropertyReference] = [FSMRoutes]</li></ul></li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>ORB Preferred Engineer Objective</td>
+          <td>Matching Objectives</td>
+          <td>Enhanced Match Properties Objective</td>
+          <td family="5">DR</td>
+          <td>ORB Preferred Resources Obj</td>
+          <td>0</td>
+          <td>1</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [0]</li>
+              <li>Full Match Only [1]</li>
+              <li>
+                <span>Conditions XML</span>
+                <ul>
+                  <li>
+                    <span>Matches</span>
+                    <ul>
+                      <li>
+                        <span>Single-Multi-Value Match</span>
+                        <ul>
+                          <li>Relation [Included]</li>
+                          <li>Allowed Empty [Task]</li>
+                          <li>Engineer Property [ID]</li>
+                          <li>Task Property [PreferredEngineers]</li>
+                          <li>
+                            <span>Multi-Value Details</span>
+                            <ul>
+                              <li>
+                                <span>Property</span>
+                                <ul>
+                                  <li>Part [PreferredEngineer]</li>
+                                  <li>Part [ID]</li>
+                                </ul>
+                              </li>
+                              <li>Allowed Empty [Task]</li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>[PropertyReferences]<ul><li>[PropertyReference]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [PreferredEngineers]</li></ul></li></ul></li><li>[PropertyReference]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Engineer]</li><li>[PropertyReference] = [ID]</li></ul></li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>ORB Same Sites</td>
+          <td>Geography Objectives</td>
+          <td>Travel Between Consecutive Assignments Objective</td>
+          <td family="6">DRT</td>
+          <td></td>
+          <td>3218</td>
+          <td>0</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [1]</li>
+              <li>[PeriodicResolution] = [W6_PERIODIC_DAY]</li>
+              <li>[PeriodicWeekDay] = [W6_MONDAY]</li>
+              <li>[PeriodicMonthDay] = [1]</li>
+              <li>[PeriodicStartTime] = [0]</li>
+              <li>[CheckTravelFromHomeBase] = [1]</li>
+              <li>[CheckTravelToHomeBase] = [1]</li>
+              <li>[ByDistance] = [1]</li>
+              <li>[UseAerialDistance_SO] = [0]</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>PER Minimize Travel Time</td>
+          <td>Geography Objectives</td>
+          <td>Travel Between Consecutive Assignments Objective</td>
+          <td family="6">DRT</td>
+          <td>PER Minimize Travel Time</td>
+          <td>28800</td>
+          <td>0</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [0]</li>
+              <li>[PeriodicResolution] = [W6_PERIODIC_DAY]</li>
+              <li>[PeriodicWeekDay] = [W6_MONDAY]</li>
+              <li>[PeriodicMonthDay] = [1]</li>
+              <li>[PeriodicStartTime] = [0]</li>
+              <li>[CheckTravelFromHomeBase] = [0]</li>
+              <li>[CheckTravelToHomeBase] = [0]</li>
+              <li>[ByDistance] = [0]</li>
+              <li>[UseAerialDistance_SO] = [0]</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>PER Prefer Down Task</td>
+          <td>Basic Behavior Objectives</td>
+          <td>Task Priority Objective</td>
+          <td family="0">D</td>
+          <td>PER Down Tasks</td>
+          <td>0</td>
+          <td>1000</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [0]</li>
+              <li>Task Property [TaskNumberOfRequiredEngineers]</li>
+              <li>
+                <span>Value XML</span>
+                <ul>
+                  <li>
+                    <span>Property Based Revenues</span>
+                    <ul>
+                      <li>
+                        <span>Number</span>
+                        <ul>
+                          <li>ID [NumberOfRequiredEngineers]</li>
+                          <li>[RefreshData] = []</li>
+                          <li>
+                            <span>Revenue</span>
+                            <ul>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [1]</li>
+                                  <li>Revenue [4000]</li>
+                                </ul>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>[DictionaryProperty] = []</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Perfer Longer Duration Work</td>
+          <td>Basic Behavior Objectives</td>
+          <td>Task Priority Objective</td>
+          <td family="0">D</td>
+          <td></td>
+          <td>0</td>
+          <td>1000</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [0]</li>
+              <li>Task Property [TaskAdditionalTravel_SO]</li>
+              <li>
+                <span>Value XML</span>
+                <ul>
+                  <li>
+                    <span>Property Based Revenues</span>
+                    <ul>
+                      <li>
+                        <span>Duration</span>
+                        <ul>
+                          <li>ID [808]</li>
+                          <li>
+                            <span>Revenue</span>
+                            <ul>
+                              <li>Base Revenue [100]</li>
+                              <li>Time Unit [60]</li>
+                              <li>Revenue Per Time Unit [1]</li>
+                              <li>Calculation Time Unit [60]</li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>[DictionaryProperty] = []</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>PM02 Environmental Boost</td>
+          <td>Basic Behavior Objectives</td>
+          <td>Task Priority Objective</td>
+          <td family="0">D</td>
+          <td>Maintenance PM02 DP over 50</td>
+          <td>0</td>
+          <td>100</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [0]</li>
+              <li>Task Property [TaskNumberOfRequiredEngineers]</li>
+              <li>
+                <span>Value XML</span>
+                <ul>
+                  <li>
+                    <span>Property Based Revenues</span>
+                    <ul>
+                      <li>
+                        <span>Number</span>
+                        <ul>
+                          <li>ID [NumberOfRequiredEngineers]</li>
+                          <li>[RefreshData] = []</li>
+                          <li>
+                            <span>Revenue</span>
+                            <ul>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [1]</li>
+                                  <li>Revenue [100]</li>
+                                </ul>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>[DictionaryProperty] = []</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Prefer Down Task</td>
+          <td>Basic Behavior Objectives</td>
+          <td>Task Priority Objective</td>
+          <td family="0">D</td>
+          <td>dynamic priority 100</td>
+          <td>0</td>
+          <td>100</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [0]</li>
+              <li>Task Property [TaskNumberOfRequiredEngineers]</li>
+              <li>
+                <span>Value XML</span>
+                <ul>
+                  <li>
+                    <span>Property Based Revenues</span>
+                    <ul>
+                      <li>
+                        <span>Number</span>
+                        <ul>
+                          <li>ID [NumberOfRequiredEngineers]</li>
+                          <li>[RefreshData] = []</li>
+                          <li>
+                            <span>Revenue</span>
+                            <ul>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [1]</li>
+                                  <li>Revenue [4000]</li>
+                                </ul>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>[DictionaryProperty] = []</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Prefer Internal Engineers</td>
+          <td>Matching Objectives</td>
+          <td>Priority By Property Objective</td>
+          <td family="1">R</td>
+          <td></td>
+          <td>0</td>
+          <td>-1</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [1]</li>
+              <li>[EmptyPropertyGetsBestGrade] = [1]</li>
+              <li>[PropertyToCompare]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Engineer]</li><li>[PropertyReference] = [Internal]</li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Prefer Lead Operators</td>
+          <td>Matching Objectives</td>
+          <td>Enhanced Skills Objective</td>
+          <td family="5">DR</td>
+          <td>BAK OPS North 4</td>
+          <td>1</td>
+          <td>52</td>
+          <td>
+            <ul>
+              <li>Is BVF [0]</li>
+              <li>[OverSkillsLess] = [1]</li>
+              <li>[ReqSkillsLow] = [0]</li>
+              <li>[GradeIrrelevantBest] = [0]</li>
+              <li>[PointsPerOverSkill] = [10]</li>
+              <li>[MaxSkillLevel] = [2]</li>
+              <li>[MaxGradeOverSkill] = [50]</li>
+              <li>[MinGradeOverSkill] = [0]</li>
+              <li>[MaxGradeReqSkill] = [2]</li>
+              <li>[MinGradeReqSkill] = [1]</li>
+              <li>Engineer Property [EngineerSkills]</li>
+              <li>Task Property [TaskRequiredSkills1]</li>
+              <li>[EngineerLevelProperty]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Engineer]</li><li>[PropertyReference] = [Skills.SkillLevel]</li></ul></li></ul></li>
+              <li>[TaskLevelProperty]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [RequiredSkills1.SkillLevel]</li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Prefer Longer Duration Work</td>
+          <td>Basic Behavior Objectives</td>
+          <td>Task Priority Objective</td>
+          <td family="0">D</td>
+          <td></td>
+          <td>0</td>
+          <td>1000</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [0]</li>
+              <li>Task Property [TaskDuration]</li>
+              <li>
+                <span>Value XML</span>
+                <ul>
+                  <li>
+                    <span>Property Based Revenues</span>
+                    <ul>
+                      <li>
+                        <span>Duration</span>
+                        <ul>
+                          <li>ID [21]</li>
+                          <li>
+                            <span>Revenue</span>
+                            <ul>
+                              <li>Base Revenue [100]</li>
+                              <li>Time Unit [60]</li>
+                              <li>Revenue Per Time Unit [1]</li>
+                              <li>Calculation Time Unit [60]</li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>[DictionaryProperty] = []</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Prefer Megatasks</td>
+          <td>Basic Behavior Objectives</td>
+          <td>Task Priority Objective</td>
+          <td family="0">D</td>
+          <td>Bundler - Megatasks</td>
+          <td>0</td>
+          <td>100</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [0]</li>
+              <li>Task Property [TaskNumberOfRequiredEngineers]</li>
+              <li>
+                <span>Value XML</span>
+                <ul>
+                  <li>
+                    <span>Property Based Revenues</span>
+                    <ul>
+                      <li>
+                        <span>Number</span>
+                        <ul>
+                          <li>ID [NumberOfRequiredEngineers]</li>
+                          <li>[RefreshData] = []</li>
+                          <li>
+                            <span>Revenue</span>
+                            <ul>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [1]</li>
+                                  <li>Revenue [1000]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [10]</li>
+                                  <li>Revenue [1050]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [20]</li>
+                                  <li>Revenue [1100]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [30]</li>
+                                  <li>Revenue [1150]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [40]</li>
+                                  <li>Revenue [1200]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [50]</li>
+                                  <li>Revenue [1250]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [60]</li>
+                                  <li>Revenue [1300]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [70]</li>
+                                  <li>Revenue [1350]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [80]</li>
+                                  <li>Revenue [1400]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [90]</li>
+                                  <li>Revenue [1500]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [100]</li>
+                                  <li>Revenue [1600]</li>
+                                </ul>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>[DictionaryProperty] = []</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Prefer Operators over Leads</td>
+          <td>Matching Objectives</td>
+          <td>Enhanced Skills Objective</td>
+          <td family="5">DR</td>
+          <td>BAK OPS</td>
+          <td>1</td>
+          <td>52</td>
+          <td>
+            <ul>
+              <li>Is BVF [0]</li>
+              <li>[OverSkillsLess] = [0]</li>
+              <li>[ReqSkillsLow] = [0]</li>
+              <li>[GradeIrrelevantBest] = [0]</li>
+              <li>[PointsPerOverSkill] = [10]</li>
+              <li>[MaxSkillLevel] = [3]</li>
+              <li>[MaxGradeOverSkill] = [50]</li>
+              <li>[MinGradeOverSkill] = [0]</li>
+              <li>[MaxGradeReqSkill] = [2]</li>
+              <li>[MinGradeReqSkill] = [1]</li>
+              <li>Engineer Property [EngineerSkills]</li>
+              <li>Task Property [TaskRequiredSkills1]</li>
+              <li>[EngineerLevelProperty]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Engineer]</li><li>[PropertyReference] = [Skills.SkillLevel]</li></ul></li></ul></li>
+              <li>[TaskLevelProperty]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [RequiredSkills1.SkillLevel]</li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Prefer Route Operator</td>
+          <td>Matching Objectives</td>
+          <td>Enhanced Match Properties Objective</td>
+          <td family="5">DR</td>
+          <td>Obj Prefer Route Specific Operator</td>
+          <td>0</td>
+          <td>1</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [0]</li>
+              <li>Full Match Only [1]</li>
+              <li>
+                <span>Conditions XML</span>
+                <ul>
+                  <li>
+                    <span>Matches</span>
+                    <ul>
+                      <li>
+                        <span>Single-Multi-Value Match</span>
+                        <ul>
+                          <li>Relation [Includes]</li>
+                          <li>Allowed Empty [None]</li>
+                          <li>Engineer Property [FSMRoutes]</li>
+                          <li>Task Property [MROParentMOCID]</li>
+                          <li>
+                            <span>Multi-Value Details</span>
+                            <ul>
+                              <li>
+                                <span>Property</span>
+                                <ul>Route</ul>
+                              </li>
+                              <li>Allowed Empty [None]</li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>[PropertyReferences]<ul><li>[PropertyReference]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [MROParentMOCID]</li></ul></li></ul></li><li>[PropertyReference]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Engineer]</li><li>[PropertyReference] = [FSMRoutes]</li></ul></li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Preferred Engineer Objective</td>
+          <td>Matching Objectives</td>
+          <td>Enhanced Match Properties Objective</td>
+          <td family="5">DR</td>
+          <td></td>
+          <td>0</td>
+          <td>1</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [1]</li>
+              <li>Full Match Only [1]</li>
+              <li>
+                <span>Conditions XML</span>
+                <ul>
+                  <li>
+                    <span>Matches</span>
+                    <ul>
+                      <li>
+                        <span>Single-Multi-Value Match</span>
+                        <ul>
+                          <li>Relation [Included]</li>
+                          <li>Allowed Empty [Task]</li>
+                          <li>Engineer Property [ID]</li>
+                          <li>Task Property [PreferredEngineers]</li>
+                          <li>
+                            <span>Multi-Value Details</span>
+                            <ul>
+                              <li>
+                                <span>Property</span>
+                                <ul>
+                                  <li>Part [PreferredEngineer]</li>
+                                  <li>Part [ID]</li>
+                                </ul>
+                              </li>
+                              <li>Allowed Empty [Task]</li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>[PropertyReferences]<ul><li>[PropertyReference]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [PreferredEngineers]</li></ul></li></ul></li><li>[PropertyReference]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Engineer]</li><li>[PropertyReference] = [ID]</li></ul></li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Preferred Engineer Working Area</td>
+          <td>Matching Objectives</td>
+          <td>Enhanced Match Properties Objective</td>
+          <td family="5">DR</td>
+          <td></td>
+          <td>0</td>
+          <td>1</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [1]</li>
+              <li>Full Match Only [0]</li>
+              <li>
+                <span>Conditions XML</span>
+                <ul>
+                  <li>
+                    <span>Matches</span>
+                    <ul>
+                      <li>
+                        <span>Single-Multi-Value Match</span>
+                        <ul>
+                          <li>Relation [Includes]</li>
+                          <li>Allowed Empty [None]</li>
+                          <li>Engineer Property [PreferredWorkingAreas]</li>
+                          <li>Task Property [WorkingArea]</li>
+                          <li>
+                            <span>Multi-Value Details</span>
+                            <ul>
+                              <li>
+                                <span>Property</span>
+                                <ul>PreferredWorkingArea</ul>
+                              </li>
+                              <li>Allowed Empty [None]</li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>[PropertyReferences]<ul><li>[PropertyReference]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [WorkingArea]</li></ul></li></ul></li><li>[PropertyReference]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Engineer]</li><li>[PropertyReference] = [PreferredWorkingAreas]</li></ul></li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Reduce idle time</td>
+          <td>Basic Behavior Objectives</td>
+          <td>Minimize Engineer Idle Time Objective</td>
+          <td family="6">DRT</td>
+          <td>Permian Operators</td>
+          <td>0</td>
+          <td>1</td>
+          <td>
+            <ul>
+              <li>[TimeWindowFromNow] = [3600]</li>
+              <li>[ProblematicIdleDuration] = [3600]</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Same Sites</td>
+          <td>Geography Objectives</td>
+          <td>Travel Between Consecutive Assignments Objective</td>
+          <td family="6">DRT</td>
+          <td></td>
+          <td>402.25</td>
+          <td>0</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [1]</li>
+              <li>[PeriodicResolution] = [W6_PERIODIC_DAY]</li>
+              <li>[PeriodicWeekDay] = [W6_MONDAY]</li>
+              <li>[PeriodicMonthDay] = [1]</li>
+              <li>[PeriodicStartTime] = [0]</li>
+              <li>[CheckTravelFromHomeBase] = [1]</li>
+              <li>[CheckTravelToHomeBase] = [1]</li>
+              <li>[ByDistance] = [1]</li>
+              <li>[UseAerialDistance_SO] = [0]</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Same Sites Maint.</td>
+          <td>Geography Objectives</td>
+          <td>Travel Between Consecutive Assignments Objective</td>
+          <td family="6">DRT</td>
+          <td>MRO - Obj - ASAP -Maintenance Tasks</td>
+          <td>402.25</td>
+          <td>0</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [0]</li>
+              <li>[PeriodicResolution] = [W6_PERIODIC_DAY]</li>
+              <li>[PeriodicWeekDay] = [W6_MONDAY]</li>
+              <li>[PeriodicMonthDay] = [1]</li>
+              <li>[PeriodicStartTime] = [0]</li>
+              <li>[CheckTravelFromHomeBase] = [1]</li>
+              <li>[CheckTravelToHomeBase] = [1]</li>
+              <li>[ByDistance] = [1]</li>
+              <li>[UseAerialDistance_SO] = [0]</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>SAP Priority Boost</td>
+          <td>Basic Behavior Objectives</td>
+          <td>Task Priority Objective</td>
+          <td family="0">D</td>
+          <td>BAK SAP Priority</td>
+          <td>0</td>
+          <td>100</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [0]</li>
+              <li>Task Property [TaskPriority]</li>
+              <li>
+                <span>Value XML</span>
+                <ul>
+                  <li>
+                    <span>Property Based Revenues</span>
+                    <ul>
+                      <li>
+                        <span>Number</span>
+                        <ul>
+                          <li>ID [Priority]</li>
+                          <li>[RefreshData] = []</li>
+                          <li>
+                            <span>Revenue</span>
+                            <ul>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [1]</li>
+                                  <li>Revenue [100]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [2]</li>
+                                  <li>Revenue [80]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [3]</li>
+                                  <li>Revenue [60]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [4]</li>
+                                  <li>Revenue [40]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [5]</li>
+                                  <li>Revenue [20]</li>
+                                </ul>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>[DictionaryProperty] = []</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Schedule Appointments ASAP</td>
+          <td>Time Objectives</td>
+          <td>Enhanced Time Objective</td>
+          <td family="3">DT</td>
+          <td>Visit with Appointment</td>
+          <td>0</td>
+          <td>100</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [0]</li>
+              <li>[PriorityWorstValue] = [0]</li>
+              <li>[PriorityBestValue] = [0]</li>
+              <li>[CompareType] = [W6_ASSIGNMENT_START]</li>
+              <li>[CompareToType] = [W6_MAX_CURRENT_TIME_AND_PROPERTY]</li>
+              <li>[EnableTimeZoneConversion] = [1]</li>
+              <li>[IgnoreEffectOnOtherTasks] = [0]</li>
+              <li>[DateProperty]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [AppointmentStart]</li></ul></li></ul></li>
+              <li>[PriorityProperty] = []</li>
+              <li>[GradeFunctionPoints]<ul><li>[GradeFunctionPoint]<ul><li>[ValueX] = [0]</li><li>[ValueY] = [100]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [28800]</li><li>[ValueY] = [0]</li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Schedule Non-Appointments ASAP</td>
+          <td>Time Objectives</td>
+          <td>Enhanced Time Objective</td>
+          <td family="3">DT</td>
+          <td>Visit without Appointment</td>
+          <td>0</td>
+          <td>100</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [0]</li>
+              <li>[PriorityWorstValue] = [100]</li>
+              <li>[PriorityBestValue] = [0]</li>
+              <li>[CompareType] = [W6_ASSIGNMENT_START]</li>
+              <li>[CompareToType] = [W6_CURRENT_TIME_TO]</li>
+              <li>[EnableTimeZoneConversion] = [1]</li>
+              <li>[IgnoreEffectOnOtherTasks] = [0]</li>
+              <li>[DateProperty] = []</li>
+              <li>[PriorityProperty]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [DynamicPriority]</li></ul></li></ul></li>
+              <li>[GradeFunctionPoints]<ul><li>[GradeFunctionPoint]<ul><li>[ValueX] = [0]</li><li>[ValueY] = [100]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [2592000]</li><li>[ValueY] = [0]</li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Task Dynamic Priority</td>
+          <td>Basic Behavior Objectives</td>
+          <td>Task Priority Objective</td>
+          <td family="0">D</td>
+          <td></td>
+          <td>0</td>
+          <td>1600</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [0]</li>
+              <li>Task Property [TaskDynamicPriority]</li>
+              <li>
+                <span>Value XML</span>
+                <ul>
+                  <li>
+                    <span>Property Based Revenues</span>
+                    <ul>
+                      <li>
+                        <span>Number</span>
+                        <ul>
+                          <li>ID [DynamicPriority]</li>
+                          <li>[RefreshData] = [1]</li>
+                          <li>
+                            <span>Revenue</span>
+                            <ul>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [0]</li>
+                                  <li>Revenue [1.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [1]</li>
+                                  <li>Revenue [2.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [2]</li>
+                                  <li>Revenue [3.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [3]</li>
+                                  <li>Revenue [4.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [4]</li>
+                                  <li>Revenue [5.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [5]</li>
+                                  <li>Revenue [6.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [6]</li>
+                                  <li>Revenue [7.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [7]</li>
+                                  <li>Revenue [8.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [8]</li>
+                                  <li>Revenue [9.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [9]</li>
+                                  <li>Revenue [10.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [13]</li>
+                                  <li>Revenue [21.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [14]</li>
+                                  <li>Revenue [22.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [15]</li>
+                                  <li>Revenue [23.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [16]</li>
+                                  <li>Revenue [24.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [17]</li>
+                                  <li>Revenue [25.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [18]</li>
+                                  <li>Revenue [26.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [19]</li>
+                                  <li>Revenue [27.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [20]</li>
+                                  <li>Revenue [28.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [21]</li>
+                                  <li>Revenue [29.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [22]</li>
+                                  <li>Revenue [30.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [23]</li>
+                                  <li>Revenue [31.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [24]</li>
+                                  <li>Revenue [32.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [25]</li>
+                                  <li>Revenue [33.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [26]</li>
+                                  <li>Revenue [34.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [27]</li>
+                                  <li>Revenue [35.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [28]</li>
+                                  <li>Revenue [36.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [29]</li>
+                                  <li>Revenue [37.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [30]</li>
+                                  <li>Revenue [38.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [31]</li>
+                                  <li>Revenue [39.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [32]</li>
+                                  <li>Revenue [40.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [34]</li>
+                                  <li>Revenue [81.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [35]</li>
+                                  <li>Revenue [82.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [36]</li>
+                                  <li>Revenue [83.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [37]</li>
+                                  <li>Revenue [84.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [38]</li>
+                                  <li>Revenue [85.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [39]</li>
+                                  <li>Revenue [86.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [40]</li>
+                                  <li>Revenue [87.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [41]</li>
+                                  <li>Revenue [88.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [42]</li>
+                                  <li>Revenue [89.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [43]</li>
+                                  <li>Revenue [90.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [47]</li>
+                                  <li>Revenue [181.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [48]</li>
+                                  <li>Revenue [182.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [49]</li>
+                                  <li>Revenue [183.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [50]</li>
+                                  <li>Revenue [184.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [51]</li>
+                                  <li>Revenue [185.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [52]</li>
+                                  <li>Revenue [186.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [53]</li>
+                                  <li>Revenue [187.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [54]</li>
+                                  <li>Revenue [188.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [55]</li>
+                                  <li>Revenue [189.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [56]</li>
+                                  <li>Revenue [190.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [57]</li>
+                                  <li>Revenue [191.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [58]</li>
+                                  <li>Revenue [192.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [59]</li>
+                                  <li>Revenue [193.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [60]</li>
+                                  <li>Revenue [194.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [61]</li>
+                                  <li>Revenue [195.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [62]</li>
+                                  <li>Revenue [196.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [63]</li>
+                                  <li>Revenue [197.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [64]</li>
+                                  <li>Revenue [198.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [65]</li>
+                                  <li>Revenue [199.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [66]</li>
+                                  <li>Revenue [200.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [68]</li>
+                                  <li>Revenue [401.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [69]</li>
+                                  <li>Revenue [402.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [70]</li>
+                                  <li>Revenue [403.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [71]</li>
+                                  <li>Revenue [404.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [72]</li>
+                                  <li>Revenue [405.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [73]</li>
+                                  <li>Revenue [406.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [74]</li>
+                                  <li>Revenue [407.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [75]</li>
+                                  <li>Revenue [408.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [76]</li>
+                                  <li>Revenue [409.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [77]</li>
+                                  <li>Revenue [410.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [81]</li>
+                                  <li>Revenue [821.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [82]</li>
+                                  <li>Revenue [822.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [83]</li>
+                                  <li>Revenue [823.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [84]</li>
+                                  <li>Revenue [824.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [85]</li>
+                                  <li>Revenue [825.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [86]</li>
+                                  <li>Revenue [826.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [87]</li>
+                                  <li>Revenue [827.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [88]</li>
+                                  <li>Revenue [828.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [89]</li>
+                                  <li>Revenue [829.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [90]</li>
+                                  <li>Revenue [830.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [91]</li>
+                                  <li>Revenue [831.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [92]</li>
+                                  <li>Revenue [832.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [93]</li>
+                                  <li>Revenue [833.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [94]</li>
+                                  <li>Revenue [834.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [95]</li>
+                                  <li>Revenue [835.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [96]</li>
+                                  <li>Revenue [836.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [97]</li>
+                                  <li>Revenue [837.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [98]</li>
+                                  <li>Revenue [838.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [99]</li>
+                                  <li>Revenue [839.00]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [100]</li>
+                                  <li>Revenue [1600]</li>
+                                </ul>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>[DictionaryProperty] = []</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Task Dynamic Priority - Maint</td>
+          <td>Basic Behavior Objectives</td>
+          <td>Task Priority Objective</td>
+          <td family="0">D</td>
+          <td>MRO - Obj - ASAP -Maintenance Tasks</td>
+          <td>0</td>
+          <td>1600</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [0]</li>
+              <li>Task Property [TaskDynamicPriority]</li>
+              <li>
+                <span>Value XML</span>
+                <ul>
+                  <li>
+                    <span>Property Based Revenues</span>
+                    <ul>
+                      <li>
+                        <span>Number</span>
+                        <ul>
+                          <li>ID [DynamicPriority]</li>
+                          <li>[RefreshData] = [1]</li>
+                          <li>
+                            <span>Revenue</span>
+                            <ul>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [1]</li>
+                                  <li>Revenue [1000]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [10]</li>
+                                  <li>Revenue [1050]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [20]</li>
+                                  <li>Revenue [1100]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [30]</li>
+                                  <li>Revenue [1150]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [40]</li>
+                                  <li>Revenue [1200]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [50]</li>
+                                  <li>Revenue [1250]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [60]</li>
+                                  <li>Revenue [1300]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [70]</li>
+                                  <li>Revenue [1350]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [80]</li>
+                                  <li>Revenue [1400]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [90]</li>
+                                  <li>Revenue [1500]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [100]</li>
+                                  <li>Revenue [1600]</li>
+                                </ul>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>[DictionaryProperty] = []</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <h2 class="ui header">Business Value Functions</h2>
+    <table id="bvfsTable" class="ui celled table" style="width:100%">
+      <thead>
+        <tr class="header">
+          <th>BVF</th>
+          <th>Category</th>
+          <th>Family</th>
+          <th>Relevance group</th>
+          <th>Settings</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>CA Number of Task Scheuled DP 00 - 25</td>
+          <td>Business Value Functions</td>
+          <td family="5">DR</td>
+          <td>[VS] CA Number of Scheduled Task DP - 0-25 (RG)</td>
+          <td>
+            <ul>
+              <li>[MatchValue] = [1]</li>
+              <li>Full Match Only [1]</li>
+              <li>
+                <span>Conditions XML</span>
+                <ul>
+                  <li>
+                    <span>Matches</span>
+                    <ul>
+                      <li>
+                        <span>Single Value Match</span>
+                        <ul>
+                          <li>Allowed Empty [None]</li>
+                          <li>Engineer Property [CountryID]</li>
+                          <li>Task Property [CountryID]</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>[PropertyReferences]<ul><li>[PropertyReference]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [CountryID]</li></ul></li></ul></li><li>[PropertyReference]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Engineer]</li><li>[PropertyReference] = [CountryID]</li></ul></li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>CA Number of Task Scheuled DP 26 - 60</td>
+          <td>Business Value Functions</td>
+          <td family="5">DR</td>
+          <td>[VS] CA Number of Scheduled Task DP - 26 - 60 (RG)</td>
+          <td>
+            <ul>
+              <li>[MatchValue] = [1]</li>
+              <li>Full Match Only [1]</li>
+              <li>
+                <span>Conditions XML</span>
+                <ul>
+                  <li>
+                    <span>Matches</span>
+                    <ul>
+                      <li>
+                        <span>Single Value Match</span>
+                        <ul>
+                          <li>Allowed Empty [None]</li>
+                          <li>Engineer Property [CountryID]</li>
+                          <li>Task Property [CountryID]</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>[PropertyReferences]<ul><li>[PropertyReference]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [CountryID]</li></ul></li></ul></li><li>[PropertyReference]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Engineer]</li><li>[PropertyReference] = [CountryID]</li></ul></li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>CA Number of Task Scheuled DP 61-75</td>
+          <td>Business Value Functions</td>
+          <td family="5">DR</td>
+          <td>[VS] CA Number of Scheduled Task DP - 61-75 (RG)</td>
+          <td>
+            <ul>
+              <li>[MatchValue] = [1]</li>
+              <li>Full Match Only [1]</li>
+              <li>
+                <span>Conditions XML</span>
+                <ul>
+                  <li>
+                    <span>Matches</span>
+                    <ul>
+                      <li>
+                        <span>Single Value Match</span>
+                        <ul>
+                          <li>Allowed Empty [None]</li>
+                          <li>Engineer Property [CountryID]</li>
+                          <li>Task Property [CountryID]</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>[PropertyReferences]<ul><li>[PropertyReference]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [CountryID]</li></ul></li></ul></li><li>[PropertyReference]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Engineer]</li><li>[PropertyReference] = [CountryID]</li></ul></li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>CA Number of Task Scheuled DP 76-90</td>
+          <td>Business Value Functions</td>
+          <td family="5">DR</td>
+          <td>[VS] CA Number of Scheduled Task DP - 76-90 (RG)</td>
+          <td>
+            <ul>
+              <li>[MatchValue] = [1]</li>
+              <li>Full Match Only [1]</li>
+              <li>
+                <span>Conditions XML</span>
+                <ul>
+                  <li>
+                    <span>Matches</span>
+                    <ul>
+                      <li>
+                        <span>Single Value Match</span>
+                        <ul>
+                          <li>Allowed Empty [None]</li>
+                          <li>Engineer Property [CountryID]</li>
+                          <li>Task Property [CountryID]</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>[PropertyReferences]<ul><li>[PropertyReference]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [CountryID]</li></ul></li></ul></li><li>[PropertyReference]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Engineer]</li><li>[PropertyReference] = [CountryID]</li></ul></li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>CA Number of Task Scheuled DP 91-98</td>
+          <td>Business Value Functions</td>
+          <td family="5">DR</td>
+          <td>[VS] CA Number of Scheduled Task DP - 91-98 (RG)</td>
+          <td>
+            <ul>
+              <li>[MatchValue] = [1]</li>
+              <li>Full Match Only [1]</li>
+              <li>
+                <span>Conditions XML</span>
+                <ul>
+                  <li>
+                    <span>Matches</span>
+                    <ul>
+                      <li>
+                        <span>Single Value Match</span>
+                        <ul>
+                          <li>Allowed Empty [None]</li>
+                          <li>Engineer Property [CountryID]</li>
+                          <li>Task Property [CountryID]</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>[PropertyReferences]<ul><li>[PropertyReference]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [CountryID]</li></ul></li></ul></li><li>[PropertyReference]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Engineer]</li><li>[PropertyReference] = [CountryID]</li></ul></li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>CA Number of Task Scheuled DP 99-100</td>
+          <td>Business Value Functions</td>
+          <td family="5">DR</td>
+          <td>[VS] CA Number of Scheduled Task DP - 99-100 (RG)</td>
+          <td>
+            <ul>
+              <li>[MatchValue] = [1]</li>
+              <li>Full Match Only [1]</li>
+              <li>
+                <span>Conditions XML</span>
+                <ul>
+                  <li>
+                    <span>Matches</span>
+                    <ul>
+                      <li>
+                        <span>Single Value Match</span>
+                        <ul>
+                          <li>Allowed Empty [None]</li>
+                          <li>Engineer Property [CountryID]</li>
+                          <li>Task Property [CountryID]</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>[PropertyReferences]<ul><li>[PropertyReference]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [CountryID]</li></ul></li></ul></li><li>[PropertyReference]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Engineer]</li><li>[PropertyReference] = [CountryID]</li></ul></li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>CA_Appointments on Critical Zone (Less than 30 mins before app finish)</td>
+          <td>Business Value Functions</td>
+          <td family="3">DT</td>
+          <td>_Appointments</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [1]</li>
+              <li>[PriorityWorstValue] = [1]</li>
+              <li>[PriorityBestValue] = [1]</li>
+              <li>[CompareType] = [W6_ASSIGNMENT_START]</li>
+              <li>[CompareToType] = [W6_TASK_PROPERTY]</li>
+              <li>[EnableTimeZoneConversion] = [1]</li>
+              <li>[IgnoreEffectOnOtherTasks] = [0]</li>
+              <li>[DateProperty]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [AppointmentFinish]</li></ul></li></ul></li>
+              <li>[PriorityProperty]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [Number]</li></ul></li></ul></li>
+              <li>[GradeFunctionPoints]<ul><li>[GradeFunctionPoint]<ul><li>[ValueX] = [-86400]</li><li>[ValueY] = [0]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [-1860]</li><li>[ValueY] = [0]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [-1800]</li><li>[ValueY] = [1]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [0]</li><li>[ValueY] = [1]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [60]</li><li>[ValueY] = [0]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [86400]</li><li>[ValueY] = [0]</li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>CA_Appointments on Safe Zone (More than 30 mins before app finish)</td>
+          <td>Business Value Functions</td>
+          <td family="3">DT</td>
+          <td>_Appointments</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [1]</li>
+              <li>[PriorityWorstValue] = [1]</li>
+              <li>[PriorityBestValue] = [1]</li>
+              <li>[CompareType] = [W6_ASSIGNMENT_START]</li>
+              <li>[CompareToType] = [W6_TASK_PROPERTY]</li>
+              <li>[EnableTimeZoneConversion] = [1]</li>
+              <li>[IgnoreEffectOnOtherTasks] = [0]</li>
+              <li>[DateProperty]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [AppointmentFinish]</li></ul></li></ul></li>
+              <li>[PriorityProperty]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [Number]</li></ul></li></ul></li>
+              <li>[GradeFunctionPoints]<ul><li>[GradeFunctionPoint]<ul><li>[ValueX] = [-86400]</li><li>[ValueY] = [1]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [-1860]</li><li>[ValueY] = [1]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [-1800]</li><li>[ValueY] = [0]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [0]</li><li>[ValueY] = [0]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [86400]</li><li>[ValueY] = [0]</li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>CA_ASAP - Appointments</td>
+          <td>Business Value Functions</td>
+          <td family="3">DT</td>
+          <td>_Appointments</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [1]</li>
+              <li>[PriorityWorstValue] = [0]</li>
+              <li>[PriorityBestValue] = [0]</li>
+              <li>[CompareType] = [W6_ASSIGNMENT_START]</li>
+              <li>[CompareToType] = [W6_TASK_PROPERTY]</li>
+              <li>[EnableTimeZoneConversion] = [1]</li>
+              <li>[IgnoreEffectOnOtherTasks] = [0]</li>
+              <li>[DateProperty]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [AppointmentStart]</li></ul></li></ul></li>
+              <li>[PriorityProperty] = []</li>
+              <li>[GradeFunctionPoints]<ul><li>[GradeFunctionPoint]<ul><li>[ValueX] = [0]</li><li>[ValueY] = [0]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [36000]</li><li>[ValueY] = [600]</li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>CA_ASAP - Non Appointments</td>
+          <td>Business Value Functions</td>
+          <td family="3">DT</td>
+          <td>_Non Appointments</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [1]</li>
+              <li>[PriorityWorstValue] = [0]</li>
+              <li>[PriorityBestValue] = [0]</li>
+              <li>[CompareType] = [W6_ASSIGNMENT_START]</li>
+              <li>[CompareToType] = [W6_MAX_CURRENT_TIME_AND_PROPERTY]</li>
+              <li>[EnableTimeZoneConversion] = [1]</li>
+              <li>[IgnoreEffectOnOtherTasks] = [0]</li>
+              <li>[DateProperty]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [EarlyStart]</li></ul></li></ul></li>
+              <li>[PriorityProperty] = []</li>
+              <li>[GradeFunctionPoints]<ul><li>[GradeFunctionPoint]<ul><li>[ValueX] = [0]</li><li>[ValueY] = [0]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [2592000]</li><li>[ValueY] = [43200]</li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>CA_Fixed Travel With From HB</td>
+          <td>Business Value Functions</td>
+          <td family="6">DRT</td>
+          <td></td>
+          <td>
+            <ul>
+              <li>Travel Cost [-1]</li>
+              <li>[TravelCostPlaceholder] = [W6_DATA_ENTRY]</li>
+              <li>[PeriodicResolution] = [W6_PERIODIC_DAY]</li>
+              <li>[PeriodicWeekDay] = [W6_SUNDAY]</li>
+              <li>[PeriodicMonthDay] = [0]</li>
+              <li>[PeriodicStartTime] = [0]</li>
+              <li>[CheckTravelFromHomeBase] = [1]</li>
+              <li>[CheckTravelToHomeBase] = [0]</li>
+              <li>[ByDistance] = [1]</li>
+              <li>[EngineerTravelCostProperty] = []</li>
+              <li>Same Site Bonus [0]</li>
+              <li>Fixed Mode [1]</li>
+              <li>Fixed Travel [1]</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>CA_Fixed Travel With To/From HB</td>
+          <td>Business Value Functions</td>
+          <td family="6">DRT</td>
+          <td></td>
+          <td>
+            <ul>
+              <li>Travel Cost [-1]</li>
+              <li>[TravelCostPlaceholder] = [W6_DATA_ENTRY]</li>
+              <li>[PeriodicResolution] = [W6_PERIODIC_DAY]</li>
+              <li>[PeriodicWeekDay] = [W6_SUNDAY]</li>
+              <li>[PeriodicMonthDay] = [0]</li>
+              <li>[PeriodicStartTime] = [0]</li>
+              <li>[CheckTravelFromHomeBase] = [1]</li>
+              <li>[CheckTravelToHomeBase] = [1]</li>
+              <li>[ByDistance] = [1]</li>
+              <li>[EngineerTravelCostProperty] = []</li>
+              <li>Same Site Bonus [0]</li>
+              <li>Fixed Mode [1]</li>
+              <li>Fixed Travel [1]</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>CA_FSE_Number of Scheduled Appointments</td>
+          <td>Business Value Functions</td>
+          <td family="5">DR</td>
+          <td></td>
+          <td>
+            <ul>
+              <li>[MatchValue] = [1]</li>
+              <li>Full Match Only [1]</li>
+              <li>
+                <span>Conditions XML</span>
+                <ul>
+                  <li>
+                    <span>Matches</span>
+                    <ul>
+                      <li>
+                        <span>Single Value Match</span>
+                        <ul>
+                          <li>Allowed Empty [None]</li>
+                          <li>Engineer Property [CountryID]</li>
+                          <li>Task Property [CountryID]</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>[PropertyReferences]<ul><li>[PropertyReference]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [CountryID]</li></ul></li></ul></li><li>[PropertyReference]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Engineer]</li><li>[PropertyReference] = [CountryID]</li></ul></li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>CA_FSE_Number of Scheduled NonAppointments</td>
+          <td>Business Value Functions</td>
+          <td family="5">DR</td>
+          <td></td>
+          <td>
+            <ul>
+              <li>[MatchValue] = [1]</li>
+              <li>Full Match Only [1]</li>
+              <li>
+                <span>Conditions XML</span>
+                <ul>
+                  <li>
+                    <span>Matches</span>
+                    <ul>
+                      <li>
+                        <span>Single Value Match</span>
+                        <ul>
+                          <li>Allowed Empty [None]</li>
+                          <li>Engineer Property [CountryID]</li>
+                          <li>Task Property [CountryID]</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>[PropertyReferences]<ul><li>[PropertyReference]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [CountryID]</li></ul></li></ul></li><li>[PropertyReference]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Engineer]</li><li>[PropertyReference] = [CountryID]</li></ul></li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>CA_FSE_Number of Scheduled Tasks</td>
+          <td>Business Value Functions</td>
+          <td family="5">DR</td>
+          <td></td>
+          <td>
+            <ul>
+              <li>[MatchValue] = [1]</li>
+              <li>Full Match Only [1]</li>
+              <li>
+                <span>Conditions XML</span>
+                <ul>
+                  <li>
+                    <span>Matches</span>
+                    <ul>
+                      <li>
+                        <span>Single Value Match</span>
+                        <ul>
+                          <li>Allowed Empty [None]</li>
+                          <li>Engineer Property [CountryID]</li>
+                          <li>Task Property [CountryID]</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>[PropertyReferences]<ul><li>[PropertyReference]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [CountryID]</li></ul></li></ul></li><li>[PropertyReference]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Engineer]</li><li>[PropertyReference] = [CountryID]</li></ul></li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>CA_Number of Same Site Tasks</td>
+          <td>Business Value Functions</td>
+          <td family="6">DRT</td>
+          <td></td>
+          <td>
+            <ul>
+              <li>Travel Cost [0]</li>
+              <li>[TravelCostPlaceholder] = [W6_DATA_ENTRY]</li>
+              <li>[PeriodicResolution] = [W6_PERIODIC_DAY]</li>
+              <li>[PeriodicWeekDay] = [W6_SUNDAY]</li>
+              <li>[PeriodicMonthDay] = [0]</li>
+              <li>[PeriodicStartTime] = [0]</li>
+              <li>[CheckTravelFromHomeBase] = [0]</li>
+              <li>[CheckTravelToHomeBase] = [0]</li>
+              <li>[ByDistance] = [1]</li>
+              <li>[EngineerTravelCostProperty] = []</li>
+              <li>Same Site Bonus [1]</li>
+              <li>Fixed Mode [0]</li>
+              <li>Fixed Travel [0]</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>CA_Response Time for DP 00 to 25</td>
+          <td>Business Value Functions</td>
+          <td family="3">DT</td>
+          <td>[VS] CA Number of Scheduled Task DP - 0-25 (RG)</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [1]</li>
+              <li>[PriorityWorstValue] = [0]</li>
+              <li>[PriorityBestValue] = [0]</li>
+              <li>[CompareType] = [W6_ASSIGNMENT_START]</li>
+              <li>[CompareToType] = [W6_MAX_CURRENT_TIME_AND_PROPERTY]</li>
+              <li>[EnableTimeZoneConversion] = [1]</li>
+              <li>[IgnoreEffectOnOtherTasks] = [0]</li>
+              <li>[DateProperty]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [EarlyStart]</li></ul></li></ul></li>
+              <li>[PriorityProperty] = []</li>
+              <li>[GradeFunctionPoints]<ul><li>[GradeFunctionPoint]<ul><li>[ValueX] = [0]</li><li>[ValueY] = [0]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [2592000]</li><li>[ValueY] = [43200]</li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>CA_Response Time for DP 26 to 60</td>
+          <td>Business Value Functions</td>
+          <td family="3">DT</td>
+          <td>[VS] CA Number of Scheduled Task DP - 26 - 60 (RG)</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [1]</li>
+              <li>[PriorityWorstValue] = [0]</li>
+              <li>[PriorityBestValue] = [0]</li>
+              <li>[CompareType] = [W6_ASSIGNMENT_START]</li>
+              <li>[CompareToType] = [W6_MAX_CURRENT_TIME_AND_PROPERTY]</li>
+              <li>[EnableTimeZoneConversion] = [1]</li>
+              <li>[IgnoreEffectOnOtherTasks] = [0]</li>
+              <li>[DateProperty]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [EarlyStart]</li></ul></li></ul></li>
+              <li>[PriorityProperty] = []</li>
+              <li>[GradeFunctionPoints]<ul><li>[GradeFunctionPoint]<ul><li>[ValueX] = [0]</li><li>[ValueY] = [0]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [2592000]</li><li>[ValueY] = [43200]</li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>CA_Response Time for DP 61 to 75</td>
+          <td>Business Value Functions</td>
+          <td family="3">DT</td>
+          <td>[VS] CA Number of Scheduled Task DP - 61-75 (RG)</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [1]</li>
+              <li>[PriorityWorstValue] = [0]</li>
+              <li>[PriorityBestValue] = [0]</li>
+              <li>[CompareType] = [W6_ASSIGNMENT_START]</li>
+              <li>[CompareToType] = [W6_MAX_CURRENT_TIME_AND_PROPERTY]</li>
+              <li>[EnableTimeZoneConversion] = [1]</li>
+              <li>[IgnoreEffectOnOtherTasks] = [0]</li>
+              <li>[DateProperty]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [EarlyStart]</li></ul></li></ul></li>
+              <li>[PriorityProperty] = []</li>
+              <li>[GradeFunctionPoints]<ul><li>[GradeFunctionPoint]<ul><li>[ValueX] = [0]</li><li>[ValueY] = [0]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [2592000]</li><li>[ValueY] = [43200]</li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>CA_Response Time for DP 76 to 90</td>
+          <td>Business Value Functions</td>
+          <td family="3">DT</td>
+          <td>[VS] CA Number of Scheduled Task DP - 76-90 (RG)</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [1]</li>
+              <li>[PriorityWorstValue] = [0]</li>
+              <li>[PriorityBestValue] = [0]</li>
+              <li>[CompareType] = [W6_ASSIGNMENT_START]</li>
+              <li>[CompareToType] = [W6_MAX_CURRENT_TIME_AND_PROPERTY]</li>
+              <li>[EnableTimeZoneConversion] = [1]</li>
+              <li>[IgnoreEffectOnOtherTasks] = [0]</li>
+              <li>[DateProperty]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [EarlyStart]</li></ul></li></ul></li>
+              <li>[PriorityProperty] = []</li>
+              <li>[GradeFunctionPoints]<ul><li>[GradeFunctionPoint]<ul><li>[ValueX] = [0]</li><li>[ValueY] = [0]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [2592000]</li><li>[ValueY] = [43200]</li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>CA_Response Time for DP 91 to 98</td>
+          <td>Business Value Functions</td>
+          <td family="3">DT</td>
+          <td>[VS] CA Number of Scheduled Task DP - 91-98 (RG)</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [1]</li>
+              <li>[PriorityWorstValue] = [0]</li>
+              <li>[PriorityBestValue] = [0]</li>
+              <li>[CompareType] = [W6_ASSIGNMENT_START]</li>
+              <li>[CompareToType] = [W6_MAX_CURRENT_TIME_AND_PROPERTY]</li>
+              <li>[EnableTimeZoneConversion] = [1]</li>
+              <li>[IgnoreEffectOnOtherTasks] = [0]</li>
+              <li>[DateProperty]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [EarlyStart]</li></ul></li></ul></li>
+              <li>[PriorityProperty] = []</li>
+              <li>[GradeFunctionPoints]<ul><li>[GradeFunctionPoint]<ul><li>[ValueX] = [0]</li><li>[ValueY] = [0]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [2592000]</li><li>[ValueY] = [43200]</li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>CA_Response Time for DP 99 to 100</td>
+          <td>Business Value Functions</td>
+          <td family="3">DT</td>
+          <td>[VS] CA Number of Scheduled Task DP - 99-100 (RG)</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [1]</li>
+              <li>[PriorityWorstValue] = [0]</li>
+              <li>[PriorityBestValue] = [0]</li>
+              <li>[CompareType] = [W6_ASSIGNMENT_START]</li>
+              <li>[CompareToType] = [W6_MAX_CURRENT_TIME_AND_PROPERTY]</li>
+              <li>[EnableTimeZoneConversion] = [1]</li>
+              <li>[IgnoreEffectOnOtherTasks] = [0]</li>
+              <li>[DateProperty]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [EarlyStart]</li></ul></li></ul></li>
+              <li>[PriorityProperty] = []</li>
+              <li>[GradeFunctionPoints]<ul><li>[GradeFunctionPoint]<ul><li>[ValueX] = [0]</li><li>[ValueY] = [0]</li></ul></li><li>[GradeFunctionPoint]<ul><li>[ValueX] = [2592000]</li><li>[ValueY] = [43200]</li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>CA_Total Overtime Hours</td>
+          <td>Business Value Functions</td>
+          <td family="6">DRT</td>
+          <td></td>
+          <td>
+            <ul>
+              <li>Base Cost [0]</li>
+              <li>Working Time Hour Cost [0]</li>
+              <li>[OvertimeHourCost] = [-1]</li>
+              <li>[IdleTimeUnitCost] = [0]</li>
+              <li>[BaseCostPlaceholder] = [W6_DATA_ENTRY]</li>
+              <li>[WorkingTimeHourCostPlaceholder] = [W6_DATA_ENTRY]</li>
+              <li>[OvertimeHourCostPlaceholder] = [W6_DATA_ENTRY]</li>
+              <li>[IdleTimeCostPlaceholder] = [W6_DATA_ENTRY]</li>
+              <li>[EngineerBaseCostProperty] = []</li>
+              <li>[EngWorkingTimeHourCostProperty] = []</li>
+              <li>[EngOvertimeHourCostProperty] = []</li>
+              <li>[EngineerIdleTimeCostProperty] = []</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>CA_Total Regular Hours</td>
+          <td>Business Value Functions</td>
+          <td family="6">DRT</td>
+          <td></td>
+          <td>
+            <ul>
+              <li>Base Cost [0]</li>
+              <li>Working Time Hour Cost [-1]</li>
+              <li>[OvertimeHourCost] = [0]</li>
+              <li>[IdleTimeUnitCost] = [0]</li>
+              <li>[BaseCostPlaceholder] = [W6_DATA_ENTRY]</li>
+              <li>[WorkingTimeHourCostPlaceholder] = [W6_DATA_ENTRY]</li>
+              <li>[OvertimeHourCostPlaceholder] = [W6_DATA_ENTRY]</li>
+              <li>[IdleTimeCostPlaceholder] = [W6_DATA_ENTRY]</li>
+              <li>[EngineerBaseCostProperty] = []</li>
+              <li>[EngWorkingTimeHourCostProperty] = []</li>
+              <li>[EngOvertimeHourCostProperty] = []</li>
+              <li>[EngineerIdleTimeCostProperty] = []</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>CA_Total Travel Time [Min] - With To/From HB</td>
+          <td>Business Value Functions</td>
+          <td family="6">DRT</td>
+          <td></td>
+          <td>
+            <ul>
+              <li>Travel Cost [-60]</li>
+              <li>[TravelCostPlaceholder] = [W6_DATA_ENTRY]</li>
+              <li>[PeriodicResolution] = [W6_PERIODIC_DAY]</li>
+              <li>[PeriodicWeekDay] = [W6_SUNDAY]</li>
+              <li>[PeriodicMonthDay] = [0]</li>
+              <li>[PeriodicStartTime] = [0]</li>
+              <li>[CheckTravelFromHomeBase] = [1]</li>
+              <li>[CheckTravelToHomeBase] = [1]</li>
+              <li>[ByDistance] = [0]</li>
+              <li>[EngineerTravelCostProperty] = []</li>
+              <li>Same Site Bonus [0]</li>
+              <li>Fixed Mode [0]</li>
+              <li>Fixed Travel [0]</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>CA_Total Travel Time [Min] - Without To/From HB</td>
+          <td>Business Value Functions</td>
+          <td family="6">DRT</td>
+          <td></td>
+          <td>
+            <ul>
+              <li>Travel Cost [-60]</li>
+              <li>[TravelCostPlaceholder] = [W6_DATA_ENTRY]</li>
+              <li>[PeriodicResolution] = [W6_PERIODIC_DAY]</li>
+              <li>[PeriodicWeekDay] = [W6_SUNDAY]</li>
+              <li>[PeriodicMonthDay] = [0]</li>
+              <li>[PeriodicStartTime] = [0]</li>
+              <li>[CheckTravelFromHomeBase] = [0]</li>
+              <li>[CheckTravelToHomeBase] = [0]</li>
+              <li>[ByDistance] = [0]</li>
+              <li>[EngineerTravelCostProperty] = []</li>
+              <li>Same Site Bonus [0]</li>
+              <li>Fixed Mode [0]</li>
+              <li>Fixed Travel [0]</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>CA_Total Working Hours (Regular and OverTime)</td>
+          <td>Business Value Functions</td>
+          <td family="6">DRT</td>
+          <td></td>
+          <td>
+            <ul>
+              <li>Base Cost [0]</li>
+              <li>Working Time Hour Cost [-1]</li>
+              <li>[OvertimeHourCost] = [-1]</li>
+              <li>[IdleTimeUnitCost] = [0]</li>
+              <li>[BaseCostPlaceholder] = [W6_DATA_ENTRY]</li>
+              <li>[WorkingTimeHourCostPlaceholder] = [W6_DATA_ENTRY]</li>
+              <li>[OvertimeHourCostPlaceholder] = [W6_DATA_ENTRY]</li>
+              <li>[IdleTimeCostPlaceholder] = [W6_DATA_ENTRY]</li>
+              <li>[EngineerBaseCostProperty] = []</li>
+              <li>[EngWorkingTimeHourCostProperty] = []</li>
+              <li>[EngOvertimeHourCostProperty] = []</li>
+              <li>[EngineerIdleTimeCostProperty] = []</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Report's AB Penalties Cost</td>
+          <td>Business Value Functions</td>
+          <td family="3">DT</td>
+          <td>Visit with Appointment</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [1]</li>
+              <li>[PriorityWorstValue] = [0]</li>
+              <li>[PriorityBestValue] = [0]</li>
+              <li>[CompareType] = [W6_ASSIGNMENT_START]</li>
+              <li>[CompareToType] = [W6_TASK_PROPERTY]</li>
+              <li>[EnableTimeZoneConversion] = [1]</li>
+              <li>[IgnoreEffectOnOtherTasks] = [0]</li>
+              <li>[DateProperty]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [AppointmentFinish]</li></ul></li></ul></li>
+              <li>[PriorityProperty] = []</li>
+              <li>[GradeFunctionPoints]<ul><li>[GradeFunctionPoint]<ul><li>[ValueX] = [-60]</li><li>[ValueY] = [60]</li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Report's External Engineers Cost</td>
+          <td>Business Value Functions</td>
+          <td family="6">DRT</td>
+          <td>External Engineers</td>
+          <td>
+            <ul>
+              <li>Base Cost [0]</li>
+              <li>Working Time Hour Cost [-60]</li>
+              <li>[OvertimeHourCost] = [-90]</li>
+              <li>[IdleTimeUnitCost] = [0]</li>
+              <li>[BaseCostPlaceholder] = [W6_DATA_ENTRY]</li>
+              <li>[WorkingTimeHourCostPlaceholder] = [W6_DATA_ENTRY]</li>
+              <li>[OvertimeHourCostPlaceholder] = [W6_DATA_ENTRY]</li>
+              <li>[IdleTimeCostPlaceholder] = [W6_DATA_ENTRY]</li>
+              <li>[EngineerBaseCostProperty] = []</li>
+              <li>[EngWorkingTimeHourCostProperty] = []</li>
+              <li>[EngOvertimeHourCostProperty] = []</li>
+              <li>[EngineerIdleTimeCostProperty] = []</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Report's Internal Engineers Cost</td>
+          <td>Business Value Functions</td>
+          <td family="6">DRT</td>
+          <td>Internal Engineers</td>
+          <td>
+            <ul>
+              <li>Base Cost [0]</li>
+              <li>Working Time Hour Cost [-60]</li>
+              <li>[OvertimeHourCost] = [-90]</li>
+              <li>[IdleTimeUnitCost] = [0]</li>
+              <li>[BaseCostPlaceholder] = [W6_DATA_ENTRY]</li>
+              <li>[WorkingTimeHourCostPlaceholder] = [W6_DATA_ENTRY]</li>
+              <li>[OvertimeHourCostPlaceholder] = [W6_DATA_ENTRY]</li>
+              <li>[IdleTimeCostPlaceholder] = [W6_DATA_ENTRY]</li>
+              <li>[EngineerBaseCostProperty] = []</li>
+              <li>[EngWorkingTimeHourCostProperty] = []</li>
+              <li>[EngOvertimeHourCostProperty] = []</li>
+              <li>[EngineerIdleTimeCostProperty] = []</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Report's Number of Same Site Tasks</td>
+          <td>Business Value Functions</td>
+          <td family="6">DRT</td>
+          <td></td>
+          <td>
+            <ul>
+              <li>Travel Cost [0]</li>
+              <li>[TravelCostPlaceholder] = [W6_DATA_ENTRY]</li>
+              <li>[PeriodicResolution] = [W6_PERIODIC_DAY]</li>
+              <li>[PeriodicWeekDay] = [W6_SUNDAY]</li>
+              <li>[PeriodicMonthDay] = [0]</li>
+              <li>[PeriodicStartTime] = [0]</li>
+              <li>[CheckTravelFromHomeBase] = [0]</li>
+              <li>[CheckTravelToHomeBase] = [0]</li>
+              <li>[ByDistance] = [1]</li>
+              <li>[EngineerTravelCostProperty] = []</li>
+              <li>Same Site Bonus [1]</li>
+              <li>Fixed Mode [0]</li>
+              <li>Fixed Travel [0]</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Report's Operational Cost</td>
+          <td>Business Value Functions</td>
+          <td family="6">DRT</td>
+          <td></td>
+          <td>
+            <ul>
+              <li>Travel Cost [-60]</li>
+              <li>[TravelCostPlaceholder] = [W6_DATA_ENTRY]</li>
+              <li>[PeriodicResolution] = [W6_PERIODIC_DAY]</li>
+              <li>[PeriodicWeekDay] = [W6_SUNDAY]</li>
+              <li>[PeriodicMonthDay] = [0]</li>
+              <li>[PeriodicStartTime] = [0]</li>
+              <li>[CheckTravelFromHomeBase] = [1]</li>
+              <li>[CheckTravelToHomeBase] = [1]</li>
+              <li>[ByDistance] = [0]</li>
+              <li>[EngineerTravelCostProperty] = []</li>
+              <li>Same Site Bonus [0]</li>
+              <li>Fixed Mode [0]</li>
+              <li>Fixed Travel [0]</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Report's Overtime Duration</td>
+          <td>Business Value Functions</td>
+          <td family="6">DRT</td>
+          <td></td>
+          <td>
+            <ul>
+              <li>Base Cost [0]</li>
+              <li>Working Time Hour Cost [0]</li>
+              <li>[OvertimeHourCost] = [-1]</li>
+              <li>[IdleTimeUnitCost] = [0]</li>
+              <li>[BaseCostPlaceholder] = [W6_DATA_ENTRY]</li>
+              <li>[WorkingTimeHourCostPlaceholder] = [W6_DATA_ENTRY]</li>
+              <li>[OvertimeHourCostPlaceholder] = [W6_DATA_ENTRY]</li>
+              <li>[IdleTimeCostPlaceholder] = [W6_DATA_ENTRY]</li>
+              <li>[EngineerBaseCostProperty] = []</li>
+              <li>[EngWorkingTimeHourCostProperty] = []</li>
+              <li>[EngOvertimeHourCostProperty] = []</li>
+              <li>[EngineerIdleTimeCostProperty] = []</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Report's Penalties Cost</td>
+          <td>Business Value Functions</td>
+          <td family="3">DT</td>
+          <td>Visit without Appointment</td>
+          <td>
+            <ul>
+              <li>[IrrelevantGetsBestGrade] = [1]</li>
+              <li>[PriorityWorstValue] = [0]</li>
+              <li>[PriorityBestValue] = [0]</li>
+              <li>[CompareType] = [W6_ASSIGNMENT_FINISH]</li>
+              <li>[CompareToType] = [W6_TASK_PROPERTY]</li>
+              <li>[EnableTimeZoneConversion] = [1]</li>
+              <li>[IgnoreEffectOnOtherTasks] = [0]</li>
+              <li>[DateProperty]<ul><li>[GenericPropertyReference]<ul><li>[CollectionReference] = [Task]</li><li>[PropertyReference] = [DueDate]</li></ul></li></ul></li>
+              <li>[PriorityProperty] = []</li>
+              <li>[GradeFunctionPoints]<ul><li>[GradeFunctionPoint]<ul><li>[ValueX] = [-60]</li><li>[ValueY] = [60]</li></ul></li></ul></li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Report's Travel Distance Approximate With To/From HB</td>
+          <td>Business Value Functions</td>
+          <td family="6">DRT</td>
+          <td></td>
+          <td>
+            <ul>
+              <li>Travel Cost [1]</li>
+              <li>[TravelCostPlaceholder] = [W6_DATA_ENTRY]</li>
+              <li>[PeriodicResolution] = [W6_PERIODIC_DAY]</li>
+              <li>[PeriodicWeekDay] = [W6_SUNDAY]</li>
+              <li>[PeriodicMonthDay] = [0]</li>
+              <li>[PeriodicStartTime] = [0]</li>
+              <li>[CheckTravelFromHomeBase] = [1]</li>
+              <li>[CheckTravelToHomeBase] = [1]</li>
+              <li>[ByDistance] = [1]</li>
+              <li>[EngineerTravelCostProperty] = []</li>
+              <li>Same Site Bonus [0]</li>
+              <li>Fixed Mode [0]</li>
+              <li>Fixed Travel [0]</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Report's Work Revenue</td>
+          <td>Business Value Functions</td>
+          <td family="0">D</td>
+          <td></td>
+          <td>
+            <ul>
+              <li>Task Property [TaskPriority]</li>
+              <li>
+                <span>Value XML</span>
+                <ul>
+                  <li>
+                    <span>Property Based Revenues</span>
+                    <ul>
+                      <li>
+                        <span>Number</span>
+                        <ul>
+                          <li>ID [Priority]</li>
+                          <li>[RefreshData] = []</li>
+                          <li>
+                            <span>Revenue</span>
+                            <ul>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [1]</li>
+                                  <li>Revenue [500]</li>
+                                </ul>
+                              </li>
+                              <li>
+                                <span>Specific Revenue</span>
+                                <ul>
+                                  <li>Value [10]</li>
+                                  <li>Revenue [100]</li>
+                                </ul>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>[DictionaryProperty] = []</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <script>
+          $( document ).ready( function () {
+            initDataTableWithButtons(
+              "#objectivesTable",
+              "Objectives",
+              true,
+              true,
+              {
+                order: [[0, 'asc']],
+                paging: false,
+              }
+            );
+            initDataTableWithButtons(
+              "#bvfsTable",
+              "Business Value Functions",
+              true,
+              true,
+              {
+                order: [[0, 'asc']],
+                paging: false,
+              }
+            );
+          } );</script>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+h1 {
+  font-size:1.5em;
+  font-weight:bold;
+}
+
+table {
+  border-collapse:collapse;
+}
+
+table, th, td {
+  border: 1px solid black;
+  margin:0;
+  padding:5px;
+}
+
+th {
+  font-weight:bold;
+  background-color:#d3d3d3;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+	
+.even {
+  background-color :#ffffdd;
+}
+	
+.strongLeft {
+  font-weight:bold;
+  text-align:left;
+}
+
+.left {
+  text-align:left;
+}
+
+.center {
+  text-align:center;
+}
+	
+.red {
+  color:red;
+}

@@ -1,0 +1,593 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:xoom="urn:xmlns:zanyants:xoom">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.9.3/semantic.min.css" xmlns="" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/se/jszip-3.10.1/dt-2.0.7/b-3.0.2/b-colvis-3.0.2/b-html5-3.0.2/b-print-3.0.2/cr-2.0.2/date-1.5.2/fc-5.0.0/fh-4.0.1/kt-2.12.0/r-3.0.2/rg-1.5.0/sc-2.4.2/sb-1.7.1/sp-2.3.1/datatables.min.css" xmlns="" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" xmlns="">//</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.9.3/semantic.min.js" xmlns="">//</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js" xmlns="">//</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js" xmlns="">//</script>
+    <script src="https://cdn.datatables.net/v/se/jszip-3.10.1/dt-2.0.7/b-3.0.2/b-colvis-3.0.2/b-html5-3.0.2/b-print-3.0.2/cr-2.0.2/date-1.5.2/fc-5.0.0/fh-4.0.1/kt-2.12.0/r-3.0.2/rg-1.5.0/sc-2.4.2/sb-1.7.1/sp-2.3.1/datatables.min.js" xmlns="">//</script>
+    <script type="text/javascript" src="script/cfg-tables.js" xmlns="">//</script>
+    <title>Scheduling Workflows Report</title>
+  </head>
+  <body style="padding: 16px">
+    <h2>Scheduling Workflows report</h2>
+    <table id="swTable" class="ui celled table" style="width: 100%">
+      <thead>
+        <tr class="header">
+          <th>Workflow</th>
+          <th>Time</th>
+          <th>Stage</th>
+          <th>Logic Domain</th>
+          <th>Unmovable Tasks</th>
+          <th>Unswitchable Tasks</th>
+          <th>Retry Group</th>
+          <th>High Priority Group</th>
+          <th>Low Priority Group</th>
+          <th>Other Parameters</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>ClickMobile Schedule Update</td>
+          <td>30</td>
+          <td>ClickMobile Schedule Update</td>
+          <td>BAK General</td>
+          <td>Unmovable Tasks</td>
+          <td>Unswitchable Tasks no Dispatch</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Optimizer = Extended Optimizer</td>
+        </tr>
+        <tr>
+          <td>Equipment Info Quick Optimize</td>
+          <td>45</td>
+          <td>Equipment Info Quick Optimize</td>
+          <td>Equip Info General</td>
+          <td>Unmovable Tasks</td>
+          <td>Unswitchable Tasks no Dispatch</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Optimizer = Extended Optimizer</td>
+        </tr>
+        <tr>
+          <td>FSM BAK EMER Tasks</td>
+          <td>10</td>
+          <td>FSM BAK EMER Stage</td>
+          <td>BAK General</td>
+          <td>Unmovable Tasks</td>
+          <td>Unswitchable Tasks no Dispatch</td>
+          <td>FSM BAK EMER SP</td>
+          <td>FSM BAK EMER SP</td>
+          <td>FSM BAK UNSCH EMER</td>
+          <td>Optimizer = Extended Optimizer, Unschedule Tasks: 2</td>
+        </tr>
+        <tr>
+          <td>FSM BAK HIGH Tasks</td>
+          <td>10</td>
+          <td>FSM BAK HIGH Stage</td>
+          <td>BAK General</td>
+          <td>Unmovable Tasks</td>
+          <td>Unswitchable Tasks no Dispatch</td>
+          <td>FSM BAK HIGH SP</td>
+          <td>FSM BAK HIGH SP</td>
+          <td>FSM BAK UNSCH HIGH</td>
+          <td>Optimizer = Extended Optimizer, Unschedule Tasks: 2</td>
+        </tr>
+        <tr>
+          <td>FSM BAK LOW Tasks</td>
+          <td>10</td>
+          <td>FSM BAK LOW Stage</td>
+          <td>BAK General</td>
+          <td>Unmovable Tasks</td>
+          <td>Unswitchable Tasks no Dispatch</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Optimizer = Extended Optimizer</td>
+        </tr>
+        <tr>
+          <td>FSM BAK MED-HIGH Tasks</td>
+          <td>10</td>
+          <td>FSM BAK MED-HIGH Stage</td>
+          <td>BAK General</td>
+          <td>Unmovable Tasks</td>
+          <td>Unswitchable Tasks no Dispatch</td>
+          <td>FSM BAK MED-HIGH SP</td>
+          <td>FSM BAK MED-HIGH SP</td>
+          <td>FSM BAK UNSCH MED-HIGH</td>
+          <td>Optimizer = Extended Optimizer, Unschedule Tasks: 2</td>
+        </tr>
+        <tr>
+          <td>FSM BAK MEDIUM Tasks</td>
+          <td>10</td>
+          <td>FSM BAK MEDIUM Stage</td>
+          <td>BAK General</td>
+          <td>Unmovable Tasks</td>
+          <td>Unswitchable Tasks no Dispatch</td>
+          <td>FSM BAK MEDIUM SP</td>
+          <td>FSM BAK MEDIUM SP</td>
+          <td>FSM BAK UNSCH MEDIUM</td>
+          <td>Optimizer = Extended Optimizer, Unschedule Tasks: 2</td>
+        </tr>
+        <tr>
+          <td>FSM BAK MED-LOW Tasks</td>
+          <td>10</td>
+          <td>FSM BAK MED-LOW Stage</td>
+          <td>BAK General</td>
+          <td>Unmovable Tasks</td>
+          <td>Unswitchable Tasks no Dispatch</td>
+          <td>FSM BAK MED-LOW SP</td>
+          <td>FSM BAK MED-LOW SP</td>
+          <td>FSM BAK UNSCH MED-LOW</td>
+          <td>Optimizer = Extended Optimizer, Unschedule Tasks: 2</td>
+        </tr>
+        <tr>
+          <td>FSM BAK Optimize Rejected/Operator PMs</td>
+          <td>30</td>
+          <td>FSM BAK Rejected/Operator PMs Tasks</td>
+          <td>BAK General</td>
+          <td>Unmovable Tasks</td>
+          <td>Unswitchable Tasks no Dispatch</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Optimizer = Extended Optimizer</td>
+        </tr>
+        <tr>
+          <td>FSM BAK Quick Optimize</td>
+          <td>45</td>
+          <td>FSM BAK Quick Optimize</td>
+          <td>BAK General</td>
+          <td>Unmovable Tasks</td>
+          <td>Unswitchable Tasks no Dispatch</td>
+          <td>FSM Quick Optimize</td>
+          <td>FSM Quick Optimize</td>
+          <td>FSM BAK UNSCH MED-HIGH</td>
+          <td>Optimizer = Extended Optimizer, Unschedule Tasks: 2</td>
+        </tr>
+        <tr>
+          <td>FSM EF Maint Measurement Quick Optimize</td>
+          <td>15</td>
+          <td>FSM EF Maint. Measurement Quick Optimize</td>
+          <td>EF General Measurement</td>
+          <td>Unmovable Tasks</td>
+          <td>Unswitchable Tasks no Dispatch</td>
+          <td>FSM Quick Optimize - EF Measurement</td>
+          <td>FSM Quick Optimize - EF Measurement</td>
+          <td>FSM UNSCH MED-LOW</td>
+          <td>Optimizer = Extended Optimizer, Unschedule Tasks: 2</td>
+        </tr>
+        <tr>
+          <td>FSM EF Measurement </td>
+          <td>20</td>
+          <td>FSM EF Measurement</td>
+          <td>EF General Measurement</td>
+          <td>FSM EF Unmovable Tasks - Maint</td>
+          <td>FSM EF Unswitchable Tasks no Dispatch - Maint</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Optimizer = Extended Optimizer</td>
+        </tr>
+        <tr>
+          <td>FSM HIGH Tasks</td>
+          <td>10</td>
+          <td>FSM HIGH Stage</td>
+          <td>General</td>
+          <td>Unmovable Tasks</td>
+          <td>Unswitchable Tasks no Dispatch</td>
+          <td>FSM HIGH SP</td>
+          <td>FSM HIGH SP</td>
+          <td>FSM UNSCH HIGH</td>
+          <td>Optimizer = Extended Optimizer, Unschedule Tasks: 2</td>
+        </tr>
+        <tr>
+          <td>FSM LOW Tasks</td>
+          <td>10</td>
+          <td>FSM LOW Stage</td>
+          <td>General</td>
+          <td>Unmovable Tasks</td>
+          <td>Unswitchable Tasks no Dispatch</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Optimizer = Extended Optimizer</td>
+        </tr>
+        <tr>
+          <td>FSM Maint. HIGH Tasks</td>
+          <td>10</td>
+          <td>FSM Maint. HIGH Stage</td>
+          <td>General Maintenance</td>
+          <td>Unmovable Tasks</td>
+          <td>Unswitchable Tasks no Dispatch</td>
+          <td>FSM MAINT. HIGH SP</td>
+          <td>FSM MAINT. HIGH SP</td>
+          <td>FSM UNSCH HIGH</td>
+          <td>Optimizer = Extended Optimizer, Unschedule Tasks: 2</td>
+        </tr>
+        <tr>
+          <td>FSM Maint. LOW Tasks</td>
+          <td>10</td>
+          <td>FSM Maint. LOW Stage</td>
+          <td>General Maintenance</td>
+          <td>Unmovable Tasks</td>
+          <td>Unswitchable Tasks no Dispatch</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Optimizer = Extended Optimizer</td>
+        </tr>
+        <tr>
+          <td>FSM Maint. MED-HIGH Tasks</td>
+          <td>10</td>
+          <td>FSM Maint. MED-HIGH Stage</td>
+          <td>General Maintenance</td>
+          <td>Unmovable Tasks</td>
+          <td>Unswitchable Tasks no Dispatch</td>
+          <td>FSM MAINT. MED-HIGH SP</td>
+          <td>FSM MAINT. MED-HIGH SP</td>
+          <td>FSM UNSCH MED-HIGH</td>
+          <td>Optimizer = Extended Optimizer, Unschedule Tasks: 2</td>
+        </tr>
+        <tr>
+          <td>FSM Maint. MEDIUM Tasks</td>
+          <td>10</td>
+          <td>FSM Maint. MEDIUM Stage</td>
+          <td>General Maintenance</td>
+          <td>Unmovable Tasks</td>
+          <td>Unswitchable Tasks no Dispatch</td>
+          <td>FSM MAINT. MEDIUM SP</td>
+          <td>FSM MAINT. MEDIUM SP</td>
+          <td>FSM UNSCH MEDIUM</td>
+          <td>Optimizer = Extended Optimizer, Unschedule Tasks: 2</td>
+        </tr>
+        <tr>
+          <td>FSM Maint. MED-LOW Tasks</td>
+          <td>10</td>
+          <td>FSM Maint. MED-LOW Stage</td>
+          <td>General Maintenance</td>
+          <td>Unmovable Tasks</td>
+          <td>Unswitchable Tasks no Dispatch</td>
+          <td>FSM MAINT. MED-LOW SP</td>
+          <td>FSM MAINT. MED-LOW SP</td>
+          <td>FSM UNSCH MED-LOW</td>
+          <td>Optimizer = Extended Optimizer, Unschedule Tasks: 2</td>
+        </tr>
+        <tr>
+          <td>FSM Maint. Quick Optimize</td>
+          <td>15</td>
+          <td>FSM Maint. Quick Optimize</td>
+          <td>General Maintenance</td>
+          <td>Unmovable Tasks</td>
+          <td>Unswitchable Tasks no Dispatch</td>
+          <td>FSM Quick Optimize - EF Maint</td>
+          <td>FSM Quick Optimize - EF Maint</td>
+          <td>FSM UNSCH MED-HIGH</td>
+          <td>Optimizer = Extended Optimizer, Unschedule Tasks: 2</td>
+        </tr>
+        <tr>
+          <td>FSM Maint.Masurement HIGH Tasks </td>
+          <td>10</td>
+          <td>FSM Maint.Masurement HIGH Tasks </td>
+          <td>EF General Measurement</td>
+          <td>Unmovable Tasks</td>
+          <td>Unswitchable Tasks no Dispatch</td>
+          <td>FSM MAINT.MASUREMENT HIGH SP</td>
+          <td>FSM MAINT.MASUREMENT HIGH SP</td>
+          <td>FSM UNSCH HIGH</td>
+          <td>Optimizer = Extended Optimizer, Unschedule Tasks: 2</td>
+        </tr>
+        <tr>
+          <td>FSM Maint.Masurement LOW Tasks </td>
+          <td>10</td>
+          <td>FSM Maint.Masurement LOW Tasks </td>
+          <td>EF General Measurement</td>
+          <td>Unmovable Tasks</td>
+          <td>Unswitchable Tasks no Dispatch</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Optimizer = Extended Optimizer</td>
+        </tr>
+        <tr>
+          <td>FSM Maint.Masurement MED-HIGH Tasks </td>
+          <td>10</td>
+          <td>FSM Maint.Masurement MED-HIGH Tasks </td>
+          <td>EF General Measurement</td>
+          <td>Unmovable Tasks</td>
+          <td>Unswitchable Tasks no Dispatch</td>
+          <td>FSM MAINT.MASUREMENT MED-HIGH SP</td>
+          <td>FSM MAINT.MASUREMENT MED-HIGH SP</td>
+          <td>FSM UNSCH MED-HIGH</td>
+          <td>Optimizer = Extended Optimizer, Unschedule Tasks: 2</td>
+        </tr>
+        <tr>
+          <td>FSM Maint.Masurement MEDIUM Tasks </td>
+          <td>10</td>
+          <td>FSM Maint.Masurement MEDIUM Tasks </td>
+          <td>EF General Measurement</td>
+          <td>Unmovable Tasks</td>
+          <td>Unswitchable Tasks no Dispatch</td>
+          <td>FSM MAINT.MASUREMENT MEDIUM SP</td>
+          <td>FSM MAINT.MASUREMENT MEDIUM SP</td>
+          <td>FSM UNSCH MEDIUM</td>
+          <td>Optimizer = Extended Optimizer, Unschedule Tasks: 2</td>
+        </tr>
+        <tr>
+          <td>FSM Maint.Masurement MED-LOW Tasks </td>
+          <td>10</td>
+          <td>FSM Maint.Masurement MED-LOW Tasks</td>
+          <td>EF General Measurement</td>
+          <td>Unmovable Tasks</td>
+          <td>Unswitchable Tasks no Dispatch</td>
+          <td>FSM MAINT.MASUREMENT MED-LOW SP</td>
+          <td>FSM MAINT.MASUREMENT MED-LOW SP</td>
+          <td>FSM UNSCH MED-LOW</td>
+          <td>Optimizer = Extended Optimizer, Unschedule Tasks: 2</td>
+        </tr>
+        <tr>
+          <td>FSM MED-HIGH Tasks</td>
+          <td>10</td>
+          <td>FSM MED-HIGH Stage</td>
+          <td>General</td>
+          <td>Unmovable Tasks</td>
+          <td>Unswitchable Tasks no Dispatch</td>
+          <td>FSM MED-HIGH SP</td>
+          <td>FSM MED-HIGH SP</td>
+          <td>FSM UNSCH MED-HIGH</td>
+          <td>Optimizer = Extended Optimizer, Unschedule Tasks: 2</td>
+        </tr>
+        <tr>
+          <td>FSM MEDIUM Tasks</td>
+          <td>10</td>
+          <td>FSM MEDIUM Stage</td>
+          <td>General</td>
+          <td>Unmovable Tasks</td>
+          <td>Unswitchable Tasks no Dispatch</td>
+          <td>FSM MEDIUM SP</td>
+          <td>FSM MEDIUM SP</td>
+          <td>FSM UNSCH MEDIUM</td>
+          <td>Optimizer = Extended Optimizer, Unschedule Tasks: 2</td>
+        </tr>
+        <tr>
+          <td>FSM MED-LOW Tasks</td>
+          <td>10</td>
+          <td>FSM MED-LOW Stage</td>
+          <td>General</td>
+          <td>Unmovable Tasks</td>
+          <td>Unswitchable Tasks no Dispatch</td>
+          <td>FSM MED-LOW SP</td>
+          <td>FSM MED-LOW SP</td>
+          <td>FSM UNSCH MED-LOW</td>
+          <td>Optimizer = Extended Optimizer, Unschedule Tasks: 2</td>
+        </tr>
+        <tr>
+          <td>FSM ORB HIGH Tasks</td>
+          <td>10</td>
+          <td>FSM ORB HIGH Stage</td>
+          <td>ORB General</td>
+          <td>Unmovable Tasks</td>
+          <td>Unswitchable Tasks no Dispatch</td>
+          <td>FSM ORB HIGH SP</td>
+          <td>FSM ORB HIGH SP</td>
+          <td>FSM ORB UNSCH HIGH</td>
+          <td>Optimizer = Extended Optimizer, Unschedule Tasks: 2</td>
+        </tr>
+        <tr>
+          <td>FSM ORB LOW Tasks</td>
+          <td>10</td>
+          <td>FSM ORB LOW Stage</td>
+          <td>ORB General</td>
+          <td>Unmovable Tasks</td>
+          <td>Unswitchable Tasks no Dispatch</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Optimizer = Extended Optimizer</td>
+        </tr>
+        <tr>
+          <td>FSM ORB MED-HIGH Tasks</td>
+          <td>10</td>
+          <td>FSM ORB MED-HIGH Stage</td>
+          <td>ORB General</td>
+          <td>Unmovable Tasks</td>
+          <td>Unswitchable Tasks no Dispatch</td>
+          <td>FSM ORB MED-HIGH SP</td>
+          <td>FSM ORB MED-HIGH SP</td>
+          <td>FSM ORB UNSCH MED-HIGH</td>
+          <td>Optimizer = Extended Optimizer, Unschedule Tasks: 2</td>
+        </tr>
+        <tr>
+          <td>FSM ORB MEDIUM Tasks</td>
+          <td>10</td>
+          <td>FSM ORB MEDIUM Stage</td>
+          <td>ORB General</td>
+          <td>Unmovable Tasks</td>
+          <td>Unswitchable Tasks no Dispatch</td>
+          <td>FSM ORB MEDIUM SP</td>
+          <td>FSM ORB MEDIUM SP</td>
+          <td>FSM ORB UNSCH MEDIUM</td>
+          <td>Optimizer = Extended Optimizer, Unschedule Tasks: 2</td>
+        </tr>
+        <tr>
+          <td>FSM ORB MED-LOW Tasks</td>
+          <td>10</td>
+          <td>FSM ORB MED-LOW Stage</td>
+          <td>ORB General</td>
+          <td>Unmovable Tasks</td>
+          <td>Unswitchable Tasks no Dispatch</td>
+          <td>FSM ORB MED-LOW SP</td>
+          <td>FSM ORB MED-LOW SP</td>
+          <td>FSM ORB UNSCH MED-LOW</td>
+          <td>Optimizer = Extended Optimizer, Unschedule Tasks: 2</td>
+        </tr>
+        <tr>
+          <td>FSM ORB OPS SAP Tasks</td>
+          <td>10</td>
+          <td>FSM ORB OPS SAP Tasks Stage</td>
+          <td>ORB General</td>
+          <td>Unmovable Tasks</td>
+          <td>Unswitchable Tasks no Dispatch</td>
+          <td>FSM ORB OPS SAP Tasks</td>
+          <td>FSM ORB OPS SAP Tasks</td>
+          <td>FSM ORB UNSCH MED-LOW</td>
+          <td>Optimizer = Extended Optimizer, Unschedule Tasks: 2</td>
+        </tr>
+        <tr>
+          <td>FSM ORB Quick Optimize</td>
+          <td>30</td>
+          <td>FSM ORB Quick Optimize</td>
+          <td>ORB General</td>
+          <td>Unmovable Tasks</td>
+          <td>Unswitchable Tasks no Dispatch</td>
+          <td>FSM Quick Optimize</td>
+          <td>FSM Quick Optimize</td>
+          <td>FSM ORB UNSCH HIGH</td>
+          <td>Optimizer = Extended Optimizer, Unschedule Tasks: 2</td>
+        </tr>
+        <tr>
+          <td>FSM PER EMER Tasks</td>
+          <td>1</td>
+          <td>FSM PER EMER Stage</td>
+          <td>PER General</td>
+          <td>Unmovable Tasks</td>
+          <td>Unswitchable Tasks no Dispatch</td>
+          <td>FSM PER EMER SP</td>
+          <td>FSM PER EMER SP</td>
+          <td>FSM PER UNSCH EMER</td>
+          <td>Optimizer = Extended Optimizer, Unschedule Tasks: 2</td>
+        </tr>
+        <tr>
+          <td>FSM PER HIGH Tasks</td>
+          <td>10</td>
+          <td>FSM PER HIGH Stage</td>
+          <td>PER General</td>
+          <td>Unmovable Tasks</td>
+          <td>Unswitchable Tasks no Dispatch</td>
+          <td>FSM PER HIGH SP</td>
+          <td>FSM PER HIGH SP</td>
+          <td>FSM PER UNSCH HIGH</td>
+          <td>Optimizer = Extended Optimizer, Unschedule Tasks: 2</td>
+        </tr>
+        <tr>
+          <td>FSM PER LOW Tasks</td>
+          <td>10</td>
+          <td>FSM PER LOW Stage</td>
+          <td>PER General</td>
+          <td>Unmovable Tasks</td>
+          <td>Unswitchable Tasks no Dispatch</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Optimizer = Extended Optimizer</td>
+        </tr>
+        <tr>
+          <td>FSM PER MED-HIGH Tasks</td>
+          <td>10</td>
+          <td>FSM PER MED-HIGH Stage</td>
+          <td>PER General</td>
+          <td>Unmovable Tasks</td>
+          <td>Unswitchable Tasks no Dispatch</td>
+          <td>FSM PER MED-HIGH SP</td>
+          <td>FSM PER MED-HIGH SP</td>
+          <td>FSM PER UNSCH MED-HIGH</td>
+          <td>Optimizer = Extended Optimizer, Unschedule Tasks: 2</td>
+        </tr>
+        <tr>
+          <td>FSM PER MEDIUM Tasks</td>
+          <td>10</td>
+          <td>FSM PER MEDIUM Stage</td>
+          <td>PER General</td>
+          <td>Unmovable Tasks</td>
+          <td>Unswitchable Tasks no Dispatch</td>
+          <td>FSM PER MEDIUM SP</td>
+          <td>FSM PER MEDIUM SP</td>
+          <td>FSM PER UNSCH MEDIUM</td>
+          <td>Optimizer = Extended Optimizer, Unschedule Tasks: 2</td>
+        </tr>
+        <tr>
+          <td>FSM PER MED-LOW Tasks</td>
+          <td>10</td>
+          <td>FSM PER MED-LOW Stage</td>
+          <td>PER General</td>
+          <td>Unmovable Tasks</td>
+          <td>Unswitchable Tasks no Dispatch</td>
+          <td>FSM PER MED-LOW SP</td>
+          <td>FSM PER MED-LOW SP</td>
+          <td>FSM PER UNSCH MED-LOW</td>
+          <td>Optimizer = Extended Optimizer, Unschedule Tasks: 2</td>
+        </tr>
+        <tr>
+          <td>FSM PER Quick Optimize - High </td>
+          <td>1</td>
+          <td>FSM PER Quick Optimize - High </td>
+          <td>PER General</td>
+          <td>Unmovable Tasks</td>
+          <td>Update Polygons</td>
+          <td>FSM Quick Optimize</td>
+          <td>FSM Quick Optimize</td>
+          <td>FSM PER UNSCH HIGH</td>
+          <td>Optimizer = Extended Optimizer, Unschedule Tasks: 2</td>
+        </tr>
+        <tr>
+          <td>FSM PER Quick Optimize - Med</td>
+          <td>10</td>
+          <td>FSM PER Quick Optimize - Med</td>
+          <td>PER General</td>
+          <td>Unmovable Tasks</td>
+          <td>Unswitchable Tasks no Dispatch</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Optimizer = Extended Optimizer</td>
+        </tr>
+        <tr>
+          <td>FSM Quick Optimize</td>
+          <td>15</td>
+          <td>FSM Quick Optimize</td>
+          <td>General</td>
+          <td>Unmovable Tasks</td>
+          <td>Unswitchable Tasks no Dispatch</td>
+          <td>FSM Quick Optimize</td>
+          <td>FSM Quick Optimize</td>
+          <td>FSM UNSCH MED-HIGH</td>
+          <td>Optimizer = Extended Optimizer, Unschedule Tasks: 2</td>
+        </tr>
+        <tr>
+          <td>FSM Quick Optimize - Med</td>
+          <td>15</td>
+          <td>FSM Quick Optimize - Med</td>
+          <td>General</td>
+          <td>Unmovable Tasks</td>
+          <td>Unswitchable Tasks no Dispatch</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Optimizer = Extended Optimizer</td>
+        </tr>
+      </tbody>
+    </table>
+    <script>
+      $( document ).ready( function ()
+        {
+          initDataTableWithButtons(
+            '#swTable',
+            'Scheduling Workflows',
+            true,
+            true,
+            {
+              paging: false,
+              order: [[0, 'asc']],
+            },
+            true
+          );
+        } );
+          </script>
+  </body>
+</html>

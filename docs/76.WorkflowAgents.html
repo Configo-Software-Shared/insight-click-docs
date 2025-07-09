@@ -1,0 +1,1419 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.9.3/semantic.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/se/jszip-3.10.1/dt-2.0.7/b-3.0.2/b-colvis-3.0.2/b-html5-3.0.2/b-print-3.0.2/cr-2.0.2/date-1.5.2/fc-5.0.0/fh-4.0.1/kt-2.12.0/r-3.0.2/rg-1.5.0/sc-2.4.2/sb-1.7.1/sp-2.3.1/datatables.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js">//</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.9.3/semantic.min.js">//</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js">//</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js">//</script>
+    <script src="https://cdn.datatables.net/v/se/jszip-3.10.1/dt-2.0.7/b-3.0.2/b-colvis-3.0.2/b-html5-3.0.2/b-print-3.0.2/cr-2.0.2/date-1.5.2/fc-5.0.0/fh-4.0.1/kt-2.12.0/r-3.0.2/rg-1.5.0/sc-2.4.2/sb-1.7.1/sp-2.3.1/datatables.min.js">//</script>
+    <script type="text/javascript" src="script/cfg-tables.js">//</script>
+    <title>Workflow Agents</title>
+  </head>
+  <body style="padding:16px">
+    <h2 class="ui header">Workflow Agents</h2>
+    <table id="waTable" class="ui celled table" style="width:100%">
+      <thead>
+        <tr class="header">
+          <th>Name</th>
+          <th>Decomposition</th>
+          <th>Steps</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>BAK Alert Flare Alarm Past Due</td>
+          <td>
+            <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">BAK DISTRICT 1-10</div>
+          </td>
+          <td>
+            <div class="ui ordered list">
+              <div class="item">
+                <div class="header">Alert if tasks are Open and past due</div>
+                <div class="description">
+                  <div>Set to In-Jeopardy if flare alarm is past due</div>
+                  <div>
+                    <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">DueDate<div class="detail">Task Property</div></div> is between Now-08:00 and Now.</div>
+                  <div>Filter using group <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Jeopardy - BAK Flare Alarm Past Due</div></div>
+                  <div>
+                    <b>Actions:</b>
+                    <ul class="ui list">
+                      <li value="*">Change Task.JeopardyState to Flare Alarm Past Due (BAK) </li>
+                      <li value="*">Change Task.InJeopardy to True</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>BAK Alert Jeopardy Not Acknowledged Alarms</td>
+          <td>
+            <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">BAK DISTRICT 1-10</div>
+          </td>
+          <td>
+            <div class="ui ordered list">
+              <div class="item">
+                <div class="header">Alert if tasks are Open and Due Soon</div>
+                <div class="description">
+                  <div>Set to In-Jeopardy if task is not acknowledged</div>
+                  <div>
+                    <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">AssignmentStart<div class="detail">Task Property</div></div> is between Now-08:00 and Now-02:00.</div>
+                  <div>Filter using group <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Jeopardy - BAK Not Acknowledged</div></div>
+                  <div>
+                    <b>Actions:</b>
+                    <ul class="ui list">
+                      <li value="*">Change Task.JeopardyState to Not Acknowledged (Job Skipped) </li>
+                      <li value="*">Change Task.InJeopardy to True</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>BAK Alert Jeopardy Unscheduled Tasks</td>
+          <td>
+            <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">BAK DISTRICT 1-10</div>
+          </td>
+          <td>
+            <div class="ui ordered list">
+              <div class="item">
+                <div class="header">Alert if tasks are Open and Due Soon</div>
+                <div class="description">
+                  <div>Set to In-Jeopardy if task is Open and due soon, no extensions remaining</div>
+                  <div>
+                    <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">DueDate<div class="detail">Task Property</div></div> is between Now-1d00:00 and Now+01:00.</div>
+                  <div>Filter using group <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Jeopardy - BAK Unscheduled</div></div>
+                  <div>
+                    <b>Actions:</b>
+                    <ul class="ui list">
+                      <li value="*">Change Task.JeopardyState to Not Scheduled</li>
+                      <li value="*">Change Task.InJeopardy to True</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>BAK Cancel Return Same Day Tasks not Completed</td>
+          <td>
+            <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">BAK DISTRICT 1-1</div>
+          </td>
+          <td>
+            <div class="ui ordered list">
+              <div class="item">
+                <div class="header">Cancel Active RSD Tasks</div>
+                <div class="description">
+                  <div>
+                    <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">DueDate<div class="detail">Task Property</div></div> is between Now-1d00:00 and Now.</div>
+                  <div>Filter using group <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">BAK Return Same Day Cancel</div></div>
+                  <div>
+                    <b>Actions:</b>
+                    <ul class="ui list">
+                      <li value="*">Change Task.Pinned to False</li>
+                      <li value="*">Change Task.Status to Cancelled </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>BAK Create Flare Notification</td>
+          <td>
+            <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">BAK DISTRICT 1-10</div>
+          </td>
+          <td>
+            <div class="ui ordered list">
+              <div class="item">
+                <div class="header">Put Task On Hold</div>
+                <div class="description">
+                  <div>
+                    <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">DueDate<div class="detail">Task Property</div></div> is between Now-02:00 and Now+1d00:00.</div>
+                  <div>Filter using group <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">BAK Create Notification Flare Agent</div></div>
+                  <div>
+                    <b>Actions:</b>
+                    <ul class="ui list">
+                      <li value="*">Change Task.MROCompletionNotes to Alarm placed ON HOLD and notification created.</li>
+                      <li value="*">Change Task.Status to On Hold </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>BAK Extend Ops Due Dates</td>
+          <td>
+            <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">BAK DISTRICT 1-1</div>
+          </td>
+          <td>
+            <div class="ui ordered list">
+              <div class="item">
+                <div class="header">Extend Due Date</div>
+                <div class="description">
+                  <div>
+                    <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">DueDate<div class="detail">Task Property</div></div> is between Now-2d00:00 and Now+02:00.</div>
+                  <div>Filter using group <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">BAK Optimizable Ops Tasks Not Extended</div></div>
+                  <div>
+                    <b>Actions:</b>
+                    <ul class="ui list">
+                      <li value="*">Change Task.ExtensionFlag to True</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>BAK Flame Arrestor Flare Alarm Past Due</td>
+          <td>
+            <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">BAK DISTRICT 1-10</div>
+          </td>
+          <td>
+            <div class="ui ordered list">
+              <div class="item">
+                <div class="header">Alert if tasks are Open and past due</div>
+                <div class="description">
+                  <div>Set to In-Jeopardy if flare alarm is past due</div>
+                  <div>
+                    <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">DueDate<div class="detail">Task Property</div></div> is between Now-08:00 and Now.</div>
+                  <div>Filter using group <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Jeopardy - BAK Flame Arrestor (BAK) Past Due</div></div>
+                  <div>
+                    <b>Actions:</b>
+                    <ul class="ui list">
+                      <li value="*">Change Task.JeopardyState to Flame Arrestor Alarm Past Due (BAK) </li>
+                      <li value="*">Change Task.InJeopardy to True</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>BAK Move Active WOs Forward</td>
+          <td>
+            <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">BAK DISTRICT 1-10</div>
+          </td>
+          <td>
+            <div class="ui ordered list">
+              <div class="item">
+                <div class="header">Move Assignments 24hrs Forward</div>
+                <div class="description">
+                  <div>
+                    <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">AssignmentStart<div class="detail">Task Property</div></div> is between Now-1d00:00 and Now.</div>
+                  <div>Filter using group <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">BAK - Active WOs Move Forward Before</div></div>
+                  <div>
+                    <b>Actions:</b>
+                    <ul class="ui list">
+                      <li value="*">Change Task.Pinned to False</li>
+                      <li value="*">Change Task.AssignmentFinish to now plus 24:00 hour(s)</li>
+                      <li value="*">Change Task.AssignmentStart to now plus 24:00 hour(s)</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>BAK OPS Cancel Past Due Tasks</td>
+          <td>
+            <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">BAK DISTRICT 1-1</div>
+          </td>
+          <td>
+            <div class="ui ordered list">
+              <div class="item">
+                <div class="header">Cancel Tasks Past Due</div>
+                <div class="description">
+                  <div>
+                    <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">DueDate<div class="detail">Task Property</div></div> is between Now-10d00:00 and Now.</div>
+                  <div>Filter using group <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">FSM Daily Tasks to Cancel</div></div>
+                  <div>
+                    <b>Actions:</b>
+                    <ul class="ui list">
+                      <li value="*">Change Task.Pinned to False</li>
+                      <li value="*">Change Task.Status to Cancelled </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>BAK OPS Dispatch Mobile Tasks</td>
+          <td>
+            <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">BAK DISTRICT 1-10</div>
+          </td>
+          <td>
+            <div class="ui ordered list">
+              <div class="item">
+                <div class="header">Dispatch and Pin Mobile Tasks</div>
+                <div class="description">
+                  <div>
+                    <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Start<div class="detail">Assignment Property</div></div> is between Now-04:00 and Now+10:00.</div>
+                  <div>Filter using group <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">FSM BAK OPS Scheduled Mobile Tasks</div></div>
+                  <div>
+                    <b>Actions:</b>
+                    <ul class="ui list">
+                      <li value="*">Change Task.Status to Dispatched </li>
+                      <li value="*">Change Task.Pinned to True</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>BAK OPS Dispatch Today</td>
+          <td>
+            <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">BAK DISTRICT 1-10</div>
+          </td>
+          <td>
+            <div class="ui ordered list">
+              <div class="item">
+                <div class="header">Dispatch Today</div>
+                <div class="description">
+                  <div>
+                    <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Start<div class="detail">Assignment Property</div></div> is between Now-12:00 and Now+12:00.</div>
+                  <div>Filter using group <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">BAK Scheduled Assignments</div></div>
+                  <div>
+                    <b>Actions:</b>
+                    <ul class="ui list">
+                      <li value="*">Change Task.Status to Dispatched</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>BAK OPS Rejected to Open</td>
+          <td>
+            <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">BAK DISTRICT 1-10</div>
+          </td>
+          <td>
+            <div class="ui ordered list">
+              <div class="item">
+                <div class="header">Set Rejected to Open for BAK Ops</div>
+                <div class="description">
+                  <div>Triggers generic event to clear out ExcludedResources</div>
+                  <div>
+                    <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">DueDate<div class="detail">Task Property</div></div> is between Now-1d00:00 and Now+5d00:00.</div>
+                  <div>Filter using group <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">FSM BAK OPS Rejected Tasks</div></div>
+                  <div>
+                    <b>Actions:</b>
+                    <ul class="ui list">
+                      <li value="*">Change Task.Pinned to False</li>
+                      <li value="*">Change Task.Status to Open</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>BAK OPS Return Same Day Travel Status</td>
+          <td>
+            <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">BAK DISTRICT 1-1</div>
+          </td>
+          <td>
+            <div class="ui ordered list">
+              <div class="item">
+                <div class="header">Schedule to Travel Status for Return Same Day</div>
+                <div class="description">
+                  <div>
+                    <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Start<div class="detail">Assignment Property</div></div> is between Now-14:00 and Now+06:00.</div>
+                  <div>Filter using group <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">BAK Return Same Day Travel</div></div>
+                  <div>
+                    <b>Actions:</b>
+                    <ul class="ui list">
+                      <li value="*">Change Task.Status to Acknowledged </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>BAK Tank Pressure Pending Assignment </td>
+          <td>
+            <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">BAK DISTRICT 1-1</div>
+          </td>
+          <td>
+            <div class="ui ordered list">
+              <div class="item">
+                <div class="header">Task has not been assigned </div>
+                <div class="description">
+                  <div>Tank high pressure alarm is triggered and has not been assign to a resouces ES + 3hr </div>
+                  <div>
+                    <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">EarlyStart<div class="detail">Task Property</div></div> is between Now-1d00:00 and Now-08:00.</div>
+                  <div>Filter using group <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Jeopardy - LDAR Task Pending Assignment</div></div>
+                  <div>
+                    <b>Actions:</b>
+                    <ul class="ui list">
+                      <li value="*">Change Task.JeopardyState to LDAR Task Pending Assignement </li>
+                      <li value="*">Change Task.InJeopardy to True</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>BAK Tank Pressure Pending Completion</td>
+          <td>
+            <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">BAK DISTRICT 1-1</div>
+          </td>
+          <td>
+            <div class="ui ordered list">
+              <div class="item">
+                <div class="header">Task has not been completed</div>
+                <div class="description">
+                  <div>Tank high pressure alarm is triggered and has not been completed ES + 12hr </div>
+                  <div>
+                    <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">EarlyStart<div class="detail">Task Property</div></div> is between Now-1d00:00 and Now-20:00.</div>
+                  <div>Filter using group <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Jeopardy - LDAR Task Pending Completion</div></div>
+                  <div>
+                    <b>Actions:</b>
+                    <ul class="ui list">
+                      <li value="*">Change Task.InJeopardy to True</li>
+                      <li value="*">Change Task.JeopardyState to LDAR Task Pending Completion </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>BAK Unschedule Dispatched work - End of day</td>
+          <td>
+            <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">BAK DISTRICT 1-10</div>
+          </td>
+          <td>
+            <div class="ui ordered list">
+              <div class="item">
+                <div class="header">Set Status of past Dispatched tasks to Open</div>
+                <div class="description">
+                  <div>For all Tasks where AssignmentStart is within the last 24 hours and Status is still Dispatched or Scheduled, set the Task status to Open (Unschedule)</div>
+                  <div>
+                    <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">AssignmentStart<div class="detail">Task Property</div></div> is between Now-1d00:00 and Now-02:00.</div>
+                  <div>Filter using group <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">BAK - Non Water Tasks - Dispatched</div></div>
+                  <div>
+                    <b>Actions:</b>
+                    <ul class="ui list">
+                      <li value="*">Change Task.Pinned to False</li>
+                      <li value="*">Change Task.Status to Open</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>BAK Unschedule Dispatched work - End of Night</td>
+          <td>
+            <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">BAK DISTRICT 1-10</div>
+          </td>
+          <td>
+            <div class="ui ordered list">
+              <div class="item">
+                <div class="header">Set Status of past Dispatched tasks to Open</div>
+                <div class="description">
+                  <div>For all Tasks where AssignmentStart is within the last 24 hours and Status is still Dispatched or Scheduled, set the Task status to Open (Unschedule)</div>
+                  <div>
+                    <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">AssignmentStart<div class="detail">Task Property</div></div> is between Now-1d00:00 and Now.</div>
+                  <div>Filter using group <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">BAK Unschedule End of Night</div></div>
+                  <div>
+                    <b>Actions:</b>
+                    <ul class="ui list">
+                      <li value="*">Change Task.Pinned to False</li>
+                      <li value="*">Change Task.Status to Open</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Dispatch Next 6 hours</td>
+          <td>
+            <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">EF DISTRICT 1-2</div>
+          </td>
+          <td>
+            <div class="ui ordered list">
+              <div class="item">
+                <div class="header">Dispatch Next 6 hours</div>
+                <div class="description">
+                  <div>A Dispatch Agent which dispatches tasks which should start in the next 3 hours</div>
+                  <div>
+                    <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Start<div class="detail">Assignment Property</div></div> is between Now-04:00 and Now+06:00.</div>
+                  <div>Filter using group <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Scheduled Assignments</div></div>
+                  <div>
+                    <b>Actions:</b>
+                    <ul class="ui list">
+                      <li value="*">Change Task.Status to Dispatched</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Display Date Agent</td>
+          <td>
+            <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">EF DISTRICT 1-2</div>
+          </td>
+          <td>
+            <div class="ui ordered list">
+              <div class="item">
+                <div class="header">Update Display Date</div>
+                <div class="description">
+                  <div>Uncompleted Tasks with DisplayDate between 1 days ago and now should be included in the Web Client domain therefore this step will set DisplayDate to Now + 1 day</div>
+                  <div>
+                    <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">DisplayDate<div class="detail">Task Property</div></div> is between Now-1d00:00 and Now.</div>
+                  <div>Filter using group <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Uncompleted Tasks</div></div>
+                  <div>
+                    <b>Actions:</b>
+                    <ul class="ui list">
+                      <li value="*">Change Task.DisplayDate to start of day plus 29:00 hour(s)</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>EF Critical PM Past Due</td>
+          <td>
+            <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">EF DISTRICT 1-2</div>
+          </td>
+          <td>
+            <div class="ui ordered list">
+              <div class="item">
+                <div class="header">Alert if tasks are Open and past due</div>
+                <div class="description">
+                  <div>Set to In-Jeopardy if task past due</div>
+                  <div>
+                    <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">DueDate<div class="detail">Task Property</div></div> is between Now and Now+1d00:00.</div>
+                  <div>Filter using group <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Jeopardy - EF Critical PMs Past Due</div></div>
+                  <div>
+                    <b>Actions:</b>
+                    <ul class="ui list">
+                      <li value="*">Change Task.JeopardyState to Critical PMs Past Due (EF) </li>
+                      <li value="*">Change Task.InJeopardy to True</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>EF LDAR Task Past Due</td>
+          <td>
+            <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">EF DISTRICT 1-2</div>
+          </td>
+          <td>
+            <div class="ui ordered list">
+              <div class="item">
+                <div class="header">Alert if tasks are Open and past due</div>
+                <div class="description">
+                  <div>Set to In-Jeopardy if task past due</div>
+                  <div>
+                    <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">DueDate<div class="detail">Task Property</div></div> is between Now-2d00:00 and Now.</div>
+                  <div>Filter using group <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Jeopardy - LDAR Task Past Due</div></div>
+                  <div>
+                    <b>Actions:</b>
+                    <ul class="ui list">
+                      <li value="*">Change Task.JeopardyState to LDAR Task Past Due (EF) </li>
+                      <li value="*">Change Task.InJeopardy to True</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>EF OPS Cancel Past Due Tasks</td>
+          <td>
+            <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">EF DISTRICT 1-2</div>
+          </td>
+          <td>
+            <div class="ui ordered list">
+              <div class="item">
+                <div class="header">Cancel Past Due Tasks</div>
+                <div class="description">
+                  <div>
+                    <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">DueDate<div class="detail">Task Property</div></div> is between Now-7d00:00 and Now.</div>
+                  <div>Filter using group <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">FSM EF Daily Tasks to Cancel</div></div>
+                  <div>
+                    <b>Actions:</b>
+                    <ul class="ui list">
+                      <li value="*">Change Task.Pinned to False</li>
+                      <li value="*">Change Task.Status to Cancelled </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>EF Unschedule Dispatched work</td>
+          <td>
+            <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">EF DISTRICT 1-7</div>
+          </td>
+          <td>
+            <div class="ui ordered list">
+              <div class="item">
+                <div class="header">Set Status of past Dispatched tasks to Open</div>
+                <div class="description">
+                  <div>For all Tasks where AssignmentStart is within the last 24 hours and Status is still Dispatched or Scheduled, set the Task status to Open (Unschedule)</div>
+                  <div>
+                    <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">AssignmentStart<div class="detail">Task Property</div></div> is between Now-1d00:00 and Now.</div>
+                  <div>Filter using group <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">MRO - EF Non Water Tasks - Dispatched</div></div>
+                  <div>
+                    <b>Actions:</b>
+                    <ul class="ui list">
+                      <li value="*">Change Task.Status to Open</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Equipment Info Dispatch Agent</td>
+          <td>
+            <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">EQ INFO 1-1</div>
+          </td>
+          <td>
+            <div class="ui ordered list">
+              <div class="item">
+                <div class="header">Dispatch Today</div>
+                <div class="description">
+                  <div>
+                    <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Start<div class="detail">Assignment Property</div></div> is between Now-02:00 and Now+18:00.</div>
+                  <div>Filter using group <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Equipment Info Scheduled</div></div>
+                  <div>
+                    <b>Actions:</b>
+                    <ul class="ui list">
+                      <li value="*">Change Task.Status to Dispatched</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Equipment Info Extend</td>
+          <td>
+            <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">EQ INFO 1-1</div>
+          </td>
+          <td>
+            <div class="ui ordered list">
+              <div class="item">
+                <div class="header">Extend Due Date</div>
+                <div class="description">
+                  <div>
+                    <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">DueDate<div class="detail">Task Property</div></div> is between Now-1d00:00 and Now+04:00.</div>
+                  <div>Filter using group <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Equipment Info Not Extended</div></div>
+                  <div>
+                    <b>Actions:</b>
+                    <ul class="ui list">
+                      <li value="*">Change Task.DueDate to now plus 24:00 hour(s)</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Equipment Info Unschedule Agent</td>
+          <td>
+            <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">EQ INFO 1-1</div>
+          </td>
+          <td>
+            <div class="ui ordered list">
+              <div class="item">
+                <div class="header">Set Status of past Dispatched tasks to Open</div>
+                <div class="description">
+                  <div>
+                    <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">AssignmentStart<div class="detail">Task Property</div></div> is between Now-1d00:00 and Now.</div>
+                  <div>Filter using group <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Equipment Info Unschedule Tasks</div></div>
+                  <div>
+                    <b>Actions:</b>
+                    <ul class="ui list">
+                      <li value="*">Change Task.Status to Open</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Extend Due Date - Shut-in Wells</td>
+          <td>
+            <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">EF DISTRICT 1-2</div>
+          </td>
+          <td>
+            <div class="ui ordered list">
+              <div class="item">
+                <div class="header">Extend Due Dates on Shut-in Wells </div>
+                <div class="description">
+                  <div>
+                    <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">DueDate<div class="detail">Task Property</div></div> is between Now-30d00:00 and Now.</div>
+                  <div>Filter using group <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">FSM Well Shut-In Due Date</div></div>
+                  <div>
+                    <b>Actions:</b>
+                    <ul class="ui list">
+                      <li value="*">Change Task.DueDate to now plus 168:00 hour(s)</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Extend Maintenance Due Dates</td>
+          <td>
+            <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">EF ORB PER DISTRICT 1-2</div>
+          </td>
+          <td>
+            <div class="ui ordered list">
+              <div class="item">
+                <div class="header">Extend Due Date</div>
+                <div class="description">
+                  <div>
+                    <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">DueDate<div class="detail">Task Property</div></div> is between Now-10d00:00 and Now.</div>
+                  <div>Filter using group <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Optimizable Maintenance Tasks Not Extended</div></div>
+                  <div>
+                    <b>Actions:</b>
+                    <ul class="ui list">
+                      <li value="*">Change Task.ExtensionFlag to True</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Extend Monthly Assignments</td>
+          <td>
+            <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">ALL DISTRICT 1-1</div>
+          </td>
+          <td>
+            <div class="ui ordered list">
+              <div class="item">
+                <div class="header">Move to Tomorrow</div>
+                <div class="description">
+                  <div>
+                    <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">DueDate<div class="detail">Task Property</div></div> is between Now-1d00:00 and Now.</div>
+                  <div>Filter using group <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">FSM Monthly Tasks to Extend</div></div>
+                  <div>
+                    <b>Actions:</b>
+                    <ul class="ui list">
+                      <li value="*">Change Task.Pinned to False</li>
+                      <li value="*">Change Task.ExtensionFlag to True</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Extend Ops Due Dates</td>
+          <td>
+            <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">EF DISTRICT 1-2</div>
+          </td>
+          <td>
+            <div class="ui ordered list">
+              <div class="item">
+                <div class="header">Extend Due Date</div>
+                <div class="description">
+                  <div>
+                    <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">DueDate<div class="detail">Task Property</div></div> is between Now-2d00:00 and Now+00:30.</div>
+                  <div>Filter using group <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Optimizable Ops Tasks Not Extended</div></div>
+                  <div>
+                    <b>Actions:</b>
+                    <ul class="ui list">
+                      <li value="*">Change Task.ExtensionFlag to True</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>FSM Cancel Inspections</td>
+          <td>
+            <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">ALL DISTRICT 1-1</div>
+          </td>
+          <td>
+            <div class="ui ordered list">
+              <div class="item">
+                <div class="header">Cancel Inspections Past Due</div>
+                <div class="description">
+                  <div>
+                    <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">DueDate<div class="detail">Task Property</div></div> is between Now-10d00:00 and Now.</div>
+                  <div>Filter using group <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">FSM Cancel Inspections</div></div>
+                  <div>
+                    <b>Actions:</b>
+                    <ul class="ui list">
+                      <li value="*">Change Task.Pinned to False</li>
+                      <li value="*">Change Task.Status to Cancelled </li>
+                      <li value="*">Change Task.MROCompletionNotes to End of Month - Auto Cancelled</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>FSM Cancel Past Due Reactive RBBEs</td>
+          <td>
+            <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">BAK ORB DISTRICT 1-1</div>
+          </td>
+          <td>
+            <div class="ui ordered list">
+              <div class="item">
+                <div class="header">Cancel RBBEs Past Due</div>
+                <div class="description">
+                  <div>
+                    <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">DueDate<div class="detail">Task Property</div></div> is between Now-2d00:00 and Now.</div>
+                  <div>Filter using group <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">FSM Reactive RBBE Cancel</div></div>
+                  <div>
+                    <b>Actions:</b>
+                    <ul class="ui list">
+                      <li value="*">Change Task.Status to Cancelled </li>
+                      <li value="*">Change Task.MROCancelReasons to Reactive RBBE Reset </li>
+                      <li value="*">Change Task.MROCompletionNotes to Auto cancelled</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>FSM Clear Required Resources</td>
+          <td>
+            <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">BAK DISTRICT 1-10</div>
+          </td>
+          <td>
+            <div class="ui ordered list">
+              <div class="item">
+                <div class="header">Flag Tasks to Clear</div>
+                <div class="description">
+                  <div>Generic event will remove required resources</div>
+                  <div>
+                    <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">DueDate<div class="detail">Task Property</div></div> is between Now-1d00:00 and Now+30d00:00.</div>
+                  <div>Filter using group <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">FSM Clear Required Resources</div></div>
+                  <div>
+                    <b>Actions:</b>
+                    <ul class="ui list">
+                      <li value="*">Change Task.DoNotSendStatusChangeReport_SO to False</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>FSM Daily Active Tasks Email</td>
+          <td>
+            <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">BAK EF REGION 1-5</div>
+          </td>
+          <td>
+            <div class="ui ordered list">
+              <div class="item">
+                <div class="header">Trigger Email</div>
+                <div class="description">
+                  <div>
+                    <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Start<div class="detail">Assignment Property</div></div> is between Now-12:00 and Now.</div>
+                  <div>Filter using group <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">FSM Daily Assignment Group</div></div>
+                  <div>
+                    <b>Actions:</b>
+                    <ul class="ui list">
+                      <li value="*">Change Task.IsBreakActual_SO to True</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>FSM On Hold Move Forward</td>
+          <td>
+            <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">OND DISTRICT 1-1</div>
+          </td>
+          <td>
+            <div class="ui ordered list">
+              <div class="item">
+                <div class="header">Move On Hold Tasks Forward</div>
+                <div class="description">
+                  <div>
+                    <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">DueDate<div class="detail">Task Property</div></div> is between Now-1d00:00 and Now.</div>
+                  <div>Filter using group <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">FSM On Hold Tasks Move Forward</div></div>
+                  <div>
+                    <b>Actions:</b>
+                    <ul class="ui list">
+                      <li value="*">Change Task.DueDate to now plus 24:00 hour(s)</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>MRO - Maintenance Dispatch Next 8 hours</td>
+          <td>
+            <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">EF DISTRICT 1-2</div>
+          </td>
+          <td>
+            <div class="ui ordered list">
+              <div class="item">
+                <div class="header">Dispatch Next 8 hours</div>
+                <div class="description">
+                  <div>A Dispatch Agent which dispatches tasks which should start in the next 2 hours</div>
+                  <div>
+                    <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Start<div class="detail">Assignment Property</div></div> is between Now-04:00 and Now+08:00.</div>
+                  <div>Filter using group <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">MRO - Maintenance Scheduled Assignments</div></div>
+                  <div>
+                    <b>Actions:</b>
+                    <ul class="ui list">
+                      <li value="*">Change Task.Status to Dispatched</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>MRO CreateTask Manual Entry</td>
+          <td>
+            <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">MRO Daily Online Decomposition (1-1)</div>
+          </td>
+          <td>
+            <div class="ui ordered list">
+              <div class="item">
+                <div class="header">Set the MROManualEntryCreatd Boolean</div>
+                <div class="description">
+                  <div>Set the Boolean to True which will cause the Task Update Generic Event to fire and create the MROTaskManualEntry record.</div>
+                  <div>
+                    <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">OpenDate<div class="detail">Task Property</div></div> is between Now-04:00 and Now+02:00.</div>
+                  <div>Filter using group <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">MRO - Task Manual Entry False</div></div>
+                  <div>
+                    <b>Actions:</b>
+                    <ul class="ui list">
+                      <li value="*">Change Task.MROIsManualEntryCreated to True</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>ORB Alert Jeopardy Unscheduled Tasks</td>
+          <td>
+            <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">ORB DISTRICT 1-7</div>
+          </td>
+          <td>
+            <div class="ui ordered list">
+              <div class="item">
+                <div class="header">Alert if tasks are Open and Past Due</div>
+                <div class="description">
+                  <div>Set to In-Jeopardy if task is Open and Past Due, no extensions remaining</div>
+                  <div>
+                    <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">DueDate<div class="detail">Task Property</div></div> is between Now-1d00:00 and Now+02:00.</div>
+                  <div>Filter using group <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">ORB Open Tasks (Not In Jeopardy)</div></div>
+                  <div>
+                    <b>Actions:</b>
+                    <ul class="ui list">
+                      <li value="*">Change Task.JeopardyState to Not Scheduled</li>
+                      <li value="*">Change Task.InJeopardy to True</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>ORB Cancel Today</td>
+          <td>
+            <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">ORB DISTRICT 1-1</div>
+          </td>
+          <td>
+            <div class="ui ordered list">
+              <div class="item">
+                <div class="header">Cancel Admin Tasks</div>
+                <div class="description">
+                  <div>
+                    <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">DueDate<div class="detail">Task Property</div></div> is between Now-1d00:00 and Now+04:00.</div>
+                  <div>Filter using group <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">ORB Cancel Today</div></div>
+                  <div>
+                    <b>Actions:</b>
+                    <ul class="ui list">
+                      <li value="*">Change Task.Pinned to False</li>
+                      <li value="*">Change Task.Status to Cancelled </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>ORB Extend Ops Due Dates</td>
+          <td>
+            <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">ORB DISTRICT 1-1</div>
+          </td>
+          <td>
+            <div class="ui ordered list">
+              <div class="item">
+                <div class="header">Extend Due Date</div>
+                <div class="description">
+                  <div>
+                    <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">DueDate<div class="detail">Task Property</div></div> is between Now-2d00:00 and Now+00:30.</div>
+                  <div>Filter using group <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">ORB Optimizable Ops Tasks Not Extended</div></div>
+                  <div>
+                    <b>Actions:</b>
+                    <ul class="ui list">
+                      <li value="*">Change Task.ExtensionFlag to True</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>ORB OPS Cancel Past Due Tasks</td>
+          <td>
+            <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">ORB DISTRICT 1-1</div>
+          </td>
+          <td>
+            <div class="ui ordered list">
+              <div class="item">
+                <div class="header">Cancel Tasks Past Due</div>
+                <div class="description">
+                  <div>
+                    <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">DueDate<div class="detail">Task Property</div></div> is between Now-10d00:00 and Now.</div>
+                  <div>Filter using group <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">ORB FSM Daily Tasks to Cancel</div></div>
+                  <div>
+                    <b>Actions:</b>
+                    <ul class="ui list">
+                      <li value="*">Change Task.Pinned to False</li>
+                      <li value="*">Change Task.Status to Cancelled </li>
+                      <li value="*">Change Task.MROCancelReasons to [758120450]</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>ORB OPS Dispatch Next 9 Hours</td>
+          <td>
+            <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">ORB DISTRICT 1-7</div>
+          </td>
+          <td>
+            <div class="ui ordered list">
+              <div class="item">
+                <div class="header">Dispatch Next 9 hours</div>
+                <div class="description">
+                  <div>A Dispatch Agent which dispatches tasks which should start in the next 6  hours</div>
+                  <div>
+                    <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Start<div class="detail">Assignment Property</div></div> is between Now-10:00 and Now+10:00.</div>
+                  <div>Filter using group <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Scheduled Assignments - ORB OPS</div></div>
+                  <div>
+                    <b>Actions:</b>
+                    <ul class="ui list">
+                      <li value="*">Change Task.Status to Dispatched</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>ORB Remove Excluded Resources</td>
+          <td>
+            <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">ORB DISTRICT 1-7</div>
+          </td>
+          <td>
+            <div class="ui ordered list">
+              <div class="item">
+                <div class="header">Remove Excluded Resources</div>
+                <div class="description">
+                  <div>For Rejected tasks - remove excluded resources</div>
+                  <div>
+                    <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">DueDate<div class="detail">Task Property</div></div> is between Now-1d00:00 and Now+7d00:00.</div>
+                  <div>Filter using group <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">ORB Remove Excluded Resources</div></div>
+                  <div>
+                    <b>Actions:</b>
+                    <ul class="ui list">
+                      <li value="*">Change Task.SendByCXEMAIL to True</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>ORB Unschedule Dispatched Work - End of Day</td>
+          <td>
+            <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">ORB DISTRICT 1-7</div>
+          </td>
+          <td>
+            <div class="ui ordered list">
+              <div class="item">
+                <div class="header">Set Status of Past Dispatched Tasks to Open</div>
+                <div class="description">
+                  <div>For all Tasks where AssignmnetStart is within the last 24 hours and Status is still Dispatched or Scheduled. Set the Taks status to open (Unschedlue).</div>
+                  <div>
+                    <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">AssignmentStart<div class="detail">Task Property</div></div> is between Now-1d00:00 and Now.</div>
+                  <div>Filter using group <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">ORB Unschedue End of Day</div></div>
+                  <div>
+                    <b>Actions:</b>
+                    <ul class="ui list">
+                      <li value="*">Change Task.Pinned to False</li>
+                      <li value="*">Change Task.SendByCXEMAIL to True</li>
+                      <li value="*">Change Task.Status to Open </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="header">Remove Excluded Resources on Open/Rejected</div>
+                <div class="description">
+                  <div>
+                    <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">DueDate<div class="detail">Task Property</div></div> is between Now-1d00:00 and Now+7d00:00.</div>
+                  <div>Filter using group <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">ORB Remove Excluded Resources</div></div>
+                  <div>
+                    <b>Actions:</b>
+                    <ul class="ui list">
+                      <li value="*">Change Task.SendByCXEMAIL to True</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>ORB Unschedule Dispatched Work - Mid Day</td>
+          <td>
+            <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">ORB DISTRICT 1-7</div>
+          </td>
+          <td>
+            <div class="ui ordered list">
+              <div class="item">
+                <div class="header">Set Status of Past Dispatched Tasks to Open</div>
+                <div class="description">
+                  <div>For all Tasks where AssignmnetStart is within the last 12 hours and Status is still Dispatched or Scheduled. Set the Taks status to open (Unschedlue).</div>
+                  <div>
+                    <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">AssignmentStart<div class="detail">Task Property</div></div> is between Now-12:00 and Now-00:30.</div>
+                  <div>Filter using group <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">ORB Unschedule Mid Day</div></div>
+                  <div>
+                    <b>Actions:</b>
+                    <ul class="ui list">
+                      <li value="*">Change Task.Status to Open </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>PER Alert Pilot Alarm Past Due</td>
+          <td>
+            <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">PER DISTRICT 1-5</div>
+          </td>
+          <td>
+            <div class="ui ordered list">
+              <div class="item">
+                <div class="header">Alert if tasks are Open and past due</div>
+                <div class="description">
+                  <div>Set to In-Jeopardy if flare alarm is past due</div>
+                  <div>
+                    <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">DueDate<div class="detail">Task Property</div></div> is between Now-07:00 and Now.</div>
+                  <div>Filter using group <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Jeopardy - PER Pilot Alarm Past Due</div></div>
+                  <div>
+                    <b>Actions:</b>
+                    <ul class="ui list">
+                      <li value="*">Change Task.JeopardyState to Pilot Alarm Past Due (PER) </li>
+                      <li value="*">Change Task.InJeopardy to True</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>PER Extend Due Date</td>
+          <td>
+            <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">PER DISTRICT 1-1</div>
+          </td>
+          <td>
+            <div class="ui ordered list">
+              <div class="item">
+                <div class="header">Extend Due Date</div>
+                <div class="description">
+                  <div>
+                    <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">DueDate<div class="detail">Task Property</div></div> is between Now-2d00:00 and Now+03:00.</div>
+                  <div>Filter using group <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">PER Optimizable Ops Tasks Not Extended</div></div>
+                  <div>
+                    <b>Actions:</b>
+                    <ul class="ui list">
+                      <li value="*">Change Task.ExtensionFlag to True</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>PER Move Vendor Contacted Forward</td>
+          <td>
+            <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">PER DISTRICT 1-1</div>
+          </td>
+          <td>
+            <div class="ui ordered list">
+              <div class="item">
+                <div class="header">Move Vendor Contacted to Tomorrow</div>
+                <div class="description">
+                  <div>
+                    <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">AssignmentStart<div class="detail">Task Property</div></div> is between Now-1d00:00 and Now.</div>
+                  <div>Filter using group <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">PER Vendor Contacted</div></div>
+                  <div>
+                    <b>Actions:</b>
+                    <ul class="ui list">
+                      <li value="*">Change Task.AssignmentStart to start of day plus 32:00 hour(s)</li>
+                      <li value="*">Change Task.AssignmentFinish to start of day plus 32:20 hour(s)</li>
+                      <li value="*">Change Task.DueDate to start of day plus 42:00 hour(s)</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>PER OPS Dispatch Next 3 Hours</td>
+          <td>
+            <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">PER DISTRICT 1-5</div>
+          </td>
+          <td>
+            <div class="ui ordered list">
+              <div class="item">
+                <div class="header">Dispatch Next 3 hours</div>
+                <div class="description">
+                  <div>A Dispatch Agent which dispatches tasks which should start in the next 3  hours</div>
+                  <div>
+                    <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Start<div class="detail">Assignment Property</div></div> is between Now-12:00 and Now+12:00.</div>
+                  <div>Filter using group <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">PER Scheduled Assignments</div></div>
+                  <div>
+                    <b>Actions:</b>
+                    <ul class="ui list">
+                      <li value="*">Change Task.Status to Dispatched</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>PER Unschedule Dispatched work - End of day</td>
+          <td>
+            <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">PER DISTRICT 1-5</div>
+          </td>
+          <td>
+            <div class="ui ordered list">
+              <div class="item">
+                <div class="header">Set Status of past Dispatched tasks to Open</div>
+                <div class="description">
+                  <div>For all Tasks where AssignmentStart is within the last 24 hours and Status is still Dispatched or Scheduled, set the Task status to Open (Unschedule)</div>
+                  <div>
+                    <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">AssignmentStart<div class="detail">Task Property</div></div> is between Now-14d00:00 and Now.</div>
+                  <div>Filter using group <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">PER - Non Water Tasks - Dispatched</div></div>
+                  <div>
+                    <b>Actions:</b>
+                    <ul class="ui list">
+                      <li value="*">Change Task.Pinned to False</li>
+                      <li value="*">Change Task.Status to Open</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Schedule Date Agent</td>
+          <td>
+            <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">EF DISTRICT 1-2</div>
+          </td>
+          <td>
+            <div class="ui ordered list">
+              <div class="item">
+                <div class="header">Set Schedule Date by Due Date </div>
+                <div class="description">
+                  <div>Optimizable Tasks with ScheduleDate between 1 days ago and now should be included in the BGO domain therefore this step will set ScheduleDate to Now + 1 day</div>
+                  <div>
+                    <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">ScheduleDate<div class="detail">Task Property</div></div> is between Now-1d00:00 and Now.</div>
+                  <div>Filter using group <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Optimizable Tasks</div></div>
+                  <div>
+                    <b>Actions:</b>
+                    <ul class="ui list">
+                      <li value="*">Change Task.ScheduleDate to start of day plus 29:00 hour(s)</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Support Fix</td>
+          <td>
+            <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">SUPPORT ALL 1-1</div>
+          </td>
+          <td>
+            <div class="ui ordered list">
+              <div class="item">
+                <div class="header">Cancelled to Delete</div>
+                <div class="description">
+                  <div>
+                    <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">DueDate<div class="detail">Task Property</div></div> is between Now-756d00:00 and Now-215d00:00.</div>
+                  <div>Filter using group <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Support Fix</div></div>
+                  <div>
+                    <b>Actions:</b>
+                    <ul class="ui list">
+                      <li value="*">Change Task.Status to Delete </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Unschedule Dispatched work - End of day</td>
+          <td>
+            <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">EF DISTRICT 1-7</div>
+          </td>
+          <td>
+            <div class="ui ordered list">
+              <div class="item">
+                <div class="header">Set Status of past Dispatched tasks to Open</div>
+                <div class="description">
+                  <div>For all Tasks where AssignmentStart is within the last 24 hours and Status is still Dispatched or Scheduled, set the Task status to Open (Unschedule)</div>
+                  <div>
+                    <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">AssignmentStart<div class="detail">Task Property</div></div> is between Now-1d00:00 and Now.</div>
+                  <div>Filter using group <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">MRO - Non Water Tasks - Dispatched</div></div>
+                  <div>
+                    <b>Actions:</b>
+                    <ul class="ui list">
+                      <li value="*">Change Task.Pinned to False</li>
+                      <li value="*">Change Task.SendByCXEMAIL to True</li>
+                      <li value="*">Change Task.Status to Open</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Unschedule Shut-in Wells</td>
+          <td>
+            <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">EF DISTRICT 1-7</div>
+          </td>
+          <td>
+            <div class="ui ordered list">
+              <div class="item">
+                <div class="header">Unschedule Shut-in Wells</div>
+                <div class="description">
+                  <div>
+                    <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Start<div class="detail">Assignment Property</div></div> is between Now and Now+2d00:00.</div>
+                  <div>Filter using group <div class="ui green label" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">FSM Shut In Wells</div></div>
+                  <div>
+                    <b>Actions:</b>
+                    <ul class="ui list">
+                      <li value="*">Change Task.Pinned to False</li>
+                      <li value="*">Change Task.WellShutIn to True</li>
+                      <li value="*">Change Task.Status to Open </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <script>
+          $( document ).ready( function ()
+            {
+              initDataTableWithButtons(
+                '#waTable',
+                "Workflow Agents",
+                false,
+                true,
+                {
+                  paging: false,
+                  order: [[0, 'asc']],
+                }
+              );
+            } );
+          </script>
+  </body>
+</html>

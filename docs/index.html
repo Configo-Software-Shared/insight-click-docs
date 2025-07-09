@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.9.3/semantic.min.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.datatables.net/v/se/jq-3.7.0/jszip-3.10.1/dt-2.0.7/b-3.0.2/b-colvis-3.0.2/b-html5-3.0.2/b-print-3.0.2/cr-2.0.2/date-1.5.2/fc-5.0.0/fh-4.0.1/kt-2.12.0/r-3.0.2/rg-1.5.0/sc-2.4.2/sb-1.7.1/sp-2.3.1/datatables.min.css" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js">//</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.9.3/semantic.min.js">//</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js">//</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js">//</script>
+  <script
+    src="https://cdn.datatables.net/v/se/jq-3.7.0/jszip-3.10.1/dt-2.0.7/b-3.0.2/b-colvis-3.0.2/b-html5-3.0.2/b-print-3.0.2/cr-2.0.2/date-1.5.2/fc-5.0.0/fh-4.0.1/kt-2.12.0/r-3.0.2/rg-1.5.0/sc-2.4.2/sb-1.7.1/sp-2.3.1/datatables.min.js">//</script>
+
+  <script type="text/javascript" src="script/cfg-tables.js"></script>
+  <script type="text/javascript" src="xomIndex.js"></script>
+  <title>ClickSoftware Configuration Reports</title>
+</head>
+
+<body style="padding:16px">
+
+  <h1 class="ui header">ClickSoftware Configuration Reports</h1>
+
+  <div class="ui relaxed divided list">
+    <div class="item">
+      <i class="large flag outline middle aligned icon"></i>
+      <div class="content">
+        <a class="header" href="00.SnapshotSummary.html">Snapshot Summary</a>
+        <div class="description">Product and custom collections and properties; logic services summary; types and collections.</div>
+      </div>
+    </div>
+    <div class="item">
+      <i class="large exclamation circle middle aligned icon"></i>
+      <div class="content">
+        <a class="header" href="05.GapAnalysis-SFS.html">Salesforce Field Service Gap Analysis</a>
+        <div class="description">Property counts by type; generic events gaps – summary and details; proactive business monitoring; workflow agents.</div>
+      </div>
+    </div>
+    <div class="item">
+      <i class="large project diagram middle aligned icon"></i>
+      <div class="content">
+        <a class="header" href="10.References.html">References</a>
+        <div class="description">All configuration items, their aliases, dependents and dependencies.</div>
+      </div>
+    </div>
+    <div class="item">
+      <i class="large project diagram middle aligned icon"></i>
+      <div class="content">
+        <a class="header" href="11.UnresolvedReferences.html">Unresolved References</a>
+        <div class="description">All unresolved references throughout the configuration, including where they appear.</div>
+      </div>
+    </div>
+    <div class="item">
+      <i class="large project diagram middle aligned icon"></i>
+      <div class="content">
+        <a class="header" href="12.UnreferencedItems.html">Unreferenced Items</a>
+        <div class="description">All unreferenced items and their direct dependencies.</div>
+      </div>
+    </div>
+    <div class="item">
+      <i class="large bug middle aligned icon"></i>
+      <div class="content">
+        <a class="header" href="13.Faults.html">Configuration Faults</a>
+        <div class="description">Scheme and configuration faults identified in the configuration.</div>
+      </div>
+    </div>
+    <div class="item">
+      <i class="large database middle aligned icon"></i>
+      <div class="content">
+        <a class="header" href="20.StructureReport.html">Service Optimization Structure</a>
+        <div class="description">Object schema, properties, indexes, integration identities.</div>
+      </div>
+    </div>
+    <div class="item">
+      <i class="large filter middle aligned icon"></i>
+      <div class="content">
+        <a class="header" href="30.Groups.html">Groups and Relevance Groups</a>
+        <div class="description">Detailed group and relevance group definitions, and their usage.</div>
+      </div>
+    </div>
+    <div class="item">
+      <i class="large filter middle aligned icon"></i>
+      <div class="content">
+        <a class="header" href="31.GroupByGeography.html">Groups by Geography</a>
+        <div class="description">Group with geographical dependencies in their definitions.</div>
+      </div>
+    </div>
+    <div class="item">
+      <i class="large filter middle aligned icon"></i>
+      <div class="content">
+        <a class="header" href="40.Decompositions.html">Decompositions</a>
+        <div class="description">Detailed decomposition definitions, geographical coverage matrices, and geographical commonalities.</div>
+      </div>
+    </div>
+    <div class="item">
+      <i class="large sitemap middle aligned icon"></i>
+      <div class="content">
+        <a class="header" href="50.StatusFlows.html">Status Flows</a>
+        <div class="description">The visualisation of all defined status flows.</div>
+      </div>
+    </div>
+    <!--
+    <div class="item">
+      <i class="large sitemap middle aligned icon"></i>
+      <div class="content">
+        <a class="header" href="51.StatusTransitionsDot.dot.png">Status Transitions</a>
+        <div class="description">The visualisation of all status transitions.</div>
+      </div>
+    </div>
+    -->
+    <div class="item">
+      <i class="large bolt middle aligned icon"></i>
+      <div class="content">
+        <a class="header" href="55.GenericEvents.html">Generic Events</a>
+        <div class="description">The summary of generic events by object and action type; detailed generic event definitions, including their usage.</div>
+      </div>
+    </div>
+    <div class="item">
+      <i class="large stream middle aligned icon"></i>
+      <div class="content">
+        <a class="header" href="60.Rules.html">Rules</a>
+        <div class="description">Detailed definitions of all scheduling rules.</div>
+      </div>
+    </div>
+    <div class="item">
+      <i class="large stream middle aligned icon"></i>
+      <div class="content">
+        <a class="header" href="61.Objectives.html">Objectives and BVFs</a>
+        <div class="description">Detailed definitions of all scheduling objectives and business value functions.</div>
+      </div>
+    </div>
+    <div class="item">
+      <i class="large stream middle aligned icon"></i>
+      <div class="content">
+        <a class="header" href="62.LogicDomainMatrix.html">Logic Domain Matrix</a>
+        <div class="description">The matrix of logic domains vs rules, objectives and business value functions.</div>
+      </div>
+    </div>
+    <!--
+    <div class="item">
+      <i class="large stream middle aligned icon"></i>
+      <div class="content">
+        <a class="header" href="64.BGOs.html">Background Optimizations</a>
+        <div class="description">Detailed definitions of background optimizations.</div>
+      </div>
+    </div>
+    -->
+    <div class="item">
+      <i class="large stream middle aligned icon"></i>
+      <div class="content">
+        <a class="header" href="65.SchedulingWorkflows.html">Scheduling Workflows</a>
+        <div class="description">Detailed definitions of scheduling workflows.</div>
+      </div>
+    </div>
+    <div class="item">
+      <i class="large stream middle aligned icon"></i>
+      <div class="content">
+        <a class="header" href="66.ScheduleUpdates.html">Schedule Updates</a>
+        <div class="description">Detailed definitions of schedule updates and their usage.</div>
+      </div>
+    </div>
+    <div class="item">
+      <i class="large tasks middle aligned icon"></i>
+      <div class="content">
+        <a class="header" href="70.AgentsManager.html">Agents Manager</a>
+        <div class="description">Agent instances, when and on what servers they are scheduled to run, and what agent setting they are using.</div>
+      </div>
+    </div>
+    <div class="item">
+      <i class="large tasks middle aligned icon"></i>
+      <div class="content">
+        <a class="header" href="71.AgentsTimeLine.html">Agents Timeline (One per Agent)</a>
+        <div class="description">The visualisation of when various agent instances are scheduled to run on various servers.</div>
+      </div>
+    </div>
+    <div class="item">
+      <i class="large tasks middle aligned icon"></i>
+      <div class="content">
+        <a class="header" href="72.AgentsTimeLine_Parallel.html">Agents Timeline (Parallel Instances)</a>
+        <div class="description">An alternative visualisation that shows all parallel instances. Useful for tuning server utilisation.</div>
+      </div>
+    </div>
+    <div class="item">
+      <i class="large tasks middle aligned icon"></i>
+      <div class="content">
+        <a class="header" href="73.ScheduleAgents.html">Schedule Agents</a>
+        <div class="description">Schedule agents, including which background optimization they use, how their decomposition is defined, and what optimisation steps they contain.</div>
+      </div>
+    </div>
+    <div class="item">
+      <i class="large tasks middle aligned icon"></i>
+      <div class="content">
+        <a class="header" href="76.WorkflowAgents.html">Workflow Agents</a>
+        <div class="description">Detailed definitions of all workflow agents, including their filters and actions.</div>
+      </div>
+    </div>
+    <div class="item">
+      <i class="large tasks middle aligned icon"></i>
+      <div class="content">
+        <a class="header" href="77.ProactiveBusinessMonitoring.html">Proactive Business Monitoring</a>
+        <div class="description">Detailed definitions of all proactive business monitoring agents, including decompositions, loading criteria and actions.</div>
+      </div>
+    </div>
+    <div class="item">
+      <i class="large code middle aligned icon"></i>
+      <div class="content">
+        <a class="header" href="80.ExtractComponents.html">Components</a>
+        <div class="description">The summary and detailed appearance of all places in the configuration that are potential candidates for custom components and their contents looks like they could be.</div>
+      </div>
+    </div>
+    <div class="item">
+      <i class="large desktop middle aligned icon"></i>
+      <div class="content">
+        <a class="header" href="90.WebClientTemplates.html">Web Client Templates</a>
+        <div class="description">Field definitions of all object forms that appear in any of the web client templates.</div>
+      </div>
+    </div>
+    <div class="item">
+      <i class="large mobile alternate middle aligned icon"></i>
+      <div class="content">
+        <a class="header" href="91.ClickMobileTemplates.html">ClickMobile Templates</a>
+        <div class="description">Product modules, events and custom panels for all ClickMobile templates.</div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,1142 @@
+<html lang="en" style="padding: 20px">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.9.3/semantic.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/se/jszip-3.10.1/dt-2.0.7/b-3.0.2/b-colvis-3.0.2/b-html5-3.0.2/b-print-3.0.2/cr-2.0.2/date-1.5.2/fc-5.0.0/fh-4.0.1/kt-2.12.0/r-3.0.2/rg-1.5.0/sc-2.4.2/sb-1.7.1/sp-2.3.1/datatables.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js">//</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.9.3/semantic.min.js">//</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js">//</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js">//</script>
+    <script src="https://cdn.datatables.net/v/se/jszip-3.10.1/dt-2.0.7/b-3.0.2/b-colvis-3.0.2/b-html5-3.0.2/b-print-3.0.2/cr-2.0.2/date-1.5.2/fc-5.0.0/fh-4.0.1/kt-2.12.0/r-3.0.2/rg-1.5.0/sc-2.4.2/sb-1.7.1/sp-2.3.1/datatables.min.js">//</script>
+    <script type="text/javascript" src="script/cfg-tables.js">//</script>
+    <title>Decompositions</title>
+    <style>
+          .ui.table.matrix td:not(:first-child) {
+            text-align: center !important;
+          }
+        </style>
+  </head>
+  <body>
+    <h2 class="ui header">Contents</h2>
+    <div class="ui relaxed divided list">
+      <div class="item"><i class="large table top aligned icon"></i><div class="content"><a class="header" href="#defs">Decomposition Definitions</a><div class="description">Complete definition of each decomposition, and where it is used.</div></div></div>
+      <div class="item"><i class="large border none top aligned icon"></i><div class="content"><a class="header" href="#byRegion">Decompositions by Region</a><div class="description">How are different regions covered by decompositions?</div></div></div>
+      <div class="item"><i class="large border none top aligned icon"></i><div class="content"><a class="header" href="#byDistrict">Decompositions by District</a><div class="description">How are different districts covered by decompositions?</div></div></div>
+      <div class="item"><i class="large table top aligned icon"></i><div class="content"><a class="header" href="#groups">Decomposition/Territory Combinations</a><div class="description">
+                Shows the subsets of territories that are used together in one or more decomposition.
+                <div class="ui bulleted list"><div class="item"><a href="#groupByDistrict">District Decompositions</a></div><div class="item"><a href="#groupByRegion">Region Decompositions</a></div></div></div></div></div>
+    </div>
+    <h2 id="defs" class="ui header">Decomposition Definitions</h2>
+    <table id="defs-table" class="ui celled table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Indexes</th>
+          <th>Territories</th>
+          <th>Intervals</th>
+          <th>Used by</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="ID0ED">ALL DISTRICT 1-1</td>
+          <td>Task: District,DueDate<br />Engineer: District</td>
+          <td>Bakken North<br />Bakken South<br />Delaware Basin<br />Gonzales<br />Kenedy<br />MC North OK<br />MC South OK<br />Pleasanton</td>
+          <td>1-1</td>
+          <td>Workflow Agent[Extend Monthly Assignments]<br />Workflow Agent[FSM Cancel Inspections]</td>
+        </tr>
+        <tr>
+          <td id="ID0EKB">BAK DISTRICT 1-1</td>
+          <td>Task: District,DueDate<br />Engineer: District</td>
+          <td>Bakken North<br />Bakken South</td>
+          <td>1-1</td>
+          <td>Background Optimization[FSM BAK Daily Online Optimization]<br />Background Optimization[FSM BAK Quick Optimize]<br />Workflow Agent[BAK Cancel Return Same Day Tasks not Completed]<br />Workflow Agent[BAK Extend Ops Due Dates]<br />Workflow Agent[BAK OPS Cancel Past Due Tasks]<br />Workflow Agent[BAK OPS Return Same Day Travel Status]<br />Workflow Agent[BAK Tank Pressure Pending Assignment ]<br />Workflow Agent[BAK Tank Pressure Pending Completion]</td>
+        </tr>
+        <tr>
+          <td id="ID0EOC">BAK DISTRICT 1-10</td>
+          <td>Task: District,DueDate<br />Engineer: District</td>
+          <td>Bakken North<br />Bakken South</td>
+          <td>1-10</td>
+          <td>Background Optimization[FSM BAK Optimize Rejected/Operator PMs]<br />Bundler Agent[BAK Bundler]<br />Workflow Agent[BAK Alert Flare Alarm Past Due]<br />Workflow Agent[BAK Alert Jeopardy Not Acknowledged Alarms]<br />Workflow Agent[BAK Alert Jeopardy Unscheduled Tasks]<br />Workflow Agent[BAK Create Flare Notification]<br />Workflow Agent[BAK Flame Arrestor Flare Alarm Past Due]<br />Workflow Agent[BAK Move Active WOs Forward]<br />Workflow Agent[BAK OPS Dispatch Mobile Tasks]<br />Workflow Agent[BAK OPS Dispatch Today]<br />Workflow Agent[BAK OPS Rejected to Open]<br />Workflow Agent[BAK Unschedule Dispatched work - End of day]<br />Workflow Agent[BAK Unschedule Dispatched work - End of Night]<br />Workflow Agent[FSM Clear Required Resources]</td>
+        </tr>
+        <tr>
+          <td id="ID0E5D">BAK EF REGION 1-5</td>
+          <td>Task: Region,DueDate<br />Engineer: Region</td>
+          <td>Bakken<br />Eagle Ford</td>
+          <td>1-5</td>
+          <td>Workflow Agent[FSM Daily Active Tasks Email]</td>
+        </tr>
+        <tr>
+          <td id="ID0EUE">BAK ORB DISTRICT 1-1</td>
+          <td>Task: District,DueDate<br />Engineer: District</td>
+          <td>Bakken North<br />Bakken South<br />MC North OK<br />MC South OK</td>
+          <td>1-1</td>
+          <td>Workflow Agent[FSM Cancel Past Due Reactive RBBEs]</td>
+        </tr>
+        <tr>
+          <td id="ID0EOF">EF DISTRICT 1-2</td>
+          <td>Task: District,DueDate<br />Engineer: District</td>
+          <td>Gonzales<br />Kenedy<br />Pleasanton</td>
+          <td>1-2</td>
+          <td>Background Optimization[FSM Daily Online Optimization (1-2)]<br />Background Optimization[FSM EF Maint. Quick Optimize]<br />Background Optimization[FSM EF Quick Optimize - Med]<br />Background Optimization[FSM EF Quick Optimize]<br />Background Optimization[FSM Maint. Daily Online Optimization (1-2)]<br />Workflow Agent[Dispatch Next 6 hours]<br />Workflow Agent[Display Date Agent]<br />Workflow Agent[EF Critical PM Past Due]<br />Workflow Agent[EF LDAR Task Past Due]<br />Workflow Agent[EF OPS Cancel Past Due Tasks]<br />Workflow Agent[Extend Due Date - Shut-in Wells]<br />Workflow Agent[Extend Ops Due Dates]<br />Workflow Agent[MRO - Maintenance Dispatch Next 8 hours]<br />Workflow Agent[Schedule Date Agent]</td>
+        </tr>
+        <tr>
+          <td id="ID0EAH">EF DISTRICT 1-7</td>
+          <td>Task: District,DueDate<br />Engineer: District</td>
+          <td>Gonzales<br />Kenedy<br />Pleasanton</td>
+          <td>1-7</td>
+          <td>Background Optimization[FSM EF Maint Measurement Quick Optimize]<br />Background Optimization[FSM Nightly Online Optimization (1-7)]<br />Bundler Agent[General Bundler Agent]<br />Workflow Agent[EF Unschedule Dispatched work]<br />Workflow Agent[Unschedule Dispatched work - End of day]<br />Workflow Agent[Unschedule Shut-in Wells]</td>
+        </tr>
+        <tr>
+          <td id="ID0EDAAC">EF DISTRICT 24-38</td>
+          <td>Task: District,DueDate<br />Engineer: District</td>
+          <td>Gonzales<br />Kenedy<br />Pleasanton</td>
+          <td>24-38</td>
+          <td>Background Optimization[FSM Nightly Online Optimization (31-90)]</td>
+        </tr>
+        <tr>
+          <td id="ID0E2AAC">EF DISTRICT 3-7</td>
+          <td>Task: District,DueDate<br />Engineer: District</td>
+          <td>Gonzales<br />Kenedy<br />Pleasanton</td>
+          <td>3-7</td>
+          <td>Background Optimization[FSM Maint. Nightly Online Optimization (3-7)]</td>
+        </tr>
+        <tr>
+          <td id="ID0ETBAC">EF DISTRICT 8-23</td>
+          <td>Task: District,DueDate<br />Engineer: District</td>
+          <td>Gonzales<br />Kenedy<br />Pleasanton</td>
+          <td>8-23</td>
+          <td>Background Optimization[FSM Nightly Online Optimization (8-30)]<br />Bundler Agent[General Bundler Agent 8-30]</td>
+        </tr>
+        <tr>
+          <td id="ID0ENCAC">EF DISTRICT 8-30</td>
+          <td>Task: District,DueDate<br />Engineer: District</td>
+          <td>Gonzales<br />Kenedy<br />Pleasanton</td>
+          <td>8-30</td>
+          <td>Background Optimization[FSM EF Measurement (1-90)]<br />Background Optimization[FSM Maint. Nightly Online Optimization (8-30)]</td>
+        </tr>
+        <tr>
+          <td id="ID0EHDAC">EF ORB PER DISTRICT 1-2</td>
+          <td>Task: District,DueDate<br />Engineer: District</td>
+          <td>Delaware Basin<br />Gonzales<br />Kenedy<br />MC North OK<br />MC South OK<br />Pleasanton</td>
+          <td>1-2</td>
+          <td>Workflow Agent[Extend Maintenance Due Dates]</td>
+        </tr>
+        <tr>
+          <td id="ID0EFEAC">EF PER DISTRICT 1-2</td>
+          <td>Task: District,DueDate<br />Engineer: District</td>
+          <td>Delaware Basin<br />Gonzales<br />Kenedy<br />Pleasanton</td>
+          <td>1-2</td>
+          <td />
+        </tr>
+        <tr>
+          <td id="ID0E4EAC">EQ INFO 1-1</td>
+          <td>Task: District,DueDate<br />Engineer: District</td>
+          <td>Bakken North<br />Bakken South<br />Delaware Basin<br />Gonzales<br />Kenedy<br />Pleasanton</td>
+          <td>1-1</td>
+          <td>Background Optimization[Equipment Info Quick Optimize]<br />Workflow Agent[Equipment Info Dispatch Agent]<br />Workflow Agent[Equipment Info Extend]<br />Workflow Agent[Equipment Info Unschedule Agent]</td>
+        </tr>
+        <tr>
+          <td id="ID0EBGAC">MRO Daily Online Decomposition (1-1)</td>
+          <td>Task: District,OpenDate<br />Engineer: District</td>
+          <td>
+            <div class="ui pink circular label">A</div>
+          </td>
+          <td>1-1</td>
+          <td>Workflow Agent[MRO CreateTask Manual Entry]</td>
+        </tr>
+        <tr>
+          <td id="ID0ETGAC">OND DISTRICT 1-1</td>
+          <td>Task: District,DueDate<br />Engineer: District</td>
+          <td>Delaware Basin<br />MC North OK<br />MC South OK</td>
+          <td>1-1</td>
+          <td>Workflow Agent[FSM On Hold Move Forward]</td>
+        </tr>
+        <tr>
+          <td id="ID0ELHAC">ORB DISTRICT 1-1</td>
+          <td>Task: District,DueDate<br />Engineer: District</td>
+          <td>MC North OK<br />MC South OK</td>
+          <td>1-1</td>
+          <td>Background Optimization[FSM ORB Daily Online Optimization (Today)]<br />Workflow Agent[ORB Cancel Today]<br />Workflow Agent[ORB Extend Ops Due Dates]<br />Workflow Agent[ORB OPS Cancel Past Due Tasks]</td>
+        </tr>
+        <tr>
+          <td id="ID0EHIAC">ORB DISTRICT 1-2</td>
+          <td>Task: District,DueDate<br />Engineer: District</td>
+          <td>MC North OK<br />MC South OK</td>
+          <td>1-2</td>
+          <td>Background Optimization[FSM ORB Daily Online Optimization (1-2)]<br />Background Optimization[FSM ORB Quick Optimize]</td>
+        </tr>
+        <tr>
+          <td id="ID0E6IAC">ORB DISTRICT 1-7</td>
+          <td>Task: District,DueDate<br />Engineer: District</td>
+          <td>MC North OK<br />MC South OK</td>
+          <td>1-7</td>
+          <td>Bundler Agent[ORB Bundler Agent OPS]<br />Workflow Agent[ORB Alert Jeopardy Unscheduled Tasks]<br />Workflow Agent[ORB OPS Dispatch Next 9 Hours]<br />Workflow Agent[ORB Remove Excluded Resources]<br />Workflow Agent[ORB Unschedule Dispatched Work - End of Day]<br />Workflow Agent[ORB Unschedule Dispatched Work - Mid Day]</td>
+        </tr>
+        <tr>
+          <td id="ID0E6JAC">PER DISTRICT 1-1</td>
+          <td>Task: District,DueDate<br />Engineer: District</td>
+          <td>Delaware Basin</td>
+          <td>1-1</td>
+          <td>Background Optimization[FSM PER Daily Online Optimization (1-2)]<br />Workflow Agent[PER Extend Due Date]<br />Workflow Agent[PER Move Vendor Contacted Forward]</td>
+        </tr>
+        <tr>
+          <td id="ID0EXKAC">PER DISTRICT 1-2</td>
+          <td>Task: District,DueDate<br />Engineer: District</td>
+          <td>Delaware Basin</td>
+          <td>1-2</td>
+          <td>Background Optimization[FSM PER Quick Optimize - Med]<br />Background Optimization[FSM PER Quick Optimze]</td>
+        </tr>
+        <tr>
+          <td id="ID0ENLAC">PER DISTRICT 1-5</td>
+          <td>Task: District,DueDate<br />Engineer: District</td>
+          <td>Delaware Basin</td>
+          <td>1-5</td>
+          <td>Bundler Agent[PER Bundler Agent]<br />Workflow Agent[PER Alert Pilot Alarm Past Due]<br />Workflow Agent[PER OPS Dispatch Next 3 Hours]<br />Workflow Agent[PER Unschedule Dispatched work - End of day]</td>
+        </tr>
+        <tr>
+          <td id="ID0EHMAC">SUPPORT ALL 1-1</td>
+          <td>Task: District,DueDate<br />Engineer: District</td>
+          <td>Bakken North<br />Bakken South<br />Delaware Basin<br />Gonzales<br />Kenedy<br />MC North OK<br />MC South OK<br />Pleasanton</td>
+          <td>1-1</td>
+          <td>Workflow Agent[Support Fix]</td>
+        </tr>
+      </tbody>
+    </table>
+    <h2 id="byRegion" class="ui header">Decompositions by Region</h2>
+    <table id="byRegion-table" class="ui collapsing celled table matrix">
+      <thead>
+        <tr>
+          <th>Decomposition</th>
+          <th>Bakken</th>
+          <th>Eagle Ford</th>
+          <th>Mid Continent</th>
+          <th>Permian</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="row-head">
+            <a href="#ID0ED">ALL DISTRICT 1-1</a>
+          </td>
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+        </tr>
+        <tr>
+          <td class="row-head">
+            <a href="#ID0EKB">BAK DISTRICT 1-1</a>
+          </td>
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match" />
+          <td class="match" />
+          <td class="match" />
+        </tr>
+        <tr>
+          <td class="row-head">
+            <a href="#ID0EOC">BAK DISTRICT 1-10</a>
+          </td>
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match" />
+          <td class="match" />
+          <td class="match" />
+        </tr>
+        <tr>
+          <td class="row-head">
+            <a href="#ID0E5D">BAK EF REGION 1-5</a>
+          </td>
+          <td class="match">
+            <div class="ui violet circular label">R</div>
+          </td>
+          <td class="match">
+            <div class="ui violet circular label">R</div>
+          </td>
+          <td class="match" />
+          <td class="match" />
+        </tr>
+        <tr>
+          <td class="row-head">
+            <a href="#ID0EUE">BAK ORB DISTRICT 1-1</a>
+          </td>
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match" />
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match" />
+        </tr>
+        <tr>
+          <td class="row-head">
+            <a href="#ID0EOF">EF DISTRICT 1-2</a>
+          </td>
+          <td class="match" />
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match" />
+          <td class="match" />
+        </tr>
+        <tr>
+          <td class="row-head">
+            <a href="#ID0EAH">EF DISTRICT 1-7</a>
+          </td>
+          <td class="match" />
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match" />
+          <td class="match" />
+        </tr>
+        <tr>
+          <td class="row-head">
+            <a href="#ID0EDAAC">EF DISTRICT 24-38</a>
+          </td>
+          <td class="match" />
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match" />
+          <td class="match" />
+        </tr>
+        <tr>
+          <td class="row-head">
+            <a href="#ID0E2AAC">EF DISTRICT 3-7</a>
+          </td>
+          <td class="match" />
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match" />
+          <td class="match" />
+        </tr>
+        <tr>
+          <td class="row-head">
+            <a href="#ID0ETBAC">EF DISTRICT 8-23</a>
+          </td>
+          <td class="match" />
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match" />
+          <td class="match" />
+        </tr>
+        <tr>
+          <td class="row-head">
+            <a href="#ID0ENCAC">EF DISTRICT 8-30</a>
+          </td>
+          <td class="match" />
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match" />
+          <td class="match" />
+        </tr>
+        <tr>
+          <td class="row-head">
+            <a href="#ID0EHDAC">EF ORB PER DISTRICT 1-2</a>
+          </td>
+          <td class="match" />
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+        </tr>
+        <tr>
+          <td class="row-head">
+            <a href="#ID0EFEAC">EF PER DISTRICT 1-2</a>
+          </td>
+          <td class="match" />
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match" />
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+        </tr>
+        <tr>
+          <td class="row-head">
+            <a href="#ID0E4EAC">EQ INFO 1-1</a>
+          </td>
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match" />
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+        </tr>
+        <tr>
+          <td class="row-head">
+            <a href="#ID0EBGAC">MRO Daily Online Decomposition (1-1)</a>
+          </td>
+          <td class="match">
+            <div class="ui pink circular label">A</div>
+          </td>
+          <td class="match">
+            <div class="ui pink circular label">A</div>
+          </td>
+          <td class="match">
+            <div class="ui pink circular label">A</div>
+          </td>
+          <td class="match">
+            <div class="ui pink circular label">A</div>
+          </td>
+        </tr>
+        <tr>
+          <td class="row-head">
+            <a href="#ID0ETGAC">OND DISTRICT 1-1</a>
+          </td>
+          <td class="match" />
+          <td class="match" />
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+        </tr>
+        <tr>
+          <td class="row-head">
+            <a href="#ID0ELHAC">ORB DISTRICT 1-1</a>
+          </td>
+          <td class="match" />
+          <td class="match" />
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match" />
+        </tr>
+        <tr>
+          <td class="row-head">
+            <a href="#ID0EHIAC">ORB DISTRICT 1-2</a>
+          </td>
+          <td class="match" />
+          <td class="match" />
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match" />
+        </tr>
+        <tr>
+          <td class="row-head">
+            <a href="#ID0E6IAC">ORB DISTRICT 1-7</a>
+          </td>
+          <td class="match" />
+          <td class="match" />
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match" />
+        </tr>
+        <tr>
+          <td class="row-head">
+            <a href="#ID0E6JAC">PER DISTRICT 1-1</a>
+          </td>
+          <td class="match" />
+          <td class="match" />
+          <td class="match" />
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+        </tr>
+        <tr>
+          <td class="row-head">
+            <a href="#ID0EXKAC">PER DISTRICT 1-2</a>
+          </td>
+          <td class="match" />
+          <td class="match" />
+          <td class="match" />
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+        </tr>
+        <tr>
+          <td class="row-head">
+            <a href="#ID0ENLAC">PER DISTRICT 1-5</a>
+          </td>
+          <td class="match" />
+          <td class="match" />
+          <td class="match" />
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+        </tr>
+        <tr>
+          <td class="row-head">
+            <a href="#ID0EHMAC">SUPPORT ALL 1-1</a>
+          </td>
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <h2 id="byDistrict" class="ui header">Decompositions by District</h2>
+    <table id="byDistrict-table" class="ui collapsing celled table matrix">
+      <thead>
+        <tr>
+          <th>Decomposition</th>
+          <th>Bakken North</th>
+          <th>Bakken South</th>
+          <th>Delaware Basin</th>
+          <th>Gonzales</th>
+          <th>Kenedy</th>
+          <th>MC North OK</th>
+          <th>MC South OK</th>
+          <th>Pleasanton</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="row-head">
+            <a href="#ID0ED">ALL DISTRICT 1-1</a>
+          </td>
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+        </tr>
+        <tr>
+          <td class="row-head">
+            <a href="#ID0EKB">BAK DISTRICT 1-1</a>
+          </td>
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match" />
+          <td class="match" />
+          <td class="match" />
+          <td class="match" />
+          <td class="match" />
+          <td class="match" />
+        </tr>
+        <tr>
+          <td class="row-head">
+            <a href="#ID0EOC">BAK DISTRICT 1-10</a>
+          </td>
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match" />
+          <td class="match" />
+          <td class="match" />
+          <td class="match" />
+          <td class="match" />
+          <td class="match" />
+        </tr>
+        <tr>
+          <td class="row-head">
+            <a href="#ID0E5D">BAK EF REGION 1-5</a>
+          </td>
+          <td class="match">
+            <div class="ui violet circular label">R</div>
+          </td>
+          <td class="match">
+            <div class="ui violet circular label">R</div>
+          </td>
+          <td class="match" />
+          <td class="match">
+            <div class="ui violet circular label">R</div>
+          </td>
+          <td class="match">
+            <div class="ui violet circular label">R</div>
+          </td>
+          <td class="match" />
+          <td class="match" />
+          <td class="match">
+            <div class="ui violet circular label">R</div>
+          </td>
+        </tr>
+        <tr>
+          <td class="row-head">
+            <a href="#ID0EUE">BAK ORB DISTRICT 1-1</a>
+          </td>
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match" />
+          <td class="match" />
+          <td class="match" />
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match" />
+        </tr>
+        <tr>
+          <td class="row-head">
+            <a href="#ID0EOF">EF DISTRICT 1-2</a>
+          </td>
+          <td class="match" />
+          <td class="match" />
+          <td class="match" />
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match" />
+          <td class="match" />
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+        </tr>
+        <tr>
+          <td class="row-head">
+            <a href="#ID0EAH">EF DISTRICT 1-7</a>
+          </td>
+          <td class="match" />
+          <td class="match" />
+          <td class="match" />
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match" />
+          <td class="match" />
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+        </tr>
+        <tr>
+          <td class="row-head">
+            <a href="#ID0EDAAC">EF DISTRICT 24-38</a>
+          </td>
+          <td class="match" />
+          <td class="match" />
+          <td class="match" />
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match" />
+          <td class="match" />
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+        </tr>
+        <tr>
+          <td class="row-head">
+            <a href="#ID0E2AAC">EF DISTRICT 3-7</a>
+          </td>
+          <td class="match" />
+          <td class="match" />
+          <td class="match" />
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match" />
+          <td class="match" />
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+        </tr>
+        <tr>
+          <td class="row-head">
+            <a href="#ID0ETBAC">EF DISTRICT 8-23</a>
+          </td>
+          <td class="match" />
+          <td class="match" />
+          <td class="match" />
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match" />
+          <td class="match" />
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+        </tr>
+        <tr>
+          <td class="row-head">
+            <a href="#ID0ENCAC">EF DISTRICT 8-30</a>
+          </td>
+          <td class="match" />
+          <td class="match" />
+          <td class="match" />
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match" />
+          <td class="match" />
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+        </tr>
+        <tr>
+          <td class="row-head">
+            <a href="#ID0EHDAC">EF ORB PER DISTRICT 1-2</a>
+          </td>
+          <td class="match" />
+          <td class="match" />
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+        </tr>
+        <tr>
+          <td class="row-head">
+            <a href="#ID0EFEAC">EF PER DISTRICT 1-2</a>
+          </td>
+          <td class="match" />
+          <td class="match" />
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match" />
+          <td class="match" />
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+        </tr>
+        <tr>
+          <td class="row-head">
+            <a href="#ID0E4EAC">EQ INFO 1-1</a>
+          </td>
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match" />
+          <td class="match" />
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+        </tr>
+        <tr>
+          <td class="row-head">
+            <a href="#ID0EBGAC">MRO Daily Online Decomposition (1-1)</a>
+          </td>
+          <td class="match">
+            <div class="ui pink circular label">A</div>
+          </td>
+          <td class="match">
+            <div class="ui pink circular label">A</div>
+          </td>
+          <td class="match">
+            <div class="ui pink circular label">A</div>
+          </td>
+          <td class="match">
+            <div class="ui pink circular label">A</div>
+          </td>
+          <td class="match">
+            <div class="ui pink circular label">A</div>
+          </td>
+          <td class="match">
+            <div class="ui pink circular label">A</div>
+          </td>
+          <td class="match">
+            <div class="ui pink circular label">A</div>
+          </td>
+          <td class="match">
+            <div class="ui pink circular label">A</div>
+          </td>
+        </tr>
+        <tr>
+          <td class="row-head">
+            <a href="#ID0ETGAC">OND DISTRICT 1-1</a>
+          </td>
+          <td class="match" />
+          <td class="match" />
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match" />
+          <td class="match" />
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match" />
+        </tr>
+        <tr>
+          <td class="row-head">
+            <a href="#ID0ELHAC">ORB DISTRICT 1-1</a>
+          </td>
+          <td class="match" />
+          <td class="match" />
+          <td class="match" />
+          <td class="match" />
+          <td class="match" />
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match" />
+        </tr>
+        <tr>
+          <td class="row-head">
+            <a href="#ID0EHIAC">ORB DISTRICT 1-2</a>
+          </td>
+          <td class="match" />
+          <td class="match" />
+          <td class="match" />
+          <td class="match" />
+          <td class="match" />
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match" />
+        </tr>
+        <tr>
+          <td class="row-head">
+            <a href="#ID0E6IAC">ORB DISTRICT 1-7</a>
+          </td>
+          <td class="match" />
+          <td class="match" />
+          <td class="match" />
+          <td class="match" />
+          <td class="match" />
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match" />
+        </tr>
+        <tr>
+          <td class="row-head">
+            <a href="#ID0E6JAC">PER DISTRICT 1-1</a>
+          </td>
+          <td class="match" />
+          <td class="match" />
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match" />
+          <td class="match" />
+          <td class="match" />
+          <td class="match" />
+          <td class="match" />
+        </tr>
+        <tr>
+          <td class="row-head">
+            <a href="#ID0EXKAC">PER DISTRICT 1-2</a>
+          </td>
+          <td class="match" />
+          <td class="match" />
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match" />
+          <td class="match" />
+          <td class="match" />
+          <td class="match" />
+          <td class="match" />
+        </tr>
+        <tr>
+          <td class="row-head">
+            <a href="#ID0ENLAC">PER DISTRICT 1-5</a>
+          </td>
+          <td class="match" />
+          <td class="match" />
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match" />
+          <td class="match" />
+          <td class="match" />
+          <td class="match" />
+          <td class="match" />
+        </tr>
+        <tr>
+          <td class="row-head">
+            <a href="#ID0EHMAC">SUPPORT ALL 1-1</a>
+          </td>
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+          <td class="match">
+            <div class="ui olive circular label">D</div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <h2 id="groups">Decomposition/Territory Combinations</h2>
+    <h3 id="groupByDistrict" class="ui header">District Decompositions</h3>
+    <table class="ui collapsing celled table">
+      <thead>
+        <tr>
+          <th>Territories</th>
+          <th>Decompositions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td></td>
+          <td>
+            <a href="#ID0EBGAC">MRO Daily Online Decomposition (1-1)</a>
+          </td>
+        </tr>
+        <tr>
+          <td>Bakken North<br />Bakken South</td>
+          <td>
+            <a href="#ID0EKB">BAK DISTRICT 1-1</a>
+            <br />
+            <a href="#ID0EOC">BAK DISTRICT 1-10</a>
+          </td>
+        </tr>
+        <tr>
+          <td>Bakken North<br />Bakken South<br />Delaware Basin<br />Gonzales<br />Kenedy<br />MC North OK<br />MC South OK<br />Pleasanton</td>
+          <td>
+            <a href="#ID0ED">ALL DISTRICT 1-1</a>
+            <br />
+            <a href="#ID0EHMAC">SUPPORT ALL 1-1</a>
+          </td>
+        </tr>
+        <tr>
+          <td>Bakken North<br />Bakken South<br />Delaware Basin<br />Gonzales<br />Kenedy<br />Pleasanton</td>
+          <td>
+            <a href="#ID0E4EAC">EQ INFO 1-1</a>
+          </td>
+        </tr>
+        <tr>
+          <td>Bakken North<br />Bakken South<br />MC North OK<br />MC South OK</td>
+          <td>
+            <a href="#ID0EUE">BAK ORB DISTRICT 1-1</a>
+          </td>
+        </tr>
+        <tr>
+          <td>Delaware Basin</td>
+          <td>
+            <a href="#ID0E6JAC">PER DISTRICT 1-1</a>
+            <br />
+            <a href="#ID0EXKAC">PER DISTRICT 1-2</a>
+            <br />
+            <a href="#ID0ENLAC">PER DISTRICT 1-5</a>
+          </td>
+        </tr>
+        <tr>
+          <td>Delaware Basin<br />Gonzales<br />Kenedy<br />MC North OK<br />MC South OK<br />Pleasanton</td>
+          <td>
+            <a href="#ID0EHDAC">EF ORB PER DISTRICT 1-2</a>
+          </td>
+        </tr>
+        <tr>
+          <td>Delaware Basin<br />Gonzales<br />Kenedy<br />Pleasanton</td>
+          <td>
+            <a href="#ID0EFEAC">EF PER DISTRICT 1-2</a>
+          </td>
+        </tr>
+        <tr>
+          <td>Delaware Basin<br />MC North OK<br />MC South OK</td>
+          <td>
+            <a href="#ID0ETGAC">OND DISTRICT 1-1</a>
+          </td>
+        </tr>
+        <tr>
+          <td>Gonzales<br />Kenedy<br />Pleasanton</td>
+          <td>
+            <a href="#ID0EOF">EF DISTRICT 1-2</a>
+            <br />
+            <a href="#ID0EAH">EF DISTRICT 1-7</a>
+            <br />
+            <a href="#ID0EDAAC">EF DISTRICT 24-38</a>
+            <br />
+            <a href="#ID0E2AAC">EF DISTRICT 3-7</a>
+            <br />
+            <a href="#ID0ETBAC">EF DISTRICT 8-23</a>
+            <br />
+            <a href="#ID0ENCAC">EF DISTRICT 8-30</a>
+          </td>
+        </tr>
+        <tr>
+          <td>MC North OK<br />MC South OK</td>
+          <td>
+            <a href="#ID0ELHAC">ORB DISTRICT 1-1</a>
+            <br />
+            <a href="#ID0EHIAC">ORB DISTRICT 1-2</a>
+            <br />
+            <a href="#ID0E6IAC">ORB DISTRICT 1-7</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <h3 id="groupByRegion" class="ui header">Region Decompositions</h3>
+    <table class="ui collapsing celled table">
+      <thead>
+        <tr>
+          <th>Territories</th>
+          <th>Decompositions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Bakken<br />Eagle Ford</td>
+          <td>
+            <a href="#ID0E5D">BAK EF REGION 1-5</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <script>
+          $( document ).ready( function ()
+            {
+              initDataTableWithButtons(
+                "#defs-table",
+                "Decomposition Definitions",
+                true,
+                true,
+                {
+                  paging: false,
+                }
+              );
+              initDataTableWithButtons(
+                "#byRegion-table",
+                "Decompositions by Region",
+                true,
+                true,
+                {
+                  paging: false,
+                }
+              );
+              initDataTableWithButtons(
+                "#byDistrict-table",
+                "Decompositions by District",
+                true,
+                true,
+                {
+                  paging: false,
+                }
+              );
+            } );
+        </script>
+  </body>
+</html>

@@ -1,0 +1,729 @@
+<Agents>
+  <Instance name="Equipment Info Optimizer">
+    <Enabled>0</Enabled>
+    <AgentSetting>Equipment Info Quick Optimize</AgentSetting>
+    <Servers>
+      <Server>FSE</Server>
+    </Servers>
+    <BGO name="Equipment Info Quick Optimize">
+      <Decomposition name="EQ INFO 1-1">
+        <TaskIndex>District,DueDate</TaskIndex>
+        <TimeIntervals>
+          <Interval start="1" finish="1" />
+        </TimeIntervals>
+        <PathList>
+          <Path>Bakken North</Path>
+          <Path>Bakken South</Path>
+          <Path>Delaware Basin</Path>
+          <Path>Gonzales</Path>
+          <Path>Kenedy</Path>
+          <Path>Pleasanton</Path>
+        </PathList>
+      </Decomposition>
+      <Steps>
+        <Insert count="1">
+          <SchedulingWorkflow>Equipment Info Quick Optimize</SchedulingWorkflow>
+          <LogicDomain>Equip Info General</LogicDomain>
+        </Insert>
+      </Steps>
+    </BGO>
+  </Instance>
+  <Instance name="FSM BAK OPS Optimize Rejected/Operator PMs">
+    <Enabled>1</Enabled>
+    <AgentSetting>FSM BAK OPS Optimize Rejected/Operator PMs</AgentSetting>
+    <Servers>
+      <Server>FSE</Server>
+    </Servers>
+    <BGO name="FSM BAK Optimize Rejected/Operator PMs">
+      <Decomposition name="BAK DISTRICT 1-10">
+        <TaskIndex>District,DueDate</TaskIndex>
+        <TimeIntervals>
+          <Interval start="1" finish="10" />
+        </TimeIntervals>
+        <PathList>
+          <Path>Bakken North</Path>
+          <Path>Bakken South</Path>
+        </PathList>
+      </Decomposition>
+      <Steps>
+        <Insert count="1">
+          <SchedulingWorkflow>FSM BAK Optimize Rejected/Operator PMs</SchedulingWorkflow>
+          <LogicDomain>BAK General</LogicDomain>
+        </Insert>
+      </Steps>
+    </BGO>
+  </Instance>
+  <Instance name="FSM BAK Quick Optimize New">
+    <Enabled>1</Enabled>
+    <AgentSetting>FSM BAK Quick Optimize</AgentSetting>
+    <Servers>
+      <Server>FSE</Server>
+    </Servers>
+    <BGO name="FSM BAK Quick Optimize">
+      <Decomposition name="BAK DISTRICT 1-1">
+        <TaskIndex>District,DueDate</TaskIndex>
+        <TimeIntervals>
+          <Interval start="1" finish="1" />
+        </TimeIntervals>
+        <PathList>
+          <Path>Bakken North</Path>
+          <Path>Bakken South</Path>
+        </PathList>
+      </Decomposition>
+      <Steps>
+        <Insert count="1">
+          <SchedulingWorkflow>FSM BAK Quick Optimize</SchedulingWorkflow>
+          <LogicDomain>BAK General</LogicDomain>
+        </Insert>
+      </Steps>
+    </BGO>
+  </Instance>
+  <Instance name="FSM Daily Optimizer (1-2)">
+    <Enabled>1</Enabled>
+    <AgentSetting>FSM Daily Optimizer (1-2)</AgentSetting>
+    <Servers>
+      <Server>FSE</Server>
+    </Servers>
+    <BGO name="FSM Daily Online Optimization (1-2)">
+      <Decomposition name="EF DISTRICT 1-2">
+        <TaskIndex>District,DueDate</TaskIndex>
+        <TimeIntervals>
+          <Interval start="1" finish="2" />
+        </TimeIntervals>
+        <PathList>
+          <Path>Gonzales</Path>
+          <Path>Kenedy</Path>
+          <Path>Pleasanton</Path>
+        </PathList>
+      </Decomposition>
+      <Steps>
+        <Global count="1">
+          <Optimizer>Extended Optimizer</Optimizer>
+          <LogicDomain>General</LogicDomain>
+        </Global>
+        <Global count="2">
+          <Optimizer>Extended Optimizer</Optimizer>
+          <LogicDomain>General</LogicDomain>
+        </Global>
+        <Global count="3">
+          <Optimizer>Extended Optimizer</Optimizer>
+          <LogicDomain>General</LogicDomain>
+        </Global>
+        <Global count="4">
+          <Optimizer>Extended Optimizer</Optimizer>
+          <LogicDomain>General</LogicDomain>
+        </Global>
+        <Global count="5">
+          <Optimizer>Extended Optimizer</Optimizer>
+          <LogicDomain>General</LogicDomain>
+        </Global>
+      </Steps>
+    </BGO>
+  </Instance>
+  <Instance name="FSM EF Maint. Daily Optimizer">
+    <Enabled>1</Enabled>
+    <AgentSetting>FSM Maint. Daily Optimizer (1-2)</AgentSetting>
+    <Servers>
+      <Server>FSE</Server>
+    </Servers>
+    <BGO name="FSM Maint. Daily Online Optimization (1-2)">
+      <Decomposition name="EF DISTRICT 1-2">
+        <TaskIndex>District,DueDate</TaskIndex>
+        <TimeIntervals>
+          <Interval start="1" finish="2" />
+        </TimeIntervals>
+        <PathList>
+          <Path>Gonzales</Path>
+          <Path>Kenedy</Path>
+          <Path>Pleasanton</Path>
+        </PathList>
+      </Decomposition>
+      <Steps>
+        <Global count="1">
+          <Optimizer>Extended Optimizer</Optimizer>
+          <LogicDomain>General Maintenance</LogicDomain>
+        </Global>
+        <Global count="2">
+          <Optimizer>Extended Optimizer</Optimizer>
+          <LogicDomain>General Maintenance</LogicDomain>
+        </Global>
+        <Global count="3">
+          <Optimizer>Extended Optimizer</Optimizer>
+          <LogicDomain>General Maintenance</LogicDomain>
+        </Global>
+        <Global count="4">
+          <Optimizer>Extended Optimizer</Optimizer>
+          <LogicDomain>General Maintenance</LogicDomain>
+        </Global>
+        <Global count="5">
+          <Optimizer>Extended Optimizer</Optimizer>
+          <LogicDomain>General Maintenance</LogicDomain>
+        </Global>
+      </Steps>
+    </BGO>
+  </Instance>
+  <Instance name="FSM EF Maint. Measurement Quick Optimize 2">
+    <Enabled>1</Enabled>
+    <AgentSetting>FSM Maint.Measurement EF Quick Optimize</AgentSetting>
+    <Servers>
+      <Server>FSE</Server>
+    </Servers>
+    <BGO name="FSM EF Maint Measurement Quick Optimize">
+      <Decomposition name="EF DISTRICT 1-7">
+        <TaskIndex>District,DueDate</TaskIndex>
+        <TimeIntervals>
+          <Interval start="1" finish="7" />
+        </TimeIntervals>
+        <PathList>
+          <Path>Gonzales</Path>
+          <Path>Kenedy</Path>
+          <Path>Pleasanton</Path>
+        </PathList>
+      </Decomposition>
+      <Steps>
+        <Insert count="1">
+          <SchedulingWorkflow>FSM EF Maint Measurement Quick Optimize</SchedulingWorkflow>
+          <LogicDomain>EF General Measurement</LogicDomain>
+        </Insert>
+      </Steps>
+    </BGO>
+  </Instance>
+  <Instance name="FSM EF Maint. Nightly Optimizer (3-7)">
+    <Enabled>1</Enabled>
+    <AgentSetting>FSM Maint. Nightly Optimizer (3-7)</AgentSetting>
+    <Servers>
+      <Server>FSE</Server>
+    </Servers>
+    <BGO name="FSM Maint. Nightly Online Optimization (3-7)">
+      <Decomposition name="EF DISTRICT 3-7">
+        <TaskIndex>District,DueDate</TaskIndex>
+        <TimeIntervals>
+          <Interval start="3" finish="7" />
+        </TimeIntervals>
+        <PathList>
+          <Path>Gonzales</Path>
+          <Path>Kenedy</Path>
+          <Path>Pleasanton</Path>
+        </PathList>
+      </Decomposition>
+      <Steps>
+        <Global count="1">
+          <Optimizer>Extended Optimizer</Optimizer>
+          <LogicDomain>General Maintenance</LogicDomain>
+        </Global>
+        <Global count="2">
+          <Optimizer>Extended Optimizer</Optimizer>
+          <LogicDomain>General Maintenance</LogicDomain>
+        </Global>
+        <Global count="3">
+          <Optimizer>Extended Optimizer</Optimizer>
+          <LogicDomain>General Maintenance</LogicDomain>
+        </Global>
+        <Global count="4">
+          <Optimizer>Extended Optimizer</Optimizer>
+          <LogicDomain>General Maintenance</LogicDomain>
+        </Global>
+        <Global count="5">
+          <Optimizer>Extended Optimizer</Optimizer>
+          <LogicDomain>General Maintenance</LogicDomain>
+        </Global>
+      </Steps>
+    </BGO>
+  </Instance>
+  <Instance name="FSM EF Maint. Nightly Optimizer (8-30)">
+    <Enabled>1</Enabled>
+    <AgentSetting>FSM Maint. Nightly Optimizer (8-30)</AgentSetting>
+    <Servers>
+      <Server>FSE</Server>
+    </Servers>
+    <BGO name="FSM Maint. Nightly Online Optimization (8-30)">
+      <Decomposition name="EF DISTRICT 8-30">
+        <TaskIndex>District,DueDate</TaskIndex>
+        <TimeIntervals>
+          <Interval start="8" finish="30" />
+        </TimeIntervals>
+        <PathList>
+          <Path>Gonzales</Path>
+          <Path>Kenedy</Path>
+          <Path>Pleasanton</Path>
+        </PathList>
+      </Decomposition>
+      <Steps>
+        <Global count="1">
+          <Optimizer>Extended Optimizer</Optimizer>
+          <LogicDomain>General Maintenance</LogicDomain>
+        </Global>
+        <Global count="2">
+          <Optimizer>Extended Optimizer</Optimizer>
+          <LogicDomain>General Maintenance</LogicDomain>
+        </Global>
+        <Global count="3">
+          <Optimizer>Extended Optimizer</Optimizer>
+          <LogicDomain>General Maintenance</LogicDomain>
+        </Global>
+        <Global count="4">
+          <Optimizer>Extended Optimizer</Optimizer>
+          <LogicDomain>General Maintenance</LogicDomain>
+        </Global>
+        <Global count="5">
+          <Optimizer>Extended Optimizer</Optimizer>
+          <LogicDomain>General Maintenance</LogicDomain>
+        </Global>
+      </Steps>
+    </BGO>
+  </Instance>
+  <Instance name="FSM EF Maint. Quick Optimize">
+    <Enabled>1</Enabled>
+    <AgentSetting>FSM Maint. EF Quick Optimize</AgentSetting>
+    <Servers>
+      <Server>FSE</Server>
+    </Servers>
+    <BGO name="FSM EF Maint. Quick Optimize">
+      <Decomposition name="EF DISTRICT 1-2">
+        <TaskIndex>District,DueDate</TaskIndex>
+        <TimeIntervals>
+          <Interval start="1" finish="2" />
+        </TimeIntervals>
+        <PathList>
+          <Path>Gonzales</Path>
+          <Path>Kenedy</Path>
+          <Path>Pleasanton</Path>
+        </PathList>
+      </Decomposition>
+      <Steps>
+        <Insert count="1">
+          <SchedulingWorkflow>FSM Maint. Quick Optimize</SchedulingWorkflow>
+          <LogicDomain>General Maintenance</LogicDomain>
+        </Insert>
+      </Steps>
+    </BGO>
+  </Instance>
+  <Instance name="FSM EF Measurement Optimizer 3">
+    <Enabled>1</Enabled>
+    <AgentSetting>FSM Maint. Measurement (1- 90)</AgentSetting>
+    <Servers>
+      <Server>FSE</Server>
+    </Servers>
+    <BGO name="FSM EF Measurement (1-90)">
+      <Decomposition name="EF DISTRICT 8-30">
+        <TaskIndex>District,DueDate</TaskIndex>
+        <TimeIntervals>
+          <Interval start="8" finish="30" />
+        </TimeIntervals>
+        <PathList>
+          <Path>Gonzales</Path>
+          <Path>Kenedy</Path>
+          <Path>Pleasanton</Path>
+        </PathList>
+      </Decomposition>
+      <Steps>
+        <Insert count="1">
+          <SchedulingWorkflow>FSM EF Measurement </SchedulingWorkflow>
+          <LogicDomain>EF General Measurement</LogicDomain>
+        </Insert>
+      </Steps>
+    </BGO>
+  </Instance>
+  <Instance name="FSM EF Quick Optimize">
+    <Enabled>1</Enabled>
+    <AgentSetting>FSM EF Quick Optimize</AgentSetting>
+    <Servers>
+      <Server>FSE</Server>
+    </Servers>
+    <BGO name="FSM EF Quick Optimize">
+      <Decomposition name="EF DISTRICT 1-2">
+        <TaskIndex>District,DueDate</TaskIndex>
+        <TimeIntervals>
+          <Interval start="1" finish="2" />
+        </TimeIntervals>
+        <PathList>
+          <Path>Gonzales</Path>
+          <Path>Kenedy</Path>
+          <Path>Pleasanton</Path>
+        </PathList>
+      </Decomposition>
+      <Steps>
+        <Insert count="1">
+          <SchedulingWorkflow>FSM Quick Optimize</SchedulingWorkflow>
+          <LogicDomain>General</LogicDomain>
+        </Insert>
+      </Steps>
+    </BGO>
+  </Instance>
+  <Instance name="FSM EF Quick Optimize Med/Med-Low">
+    <Enabled>0</Enabled>
+    <AgentSetting>FSM EF Quick Optimize Med/Med Low</AgentSetting>
+    <Servers>
+      <Server>FSE</Server>
+    </Servers>
+    <BGO name="FSM EF Quick Optimize - Med">
+      <Decomposition name="EF DISTRICT 1-2">
+        <TaskIndex>District,DueDate</TaskIndex>
+        <TimeIntervals>
+          <Interval start="1" finish="2" />
+        </TimeIntervals>
+        <PathList>
+          <Path>Gonzales</Path>
+          <Path>Kenedy</Path>
+          <Path>Pleasanton</Path>
+        </PathList>
+      </Decomposition>
+      <Steps>
+        <Insert count="1">
+          <SchedulingWorkflow>FSM Quick Optimize - Med</SchedulingWorkflow>
+          <LogicDomain>General</LogicDomain>
+        </Insert>
+      </Steps>
+    </BGO>
+  </Instance>
+  <Instance name="FSM Nightly Optimizer (1-7)">
+    <Enabled>1</Enabled>
+    <AgentSetting>FSM Nightly Optimizer (1-7)</AgentSetting>
+    <Servers>
+      <Server>FSE</Server>
+    </Servers>
+    <BGO name="FSM Nightly Online Optimization (1-7)">
+      <Decomposition name="EF DISTRICT 1-7">
+        <TaskIndex>District,DueDate</TaskIndex>
+        <TimeIntervals>
+          <Interval start="1" finish="7" />
+        </TimeIntervals>
+        <PathList>
+          <Path>Gonzales</Path>
+          <Path>Kenedy</Path>
+          <Path>Pleasanton</Path>
+        </PathList>
+      </Decomposition>
+      <Steps>
+        <Global count="1">
+          <Optimizer>Extended Optimizer</Optimizer>
+          <LogicDomain>General</LogicDomain>
+        </Global>
+        <Global count="2">
+          <Optimizer>Extended Optimizer</Optimizer>
+          <LogicDomain>General</LogicDomain>
+        </Global>
+        <Global count="3">
+          <Optimizer>Extended Optimizer</Optimizer>
+          <LogicDomain>General</LogicDomain>
+        </Global>
+        <Global count="4">
+          <Optimizer>Extended Optimizer</Optimizer>
+          <LogicDomain>General</LogicDomain>
+        </Global>
+        <Global count="5">
+          <Optimizer>Extended Optimizer</Optimizer>
+          <LogicDomain>General</LogicDomain>
+        </Global>
+      </Steps>
+    </BGO>
+  </Instance>
+  <Instance name="FSM Nightly Optimizer (31-90)">
+    <Enabled>1</Enabled>
+    <AgentSetting>FSM Nightly Optimizer (31-90)</AgentSetting>
+    <Servers>
+      <Server>FSE</Server>
+    </Servers>
+    <BGO name="FSM Nightly Online Optimization (31-90)">
+      <Decomposition name="EF DISTRICT 24-38">
+        <TaskIndex>District,DueDate</TaskIndex>
+        <TimeIntervals>
+          <Interval start="24" finish="38" />
+        </TimeIntervals>
+        <PathList>
+          <Path>Gonzales</Path>
+          <Path>Kenedy</Path>
+          <Path>Pleasanton</Path>
+        </PathList>
+      </Decomposition>
+      <Steps>
+        <Global count="1">
+          <Optimizer>Extended Optimizer</Optimizer>
+          <LogicDomain>General</LogicDomain>
+        </Global>
+        <Global count="2">
+          <Optimizer>Extended Optimizer</Optimizer>
+          <LogicDomain>General</LogicDomain>
+        </Global>
+        <Global count="3">
+          <Optimizer>Extended Optimizer</Optimizer>
+          <LogicDomain>General</LogicDomain>
+        </Global>
+        <Global count="4">
+          <Optimizer>Extended Optimizer</Optimizer>
+          <LogicDomain>General</LogicDomain>
+        </Global>
+        <Global count="5">
+          <Optimizer>Extended Optimizer</Optimizer>
+          <LogicDomain>General</LogicDomain>
+        </Global>
+      </Steps>
+    </BGO>
+  </Instance>
+  <Instance name="FSM Nightly Optimizer (8-30)">
+    <Enabled>1</Enabled>
+    <AgentSetting>FSM Nightly Optimizer (8-30)</AgentSetting>
+    <Servers>
+      <Server>FSE</Server>
+    </Servers>
+    <BGO name="FSM Nightly Online Optimization (8-30)">
+      <Decomposition name="EF DISTRICT 8-23">
+        <TaskIndex>District,DueDate</TaskIndex>
+        <TimeIntervals>
+          <Interval start="8" finish="23" />
+        </TimeIntervals>
+        <PathList>
+          <Path>Gonzales</Path>
+          <Path>Kenedy</Path>
+          <Path>Pleasanton</Path>
+        </PathList>
+      </Decomposition>
+      <Steps>
+        <Global count="1">
+          <Optimizer>Extended Optimizer</Optimizer>
+          <LogicDomain>General</LogicDomain>
+        </Global>
+        <Global count="2">
+          <Optimizer>Extended Optimizer</Optimizer>
+          <LogicDomain>General</LogicDomain>
+        </Global>
+        <Global count="3">
+          <Optimizer>Extended Optimizer</Optimizer>
+          <LogicDomain>General</LogicDomain>
+        </Global>
+        <Global count="4">
+          <Optimizer>Extended Optimizer</Optimizer>
+          <LogicDomain>General</LogicDomain>
+        </Global>
+        <Global count="5">
+          <Optimizer>Extended Optimizer</Optimizer>
+          <LogicDomain>General</LogicDomain>
+        </Global>
+      </Steps>
+    </BGO>
+  </Instance>
+  <Instance name="FSM ORB Daily Optimizer (1-2)">
+    <Enabled>1</Enabled>
+    <AgentSetting>FSM ORB Daily Optimizer (1-2)</AgentSetting>
+    <Servers>
+      <Server>FSE</Server>
+    </Servers>
+    <BGO name="FSM ORB Daily Online Optimization (1-2)">
+      <Decomposition name="ORB DISTRICT 1-2">
+        <TaskIndex>District,DueDate</TaskIndex>
+        <TimeIntervals>
+          <Interval start="1" finish="2" />
+        </TimeIntervals>
+        <PathList>
+          <Path>MC North OK</Path>
+          <Path>MC South OK</Path>
+        </PathList>
+      </Decomposition>
+      <Steps>
+        <Global count="1">
+          <Optimizer>Extended Optimizer</Optimizer>
+          <LogicDomain>ORB General</LogicDomain>
+        </Global>
+        <Global count="2">
+          <Optimizer>Extended Optimizer</Optimizer>
+          <LogicDomain>ORB General</LogicDomain>
+        </Global>
+        <Global count="3">
+          <Optimizer>Extended Optimizer</Optimizer>
+          <LogicDomain>ORB General</LogicDomain>
+        </Global>
+        <Global count="4">
+          <Optimizer>Extended Optimizer</Optimizer>
+          <LogicDomain>ORB General</LogicDomain>
+        </Global>
+        <Global count="5">
+          <Optimizer>Extended Optimizer</Optimizer>
+          <LogicDomain>ORB General</LogicDomain>
+        </Global>
+      </Steps>
+    </BGO>
+  </Instance>
+  <Instance name="FSM ORB Daily Optimizer (Today)">
+    <Enabled>1</Enabled>
+    <AgentSetting>FSM ORB Daily Optimizer (Today)</AgentSetting>
+    <Servers>
+      <Server>FSE</Server>
+    </Servers>
+    <BGO name="FSM ORB Daily Online Optimization (Today)">
+      <Decomposition name="ORB DISTRICT 1-1">
+        <TaskIndex>District,DueDate</TaskIndex>
+        <TimeIntervals>
+          <Interval start="1" finish="1" />
+        </TimeIntervals>
+        <PathList>
+          <Path>MC North OK</Path>
+          <Path>MC South OK</Path>
+        </PathList>
+      </Decomposition>
+      <Steps>
+        <Insert count="1">
+          <SchedulingWorkflow>FSM ORB LOW Tasks</SchedulingWorkflow>
+          <LogicDomain>ORB General</LogicDomain>
+        </Insert>
+      </Steps>
+    </BGO>
+  </Instance>
+  <Instance name="FSM ORB Quick Optimize">
+    <Enabled>1</Enabled>
+    <AgentSetting>FSM ORB Quick Optimize</AgentSetting>
+    <Servers>
+      <Server>FSE</Server>
+    </Servers>
+    <BGO name="FSM ORB Quick Optimize">
+      <Decomposition name="ORB DISTRICT 1-2">
+        <TaskIndex>District,DueDate</TaskIndex>
+        <TimeIntervals>
+          <Interval start="1" finish="2" />
+        </TimeIntervals>
+        <PathList>
+          <Path>MC North OK</Path>
+          <Path>MC South OK</Path>
+        </PathList>
+      </Decomposition>
+      <Steps>
+        <Insert count="1">
+          <SchedulingWorkflow>FSM ORB Quick Optimize</SchedulingWorkflow>
+          <LogicDomain>ORB General</LogicDomain>
+        </Insert>
+      </Steps>
+    </BGO>
+  </Instance>
+  <Instance name="FSM PER Daily Optimizer (1-2) v2">
+    <Enabled>1</Enabled>
+    <AgentSetting>FSM PER Daily Optimizer (1-2)</AgentSetting>
+    <Servers>
+      <Server>FSE</Server>
+    </Servers>
+    <BGO name="FSM PER Daily Online Optimization (1-2)">
+      <Decomposition name="PER DISTRICT 1-1">
+        <TaskIndex>District,DueDate</TaskIndex>
+        <TimeIntervals>
+          <Interval start="1" finish="1" />
+        </TimeIntervals>
+        <PathList>
+          <Path>Delaware Basin</Path>
+        </PathList>
+      </Decomposition>
+      <Steps>
+        <Global count="1">
+          <Optimizer>Extended Optimizer</Optimizer>
+          <LogicDomain>PER General</LogicDomain>
+        </Global>
+        <Global count="2">
+          <Optimizer>Extended Optimizer</Optimizer>
+          <LogicDomain>PER General</LogicDomain>
+        </Global>
+        <Global count="3">
+          <Optimizer>Extended Optimizer</Optimizer>
+          <LogicDomain>PER General</LogicDomain>
+        </Global>
+        <Global count="4">
+          <Optimizer>Extended Optimizer</Optimizer>
+          <LogicDomain>PER General</LogicDomain>
+        </Global>
+        <Global count="5">
+          <Optimizer>Extended Optimizer</Optimizer>
+          <LogicDomain>PER General</LogicDomain>
+        </Global>
+        <Global count="6">
+          <Optimizer>Extended Optimizer</Optimizer>
+          <LogicDomain>PER General</LogicDomain>
+        </Global>
+      </Steps>
+    </BGO>
+  </Instance>
+  <Instance name="FSM PER Quick Optimize">
+    <Enabled>1</Enabled>
+    <AgentSetting>FSM PER Quick Optimize High</AgentSetting>
+    <Servers>
+      <Server>FSE</Server>
+    </Servers>
+    <BGO name="FSM PER Quick Optimze">
+      <Decomposition name="PER DISTRICT 1-2">
+        <TaskIndex>District,DueDate</TaskIndex>
+        <TimeIntervals>
+          <Interval start="1" finish="2" />
+        </TimeIntervals>
+        <PathList>
+          <Path>Delaware Basin</Path>
+        </PathList>
+      </Decomposition>
+      <Steps>
+        <Insert count="1">
+          <SchedulingWorkflow>FSM PER Quick Optimize - High </SchedulingWorkflow>
+          <LogicDomain>PER General</LogicDomain>
+        </Insert>
+      </Steps>
+    </BGO>
+  </Instance>
+  <Instance name="FSM PER Quick Optimizer MED">
+    <Enabled>1</Enabled>
+    <AgentSetting>FSM PER Quick Optimizer Med/Med Low</AgentSetting>
+    <Servers>
+      <Server>FSE</Server>
+    </Servers>
+    <BGO name="FSM PER Quick Optimize - Med">
+      <Decomposition name="PER DISTRICT 1-2">
+        <TaskIndex>District,DueDate</TaskIndex>
+        <TimeIntervals>
+          <Interval start="1" finish="2" />
+        </TimeIntervals>
+        <PathList>
+          <Path>Delaware Basin</Path>
+        </PathList>
+      </Decomposition>
+      <Steps>
+        <Insert count="1">
+          <SchedulingWorkflow>FSM PER Quick Optimize - Med</SchedulingWorkflow>
+          <LogicDomain>PER General</LogicDomain>
+        </Insert>
+      </Steps>
+    </BGO>
+  </Instance>
+  <Instance name="NEW FSM BAK Daily Optimizer">
+    <Enabled>1</Enabled>
+    <AgentSetting>FSM BAK Daily Optimizer</AgentSetting>
+    <Servers>
+      <Server>FSE</Server>
+    </Servers>
+    <BGO name="FSM BAK Daily Online Optimization">
+      <Decomposition name="BAK DISTRICT 1-1">
+        <TaskIndex>District,DueDate</TaskIndex>
+        <TimeIntervals>
+          <Interval start="1" finish="1" />
+        </TimeIntervals>
+        <PathList>
+          <Path>Bakken North</Path>
+          <Path>Bakken South</Path>
+        </PathList>
+      </Decomposition>
+      <Steps>
+        <Global count="1">
+          <Optimizer>Extended Optimizer</Optimizer>
+          <LogicDomain>BAK General</LogicDomain>
+        </Global>
+        <Global count="2">
+          <Optimizer>Extended Optimizer</Optimizer>
+          <LogicDomain>BAK General</LogicDomain>
+        </Global>
+        <Global count="3">
+          <Optimizer>Extended Optimizer</Optimizer>
+          <LogicDomain>BAK General</LogicDomain>
+        </Global>
+        <Global count="4">
+          <Optimizer>Extended Optimizer</Optimizer>
+          <LogicDomain>BAK General</LogicDomain>
+        </Global>
+        <Global count="5">
+          <Optimizer>Extended Optimizer</Optimizer>
+          <LogicDomain>BAK General</LogicDomain>
+        </Global>
+      </Steps>
+    </BGO>
+  </Instance>
+</Agents>
