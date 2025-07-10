@@ -75,7 +75,7 @@
         if (value === "unknown") {
           return `<span style="color: grey;">${flag}?</span>`;
         } else if (value === "expr") {
-          return `</div><div class="item"><span style="color: purple;">${flag}: ${expr}</span><div class="item">`;
+          return `</div><div class="item"><span style="color: purple;">${flag}[${expr}]</span><div class="item">`;
         } else if (value) {
           return `<span style="color: green;">${flag}+</span>`;
         } else {
