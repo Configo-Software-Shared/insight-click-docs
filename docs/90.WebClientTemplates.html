@@ -185,20 +185,13 @@
                       data: index + 1,
                       render: renderPropertyData,
                       visible:
+                        !hiddenColumns[index] &&
                         !header.startsWith("BAK ") &&
                         !header.startsWith("Copy of"),
                     })),
                   ],
                 }
               );
-
-              // Hide columns where all values are empty
-              formTable.columns().every(function (columnIndex) {
-                if (columnIndex === 0) return; // Skip Properties column
-                if (hiddenColumns[columnIndex - 1]) {
-                  formTable.column(columnIndex).visible(false);
-                }
-              });
 
               // Count visible columns and hide extras beyond 8
               let visibleCount = 0;
