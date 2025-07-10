@@ -109,8 +109,6 @@
 
         $("#formDropdown").dropdown({
           onChange: function (value, text, $selectedItem) {
-            console.log("Selected form:", value);
-
             // Remove existing table if any
             $("#dataTableContainer").remove();
 
@@ -120,6 +118,30 @@
               // Get the first item to extract column headers (skip first element which is property name)
               const firstItem = formData[0];
               const columnHeaders = firstItem.slice(1).map((entry) => entry.o);
+
+              // Determine which columns are empty and should be hidden, and rename the column accordingly
+              const hiddenColumns = new Array(columnHeaders.length).fill(true);
+              formData.forEach((row) =>
+                row.slice(1).forEach((value, index) => {
+                  if (
+                    hiddenColumns[index] &&
+                    !(
+                      value.E === undefined &&
+                      value.M === undefined &&
+                      value.R === undefined &&
+                      value.V === undefined
+                    )
+                  ) {
+                    hiddenColumns[index] = false;
+                  }
+                })
+              );
+
+              hiddenColumns.forEach((value, index) => {
+                if (value) {
+                  columnHeaders[index] += " *";
+                }
+              });
 
               // Create table container
               const tableContainer = $(
@@ -171,23 +193,9 @@
               );
 
               // Hide columns where all values are empty
-              const numRows = formTable.rows().count();
-
-              // Check each column except first (Properties column)
               formTable.columns().every(function (columnIndex) {
                 if (columnIndex === 0) return; // Skip Properties column
-
-                let hasValue = false;
-                // Check all rows in this column
-                this.data().each(function (value) {
-                  if (value?.E !== null && value?.E !== undefined) {
-                    hasValue = true;
-                    return false; // Break loop if we find a value
-                  }
-                });
-
-                // Hide column if all values are empty
-                if (!hasValue) {
+                if (hiddenColumns[columnIndex - 1]) {
                   formTable.column(columnIndex).visible(false);
                 }
               });
