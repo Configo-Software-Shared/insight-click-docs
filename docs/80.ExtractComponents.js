@@ -484,7 +484,7 @@ const components = [
     "entries": [
       { "xoomId": "UserSetting[DC Protocols|ClickMobile Client|Web Administrative Settings|]", "xpath": "Body\/W6CMAdminSettings\/ModulesSettings\/W6CMCustomModuleSettings[Name='FSMGlobalFormsDC']\/ObjectFormDefinition\/FormXML\/FSMGlobalFormsDC\/Category\/Field\/Properties\/CustomSettings\/Setting\/@from" },
     ] },
-  { "progId": "Diabsolut.CalculationBetweenFields.Mobile.Touch.CalculationBetweenFieldsPanel",
+  { "progId": "AcmeCorp.CalculationBetweenFields.Mobile.Touch.CalculationBetweenFieldsPanel",
     "entries": [
       { "xoomId": "UserSetting[DC Protocols|ClickMobile Client|Web Administrative Settings|]", "xpath": "Body\/W6CMAdminSettings\/ModulesSettings\/W6CMCustomModuleSettings[Name='FSMGlobalFormsNORM']\/ObjectFormDefinition\/FormXML\/FSMGlobalFormsNORM\/Category\/Field\/Properties\/CustomPanelDef\/ClassPath" },
       { "xoomId": "UserSetting[Equipment Info New|ClickMobile Client|Web Administrative Settings|]", "xpath": "Body\/W6CMAdminSettings\/ModulesSettings\/W6CMCustomModuleSettings[Name='LocationDirections']\/ObjectFormDefinition\/FormXML\/LocationDirections\/Category\/Field\/Properties\/CustomPanelDef\/ClassPath" },
@@ -494,7 +494,7 @@ const components = [
       { "xoomId": "UserSetting[Test Inspections|ClickMobile Client|Web Administrative Settings|]", "xpath": "Body\/W6CMAdminSettings\/ModulesSettings\/W6CMCustomModuleSettings[Name='FSMGlobalFormsNORM']\/ObjectFormDefinition\/FormXML\/FSMGlobalFormsNORM\/Category\/Field\/Properties\/CustomPanelDef\/ClassPath" },
       { "xoomId": "UserSetting[Test Inspections|ClickMobile Client|Web Administrative Settings|]", "xpath": "Body\/W6CMAdminSettings\/ModulesSettings\/W6CMCustomModuleSettings[Name='FSMORBOPSForms']\/ObjectFormDefinition\/FormXML\/FSMORBOPSForms\/Category\/Field\/Properties\/CustomPanelDef\/ClassPath" },
     ] },
-  { "progId": "Diabsolut.CalculationBetweenFields.Mobile.Touch.js",
+  { "progId": "AcmeCorp.CalculationBetweenFields.Mobile.Touch.js",
     "entries": [
       { "xoomId": "UserSetting[DC Protocols|ClickMobile Client|Web Administrative Settings|]", "xpath": "Body\/W6CMAdminSettings\/ModulesSettings\/W6CMCustomModuleSettings[Name='FSMGlobalFormsNORM']\/ObjectFormDefinition\/FormXML\/FSMGlobalFormsNORM\/Category\/Field\/Properties\/CustomPanelDef\/DLLName" },
       { "xoomId": "UserSetting[Equipment Info New|ClickMobile Client|Web Administrative Settings|]", "xpath": "Body\/W6CMAdminSettings\/ModulesSettings\/W6CMCustomModuleSettings[Name='LocationDirections']\/ObjectFormDefinition\/FormXML\/LocationDirections\/Category\/Field\/Properties\/CustomPanelDef\/DLLName" },
@@ -504,7 +504,7 @@ const components = [
       { "xoomId": "UserSetting[Test Inspections|ClickMobile Client|Web Administrative Settings|]", "xpath": "Body\/W6CMAdminSettings\/ModulesSettings\/W6CMCustomModuleSettings[Name='FSMGlobalFormsNORM']\/ObjectFormDefinition\/FormXML\/FSMGlobalFormsNORM\/Category\/Field\/Properties\/CustomPanelDef\/DLLName" },
       { "xoomId": "UserSetting[Test Inspections|ClickMobile Client|Web Administrative Settings|]", "xpath": "Body\/W6CMAdminSettings\/ModulesSettings\/W6CMCustomModuleSettings[Name='FSMORBOPSForms']\/ObjectFormDefinition\/FormXML\/FSMORBOPSForms\/Category\/Field\/Properties\/CustomPanelDef\/DLLName" },
     ] },
-  { "progId": "Diabsolut.EngineerPropertiesAutoFill.Mobile.Touch",
+  { "progId": "AcmeCorp.EngineerPropertiesAutoFill.Mobile.Touch",
     "entries": [
       { "xoomId": "App[BAK OPS Completion 12_5|0|0|ClickMobile Touch]", "xpath": "StructureEnableScript\/FSMOPSForms\/Category\/Field\/Properties\/CustomPanelDef\/DLLName" },
       { "xoomId": "App[BAKPFC_Backup_04192023|0|0|ClickMobile Touch]", "xpath": "StructureEnableScript\/FSMGlobalFormsPFC\/Category\/Field\/Properties\/CustomPanelDef\/DLLName" },
@@ -1000,7 +1000,7 @@ const components = [
       { "xoomId": "UserSetting[Test Inspections|ClickMobile Client|Web Administrative Settings|]", "xpath": "Body\/W6CMAdminSettings\/ModulesSettings\/W6CMCustomModuleSettings[Name='MROFacilityCheckList']\/ObjectFormDefinition\/FormXML\/MROFacilityCheckList\/Category\/Field\/Properties\/CustomPanelDef\/DLLName" },
       { "xoomId": "UserSetting[Test Inspections|ClickMobile Client|Web Administrative Settings|]", "xpath": "Body\/W6CMAdminSettings\/ModulesSettings\/W6CMCustomModuleSettings[Name='ORBTVP']\/ObjectFormDefinition\/FormXML\/ORBTVP\/Category\/Field\/Properties\/CustomPanelDef\/DLLName" },
     ] },
-  { "progId": "Diabsolut.EngineerPropertiesAutoFill.Mobile.Touch.EngineerPropertiesAutoFill",
+  { "progId": "AcmeCorp.EngineerPropertiesAutoFill.Mobile.Touch.EngineerPropertiesAutoFill",
     "entries": [
       { "xoomId": "App[BAK OPS Completion 12_5|0|0|ClickMobile Touch]", "xpath": "StructureEnableScript\/FSMOPSForms\/Category\/Field\/Properties\/CustomPanelDef\/ClassPath" },
       { "xoomId": "App[BAKPFC_Backup_04192023|0|0|ClickMobile Touch]", "xpath": "StructureEnableScript\/FSMGlobalFormsPFC\/Category\/Field\/Properties\/CustomPanelDef\/ClassPath" },
@@ -1496,12 +1496,12 @@ const components = [
       { "xoomId": "UserSetting[Test Inspections|ClickMobile Client|Web Administrative Settings|]", "xpath": "Body\/W6CMAdminSettings\/ModulesSettings\/W6CMCustomModuleSettings[Name='MROFacilityCheckList']\/ObjectFormDefinition\/FormXML\/MROFacilityCheckList\/Category\/Field\/Properties\/CustomPanelDef\/ClassPath" },
       { "xoomId": "UserSetting[Test Inspections|ClickMobile Client|Web Administrative Settings|]", "xpath": "Body\/W6CMAdminSettings\/ModulesSettings\/W6CMCustomModuleSettings[Name='ORBTVP']\/ObjectFormDefinition\/FormXML\/ORBTVP\/Category\/Field\/Properties\/CustomPanelDef\/ClassPath" },
     ] },
-  { "progId": "Diabsolut.MarathonOil.Mobile.Touch",
+  { "progId": "AcmeCorp.MegaCorp.Mobile.Touch",
     "entries": [
       { "xoomId": "UserSetting[DC Protocols|ClickMobile Client|Web Administrative Settings|]", "xpath": "Body\/W6CMAdminSettings\/ModulesSettings\/W6CMCustomModuleSettings[Name='FSMGlobalFormsMOSWP']\/ObjectFormDefinition\/FormXML\/FSMGlobalFormsMOSWP\/Category\/Field\/Properties\/CustomPanelDef\/DLLName" },
       { "xoomId": "UserSetting[Test Inspections|ClickMobile Client|Web Administrative Settings|]", "xpath": "Body\/W6CMAdminSettings\/ModulesSettings\/W6CMCustomModuleSettings[Name='FSMGlobalFormsMOSWP']\/ObjectFormDefinition\/FormXML\/FSMGlobalFormsMOSWP\/Category\/Field\/Properties\/CustomPanelDef\/DLLName" },
     ] },
-  { "progId": "Diabsolut.MarathonOil.Mobile.Touch.js",
+  { "progId": "AcmeCorp.MegaCorp.Mobile.Touch.js",
     "entries": [
       { "xoomId": "App[BAK OPS Completion 12_5|0|0|ClickMobile Touch]", "xpath": "StructureEnableScript\/FSMOPSForms\/Category\/Field\/Properties\/CustomPanelDef\/DLLName" },
       { "xoomId": "App[BAKPFC_Backup_04192023|0|0|ClickMobile Touch]", "xpath": "StructureEnableScript\/FSMGlobalFormsPFC\/Category\/Field\/Properties\/CustomPanelDef\/DLLName" },
@@ -1915,7 +1915,7 @@ const components = [
       { "xoomId": "UserSetting[TMS Vendor - SPA|ClickMobile Client|Web Administrative Settings|]", "xpath": "Body\/W6CMAdminSettings\/ModulesSettings\/W6CMScheduleSettings[Name='Schedule']\/ObjectFormDefinition\/FormXML\/AssignmentForm\/Category\/Field\/Properties\/CustomPanelDef\/DLLName" },
       { "xoomId": "UserSetting[TMS Vendor|ClickMobile Client|Web Administrative Settings|]", "xpath": "Body\/W6CMAdminSettings\/ModulesSettings\/W6CMScheduleSettings[Name='Schedule']\/ObjectFormDefinition\/FormXML\/AssignmentForm\/Category\/Field\/Properties\/CustomPanelDef\/DLLName" },
     ] },
-  { "progId": "Diabsolut.MarathonOil.Mobile.Touch.Panels.DefaultFAPanel",
+  { "progId": "AcmeCorp.MegaCorp.Mobile.Touch.Panels.DefaultFAPanel",
     "entries": [
       { "xoomId": "App[Form_Fire Extinguisher 2_28 v2|0|0|ClickMobile Touch]", "xpath": "StructureEnableScript\/FSMGlobalFormsFEXT\/Category\/Field\/Properties\/CustomPanelDef\/ClassPath" },
       { "xoomId": "App[Form_Fire Extinguisher Inspection 5_18|0|0|ClickMobile Touch]", "xpath": "StructureEnableScript\/FSMGlobalFormsFEXT\/Category\/Field\/Properties\/CustomPanelDef\/ClassPath" },
@@ -1968,7 +1968,7 @@ const components = [
       { "xoomId": "UserSetting[Test Inspections|ClickMobile Client|Web Administrative Settings|]", "xpath": "Body\/W6CMAdminSettings\/ModulesSettings\/W6CMCustomModuleSettings[Name='FSMGlobalFormsSCBA']\/ObjectFormDefinition\/FormXML\/FSMGlobalFormsSCBA\/Category\/Field\/Properties\/CustomPanelDef\/ClassPath" },
       { "xoomId": "UserSetting[Test Inspections|ClickMobile Client|Web Administrative Settings|]", "xpath": "Body\/W6CMAdminSettings\/ModulesSettings\/W6CMCustomModuleSettings[Name='FSMGlobalFormsVI']\/ObjectFormDefinition\/FormXML\/FSMGlobalFormsVI\/Category\/Field\/Properties\/CustomPanelDef\/ClassPath" },
     ] },
-  { "progId": "Diabsolut.MarathonOil.Mobile.Touch.Panels.DictionaryFilterPanel",
+  { "progId": "AcmeCorp.MegaCorp.Mobile.Touch.Panels.DictionaryFilterPanel",
     "entries": [
       { "xoomId": "App[BAK OPS Completion 12_5|0|0|ClickMobile Touch]", "xpath": "StructureEnableScript\/FSMOPSForms\/Category\/Field\/Properties\/CustomPanelDef\/ClassPath" },
       { "xoomId": "App[Final_PostBAKChanges|0|0|ClickMobile Touch]", "xpath": "StructureEnableScript\/EquipmentInfo\/Category\/Field\/Properties\/CustomPanelDef\/ClassPath" },
@@ -2139,14 +2139,14 @@ const components = [
       { "xoomId": "UserSetting[Test Inspections|ClickMobile Client|Web Administrative Settings|]", "xpath": "Body\/W6CMAdminSettings\/ModulesSettings\/W6CMCustomModuleSettings[Name='ORBTVP']\/ObjectFormDefinition\/FormXML\/ORBTVP\/Category\/Field\/Properties\/CustomPanelDef\/ClassPath" },
       { "xoomId": "UserSetting[Test Inspections|ClickMobile Client|Web Administrative Settings|]", "xpath": "Body\/W6CMAdminSettings\/ModulesSettings\/W6CMScheduleSettings[Name='Schedule']\/ObjectFormDefinition\/FormXML\/AssignmentForm\/Category\/Field\/Properties\/CustomPanelDef\/ClassPath" },
     ] },
-  { "progId": "Diabsolut.MarathonOil.Mobile.Touch.Panels.DisplayStatusTransitionPanel",
+  { "progId": "AcmeCorp.MegaCorp.Mobile.Touch.Panels.DisplayStatusTransitionPanel",
     "entries": [
       { "xoomId": "UserSetting[[Vendor Water Field Resource - SPANISH]|ClickMobile Client|Web Administrative Settings|]", "xpath": "Body\/W6CMAdminSettings\/ModulesSettings\/W6CMScheduleSettings[Name='Schedule']\/ObjectFormDefinition\/FormXML\/AssignmentForm\/Category\/Field\/Properties\/CustomPanelDef\/ClassPath" },
       { "xoomId": "UserSetting[[Vendor Water Field Resource]|ClickMobile Client|Web Administrative Settings|]", "xpath": "Body\/W6CMAdminSettings\/ModulesSettings\/W6CMScheduleSettings[Name='Schedule']\/ObjectFormDefinition\/FormXML\/AssignmentForm\/Category\/Field\/Properties\/CustomPanelDef\/ClassPath" },
       { "xoomId": "UserSetting[TMS Vendor - SPA|ClickMobile Client|Web Administrative Settings|]", "xpath": "Body\/W6CMAdminSettings\/ModulesSettings\/W6CMScheduleSettings[Name='Schedule']\/ObjectFormDefinition\/FormXML\/AssignmentForm\/Category\/Field\/Properties\/CustomPanelDef\/ClassPath" },
       { "xoomId": "UserSetting[TMS Vendor|ClickMobile Client|Web Administrative Settings|]", "xpath": "Body\/W6CMAdminSettings\/ModulesSettings\/W6CMScheduleSettings[Name='Schedule']\/ObjectFormDefinition\/FormXML\/AssignmentForm\/Category\/Field\/Properties\/CustomPanelDef\/ClassPath" },
     ] },
-  { "progId": "Diabsolut.MarathonOil.Mobile.Touch.Panels.GridPanel",
+  { "progId": "AcmeCorp.MegaCorp.Mobile.Touch.Panels.GridPanel",
     "entries": [
       { "xoomId": "App[Equipment Lookup Added|0|0|ClickMobile Touch]", "xpath": "StructureEnableScript\/TaskHistory\/Category\/Field\/Properties\/CustomPanelDef\/ClassPath" },
       { "xoomId": "App[Form_Assignment_110123|0|0|ClickMobile Touch]", "xpath": "StructureEnableScript\/AssignmentForm\/Category\/Field\/Properties\/CustomPanelDef\/ClassPath" },
@@ -2172,7 +2172,7 @@ const components = [
       { "xoomId": "UserSetting[PER Operations|ClickMobile Client|Web Administrative Settings|]", "xpath": "Body\/W6CMAdminSettings\/ModulesSettings\/W6CMCustomModuleSettings[Name='TaskHistory']\/ObjectFormDefinition\/FormXML\/TaskHistory\/Category\/Field\/Properties\/CustomPanelDef\/ClassPath" },
       { "xoomId": "UserSetting[PER Operations|ClickMobile Client|Web Administrative Settings|]", "xpath": "Body\/W6CMAdminSettings\/ModulesSettings\/W6CMScheduleSettings[Name='Schedule']\/ObjectFormDefinition\/FormXML\/AssignmentForm\/Category\/Field\/Properties\/CustomPanelDef\/ClassPath" },
     ] },
-  { "progId": "Diabsolut.MarathonOil.Mobile.Touch.Panels.js",
+  { "progId": "AcmeCorp.MegaCorp.Mobile.Touch.Panels.js",
     "entries": [
       { "xoomId": "App[Form_Handover Form 6_1|0|0|ClickMobile Touch]", "xpath": "StructureEnableScript\/FSMDCWorkflow\/Category\/Field\/Properties\/CustomPanelDef\/DLLName" },
       { "xoomId": "App[Form_Handover Form_0116|0|0|ClickMobile Touch]", "xpath": "StructureEnableScript\/FSMDCWorkflow\/Category\/Field\/Properties\/CustomPanelDef\/DLLName" },
@@ -2191,7 +2191,7 @@ const components = [
       { "xoomId": "UserSetting[Test Inspections|ClickMobile Client|Web Administrative Settings|]", "xpath": "Body\/W6CMAdminSettings\/ModulesSettings\/W6CMCustomModuleSettings[Name='FSMGlobalFormsEFA']\/ObjectFormDefinition\/FormXML\/FSMGlobalFormsEFA\/Category\/Field\/Properties\/CustomPanelDef\/DLLName" },
       { "xoomId": "UserSetting[Test Inspections|ClickMobile Client|Web Administrative Settings|]", "xpath": "Body\/W6CMAdminSettings\/ModulesSettings\/W6CMCustomModuleSettings[Name='FSMGlobalFormsLOTO']\/ObjectFormDefinition\/FormXML\/FSMGlobalFormsLOTO\/Category\/Field\/Properties\/CustomPanelDef\/DLLName" },
     ] },
-  { "progId": "Diabsolut.MarathonOil.Mobile.Touch.Panels.SurveyPanel",
+  { "progId": "AcmeCorp.MegaCorp.Mobile.Touch.Panels.SurveyPanel",
     "entries": [
       { "xoomId": "App[BAKPFC_Backup_04192023|0|0|ClickMobile Touch]", "xpath": "StructureEnableScript\/FSMGlobalFormsPFC\/Category\/Field\/Properties\/CustomPanelDef\/ClassPath" },
       { "xoomId": "App[DCProtocols_Backup_04192023|0|0|ClickMobile Touch]", "xpath": "StructureEnableScript\/FSMGlobalFormsPFC\/Category\/Field\/Properties\/CustomPanelDef\/ClassPath" },
@@ -2427,7 +2427,7 @@ const components = [
       { "xoomId": "UserSetting[Test Inspections|ClickMobile Client|Web Administrative Settings|]", "xpath": "Body\/W6CMAdminSettings\/ModulesSettings\/W6CMCustomModuleSettings[Name='FSMGlobalFormsWORigMove']\/ObjectFormDefinition\/FormXML\/FSMGlobalFormsWORigMove\/Category\/Field\/Properties\/CustomPanelDef\/ClassPath" },
       { "xoomId": "UserSetting[Test Inspections|ClickMobile Client|Web Administrative Settings|]", "xpath": "Body\/W6CMAdminSettings\/ModulesSettings\/W6CMCustomModuleSettings[Name='FSMGlobalFormsWS']\/ObjectFormDefinition\/FormXML\/FSMGlobalFormsWS\/Category\/Field\/Properties\/CustomPanelDef\/ClassPath" },
     ] },
-  { "progId": "Diabsolut.MarathonOil.Mobile.Touch.Panels.SurveySubmitPanel",
+  { "progId": "AcmeCorp.MegaCorp.Mobile.Touch.Panels.SurveySubmitPanel",
     "entries": [
       { "xoomId": "App[BAKPFC_Backup_04192023|0|0|ClickMobile Touch]", "xpath": "StructureEnableScript\/FSMGlobalFormsPFC\/Category\/Field\/Properties\/CustomPanelDef\/ClassPath" },
       { "xoomId": "App[DCProtocols_Backup_04192023|0|0|ClickMobile Touch]", "xpath": "StructureEnableScript\/FSMGlobalFormsPFC\/Category\/Field\/Properties\/CustomPanelDef\/ClassPath" },
@@ -2675,12 +2675,12 @@ const components = [
       { "xoomId": "UserSetting[Test Inspections|ClickMobile Client|Web Administrative Settings|]", "xpath": "Body\/W6CMAdminSettings\/ModulesSettings\/W6CMCustomModuleSettings[Name='FSMGlobalFormsWORigMove']\/ObjectFormDefinition\/FormXML\/FSMGlobalFormsWORigMove\/Category\/Field\/Properties\/CustomPanelDef\/ClassPath" },
       { "xoomId": "UserSetting[Test Inspections|ClickMobile Client|Web Administrative Settings|]", "xpath": "Body\/W6CMAdminSettings\/ModulesSettings\/W6CMCustomModuleSettings[Name='FSMGlobalFormsWS']\/ObjectFormDefinition\/FormXML\/FSMGlobalFormsWS\/Category\/Field\/Properties\/CustomPanelDef\/ClassPath" },
     ] },
-  { "progId": "Diabsolut.PropertyCopy.Mobile.Touch.js",
+  { "progId": "AcmeCorp.PropertyCopy.Mobile.Touch.js",
     "entries": [
       { "xoomId": "UserSetting[MCAT Maintenance|ClickMobile Client|Web Administrative Settings|]", "xpath": "Body\/W6CMAdminSettings\/ModulesSettings\/W6CMCustomModuleSettings[Name='FSMORBMaintForms']\/ObjectFormDefinition\/FormXML\/FSMORBMaintForms\/Category\/Field\/Properties\/CustomPanelDef\/DLLName" },
       { "xoomId": "UserSetting[ORB Operations|ClickMobile Client|Web Administrative Settings|]", "xpath": "Body\/W6CMAdminSettings\/ModulesSettings\/W6CMCustomModuleSettings[Name='FSMORBMaintForms']\/ObjectFormDefinition\/FormXML\/FSMORBMaintForms\/Category\/Field\/Properties\/CustomPanelDef\/DLLName" },
     ] },
-  { "progId": "Diabsolut.PropertyCopy.Mobile.Touch.Panels",
+  { "progId": "AcmeCorp.PropertyCopy.Mobile.Touch.Panels",
     "entries": [
       { "xoomId": "App[Form_Action 6_2|0|0|ClickMobile Touch]", "xpath": "StructureEnableScript\/FSMGlobalActions\/Category\/Field\/Properties\/CustomPanelDef\/DLLName" },
       { "xoomId": "App[Form_Action 9_28|0|0|ClickMobile Touch]", "xpath": "StructureEnableScript\/FSMGlobalActions\/Category\/Field\/Properties\/CustomPanelDef\/DLLName" },
@@ -2763,7 +2763,7 @@ const components = [
       { "xoomId": "UserSetting[Test Inspections|ClickMobile Client|Web Administrative Settings|]", "xpath": "Body\/W6CMAdminSettings\/ModulesSettings\/W6CMCustomModuleSettings[Name='MROFacilityCheckList']\/ObjectFormDefinition\/FormXML\/MROFacilityCheckList\/Category\/Field\/Properties\/CustomPanelDef\/DLLName" },
       { "xoomId": "UserSetting[Test Inspections|ClickMobile Client|Web Administrative Settings|]", "xpath": "Body\/W6CMAdminSettings\/ModulesSettings\/W6CMScheduleSettings[Name='Schedule']\/ObjectFormDefinition\/FormXML\/AssignmentForm\/Category\/Field\/Properties\/CustomPanelDef\/DLLName" },
     ] },
-  { "progId": "Diabsolut.PropertyCopy.Mobile.Touch.Panels.js",
+  { "progId": "AcmeCorp.PropertyCopy.Mobile.Touch.Panels.js",
     "entries": [
       { "xoomId": "App[BAK OPS Completion 12_5|0|0|ClickMobile Touch]", "xpath": "StructureEnableScript\/FSMOPSForms\/Category\/Field\/Properties\/CustomPanelDef\/DLLName" },
       { "xoomId": "App[BAKPFC_Backup_04192023|0|0|ClickMobile Touch]", "xpath": "StructureEnableScript\/FSMGlobalFormsPFC\/Category\/Field\/Properties\/CustomPanelDef\/DLLName" },
@@ -3156,7 +3156,7 @@ const components = [
       { "xoomId": "UserSetting[TMS Vendor - SPA|ClickMobile Client|Web Administrative Settings|]", "xpath": "Body\/W6CMAdminSettings\/ModulesSettings\/W6CMScheduleSettings[Name='Schedule']\/ObjectFormDefinition\/FormXML\/AssignmentForm\/Category\/Field\/Properties\/CustomPanelDef\/DLLName" },
       { "xoomId": "UserSetting[TMS Vendor|ClickMobile Client|Web Administrative Settings|]", "xpath": "Body\/W6CMAdminSettings\/ModulesSettings\/W6CMScheduleSettings[Name='Schedule']\/ObjectFormDefinition\/FormXML\/AssignmentForm\/Category\/Field\/Properties\/CustomPanelDef\/DLLName" },
     ] },
-  { "progId": "Diabsolut.PropertyCopy.Mobile.Touch.Panels.PropertyCopyPanel",
+  { "progId": "AcmeCorp.PropertyCopy.Mobile.Touch.Panels.PropertyCopyPanel",
     "entries": [
       { "xoomId": "App[BAK OPS Completion 12_5|0|0|ClickMobile Touch]", "xpath": "StructureEnableScript\/FSMOPSForms\/Category\/Field\/Properties\/CustomPanelDef\/ClassPath" },
       { "xoomId": "App[BAKPFC_Backup_04192023|0|0|ClickMobile Touch]", "xpath": "StructureEnableScript\/FSMGlobalFormsPFC\/Category\/Field\/Properties\/CustomPanelDef\/ClassPath" },
